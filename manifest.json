@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "short_name": "TikTok Downloader",
+  "name": "TikTok Downloader",
+  "icons": [
+    {
+      "src": "/images/logo_192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/logo_512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/logo_2048x2048.png",
+      "type": "image/png",
+      "sizes": "2048x2048",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/logo_maskable_512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/app/",
+  "background_color": "#000000",
+  "theme_color": "#121212",
+  "display": "standalone",
+  "orientation": "portrait",
+  "description": "TikTok Downloader allows you to download a TikTok video with no watermark in just one click using our free TikTok video downloader tool. Save to any device as MP4 in HD or MP3 audio.",
+  "dir": "ltr",
+  "lang": "en",
+  "categories": ["productivity", "social", "utilities"],
+  "screenshots": [
+    {
+      "src": "/images/mobile_ss1.png",
+      "sizes": "756x1334",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/mobile_ss2.png",
+      "sizes": "756x1334",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/mobile_ss3.png",
+      "sizes": "756x1334",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/mobile_ss4.png",
+      "sizes": "756x1334",
+      "type": "image/png"
+    }
+  ],
+  "display_override": [
+    "standalone",
+    "fullscreen",
+    "minimal-ui",
+    "window-controls-overlay",
+    "browser"
+  ]
+}
