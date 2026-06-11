@@ -700,7 +700,7 @@ async function de(e) {
   W("tiktok_id", e), ie("loading");
   try {
     const n = await fetch(
-      "https://api-tp.threadsdownloader.com/tiktok/mediav2?id=".concat(e)
+      "/api/tiktok?id=".concat(e)
     );
     if (((t = await n.json()), !n.ok)) throw { response: { data: t } };
   } catch (n) {
