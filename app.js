@@ -699,9 +699,8 @@ async function de(e) {
   let t;
   W("tiktok_id", e), ie("loading");
   try {
-    const n = await fetch(
-      "/api/tiktok?id=".concat(e)
-    );
+    const _apiBase = (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") ? "https://api-tp.threadsdownloader.com/tiktok/mediav2" : "/api/tiktok";
+    const n = await fetch(_apiBase + "?id=" + e);
     if (((t = await n.json()), !n.ok)) throw { response: { data: t } };
   } catch (n) {
     const t = (
@@ -1238,6 +1237,7 @@ document
           filetype: e.filetype || "video/mp4",
         };
         const { url: n, filename: s, filetype: o } = e;
+        { ke("loading"); fetch(n).then(function(r){ var tot=+r.headers.get("Content-Length")||0,rd=r.body.getReader(),ch=[],rcv=0; function p(){return rd.read().then(function(x){ if(x.done){ var b=new Blob(ch,{type:o}),u=URL.createObjectURL(b),_a=document.createElement("a"); _a.href=u; _a.download=s; document.body.appendChild(_a); _a.click(); document.body.removeChild(_a); setTimeout(function(){URL.revokeObjectURL(u);},1e3); ke("reset"); return; } ch.push(x.value); rcv+=x.value.length; if(tot){var pct=Math.round(rcv/tot*100); ve(pct+"%",(rcv/1e6).toFixed(2)+" / "+(tot/1e6).toFixed(2)+" MB");} return p(); });} return p(); }).catch(function(){ ke("reset"); window.open(n,"_blank"); }); return; }
         let t;
         try {
           ke("loading"), await ge();
