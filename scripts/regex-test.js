@@ -1,0 +1,11 @@
+const fs = require('fs');
+const path = require('path');
+const root = path.join(__dirname, '..');
+const indexHtml = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+console.log('index length', indexHtml.length);
+const navMatch = indexHtml.match(/<nav class="navbar navbar-expand-md bg-dark py-3 navbar-dark"[\s\S]*?<\/nav>/);
+console.log('navMatch', !!navMatch, navMatch ? navMatch[0].slice(0, 100) + '...' : null);
+const footerMatch = indexHtml.match(/<footer id="footer"[\s\S]*?<\/footer>/);
+console.log('footerMatch', !!footerMatch, footerMatch ? footerMatch[0].slice(0, 100) + '...' : null);
+const iconMatch = indexHtml.match(/<link rel="shortcut icon" type="image\/png" href="data:image\/png;base64,[^"]*"[\s\S]*?(?=<link rel="stylesheet"|<script)/);
+console.log('iconMatch', !!iconMatch, iconMatch ? iconMatch[0].slice(0, 120) + '...' : null);

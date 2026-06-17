@@ -1,0 +1,12 @@
+const fs = require('fs');
+const path = require('path');
+const file = path.join(__dirname, '..', 'index.html');
+const text = fs.readFileSync(file, 'utf8');
+const navStart = text.indexOf('<nav');
+console.log('navStart', navStart);
+console.log(text.slice(navStart, navStart + 250));
+const footerStart = text.indexOf('<footer');
+console.log('footerStart', footerStart);
+console.log(text.slice(footerStart, footerStart + 250));
+console.log('nav regex test', /<nav class="navbar navbar-expand-md bg-dark py-3 navbar-dark"[\s\S]*?<\/nav>/.test(text));
+console.log('footer regex test', /<footer id="footer"[\s\S]*?<\/footer>/.test(text));
