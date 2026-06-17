@@ -42,6 +42,11 @@
       "source": "/terms.html",
       "destination": "/terms",
       "permanent": true
+    },
+    {
+      "source": "/download-tiktok-videos-sa-android.html",
+      "destination": "/download-tiktok-videos-sa-android",
+      "permanent": true
     }
   ]
 }
