@@ -2540,3 +2540,52 @@ a:hover {
   --tcblue: #4d7df7;
   --tclightblue: #1e2029;
 }
+
+/* ── Mobile fixes ────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  /* Navbar brand always visible and correct size */
+  .navbar-brand {
+    font-size: 20px !important;
+  }
+  .navbar-brand img {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .navbar-brand span {
+    font-size: 18px !important;
+  }
+
+  /* Hamburger button always on right */
+  .navbar > .container {
+    flex-wrap: nowrap;
+  }
+
+  /* Offcanvas mobile menu styling */
+  .offcanvas-start {
+    width: 280px !important;
+  }
+  .offcanvas .nav-link {
+    font-size: 1rem;
+    padding: 10px 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .offcanvas .navbar-brand {
+    font-size: 18px !important;
+  }
+
+  /* H1 minimum size on mobile */
+  h1 {
+    font-size: clamp(1.35rem, 5.5vw, 1.75rem) !important;
+    line-height: 1.3 !important;
+  }
+
+  /* H2 readable on mobile */
+  h2 {
+    font-size: clamp(1.1rem, 4.5vw, 1.5rem) !important;
+  }
+
+  /* Blog card full width on mobile */
+  .row.justify-content-center > [class*="col-md-8"] {
+    max-width: 100%;
+  }
+}
