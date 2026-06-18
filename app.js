@@ -392,12 +392,11 @@ function Q(e) {
   let t = (e = e
     .replace("https://", "")
     .replace("http://", "")
-    .replace("/photo/", "")
     .trim()
     .split("?")[0]
     .split("&")[0]);
   return (
-    t.includes("/video/") && (t = t.split("/video/")[1]),
+    t.includes("/video/") ? (t = t.split("/video/")[1]) : t.includes("/photo/") && (t = t.split("/photo/")[1]),
     (t = t.split("/")[0]),
     /^\d+$/.test(t) ||
       ((t = e),
@@ -830,7 +829,7 @@ G.addEventListener("click", async function () {
 }),
   (function () {
     try {
-      if (K.includes("/video/") || K.includes("/t/")) {
+      if (K.includes("/video/") || K.includes("/photo/") || K.includes("/t/")) {
         const e = "https://tiktok.com".concat(K),
           t = Q(e);
         if (!t) return;
