@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const root = path.join(__dirname, '..');
 
-const files = fs.readdirSync(root).filter(f => f.endsWith('.html') && f !== 'tiktok-to-mp4.html');
+const files = fs.readdirSync(root).filter(f => f.endsWith('.html'));
 
 // Page slug for "active" class in mobile nav
 const selfMap = {
@@ -19,10 +19,20 @@ const selfMap = {
   'download-tiktok-stories.html': '/download-tiktok-stories',
   'download-ang-larawan-at-slide-ng-tiktok.html': '/download-ang-larawan-at-slide-ng-tiktok',
   'download-tiktok-mp3.html': '/download-tiktok-mp3',
+  'tiktok-to-mp4.html': '/tiktok-to-mp4',
+  'paano-mag-download-ng-mga-video-sa-tiktok.html': '/paano-mag-download-ng-mga-video-sa-tiktok',
 };
 
-// Correct 4-item dropdown content
-const dropdownItems = [
+// Correct "Paano" dropdown content
+const howtoItems = [
+  '<li><a class="dropdown-item" href="/download-sa-pc">I-download sa PC</a></li>',
+  '                <li><a class="dropdown-item" href="/download-tiktok-videos-sa-android">I-download sa Android</a></li>',
+  '                <li><a class="dropdown-item" href="/download-tiktok-videos-sa-iphone">I-download sa iPhone</a></li>',
+  '                <li><a class="dropdown-item" href="/paano-mag-download-ng-mga-video-sa-tiktok">Download TikTok Videos</a></li>',
+].join('\n');
+
+// Correct TikTok Downloaders dropdown content
+const downloaderItems = [
   '<li><a class="dropdown-item" href="/download-tiktok-stories">TikTok Stories Downloader</a></li>',
   '                <li><a class="dropdown-item" href="/download-ang-larawan-at-slide-ng-tiktok">Download TikTok Slideshows</a></li>',
   '                <li><a class="dropdown-item" href="/download-tiktok-mp3">Download TikTok MP3</a></li>',
@@ -33,6 +43,7 @@ const dropdownItems = [
 function buildMobileLinks(self, indent) {
   const sp = indent || '          ';
   const links = [
+    { href: '/paano-mag-download-ng-mga-video-sa-tiktok', emoji: '&#128249;', label: 'Download TikTok Videos' },
     { href: '/download-tiktok-stories',              emoji: '&#127909;', label: 'TikTok Stories'   },
     { href: '/download-ang-larawan-at-slide-ng-tiktok', emoji: '&#128248;', label: 'TikTok Slideshows' },
     { href: '/download-tiktok-mp3',                  emoji: '&#127925;', label: 'TikTok MP3'       },
@@ -52,12 +63,25 @@ for (const f of files) {
   const self = selfMap[f] || '';
   let changed = false;
 
-  // ── 1. FIX DESKTOP DROPDOWN ─────────────────────────────────────────────
-  // Regex: capture from Stories dropdown-item through closing </ul></li> of TikTok Downloaders
-  // Works regardless of how many items are currently in the dropdown
+  // ── 1. FIX DESKTOP DROPDOWNS ────────────────────────────────────────────
+  const howtoBlockRe = /(<a class="nav-link dropdown-toggle"[^>]*>.*?Paano<\/a>)\s*<ul class="dropdown-menu dropdown-menu-dark"[\s\S]*?<\/ul>/;
+  const howtoRe = /(<li><a class="dropdown-item" href="\/download-sa-pc">I-download sa PC<\/a><\/li>)[\s\S]*?(<\/ul>\s*<\/li>)/;
+  if (howtoBlockRe.test(c)) {
+    c = c.replace(howtoBlockRe, (_match, trigger) => {
+      return trigger + '\n              <ul class="dropdown-menu dropdown-menu-dark" style="min-width:220px">\n                ' + howtoItems + '\n              </ul>';
+    });
+    changed = true;
+  } else if (howtoRe.test(c)) {
+    c = c.replace(howtoRe, howtoItems + '\n              </ul>\n            </li>');
+    c = c.replace('style="min-width:180px"', 'style="min-width:220px"');
+    c = c.replace('style="min-width:180px$3', 'style="min-width:220px');
+    c = c.replace('style="min-width:220px$3', 'style="min-width:220px');
+    changed = true;
+  }
+
   const ddRe = /(<li><a class="dropdown-item" href="\/download-tiktok-stories">TikTok Stories Downloader<\/a><\/li>)[\s\S]*?(<\/ul>\s*<\/li>)/;
   if (ddRe.test(c)) {
-    c = c.replace(ddRe, dropdownItems + '\n              </ul>\n            </li>');
+    c = c.replace(ddRe, downloaderItems + '\n              </ul>\n            </li>');
     changed = true;
   }
 
