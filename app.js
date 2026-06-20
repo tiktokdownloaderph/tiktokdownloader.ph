@@ -588,7 +588,7 @@ async function se(e) {
     n = document.getElementById("watermarkMode"),
     r = document.getElementById("removeWatermarkParent");
   (v.textContent = e.user.username),
-    (l.href = "https://www.tiktok.com/@".concat(e.user.username)),
+    (l.href = "https://example.com/@".concat(e.user.username)),
     (t.onload = () => {
       U(t);
     }),
@@ -830,7 +830,7 @@ G.addEventListener("click", async function () {
   (function () {
     try {
       if (K.includes("/video/") || K.includes("/photo/") || K.includes("/t/")) {
-        const e = "https://tiktok.com".concat(K),
+        const e = "https://example.com".concat(K),
           t = Q(e);
         if (!t) return;
         (Y.value = e), de(t);
