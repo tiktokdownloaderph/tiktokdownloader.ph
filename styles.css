@@ -2756,64 +2756,76 @@ h5 {
 
 @media (min-width: 992px) {
   .how-to-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .how-to-step-row {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: auto auto;
-    gap: 18px 24px;
-    margin: 0;
-    align-items: stretch !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 28px;
+    align-items: center;
   }
 
-  .how-to-steps > .col {
-    width: auto;
-    padding: 0;
-    margin: 0;
+  .how-to-step-row--reverse .how-to-step-copy {
+    grid-column: 2;
   }
 
-  .how-to-steps > .col:nth-child(1) {
+  .how-to-step-row--reverse .how-to-step-media {
     grid-column: 1;
     grid-row: 1;
   }
 
-  .how-to-steps > .col:nth-child(2) {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  .how-to-steps > .col:nth-child(3) {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .how-to-steps > .col:nth-child(4) {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .how-to-steps > .col:nth-child(5) {
-    grid-column: 3;
-    grid-row: 1;
-  }
-
-  .how-to-steps > .col:nth-child(1) > div,
-  .how-to-steps > .col:nth-child(3) > div,
-  .how-to-steps > .col:nth-child(5) > div {
-    min-height: 220px;
+  .how-to-step-copy > div {
+    min-height: 230px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  .how-to-steps .step-image-strip {
-    height: 100%;
-    min-height: 285px;
-    align-items: flex-start;
+  .how-to-step-media {
+    min-width: 0;
   }
 
-  .how-to-final-image {
-    width: calc((100% - 48px) / 3);
-    margin-right: 0;
-    margin-left: auto;
+  .how-to-step-media .step-image-strip {
+    width: 100%;
+    max-width: 620px;
+    height: 100%;
+    min-height: 280px;
+    align-items: center;
+  }
+
+  .how-to-step-media .step-image-strip__item {
+    flex-basis: min(58%, 360px);
+  }
+
+  .how-to-step-media .step-image-strip__item:only-child {
+    flex-basis: min(100%, 390px);
+    max-width: min(100%, 390px);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .how-to-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .how-to-step-row {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .how-to-step-row--reverse {
+    flex-direction: column;
+  }
+
+  .how-to-step-media .step-image-strip {
+    width: 100%;
+    max-width: 640px;
   }
 }
 
