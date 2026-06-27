@@ -2716,10 +2716,6 @@ h5 {
     width: 50%;
   }
 
-  .row-cols-md-5 > * {
-    flex: none;
-    width: 20%;
-  }
 }
 
 @media (min-width: 992px) {
@@ -2756,6 +2752,69 @@ h5 {
 .step-image-strip__item:only-child {
   flex-basis: 400px;
   max-width: 400px;
+}
+
+@media (min-width: 992px) {
+  .how-to-steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+    gap: 18px 24px;
+    margin: 0;
+    align-items: stretch !important;
+  }
+
+  .how-to-steps > .col {
+    width: auto;
+    padding: 0;
+    margin: 0;
+  }
+
+  .how-to-steps > .col:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .how-to-steps > .col:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .how-to-steps > .col:nth-child(3) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .how-to-steps > .col:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .how-to-steps > .col:nth-child(5) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .how-to-steps > .col:nth-child(1) > div,
+  .how-to-steps > .col:nth-child(3) > div,
+  .how-to-steps > .col:nth-child(5) > div {
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .how-to-steps .step-image-strip {
+    height: 100%;
+    min-height: 285px;
+    align-items: flex-start;
+  }
+
+  .how-to-final-image {
+    width: calc((100% - 48px) / 3);
+    margin-right: 0;
+    margin-left: auto;
+  }
 }
 
 table {
