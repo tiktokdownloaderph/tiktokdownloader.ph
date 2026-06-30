@@ -1,3 +1,13 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /download/
+Disallow: /downloads/
+Disallow: /download?
+Disallow: /*?url=
+Disallow: /*?link=
+Disallow: /*?q=
+Disallow: /*?s=
+Disallow: /*?download=
+Disallow: /*?format=
 Sitemap: https://tiktokdownloader.ph/sitemap.xml

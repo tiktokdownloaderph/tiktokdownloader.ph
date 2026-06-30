@@ -29,11 +29,6 @@
       "permanent": true
     },
     {
-      "source": "/faq.html",
-      "destination": "/faq",
-      "permanent": true
-    },
-    {
       "source": "/privacy-policy.html",
       "destination": "/privacy-policy",
       "permanent": true
@@ -51,6 +46,36 @@
     {
       "source": "/download-tiktok-videos-sa-iphone.html",
       "destination": "/download-tiktok-videos-sa-iphone",
+      "permanent": true
+    },
+    {
+      "source": "/download-ang-larawan-at-slide-ng-tiktok.html",
+      "destination": "/download-ang-larawan-at-slide-ng-tiktok",
+      "permanent": true
+    },
+    {
+      "source": "/download-sa-pc.html",
+      "destination": "/download-sa-pc",
+      "permanent": true
+    },
+    {
+      "source": "/download-tiktok-mp3.html",
+      "destination": "/download-tiktok-mp3",
+      "permanent": true
+    },
+    {
+      "source": "/download-tiktok-stories.html",
+      "destination": "/download-tiktok-stories",
+      "permanent": true
+    },
+    {
+      "source": "/paano-mag-download-ng-mga-video-sa-tiktok.html",
+      "destination": "/paano-mag-download-ng-mga-video-sa-tiktok",
+      "permanent": true
+    },
+    {
+      "source": "/tiktok-to-mp4.html",
+      "destination": "/tiktok-to-mp4",
       "permanent": true
     }
   ]

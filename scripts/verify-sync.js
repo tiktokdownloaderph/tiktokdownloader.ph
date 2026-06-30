@@ -28,8 +28,8 @@ const normalize = (text) =>
 
 const navMatch = index.match(/<nav[\s\S]*?<\/nav>/m);
 const footerMatch = index.match(/<footer[\s\S]*?<\/footer>/m);
-const appleTouch = '<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/ce-a-DXTL2ujA.png" />';
-const icon32 = '<link rel="icon" type="image/png" sizes="32x32" href="/ce-a-DcEhgwDb.png" />';
+const appleTouch = '<link rel="apple-touch-icon" type="image/png" sizes="96x96" href="/favicon.png" />';
+const icon32 = '<link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />';
 
 if (!navMatch || !footerMatch) {
   console.error('index.html: could not extract nav or footer');

@@ -28,10 +28,8 @@ const html = `<!DOCTYPE html>
     <meta name="theme-color" content="#121212" />
     <meta name="referrer" content="no-referrer" />
     <link rel="shortcut icon" type="image/png" href="${favicon}" />
-    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/ce-a-DXTL2ujA.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/ce-a-DcEhgwDb.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/ce-a-CPRRZVzP.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/ce-a-BD4-9N2x.png" />
+    <link rel="apple-touch-icon" type="image/png" sizes="96x96" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />
     <link rel="manifest" href="/manifest.json" crossorigin="use-credentials" /><link rel="stylesheet" crossorigin href="/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" defer></script>
     <script type="application/ld+json">
