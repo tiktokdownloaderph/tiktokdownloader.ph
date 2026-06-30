@@ -2812,6 +2812,17 @@ h5 {
   --bs-gutter-y: 1.5rem;
 }
 
+.home-downloader-hero {
+  padding-top: 28px;
+  margin-bottom: 46px !important;
+}
+
+.home-disclaimer {
+  max-width: 760px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 @media (min-width: 768px) {
   .row-cols-md-2 > * {
     flex: none;
@@ -2985,6 +2996,11 @@ table {
   main > .container {
     padding-right: max(calc(var(--bs-gutter-x) * 0.5), env(safe-area-inset-right));
     padding-left: max(calc(var(--bs-gutter-x) * 0.5), env(safe-area-inset-left));
+  }
+
+  .home-downloader-hero {
+    padding-top: 22px;
+    margin-bottom: 34px !important;
   }
 
   .navbar {
