@@ -2138,6 +2138,169 @@ textarea.form-control-lg {
 .faq-item {
   margin-bottom: 10px;
 }
+.pros-cons {
+  margin: 46px auto 0;
+  color: #fff;
+}
+.pros-cons h2 {
+  margin: 0 0 22px;
+  color: #fff;
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+}
+.pros-cons__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 56px minmax(0, 1fr);
+  align-items: start;
+  gap: 0;
+  max-width: 930px;
+  margin: 0 auto;
+  padding: 26px 22px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+}
+.pros-cons__panel {
+  min-width: 0;
+}
+.pros-cons__panel--pros {
+  text-align: right;
+}
+.pros-cons__panel--cons {
+  text-align: left;
+}
+.pros-cons__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 162px;
+  margin: 0 0 18px;
+  padding: 7px 15px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+}
+.pros-cons__badge span {
+  display: inline-grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 0.8rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.pros-cons__panel--pros .pros-cons__badge {
+  background: linear-gradient(135deg, #79c843, #4fa62d);
+  box-shadow: 0 12px 28px rgba(121, 200, 67, 0.2);
+}
+.pros-cons__panel--pros .pros-cons__badge span {
+  color: #4fa62d;
+}
+.pros-cons__panel--cons .pros-cons__badge {
+  background: linear-gradient(135deg, #ff3b5c, #db2447);
+  box-shadow: 0 12px 28px rgba(255, 59, 92, 0.2);
+}
+.pros-cons__panel--cons .pros-cons__badge span {
+  color: #db2447;
+}
+.pros-cons__list {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pros-cons__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 10px;
+  color: rgba(255, 255, 255, 0.74);
+  background: rgba(255, 255, 255, 0.025);
+  border-radius: 4px;
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+.pros-cons__panel--pros .pros-cons__list li {
+  border-right: 3px solid rgba(121, 200, 67, 0.8);
+}
+.pros-cons__panel--cons .pros-cons__list li {
+  border-left: 3px solid rgba(255, 59, 92, 0.78);
+}
+.pros-cons__panel--pros .pros-cons__list li {
+  justify-content: flex-end;
+}
+.pros-cons__panel--pros .pros-cons__icon {
+  order: 2;
+}
+.pros-cons__icon {
+  display: inline-grid;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  place-items: center;
+  margin-top: 1px;
+  border-radius: 50%;
+}
+.pros-cons__icon svg {
+  width: 14px;
+  height: 14px;
+}
+.pros-cons__panel--pros .pros-cons__icon {
+  color: #79c843;
+  background: rgba(121, 200, 67, 0.15);
+}
+.pros-cons__panel--cons .pros-cons__icon {
+  color: #ff3b5c;
+  background: rgba(255, 59, 92, 0.14);
+}
+.pros-cons__divider {
+  position: relative;
+  min-height: 100%;
+  align-self: stretch;
+}
+.pros-cons__divider::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(121, 200, 67, 0.42),
+    rgba(255, 59, 92, 0.42),
+    rgba(255, 255, 255, 0.12),
+    transparent
+  );
+}
+.pros-cons__divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, rgba(121, 200, 67, 0.2), transparent 45%),
+    radial-gradient(circle at center, rgba(255, 59, 92, 0.24), transparent 66%),
+    rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transform: translate(-50%, -50%);
+}
 .home-faq {
   margin: 72px auto 0;
   max-width: 760px;
@@ -3064,6 +3227,63 @@ table {
   .home-faq {
     margin-top: 52px;
     max-width: 100%;
+  }
+
+  .pros-cons {
+    margin-top: 38px;
+  }
+
+  .pros-cons h2 {
+    margin-bottom: 18px;
+  }
+
+  .pros-cons__grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 22px 18px;
+  }
+
+  .pros-cons__panel,
+  .pros-cons__panel--pros,
+  .pros-cons__panel--cons {
+    text-align: left;
+  }
+
+  .pros-cons__panel--pros .pros-cons__list li {
+    justify-content: flex-start;
+  }
+
+  .pros-cons__panel--pros .pros-cons__icon {
+    order: 0;
+  }
+
+  .pros-cons__badge {
+    min-width: 0;
+  }
+
+  .pros-cons__divider {
+    min-height: 1px;
+    height: 1px;
+  }
+
+  .pros-cons__divider::before {
+    top: 0;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(121, 200, 67, 0.42),
+      rgba(255, 59, 92, 0.42),
+      rgba(255, 255, 255, 0.12),
+      transparent
+    );
+  }
+
+  .pros-cons__divider::after {
+    display: none;
   }
 
   .home-faq__intro {
