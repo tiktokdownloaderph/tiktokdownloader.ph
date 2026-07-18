@@ -145,6 +145,7 @@ export const metadata: Metadata = {
   },
   other: {
     "google-site-verification": "hnAYVvigNOIi0f_kuc4Vp21YY9U7B49_ndP9cuSIiI0",
+    "msvalidate.01": "96D989D56448B78BB07EFC6132F9E401",
     referrer: "no-referrer",
   },
 };
