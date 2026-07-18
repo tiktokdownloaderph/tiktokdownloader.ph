@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "short_name": "TikTok Downloader",
+  "name": "TikTok Downloader",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "type": "image/png",
+      "sizes": "96x96",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#000000",
+  "theme_color": "#121212",
+  "display": "standalone",
+  "orientation": "portrait",
+  "description": "TikTok Downloader allows you to download a TikTok video with no watermark in just one click using our free TikTok video downloader tool. Save to any device as MP4 in HD or MP3 audio.",
+  "dir": "ltr",
+  "lang": "en",
+  "categories": ["productivity", "social", "utilities"],
+  "display_override": [
+    "standalone",
+    "fullscreen",
+    "minimal-ui",
+    "window-controls-overlay",
+    "browser"
+  ]
+}
