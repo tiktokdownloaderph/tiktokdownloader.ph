@@ -16,14 +16,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  async rewrites() {
-    return [
-      {
-        source: "/api/tiktok",
-        destination: "https://api-tp.threadsdownloader.com/tiktok/mediav2",
-      },
-    ];
-  },
   async redirects() {
     return [
       { source: "/about.html", destination: "/about", statusCode: 301 },
