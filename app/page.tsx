@@ -31,8 +31,8 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/",
       "author": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
       "publisher": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
-      "datePublished": "2026-07-11T16:02:46+08:00",
-      "dateModified": "2026-07-11T16:02:46+08:00",
+      "datePublished": "2026-07-18T10:00:00+08:00",
+      "dateModified": "2026-07-18T10:00:00+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph/#webpage" }
     },
     {
