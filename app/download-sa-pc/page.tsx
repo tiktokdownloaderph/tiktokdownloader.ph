@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ToolDownloader from "@/components/ToolDownloader";
 
 export const metadata: Metadata = {
   title: "Mag-download ng kahit anong TikTok video sa PC nang libre",
@@ -187,6 +188,7 @@ export default function Page() {
   return (
     <>
       <main dangerouslySetInnerHTML={{ __html: MAIN_HTML }} />
+      <ToolDownloader />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
