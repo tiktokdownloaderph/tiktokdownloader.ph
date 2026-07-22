@@ -12,8 +12,8 @@ export const metadata: Metadata = {
     type: "article",
     url: "https://tiktokdownloader.ph/download-tiktok-stories",
     siteName: "TikTok Downloader",
-    publishedTime: "2026-07-18T10:00:00+08:00",
-    modifiedTime: "2026-07-18T10:00:00+08:00",
+    publishedTime: "2026-07-23T04:32:39+08:00",
+    modifiedTime: "2026-07-23T04:32:39+08:00",
     images: [{ url: "https://tiktokdownloader.ph/images/featuredimg5.webp", width: 1200, height: 630 }],
   },
   twitter: {
@@ -64,8 +64,8 @@ const JSON_LD = {
         "name": "TikTok Downloader PH",
         "url": "https://tiktokdownloader.ph/"
       },
-      "datePublished": "2026-07-18T10:00:00+08:00",
-      "dateModified": "2026-07-18T10:00:00+08:00",
+      "datePublished": "2026-07-23T04:32:39+08:00",
+      "dateModified": "2026-07-23T04:32:39+08:00",
       "isPartOf": {
         "@id": "https://tiktokdownloader.ph/download-tiktok-stories#webpage"
       }

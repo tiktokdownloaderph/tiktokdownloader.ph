@@ -30,7 +30,7 @@ export default function DisclaimerPage() {
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8">
             <h1 style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 6 }}>Pagtatanggi (Disclaimer)</h1>
-            <p style={{ color: "rgba(255,255,255,0.38)", fontSize: ".8rem", marginBottom: 28 }}>Huling na-update: Hulyo 11, 2026</p>
+            <p style={{ color: "rgba(255,255,255,0.38)", fontSize: ".8rem", marginBottom: 28 }}>Huling na-update: Hulyo 23, 2026</p>
             <div style={{ background: "rgba(255,59,92,0.05)", border: "1px solid rgba(255,59,92,0.18)", borderRadius: 10, padding: "16px 20px", marginBottom: 24 }}>
               <p style={{ margin: 0, fontSize: ".9rem", color: "rgba(255,255,255,0.75)" }}>Ang tiktokdownloader.ph ay isang independiyenteng third-party na tool at hindi ito kaakibat, konektado, o ineendorso ng TikTok, Douyin, ByteDance Ltd., o anumang mga kaakibat na kumpanya.</p>
             </div>

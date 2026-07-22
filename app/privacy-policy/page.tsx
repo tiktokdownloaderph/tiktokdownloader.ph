@@ -30,7 +30,7 @@ export default function PrivacyPolicyPage() {
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8">
             <h1 style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 6 }}>Patakaran sa Privacy</h1>
-            <p style={{ color: "rgba(255,255,255,0.38)", fontSize: ".8rem", marginBottom: 28 }}>Huling na-update: Hulyo 11, 2026</p>
+            <p style={{ color: "rgba(255,255,255,0.38)", fontSize: ".8rem", marginBottom: 28 }}>Huling na-update: Hulyo 23, 2026</p>
             <div style={{ color: "rgba(255,255,255,0.68)", fontSize: ".9rem", lineHeight: 1.85 }}>
               <p>Ang tiktokdownloader.ph ay nakatuon sa pagprotekta ng iyong privacy. Ang Patakaran sa Privacy na ito ay nagpapaliwanag kung paano namin pinamamahalaan ang impormasyon kapag ginamit mo ang aming website.</p>
               <h2 style={s}>1. Impormasyong Hindi Namin Kinokolekta</h2>
