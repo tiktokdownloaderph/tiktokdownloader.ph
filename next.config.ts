@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    inlineCss: true,
+  },
   trailingSlash: false,
   async headers() {
     return [
