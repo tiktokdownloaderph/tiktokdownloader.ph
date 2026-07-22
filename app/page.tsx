@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Downloader from "@/components/Downloader";
-import FaqToggle from "@/components/FaqToggle";
 
 const JSON_LD = {
   "@context": "https://schema.org",
@@ -201,16 +200,16 @@ export default function HomePage() {
                   <div style={{ background: "#212529", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: 22, height: "100%", textAlign: "center" }}>
                     <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(255,59,92,0.12)", border: "1px solid rgba(255,59,92,0.3)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 14px", fontSize: ".82rem", fontWeight: 700, color: "#ff3b5c" }}>1</div>
                     <h3 style={{ color: "#fff", fontSize: ".95rem", fontWeight: 600, marginBottom: 8 }}>Kopyahin ang Link ng Video</h3>
-                    <p style={{ color: "rgba(255,255,255,0.55)", fontSize: ".875rem", margin: 0, lineHeight: 1.7 }}>Buksan ang TikTok, i-tap ang <strong style={{ color: "#ff3b5c" }}>Ibahagi</strong>, at piliin ang <strong style={{ color: "#ff3b5c" }}>Copy Link</strong>.</p>
+                    <p style={{ color: "rgba(255,255,255,0.55)", fontSize: ".875rem", margin: 0, lineHeight: 1.7 }}>Buksan ang TikTok, i-tap ang <strong style={{ color: "#fff" }}>Ibahagi</strong>, at piliin ang <strong style={{ color: "#fff" }}>Copy Link</strong>.</p>
                   </div>
                 </div>
                 <div className="how-to-step-media">
                   <div className="step-image-strip step-image-strip--between">
                     <div className="step-image-strip__item">
-                      <Image className="step-image-strip__img" src="/images/i-tap-ang-ibahagi.webp" alt="I-tap ang Ibahagi" width={400} height={650} loading="lazy" sizes="(max-width: 575px) 260px, 400px" />
+                      <Image className="step-image-strip__img" src="/images/i-tap-ang-ibahagi.webp" alt="I-tap ang Ibahagi" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
                     </div>
                     <div className="step-image-strip__item">
-                      <Image className="step-image-strip__img" src="/images/Kopyahin-ang-Link-ng-Video.webp" alt="Kopyahin ang Link ng Video" width={400} height={650} loading="lazy" sizes="(max-width: 575px) 260px, 400px" />
+                      <Image className="step-image-strip__img" src="/images/Kopyahin-ang-Link-ng-Video.webp" alt="Kopyahin ang Link ng Video" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
                     </div>
                   </div>
                 </div>
@@ -226,10 +225,10 @@ export default function HomePage() {
                 <div className="how-to-step-media">
                   <div className="step-image-strip step-image-strip--between">
                     <div className="step-image-strip__item">
-                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng-i-paste.webp" alt="I-tap ang pindutan ng i-paste" width={400} height={650} loading="lazy" sizes="(max-width: 575px) 260px, 400px" />
+                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng-i-paste.webp" alt="I-tap ang pindutan ng i-paste" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
                     </div>
                     <div className="step-image-strip__item">
-                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng-i-paste2.webp" alt="I-tap ang pindutan ng i-paste 2" width={400} height={650} loading="lazy" sizes="(max-width: 575px) 260px, 400px" />
+                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng-i-paste2.webp" alt="I-tap ang pindutan ng i-paste 2" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
                     </div>
                   </div>
                 </div>
@@ -245,7 +244,7 @@ export default function HomePage() {
                 <div className="how-to-step-media">
                   <div className="step-image-strip step-image-strip--between">
                     <div className="step-image-strip__item">
-                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng pag-download.webp" alt="I-tap ang pindutan ng pag-download" width={400} height={650} loading="lazy" sizes="(max-width: 575px) 260px, 400px" />
+                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng pag-download.webp" alt="I-tap ang pindutan ng pag-download" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
                     </div>
                   </div>
                 </div>
@@ -420,8 +419,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      <FaqToggle />
-
       {/* JSON-LD */}
       <script
         type="application/ld+json"
@@ -478,11 +475,11 @@ function HomeFaq() {
 
 function FaqItem({ question, answer }: { question: string; answer: React.ReactNode }) {
   return (
-    <div className="faq-item" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-      <h3 itemProp="name">{question}</h3>
+    <details className="faq-item" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+      <summary itemProp="name">{question}</summary>
       <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
         <div itemProp="text">{answer}</div>
       </div>
-    </div>
+    </details>
   );
 }
