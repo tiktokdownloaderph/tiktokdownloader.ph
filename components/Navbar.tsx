@@ -37,7 +37,7 @@ function Brand() {
   return (
     <Link className="navbar-brand d-flex align-items-center" href="/" title="TikTok Downloader" translate="no" style={{ fontSize: 26 }}>
       <img className="img-fluid" src={LOGO_B64} width={45} height={45} alt="TikTok Downloader Logo" style={{ marginRight: 2 }} fetchPriority="high" loading="eager" />
-      <span className="d-flex justify-content-center align-items-center" style={{ marginRight: "0 !important", fontFamily: "proxima nova", fontWeight: 800 }}>
+      <span className="d-flex justify-content-center align-items-center" style={{ marginRight: "0 !important", fontWeight: 800 }}>
         TikTok Downloader
       </span>
     </Link>

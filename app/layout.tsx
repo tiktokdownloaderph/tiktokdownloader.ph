@@ -29,9 +29,6 @@ export default function RootLayout({
         <link rel="shortcut icon" type="image/png" href="/favicon.png" />
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />
         <link rel="apple-touch-icon" type="image/png" sizes="96x96" href="/favicon.png" />
-        {/* Font preloads — prevents FOUT on navbar brand and H1 */}
-        <link rel="preload" href="/proxima-nova-semibold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/proxima-nova-bold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
       <body suppressHydrationWarning>
         <Navbar />

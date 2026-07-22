@@ -160,7 +160,6 @@ export default function HomePage() {
             className="text-center"
             style={{
               fontSize: "clamp(1.35rem, 5.5vw, 1.75rem)",
-              fontFamily: "proxima nova",
               fontWeight: 700,
               marginBottom: 12,
               marginTop: 0,
