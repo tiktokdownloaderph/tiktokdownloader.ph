@@ -2123,7 +2123,7 @@ textarea.form-control-lg {
 .faq-list {
   color: #bebebe;
 }
-.faq-item h3 {
+.faq-item summary {
   background: #080808;
   font-size: 16px;
   padding: 18px 20px;
@@ -2408,12 +2408,12 @@ textarea.form-control-lg {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .home-faq .faq-item:hover,
-.home-faq .faq-item.is-open {
+.home-faq .faq-item[open] {
   border-color: rgba(255, 59, 92, 0.42);
   box-shadow: 0 18px 34px rgba(0, 0, 0, 0.24),
     0 0 0 1px rgba(255, 59, 92, 0.08);
 }
-.home-faq .faq-item h3 {
+.home-faq .faq-item summary {
   position: relative;
   display: flex;
   align-items: center;
@@ -2427,9 +2427,10 @@ textarea.form-control-lg {
   font-size: 0.98rem !important;
   font-weight: 800 !important;
   line-height: 1.35 !important;
+  list-style: none;
 }
-.home-faq .faq-item h3::before,
-.home-faq .faq-item h3::after {
+.home-faq .faq-item summary::before,
+.home-faq .faq-item summary::after {
   content: "";
   position: absolute;
   right: 28px;
@@ -2441,14 +2442,17 @@ textarea.form-control-lg {
   transform: translateY(-50%);
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
-.home-faq .faq-item h3::after {
+.home-faq .faq-item summary::after {
   transform: translateY(-50%) rotate(90deg);
 }
-.home-faq .faq-item.is-open h3::after {
+.home-faq .faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.home-faq .faq-item[open] summary::after {
   opacity: 0;
   transform: translateY(-50%) rotate(0deg);
 }
-.home-faq .faq-item h3:focus-visible {
+.home-faq .faq-item summary:focus-visible {
   outline: 2px solid rgba(255, 59, 92, 0.85);
   outline-offset: -6px;
 }
@@ -2458,8 +2462,8 @@ textarea.form-control-lg {
 .home-faq .faq-item > p {
   display: none;
 }
-.home-faq .faq-item.is-open div[itemprop="acceptedAnswer"],
-.home-faq .faq-item.is-open > p {
+.home-faq .faq-item[open] div[itemprop="acceptedAnswer"],
+.home-faq .faq-item[open] > p {
   display: block;
 }
 .home-faq .faq-item div[itemprop="text"],
@@ -2643,18 +2647,14 @@ html ::-webkit-scrollbar-track {
 .button-dark-clean,
 .button-dark-clean:focus,
 .button-dark-clean:active {
-  color: var(--tclight) !important;
-  background: var(--tcdarkblue) !important;
+  color: #fff !important;
+  background: #c9183f !important;
   transition: 0.25s;
   border-radius: 4px;
-  background: #ff3b5c !important;
-  color: #fff !important;
   border: none;
 }
 .button-dark-clean:hover {
-  background: #16171e !important;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 6%), rgba(0, 0, 0, 6%)),
-    #fe2c55 !important;
+  background: #b51537 !important;
 }
 #loadVideos {
   width: 100%;
@@ -2693,7 +2693,7 @@ html ::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 3%);
 }
 #loadVideos.disabled .label {
-  color: rgba(255, 255, 255, 0.75);
+  color: #fff;
 }
 #loadVideos.disabled .spinner-border {
   display: block !important;
@@ -2831,7 +2831,7 @@ html ::-webkit-scrollbar-track {
 }
 #loadVideos.disabled {
   opacity: 1;
-  background: rgba(255, 59, 92, 0.7) !important;
+  background: #9f1733 !important;
 }
 #accordion-faq .accordion-item {
   border: 2px solid rgba(255, 255, 255, 6%);
@@ -3277,15 +3277,15 @@ table {
   }
 
   .step-image-strip__item {
-    flex-basis: calc((100% + 24px) / 2);
+    flex-basis: min(46vw, 260px);
   }
 
   .step-image-strip__item:only-child {
-    flex-basis: min(100%, 360px);
-    max-width: min(100%, 360px);
+    flex-basis: min(78vw, 280px);
+    max-width: min(78vw, 280px);
   }
 
-  .faq-item h3,
+  .faq-item summary,
   .faq-item div[itemprop="text"],
   .accordion-button,
   .accordion-body {
@@ -3368,14 +3368,14 @@ table {
     border-radius: 14px;
   }
 
-  .home-faq .faq-item h3 {
+  .home-faq .faq-item summary {
     min-height: 64px;
     padding: 18px 52px 18px 18px;
     font-size: 0.92rem;
   }
 
-  .home-faq .faq-item h3::before,
-  .home-faq .faq-item h3::after {
+  .home-faq .faq-item summary::before,
+  .home-faq .faq-item summary::after {
     right: 20px;
     width: 16px;
   }
@@ -3513,4 +3513,9 @@ main [style*="rgba(255, 255, 255, 0.55)"],
 main [style*="rgba(255,255,255,0.58)"],
 main [style*="rgba(255, 255, 255, 0.58)"] {
   color: rgba(255, 255, 255, 0.78) !important;
+}
+
+
+.how-to-step-copy strong {
+  color: #fff !important;
 }
