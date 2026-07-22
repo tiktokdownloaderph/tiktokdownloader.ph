@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Downloader from "@/components/Downloader";
+import DeferredDownloader from "@/components/DeferredDownloader";
 
 const JSON_LD = {
   "@context": "https://schema.org",
@@ -171,7 +171,7 @@ export default function HomePage() {
             TikTok Downloader Without Watermark
           </h1>
         </div>
-        <Downloader />
+        <DeferredDownloader />
 
         <div style={{ marginTop: 32, paddingBottom: 20 }}>
 
@@ -184,7 +184,7 @@ export default function HomePage() {
               </div>
               <div className="intro-split__media">
                 <div style={{ position: "relative", borderRadius: 22, overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)", background: "linear-gradient(180deg, rgba(255,59,92,0.12), rgba(255,255,255,0.03))", boxShadow: "0 24px 70px rgba(0,0,0,0.35)" }}>
-                  <Image src="/images/tiktok-downloader.webp" alt="TikTok Downloader preview" width={960} height={600} priority sizes="(max-width: 991px) 100vw, 50vw" style={{ display: "block", width: "100%", height: "auto", aspectRatio: "16/10", objectFit: "cover" }} />
+                  <Image src="/images/tiktok-downloader.webp" alt="TikTok Downloader preview" width={960} height={600} loading="lazy" quality={60} sizes="(max-width: 991px) 100vw, 50vw" style={{ display: "block", width: "100%", height: "auto", aspectRatio: "16/10", objectFit: "cover" }} />
                 </div>
               </div>
             </div>

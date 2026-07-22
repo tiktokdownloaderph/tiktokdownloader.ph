@@ -3519,3 +3519,37 @@ main [style*="rgba(255, 255, 255, 0.58)"] {
 .how-to-step-copy strong {
   color: #fff !important;
 }
+
+
+.mobile-nav-shell {
+  position: relative;
+}
+.mobile-nav-shell summary {
+  list-style: none;
+}
+.mobile-nav-shell summary::-webkit-details-marker {
+  display: none;
+}
+.mobile-nav-trigger {
+  border: none !important;
+  color: #a4b0dd !important;
+  border-radius: 4px !important;
+  height: 44px;
+  width: 44px;
+  background: rgba(255, 59, 92, 0.14) !important;
+}
+.mobile-nav-panel {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 100000;
+  width: min(86vw, 340px);
+  overflow-y: auto;
+  background: #121212;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 24px 0 60px rgba(0, 0, 0, 0.45);
+}
+.mobile-nav-header {
+  border-top: 2px solid rgba(255, 255, 255, 8%);
+  border-bottom: 2px solid rgba(255, 255, 255, 8%);
+  height: 60px;
+}
