@@ -2504,9 +2504,7 @@ textarea.form-control-lg {
 }
 .form-clean .form-floatingx select option {
   background: var(--tcbaseblue);
-  outline: none;
   border: none;
-  border: 5px solid red;
 }
 .form-clean .dropdown-toggle {
   width: 100%;
@@ -2515,7 +2513,6 @@ textarea.form-control-lg {
   left: 0;
   height: 100%;
   border: none;
-  outline: none;
   background: 0 0;
   text-align: start;
   padding-top: 1.625rem;
@@ -2874,7 +2871,10 @@ html ::-webkit-scrollbar-track {
 }
 *:focus {
   box-shadow: none !important;
-  outline: none !important;
+}
+*:focus-visible {
+  outline: 2px solid #ff6b86 !important;
+  outline-offset: 3px;
 }
 body {
   color: #fff;
@@ -3215,7 +3215,7 @@ table {
     display: none !important;
   }
 
-  .navbar > .container > .d-md-none[data-bs-toggle="offcanvas"] {
+   .navbar > .container > .d-md-none[aria-controls="navbar-mobile"] {
     display: flex !important;
   }
 }
@@ -3461,4 +3461,56 @@ table {
   #tiktokUrl {
     padding-right: 48px;
   }
+}
+
+/* Lighthouse/a11y hardening */
+main a:not(.btn):not(.nav-link):not(.dropdown-item):not(.navbar-brand) {
+  text-decoration: underline !important;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+.nav-dropdown-button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+.nav-item.dropdown:hover > .dropdown-menu,
+.nav-item.dropdown:focus-within > .dropdown-menu {
+  display: block;
+}
+.offcanvas.show {
+  transform: none;
+}
+.offcanvas:not(.show) {
+  transform: translateX(-100%);
+}
+.text-muted,
+.text-secondary {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+.home-faq__intro,
+.home-faq .faq-item div[itemprop="text"],
+.home-faq .faq-item > p,
+.form-clean .form-floatingx .form-label,
+.form-floatingx input::placeholder {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+.home-disclaimer p,
+.home-disclaimer strong {
+  color: rgba(255, 255, 255, 0.74) !important;
+}
+
+main [style*="rgba(255,255,255,0.38)"],
+main [style*="rgba(255, 255, 255, 0.38)"],
+main [style*="rgba(255,255,255,0.45)"],
+main [style*="rgba(255, 255, 255, 0.45)"],
+main [style*="rgba(255,255,255,0.5)"],
+main [style*="rgba(255, 255, 255, 0.5)"],
+main [style*="rgba(255,255,255,0.55)"],
+main [style*="rgba(255, 255, 255, 0.55)"],
+main [style*="rgba(255,255,255,0.58)"],
+main [style*="rgba(255, 255, 255, 0.58)"] {
+  color: rgba(255, 255, 255, 0.78) !important;
 }

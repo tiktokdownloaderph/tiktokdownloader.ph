@@ -1,7 +1,11 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 import { LOGO_B64 } from "./logo";
 
 export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <>
       <nav
@@ -60,12 +64,12 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button className="nav-link dropdown-toggle nav-dropdown-button" type="button" aria-expanded="false">
                   <svg width="1em" height="1em" viewBox="0 0 20 20" fill="none">
                     <path fillRule="evenodd" clipRule="evenodd" d="M4 5C4 4.44772 4.44772 4 5 4h10c.5523 0 1 .44772 1 1v1c0 .55228-.4477 1-1 1H5c-.55228 0-1-.44772-1-1V5zm0 5c0-.5523.44772-1 1-1h10c.5523 0 1 .4477 1 1v1c0 .5523-.4477 1-1 1H5c-.55228 0-1-.4477-1-1v-1zm1 4c-.55228 0-1 .4477-1 1v1c0 .5523.44772 1 1 1h6c.5523 0 1-.4477 1-1v-1c0-.5523-.4477-1-1-1H5z" fill="currentColor" />
                   </svg>
                   &nbsp;Paano
-                </a>
+                </button>
                 <ul className="dropdown-menu dropdown-menu-dark" style={{ minWidth: 220 }}>
                   <li><Link className="dropdown-item" href="/download-sa-pc">I-download sa PC</Link></li>
                   <li><Link className="dropdown-item" href="/download-tiktok-videos-sa-android">I-download sa Android</Link></li>
@@ -74,12 +78,12 @@ export default function Navbar() {
                 </ul>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button className="nav-link dropdown-toggle nav-dropdown-button" type="button" aria-expanded="false">
                   <svg width="1em" height="1em" viewBox="0 0 20 20" fill="none">
                     <path fillRule="evenodd" clipRule="evenodd" d="M3 17C3 16.4477 3.44772 16 4 16H16C16.5523 16 17 16.4477 17 17S16.5523 18 16 18H4C3.44772 18 3 17.5523 3 17zM6.29289 9.29289c.39053-.39052 1.02369-.39052 1.41422.0L9 10.5858V3C9 2.44772 9.44771 2 10 2 10.5523 2 11 2.44771 11 3v7.5858l1.2929-1.29291c.390500000000001-.39052 1.0237-.39052 1.4142.0C14.0976 9.68342 14.0976 10.3166 13.7071 10.7071l-3 3C10.5196 13.8946 10.2652 14 10 14 9.73478 14 9.48043 13.8946 9.29289 13.7071l-3-3C5.90237 10.3166 5.90237 9.68342 6.29289 9.29289z" fill="currentColor" />
                   </svg>
                   &nbsp;TikTok Downloaders
-                </a>
+                </button>
                 <ul className="dropdown-menu dropdown-menu-dark" style={{ minWidth: 210 }}>
                   <li><Link className="dropdown-item" href="/download-tiktok-stories">TikTok Stories Downloader</Link></li>
                   <li><Link className="dropdown-item" href="/download-ang-larawan-at-slide-ng-tiktok">Download TikTok Slideshows</Link></li>
@@ -108,9 +112,10 @@ export default function Navbar() {
               width: 44,
               background: "rgba(255, 59, 92, 0.14)",
             }}
-            data-bs-target="#navbar-mobile"
-            data-bs-toggle="offcanvas"
             aria-label="Menu"
+            aria-expanded={mobileOpen}
+            aria-controls="navbar-mobile"
+            onClick={() => setMobileOpen(true)}
           >
             <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" style={{ fontSize: 22 }}>
               <path d="M4 6H20M4 12H20m-7 6h7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -121,10 +126,10 @@ export default function Navbar() {
 
       {/* Mobile offcanvas */}
       <div
-        className="offcanvas offcanvas-start"
+        className={`offcanvas offcanvas-start${mobileOpen ? " show" : ""}`}
         tabIndex={-1}
         id="navbar-mobile"
-        style={{ zIndex: 100000, transition: "transform 0.4s cubic-bezier(0.1, 0, 0, 1)", border: "none" }}
+        style={{ zIndex: 100000, transition: "transform 0.25s ease", border: "none", visibility: mobileOpen ? "visible" : "hidden" }}
       >
         <div
           className="offcanvas-header"
@@ -147,21 +152,22 @@ export default function Navbar() {
               TikTok Downloader
             </span>
           </Link>
+          <button className="btn-close btn-close-white" type="button" aria-label="Close menu" onClick={() => setMobileOpen(false)} />
         </div>
         <div className="offcanvas-body" style={{ padding: 0, paddingTop: 16 }}>
           <nav className="navbar navbar-dark" style={{ padding: "5px 10px" }}>
             <div className="container" style={{ padding: 0 }}>
               <ul className="navbar-nav d-flex flex-fill">
-                <li className="nav-item"><Link className="nav-link active" href="/">&#127968;&nbsp;Home</Link></li>
-                <li className="nav-item"><Link className="nav-link" href="/blog">&#128196;&nbsp;Blog</Link></li>
-                <li className="nav-item"><Link className="nav-link" href="/download-sa-pc">&#128187;&nbsp;I-download sa PC</Link></li>
-                <li className="nav-item"><Link className="nav-link" href="/paano-mag-download-ng-mga-video-sa-tiktok">&#128249;&nbsp;Download TikTok Videos</Link></li>
-                <li className="nav-item"><Link className="nav-link" href="/download-tiktok-stories">&#127909;&nbsp;TikTok Stories</Link></li>
-                <li className="nav-item"><Link className="nav-link" href="/download-ang-larawan-at-slide-ng-tiktok">&#128248;&nbsp;TikTok Slideshows</Link></li>
-                <li className="nav-item"><Link className="nav-link" href="/download-tiktok-mp3">&#127925;&nbsp;TikTok MP3</Link></li>
-                <li className="nav-item"><Link className="nav-link" href="/tiktok-to-mp4">&#127909;&nbsp;TikTok to MP4</Link></li>
-                <li className="nav-item"><Link className="nav-link" href="/contact">&#128172;&nbsp;Contact Us</Link></li>
-                <li className="nav-item"><Link className="nav-link" href="/about">ℹ️&nbsp;About</Link></li>
+                <li className="nav-item"><Link className="nav-link active" href="/" onClick={() => setMobileOpen(false)}>Home</Link></li>
+                <li className="nav-item"><Link className="nav-link" href="/blog" onClick={() => setMobileOpen(false)}>Blog</Link></li>
+                <li className="nav-item"><Link className="nav-link" href="/download-sa-pc" onClick={() => setMobileOpen(false)}>I-download sa PC</Link></li>
+                <li className="nav-item"><Link className="nav-link" href="/paano-mag-download-ng-mga-video-sa-tiktok" onClick={() => setMobileOpen(false)}>Download TikTok Videos</Link></li>
+                <li className="nav-item"><Link className="nav-link" href="/download-tiktok-stories" onClick={() => setMobileOpen(false)}>TikTok Stories</Link></li>
+                <li className="nav-item"><Link className="nav-link" href="/download-ang-larawan-at-slide-ng-tiktok" onClick={() => setMobileOpen(false)}>TikTok Slideshows</Link></li>
+                <li className="nav-item"><Link className="nav-link" href="/download-tiktok-mp3" onClick={() => setMobileOpen(false)}>TikTok MP3</Link></li>
+                <li className="nav-item"><Link className="nav-link" href="/tiktok-to-mp4" onClick={() => setMobileOpen(false)}>TikTok to MP4</Link></li>
+                <li className="nav-item"><Link className="nav-link" href="/contact" onClick={() => setMobileOpen(false)}>Contact Us</Link></li>
+                <li className="nav-item"><Link className="nav-link" href="/about" onClick={() => setMobileOpen(false)}>About</Link></li>
                 <li className="nav-item" style={{ marginTop: 8, borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 8 }}>
                   <Link className="nav-link" href="/privacy-policy" style={{ fontSize: ".875rem", opacity: 0.6 }}>Privacy Policy</Link>
                 </li>

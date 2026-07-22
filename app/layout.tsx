@@ -3,7 +3,6 @@ import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import BootstrapLoader from "@/components/BootstrapLoader";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tiktokdownloader.ph"),
@@ -38,7 +37,6 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-        <BootstrapLoader />
         {GA_ID && (
           <>
             <Script

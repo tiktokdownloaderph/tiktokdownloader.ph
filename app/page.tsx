@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Downloader from "@/components/Downloader";
 import FaqToggle from "@/components/FaqToggle";
 
@@ -184,7 +185,7 @@ export default function HomePage() {
               </div>
               <div className="intro-split__media">
                 <div style={{ position: "relative", borderRadius: 22, overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)", background: "linear-gradient(180deg, rgba(255,59,92,0.12), rgba(255,255,255,0.03))", boxShadow: "0 24px 70px rgba(0,0,0,0.35)" }}>
-                  <img src="/images/tiktok-downloader.webp" alt="TikTok Downloader preview" loading="eager" style={{ display: "block", width: "100%", height: "auto", aspectRatio: "16/10", objectFit: "cover" }} />
+                  <Image src="/images/tiktok-downloader.webp" alt="TikTok Downloader preview" width={960} height={600} priority sizes="(max-width: 991px) 100vw, 50vw" style={{ display: "block", width: "100%", height: "auto", aspectRatio: "16/10", objectFit: "cover" }} />
                 </div>
               </div>
             </div>
@@ -206,10 +207,10 @@ export default function HomePage() {
                 <div className="how-to-step-media">
                   <div className="step-image-strip step-image-strip--between">
                     <div className="step-image-strip__item">
-                      <img className="step-image-strip__img" src="/images/i-tap-ang-ibahagi.webp" alt="I-tap ang Ibahagi" loading="lazy" />
+                      <Image className="step-image-strip__img" src="/images/i-tap-ang-ibahagi.webp" alt="I-tap ang Ibahagi" width={400} height={650} loading="lazy" sizes="(max-width: 575px) 260px, 400px" />
                     </div>
                     <div className="step-image-strip__item">
-                      <img className="step-image-strip__img" src="/images/Kopyahin-ang-Link-ng-Video.webp" alt="Kopyahin ang Link ng Video" loading="lazy" />
+                      <Image className="step-image-strip__img" src="/images/Kopyahin-ang-Link-ng-Video.webp" alt="Kopyahin ang Link ng Video" width={400} height={650} loading="lazy" sizes="(max-width: 575px) 260px, 400px" />
                     </div>
                   </div>
                 </div>
@@ -225,10 +226,10 @@ export default function HomePage() {
                 <div className="how-to-step-media">
                   <div className="step-image-strip step-image-strip--between">
                     <div className="step-image-strip__item">
-                      <img className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng-i-paste.webp" alt="I-tap ang pindutan ng i-paste" loading="lazy" />
+                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng-i-paste.webp" alt="I-tap ang pindutan ng i-paste" width={400} height={650} loading="lazy" sizes="(max-width: 575px) 260px, 400px" />
                     </div>
                     <div className="step-image-strip__item">
-                      <img className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng-i-paste2.webp" alt="I-tap ang pindutan ng i-paste 2" loading="lazy" />
+                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng-i-paste2.webp" alt="I-tap ang pindutan ng i-paste 2" width={400} height={650} loading="lazy" sizes="(max-width: 575px) 260px, 400px" />
                     </div>
                   </div>
                 </div>
@@ -244,7 +245,7 @@ export default function HomePage() {
                 <div className="how-to-step-media">
                   <div className="step-image-strip step-image-strip--between">
                     <div className="step-image-strip__item">
-                      <img className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng pag-download.webp" alt="I-tap ang pindutan ng pag-download" loading="lazy" />
+                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng pag-download.webp" alt="I-tap ang pindutan ng pag-download" width={400} height={650} loading="lazy" sizes="(max-width: 575px) 260px, 400px" />
                     </div>
                   </div>
                 </div>
@@ -369,7 +370,7 @@ export default function HomePage() {
             <h2>Mga Kalamangan at Kahinaan ng TikTok Downloader</h2>
             <div className="pros-cons__grid">
               <div className="pros-cons__panel pros-cons__panel--pros">
-                <p className="pros-cons__badge">Mga Kalamangan <span aria-hidden="true">✓</span></p>
+                <p className="pros-cons__badge">Mga Kalamangan <span aria-hidden="true">+</span></p>
                 <ul className="pros-cons__list">
                   {["Palaging libre, walang mga nakatagong bayad", "Ligtas, secure, at madaling gamitin", "Mabilis at maayos na pag-download", "Mag-download ng mga video sa HD na kalidad", "Walang kinakailangang pag-install ng app", "Maramihang mga pagpipilian sa pag-download"].map((item, i) => (
                     <li key={i}><span className="pros-cons__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"/></svg></span>{item}</li>
@@ -378,7 +379,7 @@ export default function HomePage() {
               </div>
               <div className="pros-cons__divider" aria-hidden="true"></div>
               <div className="pros-cons__panel pros-cons__panel--cons">
-                <p className="pros-cons__badge">Mga Kahinaan <span aria-hidden="true">×</span></p>
+                <p className="pros-cons__badge">Mga Kahinaan <span aria-hidden="true">-</span></p>
                 <ul className="pros-cons__list">
                   {["Sinusuportahan lamang ang nilalaman ng TikTok", "Kinakailangan ang koneksyon sa internet", "Hindi makapag-download ng mga pribadong video", "Hindi sinusuportahan ang pag-scrape ng profile", "Maaaring hindi available ang inalis na content"].map((item, i) => (
                     <li key={i}><span className="pros-cons__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m18 6-12 12M6 6l12 12" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round"/></svg></span>{item}</li>
