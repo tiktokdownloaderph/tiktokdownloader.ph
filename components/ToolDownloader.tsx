@@ -13,15 +13,74 @@ function pick(d: ApiData, ...keys: string[]): string {
   return "";
 }
 
+let modalCloseTimer: number | undefined;
+
+function ensureDownloadModal() {
+  let modal = document.getElementById("toolDownloadModal") as HTMLDivElement | null;
+  if (modal) return modal;
+
+  modal = document.createElement("div");
+  modal.className = "modal fade show modal-dark";
+  modal.id = "toolDownloadModal";
+  modal.setAttribute("role", "dialog");
+  modal.setAttribute("tabindex", "-1");
+  modal.style.cssText = "display:none;background-color:rgba(0,0,0,0.5);";
+  modal.innerHTML = `
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title d-flex align-items-center" style="color:#fff">Downloading...</h5>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex justify-content-center align-items-center" id="loading">
+            <div id="progress"></div>
+            <span class="d-flex justify-content-center align-items-center" style="z-index:1;font-size:1.25rem;color:#fff">
+              <span class="spinner-border spinner-border-sm" role="status" style="font-size:16px;margin-right:5px"></span>
+              <span id="toolProgressText" style="font-size:16px">Preparing download...</span>
+            </span>
+          </div>
+          <p class="text-center" style="margin:5px 0 3px;font-size:15px;color:rgba(121,126,146,0.5)">Do not close this tab or your download will cancel</p>
+        </div>
+      </div>
+    </div>`;
+  document.body.appendChild(modal);
+  return modal;
+}
+
+function updateDownloadModal(text: string, progress: number) {
+  const modal = ensureDownloadModal();
+  const bar = modal.querySelector("#progress") as HTMLElement | null;
+  const label = modal.querySelector("#toolProgressText") as HTMLElement | null;
+  modal.style.display = "flex";
+  if (bar) bar.style.width = `${progress}%`;
+  if (label) label.textContent = text;
+}
+
+function hideDownloadModal() {
+  const modal = document.getElementById("toolDownloadModal") as HTMLDivElement | null;
+  if (modal) modal.style.display = "none";
+}
+
 function doDownload(mediaUrl: string, filename: string) {
-  const dlUrl = `/api/download?url=${encodeURIComponent(mediaUrl)}&filename=${encodeURIComponent(filename)}`;
-  const a = document.createElement("a");
-  a.href = dlUrl;
-  a.download = filename;
-  a.rel = "nofollow noreferrer";
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
+  window.clearTimeout(modalCloseTimer);
+  updateDownloadModal("Preparing download...", 12);
+  window.setTimeout(() => updateDownloadModal("Starting download...", 46), 180);
+
+  try {
+    const dlUrl = `/api/download?url=${encodeURIComponent(mediaUrl)}&filename=${encodeURIComponent(filename)}`;
+    const a = document.createElement("a");
+    a.href = dlUrl;
+    a.download = filename;
+    a.rel = "nofollow noreferrer";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.setTimeout(() => updateDownloadModal("Download started!", 100), 360);
+  } catch {
+    updateDownloadModal("Download failed. Try the direct link.", 100);
+  }
+
+  modalCloseTimer = window.setTimeout(hideDownloadModal, 2200);
 }
 
 function wireBtn(container: HTMLElement | null, mediaUrl: string, filename: string) {
@@ -44,6 +103,7 @@ export default function ToolDownloader() {
     const downloadWM = document.getElementById("downloadWatermark");
     const downloadAudioEl = document.getElementById("downloadAudio");
     const spinner = loadBtn?.querySelector(".spinner-border");
+    const loader = document.getElementById("tiktokLoader");
 
     if (!input || !loadBtn) return;
 
@@ -62,6 +122,7 @@ export default function ToolDownloader() {
 
       loadBtn!.classList.add("disabled");
       spinner?.classList.remove("d-none");
+      loader?.classList.remove("d-none");
 
       // clear previous error
       document.querySelector(".td-error-msg")?.remove();
@@ -119,6 +180,7 @@ export default function ToolDownloader() {
       } finally {
         loadBtn!.classList.remove("disabled");
         spinner?.classList.add("d-none");
+        loader?.classList.add("d-none");
         // reset the guard set by the inline onclick
         (window as Window & { loadVideosClicked?: boolean }).loadVideosClicked = false;
       }

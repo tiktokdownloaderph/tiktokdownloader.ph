@@ -27,6 +27,7 @@ export default function Downloader() {
   const [removeWatermark, setRemoveWatermark] = useState(true);
   const [downloadModal, setDownloadModal] = useState(false);
   const [progressText, setProgressText] = useState("Preparing download...");
+  const [downloadProgress, setDownloadProgress] = useState(0);
 
   async function pasteUrl() {
     try {
@@ -100,8 +101,14 @@ export default function Downloader() {
 
   async function downloadFile(mediaUrl: string, filename: string) {
     setDownloadModal(true);
+    setDownloadProgress(12);
     setProgressText("Preparing download...");
     try {
+      window.setTimeout(() => {
+        setDownloadProgress(46);
+        setProgressText("Starting download...");
+      }, 180);
+
       const dlUrl = `/api/download?url=${encodeURIComponent(mediaUrl)}&filename=${encodeURIComponent(filename)}`;
       const link = document.createElement("a");
       link.href = dlUrl;
@@ -110,11 +117,15 @@ export default function Downloader() {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      setProgressText("Download started!");
-      setTimeout(() => setDownloadModal(false), 2000);
+      window.setTimeout(() => {
+        setDownloadProgress(100);
+        setProgressText("Download started!");
+      }, 360);
+      window.setTimeout(() => setDownloadModal(false), 2200);
     } catch {
+      setDownloadProgress(100);
       setProgressText("Download failed. Try the direct link.");
-      setTimeout(() => setDownloadModal(false), 2000);
+      setTimeout(() => setDownloadModal(false), 2200);
     }
   }
 
@@ -186,6 +197,14 @@ export default function Downloader() {
                             <span className="spinner-border spinner-border-sm" role="status" style={{ fontSize: 20, height: 24, width: 24, color: "#fff" }} />
                           )}
                         </button>
+                        {loading && (
+                          <div className="d-flex justify-content-center align-items-center" style={{ marginTop: 15 }}>
+                            <div className="tiktok-container">
+                              <div className="tiktok" />
+                              <div className="tiktok red" />
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -387,6 +406,7 @@ export default function Downloader() {
               </div>
               <div className="modal-body">
                 <div className="d-flex justify-content-center align-items-center" id="loading">
+                  <div id="progress" style={{ width: `${downloadProgress}%` }} />
                   <span className="d-flex justify-content-center align-items-center" style={{ zIndex: 1, fontSize: "1.25rem", color: "#fff" }}>
                     <span className="spinner-border spinner-border-sm" role="status" style={{ fontSize: 16, marginRight: 5 }} />
                     <span id="progressText" style={{ fontSize: 16 }}>{progressText}</span>
