@@ -2,17 +2,22 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Blog - TikTok Downloader PH",
-  description: "Mga tips at gabay tungkol sa TikTok downloading.",
+  description: "Mga step-by-step na gabay, tips, at tricks para sa pag-download ng TikTok videos nang walang watermark sa Android, iPhone, at PC.",
   robots: { index: true, follow: true },
   alternates: { canonical: "https://tiktokdownloader.ph/blog" },
   openGraph: {
     title: "Blog - TikTok Downloader PH",
-    description: "Mga tips at gabay tungkol sa TikTok downloading.",
-    images: [{ url: "https://tiktokdownloader.ph/favicon.png" }],
+    description: "Mga step-by-step na gabay, tips, at tricks para sa pag-download ng TikTok videos nang walang watermark sa Android, iPhone, at PC.",
+    type: "website",
+    url: "https://tiktokdownloader.ph/blog",
+    siteName: "TikTok Downloader",
+    images: [{ url: "https://tiktokdownloader.ph/images/tiktok-downloader.webp", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["https://tiktokdownloader.ph/favicon.png"],
+    title: "Blog - TikTok Downloader PH",
+    description: "Mga step-by-step na gabay, tips, at tricks para sa pag-download ng TikTok videos nang walang watermark sa Android, iPhone, at PC.",
+    images: ["https://tiktokdownloader.ph/images/tiktok-downloader.webp"],
   },
 };
 

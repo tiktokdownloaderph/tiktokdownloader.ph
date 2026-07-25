@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import ToolDownloader from "@/components/ToolDownloader";
 
 export const metadata: Metadata = {
-  title: "Mag-enjoy sa mga TikTok MP3 audio online.",
-  description: "I-convert ang iyong mga paboritong TikTok video sa high-quality na MP3 audio sa loob ng ilang segundo.",
+  title: "TikTok MP3 Downloader — I-save ang Music, Kanta, at Tunog ng TikTok",
+  description: "I-convert ang TikTok video sa MP3 at i-save ang musika, kanta, sound, o tunog nang libre. Gumagana sa lahat ng device nang walang app.",
   robots: { index: true, follow: true },
   alternates: { canonical: "https://tiktokdownloader.ph/download-tiktok-mp3" },
   openGraph: {
-    title: "Mag-enjoy sa mga TikTok MP3 audio online",
-    description: "I-convert ang iyong mga paboritong TikTok video sa high-quality na MP3 audio sa loob ng ilang segundo.",
+    title: "TikTok MP3 Downloader — I-save ang Music, Kanta, at Tunog ng TikTok",
+    description: "I-convert ang TikTok video sa MP3 at i-save ang musika, kanta, sound, o tunog nang libre. Gumagana sa lahat ng device nang walang app.",
     type: "article",
     url: "https://tiktokdownloader.ph/download-tiktok-mp3",
     siteName: "TikTok Downloader",
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mag-enjoy sa mga TikTok MP3 audio online",
-    description: "I-convert ang iyong mga paboritong TikTok video sa high-quality na MP3 audio sa loob ng ilang segundo.",
+    title: "TikTok MP3 Downloader — I-save ang Music, Kanta, at Tunog ng TikTok",
+    description: "I-convert ang TikTok video sa MP3 at i-save ang musika, kanta, sound, o tunog nang libre. Gumagana sa lahat ng device nang walang app.",
     images: ["https://tiktokdownloader.ph/images/featuredimg7.webp"],
   },
 };
@@ -38,8 +38,8 @@ const JSON_LD = {
       "@type": "WebPage",
       "@id": "https://tiktokdownloader.ph/download-tiktok-mp3#webpage",
       "url": "https://tiktokdownloader.ph/download-tiktok-mp3",
-      "name": "Mag-enjoy sa mga TikTok MP3 audio online.",
-      "description": "I-convert ang iyong mga paboritong TikTok video sa high-quality na MP3 audio sa loob ng ilang segundo.",
+      "name": "TikTok MP3 Downloader — I-save ang Music, Kanta, at Tunog ng TikTok.",
+      "description": "I-convert ang TikTok video sa MP3 at i-save ang musika, kanta, sound, o tunog nang libre. Gumagana sa lahat ng device nang walang app.",
       "inLanguage": "tl",
       "image": "https://tiktokdownloader.ph/images/featuredimg7.webp",
       "isPartOf": {
@@ -49,8 +49,8 @@ const JSON_LD = {
     {
       "@type": "Article",
       "@id": "https://tiktokdownloader.ph/download-tiktok-mp3#article",
-      "headline": "Mag-enjoy sa mga TikTok MP3 audio online.",
-      "description": "I-convert ang iyong mga paboritong TikTok video sa high-quality na MP3 audio sa loob ng ilang segundo.",
+      "headline": "TikTok MP3 Downloader — I-save ang Music, Kanta, at Tunog ng TikTok.",
+      "description": "I-convert ang TikTok video sa MP3 at i-save ang musika, kanta, sound, o tunog nang libre. Gumagana sa lahat ng device nang walang app.",
       "inLanguage": "tl",
       "url": "https://tiktokdownloader.ph/download-tiktok-mp3",
       "image": "https://tiktokdownloader.ph/images/featuredimg7.webp",
@@ -203,7 +203,7 @@ const JSON_LD = {
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tiktokdownloader.ph/" },
         { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://tiktokdownloader.ph/blog" },
-        { "@type": "ListItem", "position": 3, "name": "Mag-enjoy sa mga TikTok MP3 audio online", "item": "https://tiktokdownloader.ph/download-tiktok-mp3" }
+        { "@type": "ListItem", "position": 3, "name": "TikTok MP3 Downloader — I-save ang Music, Kanta, at Tunog ng TikTok", "item": "https://tiktokdownloader.ph/download-tiktok-mp3" }
       ]
     }
   ]

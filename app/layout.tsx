@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tl" data-bs-theme="dark" suppressHydrationWarning>
+    <html lang="fil-PH" data-bs-theme="dark" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#121212" />
         <link rel="manifest" href="/manifest.json" />

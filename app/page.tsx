@@ -64,7 +64,7 @@ const JSON_LD = {
       "description": "Libreng TikTok video downloader na nagbibigay-daan sa pag-save ng mga TikTok video nang walang watermark sa HD MP4 o MP3 na format. Walang login, walang app, walang limitasyon.",
       "featureList": [
         "Download TikTok videos without watermark",
-        "HD MP4 and 4K quality support",
+        "HD MP4 at hanggang 1080p Full HD na kalidad",
         "MP3 audio extraction",
         "No registration required",
         "No daily download limits",
@@ -125,7 +125,7 @@ const JSON_LD = {
 };
 
 export const metadata: Metadata = {
-  title: "TikTok Downloader Without Watermark (HD and Fast) 2026",
+  title: "TikTok Downloader na Walang Watermark (HD at Mabilis) 2026",
   description: "Libreng TikTok downloader para agad na ma-save ang kahit anong video nang walang watermark. Sinusuportahan ang HD MP4 at MP3, hindi na kailangan mag-login.",
   robots: { index: true, follow: true },
   alternates: { canonical: "https://tiktokdownloader.ph/" },
@@ -135,13 +135,13 @@ export const metadata: Metadata = {
     description: "Libreng TikTok downloader para agad na ma-save ang kahit anong video nang walang watermark. Sinusuportahan ang HD MP4 at MP3, hindi na kailangan mag-login.",
     type: "website",
     url: "https://tiktokdownloader.ph/",
-    images: [{ url: "https://tiktokdownloader.ph/favicon.png" }],
+    images: [{ url: "https://tiktokdownloader.ph/images/tiktok-downloader.webp", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "TikTok Downloader na Walang Watermark (HD at Mabilis) 2026",
     description: "Libreng TikTok downloader para agad na ma-save ang kahit anong video nang walang watermark. Sinusuportahan ang HD MP4 at MP3, hindi na kailangan mag-login.",
-    images: ["https://tiktokdownloader.ph/favicon.png"],
+    images: ["https://tiktokdownloader.ph/images/tiktok-downloader.webp"],
   },
   other: {
     "google-site-verification": "hnAYVvigNOIi0f_kuc4Vp21YY9U7B49_ndP9cuSIiI0",
@@ -178,8 +178,9 @@ export default function HomePage() {
           <section style={{ marginTop: 32 }}>
             <div className="intro-split">
               <div className="intro-split__text">
-                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Kung sinubukan mo nang mag-save ng mga video sa TikTok, malamang na nakatagpo ka ng mga karaniwang isyu tulad ng mga watermark, mababang kalidad ng video, o mga tool na nangangailangan ng pagpaparehistro bago mag-download. Tinatanggal ng TikTok downloader ang mga hadlang na iyon at ginagawang simple ang proseso.</p>
-                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Isa itong libreng TikTok video downloader na hinahayaan kang mag-save ng mga video na walang watermark sa mataas na kalidad na MP4 na format. Walang kinakailangang pag-login, app, o pagpaparehistro &mdash; i-paste lang ang link ng video at i-download sa ilang segundo. Gumagamit ka man ng <a href="/download-tiktok-videos-sa-android" style={{ color: "#ff3b5c", textDecoration: "none" }}>Android</a>, <a href="/download-tiktok-videos-sa-iphone" style={{ color: "#ff3b5c", textDecoration: "none" }}>iPhone</a>, <a href="/download-sa-pc" style={{ color: "#ff3b5c", textDecoration: "none" }}>Windows</a>, o Mac, gumagana ang tool nang direkta mula sa iyong browser.</p>
+                <h2 style={{ color: "#fff", fontSize: "1.15rem", fontWeight: 700, marginBottom: 10, marginTop: 0 }}>I-download ang TikTok nang Walang Watermark — Libre at Mabilis</h2>
+                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Kung sinubukan mo nang mag-save ng mga video sa TikTok, malamang na nakatagpo ka ng nakaka-inis na watermark sa gitna ng screen. Ang TikTokDownloader.ph ay isang <strong style={{ color: "#fff" }}>watermark remover</strong> at downloader sa iisang tool — tinatanggal nito ang watermark at logo ng TikTok at bine-save ang malinis na MP4 sa iyong device. Walang kumplikadong proseso, walang bayad.</p>
+                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Gusto mong <strong style={{ color: "#fff" }}>tanggalin ang watermark ng TikTok</strong> sa isang video? I-paste lang ang link at i-click ang "Download Video HD MP4." Gumagana sa <a href="/download-tiktok-videos-sa-android" style={{ color: "#ff3b5c", textDecoration: "none" }}>Android</a>, <a href="/download-tiktok-videos-sa-iphone" style={{ color: "#ff3b5c", textDecoration: "none" }}>iPhone</a>, <a href="/download-sa-pc" style={{ color: "#ff3b5c", textDecoration: "none" }}>Windows</a>, at Mac — direkta sa iyong browser, walang kailangang app.</p>
               </div>
               <div className="intro-split__media">
                 <div style={{ position: "relative", borderRadius: 22, overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)", background: "linear-gradient(180deg, rgba(255,59,92,0.12), rgba(255,255,255,0.03))", boxShadow: "0 24px 70px rgba(0,0,0,0.35)" }}>
@@ -258,7 +259,7 @@ export default function HomePage() {
               <table className="table table-dark mb-0" style={{ fontSize: ".9rem", borderColor: "rgba(255,255,255,0.06)" }}>
                 <tbody>
                   <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.5)", width: "36%" }}>Format ng Video</td><td style={{ padding: "12px 18px", color: "#fff", fontWeight: 500 }}>MP4 (Universal Compatibility)</td></tr>
-                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.5)" }}>Kalidad ng Output</td><td style={{ padding: "12px 18px", color: "#fff", fontWeight: 500 }}>1080p, 4K, at Orihinal na HD</td></tr>
+                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.5)" }}>Kalidad ng Output</td><td style={{ padding: "12px 18px", color: "#fff", fontWeight: 500 }}>Hanggang 1080p Full HD (depende sa orihinal na upload)</td></tr>
                   <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.5)" }}>Watermark</td><td style={{ padding: "12px 18px", color: "#fff", fontWeight: 600 }}>Walang Watermark</td></tr>
                   <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.5)" }}>Bilis ng Pag-download</td><td style={{ padding: "12px 18px", color: "#fff", fontWeight: 500 }}>Instant at Napakabilis</td></tr>
                   <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.5)" }}>Limitasyon ng Gumagamit</td><td style={{ padding: "12px 18px", color: "#fff", fontWeight: 600 }}>Walang Pang-araw-araw na Limitasyon</td></tr>
@@ -396,9 +397,9 @@ export default function HomePage() {
                 { title: "Igalang ang Copyright", text: "Ang mga video ng TikTok ay pagmamay-ari ng kani-kanilang mga tagalikha. Palaging humingi ng pahintulot bago i-repost o gamitin ang nilalaman." },
                 { title: "Gamitin para sa Personal o Pang-edukasyon na Layunin", text: "Ang na-download na nilalaman ay dapat gamitin sa etikal na paraan para sa personal na pagtingin, pag-aaral, o mga layunin ng sanggunian lamang." },
                 { title: "Magbigay ng Credit", text: "Kapag nagbabahagi ng mga video sa ibang mga platform, palaging bigyan ng kredito ang orihinal na lumikha sa pamamagitan ng pagbanggit sa kanilang TikTok username." },
-                { title: "Umasa sa Mabilis na Internet", text: "Ang mabilis na Wi-Fi o matibay na signal ng mobile ay nakakatulong sa mga clip na mapunta sa iyong telepono nang mabilisan. Ang mas mabagal na network ay karaniwang nangangahulugan ng mas mahabang paghihintay na mas gugustuhin mong laktawan." },
-                { title: "I-save ang Pahina bilang Bookmark", text: "Ang pagta-type ng URL sa bawat pagkakataon ay nagiging luma, kaya i-pin ang site sa toolbar ng iyong browser. Isang tap lang ay dadalhin ka agad sa download box." },
-                { title: "Suriin ang Available Storage", text: "Ang pagkaubusan ng espasyo sa kalagitnaan ng pag-download ay maaaring nakakainis. Silipin muna ang memorya ng iyong device para maiwasan ang sakit ng ulo." }
+                { title: "Mag-download sa Wi-Fi para Makatipid sa Data", text: "Ang bawat video ay karaniwang 10–50 MB. Kung nasa Globe, Smart, o DITO ka at mababa ang data mo, i-download sa Wi-Fi para maiwasan ang dagdag na gastos. Ang 1-day data promo ay sapat na para sa maraming beses na pag-download." },
+                { title: "Gumagana Kahit sa Mabagal na LTE Connection", text: "Kahit nasa provincial area ka na mabagal ang signal, gumagana pa rin ang tool — basta may koneksyon. Kung mabagal ang pag-load ng video, hintayin lang nang konti bago pindutin ang download button." },
+                { title: "I-save ang Mga Viral Video Bago Pa Matanggal", text: "Minsan tinatanggal ng mga creator ang kanilang mga video o ginagawang pribado. Kung may gusto kang i-save — viral dance, tutorial, o memorable clip — i-download agad bago pa mawala ang video." }
               ].map((tip, i) => (
                 <div key={i} style={{ padding: "16px 18px", background: "rgba(255,255,255,0.04)", borderRadius: 9, borderLeft: "2px solid rgba(255,59,92,0.5)" }}>
                   <strong style={{ color: "#fff", fontSize: ".95rem", display: "block", marginBottom: 4 }}>{tip.title}</strong>
@@ -436,10 +437,9 @@ function HomeFaq() {
     { q: "Paano Mag-download ng TikTok Videos sa iOS?", a: <p className="mb-0">Kopyahin ang link ng video mula sa TikTok app, bisitahin ang tiktokdownloader.ph sa Safari o ibang browser, i-paste ang link, at i-click ang download. Maaari mong i-save ang video nang direkta sa iyong camera roll o photos library.</p> },
     { q: "Gaano Katagal ang Pag-download ng Video?", a: <p className="mb-0">Ang bilis ng pag-download ay depende sa iyong koneksyon sa internet at laki ng video. Ang aming tool ay na-optimize para maging mabilis &mdash; karamihan sa mga video ay handa sa loob ng ilang segundo.</p> },
     { q: "Libre ba ang TikTok Downloader na Gamitin?", a: <p className="mb-0">Oo, ganap na libre itong gamitin. Walang nakatagong singil, subscription, o kinakailangan sa pagbabayad &mdash; mag-download ng walang limitasyong TikTok video nang libre.</p> },
-    { q: "Ligtas ba Gamitin ang TikTok Downloader?", a: <p className="mb-0">Oo. Hindi nangangailangan ng pag-login o personal na impormasyon ang tool. Gumagamit kami ng mga secure na koneksyon at hindi namin nag-iimbak o ibinabahagi ang anumang data ng user o na-download na nilalaman.</p> },
     { q: "Kailangan Ko Bang Mag-install ng Anumang Software, App, o Extension ng Browser?", a: <p className="mb-0">Hindi! Ito ay isang ganap na online na tool &mdash; walang software, app, o browser extension ay kinakailangan. Buksan lamang ito sa iyong browser, i-paste ang link ng TikTok video, at i-download kaagad ang iyong video.</p> },
     { q: "Maaari ba kaming Mag-download ng Mga Video mula sa Mga Pribadong Account?", a: <p className="mb-0">Hindi. Makakapag-download lang ng mga pampublikong TikTok na video. Pribado o pinaghihigpitang nilalaman ay hindi suportado.</p> },
-    { q: "Ano ang Kalidad ng mga Na-download na TikTok Video?", a: <p className="mb-0">Sinusuportahan ng platform ang pag-download ng mga TikTok na video sa HD MP4 na format na walang watermark &mdash; kasama ang 1080p, 4K, at orihinal na kalidad.</p> },
+    { q: "Ano ang Kalidad ng mga Na-download na TikTok Video?", a: <p className="mb-0">Sinusuportahan ng platform ang pag-download ng mga TikTok na video sa HD MP4 na format na walang watermark &mdash; kasama ang hanggang 1080p Full HD, depende sa orihinal na upload.</p> },
     { q: "Sinusuportahan ba nito ang Bultuhang Pag-download ng mga TikTok Video?", a: <p className="mb-0">Sa kasalukuyan, sinusuportahan nito ang pag-download ng isang TikTok video o audio file sa isang pagkakataon.</p> },
     { q: "Maaari ba akong Mag-download ng Mga TikTok Video ayon sa Username, Hashtag, o Account?", a: <p className="mb-0">Hindi, kasalukuyang hindi sumusuporta sa pag-download ng mga video sa pamamagitan ng username, hashtag, o buong profile. Kailangan mong i-paste ang direct link ng isang partikular na TikTok na video para ma-download ito.</p> },
     { q: "Bakit Hindi Gumagana ang TikTok Downloader sa Aking Device?", a: <p className="mb-0">Ito ay maaaring dahil sa mga isyu sa browser, isang di-wastong link ng video, o isang pansamantalang paghihigpit sa TikTok. I-refresh ang page, tingnan ang link, o subukan ang ibang browser.</p> },
