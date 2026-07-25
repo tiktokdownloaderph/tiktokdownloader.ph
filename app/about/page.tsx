@@ -11,13 +11,13 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://tiktokdownloader.ph/about",
     siteName: "TikTok Downloader",
-    images: [{ url: "https://tiktokdownloader.ph/favicon.png", width: 180, height: 180 }],
+    images: [{ url: "https://tiktokdownloader.ph/images/tiktok-downloader.webp", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Tungkol sa Amin - TikTok Downloader PH",
     description: "Alamin ang tungkol sa TikTok Downloader PH — ang aming misyon, serbisyo, at pangako sa aming mga gumagamit.",
-    images: ["https://tiktokdownloader.ph/favicon.png"],
+    images: ["https://tiktokdownloader.ph/images/tiktok-downloader.webp"],
   },
   other: { referrer: "no-referrer" },
 };

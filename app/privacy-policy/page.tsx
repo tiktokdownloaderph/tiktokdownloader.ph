@@ -11,13 +11,13 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://tiktokdownloader.ph/privacy-policy",
     siteName: "TikTok Downloader",
-    images: [{ url: "https://tiktokdownloader.ph/favicon.png", width: 180, height: 180 }],
+    images: [{ url: "https://tiktokdownloader.ph/images/tiktok-downloader.webp", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Patakaran sa Privacy - TikTok Downloader PH",
     description: "Basahin ang aming Patakaran sa Privacy para malaman kung paano namin pinangangalagaan ang inyong personal na impormasyon.",
-    images: ["https://tiktokdownloader.ph/favicon.png"],
+    images: ["https://tiktokdownloader.ph/images/tiktok-downloader.webp"],
   },
 };
 
