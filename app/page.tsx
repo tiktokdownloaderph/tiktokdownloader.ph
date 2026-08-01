@@ -16,8 +16,8 @@ const JSON_LD = {
       "@type": "WebPage",
       "@id": "https://tiktokdownloader.ph/#webpage",
       "url": "https://tiktokdownloader.ph/",
-      "name": "TikTok Downloader na Walang Watermark (HD at Mabilis) 2026",
-      "description": "Subukan ang aming TikTok downloader para makakuha ng mga video na walang watermark sa HD na kalidad. 100% libre, mabilis at walang kinakailangang pag-login. I-convert sa MP3 na may walang limitasyong pag-download.",
+      "name": "TikTok Downloader na Walang Watermark - HD at Mabilis",
+      "description": "Mag-download ng TikTok video nang walang watermark sa Tagalog. Libre, mabilis, at gumagana sa Android, iPhone, PC, at Mac nang walang app o login.",
       "inLanguage": "tl",
       "isPartOf": { "@id": "https://tiktokdownloader.ph/#website" },
       "about": { "@id": "https://tiktokdownloader.ph/#app" }
@@ -25,8 +25,8 @@ const JSON_LD = {
     {
       "@type": "Article",
       "@id": "https://tiktokdownloader.ph/#article",
-      "headline": "TikTok Downloader na Walang Watermark (HD at Mabilis) 2026",
-      "description": "Subukan ang aming TikTok downloader para makakuha ng mga video na walang watermark sa HD na kalidad. 100% libre, mabilis at walang kinakailangang pag-login.",
+      "headline": "TikTok Downloader na Walang Watermark - HD at Mabilis",
+      "description": "Mag-download ng TikTok video nang walang watermark sa Tagalog. Libre, mabilis, at gumagana sa Android, iPhone, PC, at Mac nang walang app o login.",
       "inLanguage": "tl",
       "url": "https://tiktokdownloader.ph/",
       "author": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
@@ -64,7 +64,7 @@ const JSON_LD = {
       "description": "Libreng TikTok video downloader na nagbibigay-daan sa pag-save ng mga TikTok video nang walang watermark sa HD MP4 o MP3 na format. Walang login, walang app, walang limitasyon.",
       "featureList": [
         "Download TikTok videos without watermark",
-        "HD MP4 at hanggang 1080p Full HD na kalidad",
+        "HD MP4 hanggang 1080p Full HD, depende sa orihinal",
         "MP3 audio extraction",
         "No registration required",
         "No daily download limits",
@@ -98,7 +98,6 @@ const JSON_LD = {
         { "@type": "Question", "name": "Paano mag-download ng TikTok video nang walang watermark?", "acceptedAnswer": { "@type": "Answer", "text": "Kopyahin ang link ng TikTok video sa pamamagitan ng Share > Copy Link. Pumunta sa TikTokDownloader.ph at i-paste ang link sa input box. I-click ang Load Video, pagkatapos ay piliin ang 'Download Video HD MP4' para makuha ang video nang walang watermark nang libre." } },
         { "@type": "Question", "name": "Anong mga format ang sinusuportahan ng TikTok Downloader?", "acceptedAnswer": { "@type": "Answer", "text": "Sinusuportahan ng TikTokDownloader.ph ang HD MP4 (walang watermark), standard MP4 (may watermark), at MP3 (audio only). Ang lahat ng format ay available nang libre at walang limitasyon sa laki ng file." } },
         { "@type": "Question", "name": "Gumagana ba ang TikTok Downloader sa iPhone at Android?", "acceptedAnswer": { "@type": "Answer", "text": "Oo, gumagana ang TikTokDownloader.ph sa lahat ng device — iPhone, Android, Windows PC, at Mac. Web-based ang tool kaya walang kailangang i-install na app. Buksan lang ang aming website sa iyong browser at simulan na mag-download." } },
-        { "@type": "Question", "name": "Ligtas ba ang paggamit ng TikTok Downloader?", "acceptedAnswer": { "@type": "Answer", "text": "Oo, ang TikTokDownloader.ph ay ligtas at secure. Hindi kami nangongolekta ng personal na impormasyon, hindi namin iniingatan ang mga video URL pagkatapos maproseso, at hindi kami nagho-host ng anumang video content sa aming mga server." } },
         { "@type": "Question", "name": "Mayroon bang limitasyon sa bilang ng pag-download?", "acceptedAnswer": { "@type": "Answer", "text": "Wala. Maaari kang mag-download ng maraming TikTok video hangga't gusto mo nang walang pang-araw-araw na limitasyon, walang rate limit, at walang kinakailangang pag-sign up." } },
         { "@type": "Question", "name": "Paano mag-download ng TikTok video sa PC o laptop?", "acceptedAnswer": { "@type": "Answer", "text": "Buksan ang TikTok sa iyong browser, i-click ang Share icon ng video, at kopyahin ang link. Pumunta sa TikTokDownloader.ph sa isang bagong tab, i-paste ang link, at i-click ang Load Video. Pipiliin mo ang format (HD MP4 o MP3) at awtomatikong mae-save ang file sa Downloads folder ng iyong PC." } },
         { "@type": "Question", "name": "Maaari bang i-convert ang TikTok video sa MP3?", "acceptedAnswer": { "@type": "Answer", "text": "Oo. Pagkatapos mag-load ng TikTok video sa TikTokDownloader.ph, makikita mo ang 'Download Audio MP3' button. I-click ito para makuha ang audio track ng video sa MP3 format nang libre at walang kinakailangang pag-install ng software." } }
@@ -125,23 +124,23 @@ const JSON_LD = {
 };
 
 export const metadata: Metadata = {
-  title: "TikTok Downloader na Walang Watermark (HD at Mabilis) 2026",
-  description: "Libreng TikTok downloader para agad na ma-save ang kahit anong video nang walang watermark. Sinusuportahan ang HD MP4 at MP3, hindi na kailangan mag-login.",
+  title: "TikTok Downloader na Walang Watermark - HD at Mabilis",
+  description: "Mag-download ng TikTok video nang walang watermark sa Tagalog. Libre, mabilis, at gumagana sa Android, iPhone, PC, at Mac nang walang app o login.",
   robots: { index: true, follow: true },
   alternates: { canonical: "https://tiktokdownloader.ph/" },
   openGraph: {
     siteName: "TikTok Downloader",
-    title: "TikTok Downloader na Walang Watermark (HD at Mabilis) 2026",
-    description: "Libreng TikTok downloader para agad na ma-save ang kahit anong video nang walang watermark. Sinusuportahan ang HD MP4 at MP3, hindi na kailangan mag-login.",
+    title: "TikTok Downloader na Walang Watermark - HD at Mabilis",
+    description: "Mag-download ng TikTok video nang walang watermark sa Tagalog. Libre, mabilis, at gumagana sa Android, iPhone, PC, at Mac nang walang app o login.",
     type: "website",
     url: "https://tiktokdownloader.ph/",
-    images: [{ url: "https://tiktokdownloader.ph/images/tiktok-downloader.webp", width: 1200, height: 630 }],
+    images: [{ url: "https://tiktokdownloader.ph/images/homepage-og-1200x630.webp", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "TikTok Downloader na Walang Watermark (HD at Mabilis) 2026",
-    description: "Libreng TikTok downloader para agad na ma-save ang kahit anong video nang walang watermark. Sinusuportahan ang HD MP4 at MP3, hindi na kailangan mag-login.",
-    images: ["https://tiktokdownloader.ph/images/tiktok-downloader.webp"],
+    title: "TikTok Downloader na Walang Watermark - HD at Mabilis",
+    description: "Mag-download ng TikTok video nang walang watermark sa Tagalog. Libre, mabilis, at gumagana sa Android, iPhone, PC, at Mac nang walang app o login.",
+    images: ["https://tiktokdownloader.ph/images/homepage-og-1200x630.webp"],
   },
   other: {
     "google-site-verification": "hnAYVvigNOIi0f_kuc4Vp21YY9U7B49_ndP9cuSIiI0",
@@ -438,13 +437,13 @@ function HomeFaq() {
     { q: "Gaano Katagal ang Pag-download ng Video?", a: <p className="mb-0">Ang bilis ng pag-download ay depende sa iyong koneksyon sa internet at laki ng video. Ang aming tool ay na-optimize para maging mabilis &mdash; karamihan sa mga video ay handa sa loob ng ilang segundo.</p> },
     { q: "Libre ba ang TikTok Downloader na Gamitin?", a: <p className="mb-0">Oo, ganap na libre itong gamitin. Walang nakatagong singil, subscription, o kinakailangan sa pagbabayad &mdash; mag-download ng walang limitasyong TikTok video nang libre.</p> },
     { q: "Kailangan Ko Bang Mag-install ng Anumang Software, App, o Extension ng Browser?", a: <p className="mb-0">Hindi! Ito ay isang ganap na online na tool &mdash; walang software, app, o browser extension ay kinakailangan. Buksan lamang ito sa iyong browser, i-paste ang link ng TikTok video, at i-download kaagad ang iyong video.</p> },
-    { q: "Maaari ba kaming Mag-download ng Mga Video mula sa Mga Pribadong Account?", a: <p className="mb-0">Hindi. Makakapag-download lang ng mga pampublikong TikTok na video. Pribado o pinaghihigpitang nilalaman ay hindi suportado.</p> },
-    { q: "Ano ang Kalidad ng mga Na-download na TikTok Video?", a: <p className="mb-0">Sinusuportahan ng platform ang pag-download ng mga TikTok na video sa HD MP4 na format na walang watermark &mdash; kasama ang hanggang 1080p Full HD, depende sa orihinal na upload.</p> },
+    { q: "Maaari ba akong Mag-download ng Mga Video mula sa Mga Pribadong Account?", a: <p className="mb-0">Hindi. Makakapag-download lang ng mga pampublikong TikTok na video. Pribado o pinaghihigpitang nilalaman ay hindi suportado.</p> },
+    { q: "Ano ang Kalidad ng mga Na-download na TikTok Video?", a: <p className="mb-0">Sinusuportahan ng platform ang pag-download ng mga TikTok na video sa HD MP4 na format na walang watermark &mdash; hanggang 1080p Full HD, depende sa orihinal na upload.</p> },
     { q: "Sinusuportahan ba nito ang Bultuhang Pag-download ng mga TikTok Video?", a: <p className="mb-0">Sa kasalukuyan, sinusuportahan nito ang pag-download ng isang TikTok video o audio file sa isang pagkakataon.</p> },
     { q: "Maaari ba akong Mag-download ng Mga TikTok Video ayon sa Username, Hashtag, o Account?", a: <p className="mb-0">Hindi, kasalukuyang hindi sumusuporta sa pag-download ng mga video sa pamamagitan ng username, hashtag, o buong profile. Kailangan mong i-paste ang direct link ng isang partikular na TikTok na video para ma-download ito.</p> },
     { q: "Bakit Hindi Gumagana ang TikTok Downloader sa Aking Device?", a: <p className="mb-0">Ito ay maaaring dahil sa mga isyu sa browser, isang di-wastong link ng video, o isang pansamantalang paghihigpit sa TikTok. I-refresh ang page, tingnan ang link, o subukan ang ibang browser.</p> },
     { q: "Mayroon bang Magagamit na App sa Google Play Store?", a: <p className="mb-0">Hindi. Wala kaming opisyal na mobile app. Ito ay dinisenyo upang gumana online sa pamamagitan ng mga web browser.</p> },
-    { q: "Nag-iimbak ba tayo ng Mga Kopya ng Na-download na TikTok Video?", a: <p className="mb-0">Hindi. Hindi nag-iimbak ng mga video o nagtatago ng mga kopya ng na-download na nilalaman. Ang lahat ng mga file ay naka-save sa iyong device.</p> },
+    { q: "Iniimbak ba namin ang Mga Kopya ng Na-download na TikTok Video?", a: <p className="mb-0">Hindi. Hindi kami nag-iimbak ng mga video o nagtatago ng mga kopya ng na-download na nilalaman. Ang lahat ng mga file ay naka-save sa iyong device.</p> },
     { q: "Mayroon bang Limitasyon sa Pag-download?", a: <p className="mb-0">Hindi. Sinusuportahan namin ang walang limitasyong pag-download nang walang mga watermark.</p> },
     { q: "Saan Nakaimbak ang Mga TikTok Video Pagkatapos Mag-download?", a: <p className="mb-0">Ang mga na-download na video at audio file ay naka-save sa default na folder ng pag-download ng iyong device.</p> },
     { q: "Bakit Nabigo o Hindi Gumagana ang Aking TikTok Video Download?", a: (
