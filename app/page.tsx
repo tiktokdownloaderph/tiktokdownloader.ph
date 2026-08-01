@@ -31,8 +31,8 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/",
       "author": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
       "publisher": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
-      "datePublished": "2026-07-23T04:32:39+08:00",
-      "dateModified": "2026-07-23T04:32:39+08:00",
+      "datePublished": "2026-08-01T16:09:36+08:00",
+      "dateModified": "2026-08-01T16:09:36+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph/#webpage" }
     },
     {
@@ -170,6 +170,19 @@ export default function HomePage() {
           </h1>
         </div>
         <DeferredDownloader />
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 8, marginTop: 12, marginBottom: 0 }} aria-label="TikTok Downloader benefits">
+          {[
+            { label: "Unlimited", text: "Walang limitasyon sa pag-download", icon: <svg viewBox="0 0 24 24" fill="none" width="16" height="16" aria-hidden="true"><path d="M7.5 8.5c-2.2 0-4 1.6-4 3.5s1.8 3.5 4 3.5c1.8 0 3.2-1 4.5-3.5 1.3-2.5 2.7-3.5 4.5-3.5 2.2 0 4 1.6 4 3.5s-1.8 3.5-4 3.5c-1.8 0-3.2-1-4.5-3.5-1.3-2.5-2.7-3.5-4.5-3.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg> },
+            { label: "No Watermark", text: "Malinis, walang TikTok logo", icon: <svg viewBox="0 0 24 24" fill="none" width="16" height="16" aria-hidden="true"><path d="M12 3.5 19 6v5.2c0 4.4-2.8 7.9-7 9.3-4.2-1.4-7-4.9-7-9.3V6l7-2.5Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/><path d="m8.8 12.2 2.1 2.1 4.4-4.8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg> },
+            { label: "MP4 & MP3", text: "Video o audio, ikaw ang pipili", icon: <svg viewBox="0 0 24 24" fill="none" width="16" height="16" aria-hidden="true"><path d="M5 5.5h8.5v13H5z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/><path d="M13.5 9.5 19 7v10l-5.5-2.5" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/><path d="M8 9.5v5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg> }
+          ].map((chip) => (
+            <span key={chip.label} style={{ display: "inline-flex", alignItems: "center", gap: 8, maxWidth: "100%", padding: "8px 11px", borderRadius: 999, border: "1px solid rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.04)", color: "rgba(255,255,255,0.7)", fontSize: ".78rem", lineHeight: 1.2 }}>
+              <span style={{ color: "#ff3b5c", display: "inline-flex", flexShrink: 0 }}>{chip.icon}</span>
+              <span style={{ display: "inline-flex", gap: 5, flexWrap: "wrap", alignItems: "baseline" }}><strong style={{ color: "#fff", fontWeight: 700 }}>{chip.label}</strong><span>{chip.text}</span></span>
+            </span>
+          ))}
+        </div>
+        <p style={{ color: "rgba(255,255,255,0.72)", fontSize: ".95rem", lineHeight: 1.8, margin: "18px auto 0", maxWidth: 900, textAlign: "center" }}>Ang <strong style={{ color: "#fff" }}>TikTok Downloader</strong> ay isang libreng online tool na nagbibigay-daan sa iyong mag-download at mag-save ng mga TikTok video nang walang watermark, sa HD MP4 o MP3 na format, direkta mula sa iyong browser &mdash; walang app, walang APK, at walang kailangang account.</p>
 
         <div style={{ marginTop: 32, paddingBottom: 20 }}>
 
@@ -178,8 +191,8 @@ export default function HomePage() {
             <div className="intro-split">
               <div className="intro-split__text">
                 <h2 style={{ color: "#fff", fontSize: "1.15rem", fontWeight: 700, marginBottom: 10, marginTop: 0 }}>I-download ang TikTok nang Walang Watermark — Libre at Mabilis</h2>
-                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Kung sinubukan mo nang mag-save ng mga video sa TikTok, malamang na nakatagpo ka ng nakaka-inis na watermark sa gitna ng screen. Ang TikTokDownloader.ph ay isang <strong style={{ color: "#fff" }}>watermark remover</strong> at downloader sa iisang tool — tinatanggal nito ang watermark at logo ng TikTok at bine-save ang malinis na MP4 sa iyong device. Walang kumplikadong proseso, walang bayad.</p>
-                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Gusto mong <strong style={{ color: "#fff" }}>tanggalin ang watermark ng TikTok</strong> sa isang video? I-paste lang ang link at i-click ang "Download Video HD MP4." Gumagana sa <a href="/download-tiktok-videos-sa-android" style={{ color: "#ff3b5c", textDecoration: "none" }}>Android</a>, <a href="/download-tiktok-videos-sa-iphone" style={{ color: "#ff3b5c", textDecoration: "none" }}>iPhone</a>, <a href="/download-sa-pc" style={{ color: "#ff3b5c", textDecoration: "none" }}>Windows</a>, at Mac — direkta sa iyong browser, walang kailangang app.</p>
+                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Kung sinubukan mo nang mag-save ng mga video sa TikTok, malamang na naranasan mo na ang mga karaniwang problema &mdash; watermark, mababang kalidad, o mga tool na humihingi ng pagpaparehistro bago ka makapag-download. Tinatanggal ng aming TikTok Downloader ang mga hadlang na iyon at ginagawang simple ang buong proseso: kopyahin, i-paste, i-download.</p>
+                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Isa itong libreng TikTok video downloader na nagpapahintulot sa iyong mag-save ng mga video nang walang watermark sa mataas na kalidad na MP4. Walang kailangang app, walang APK na ida-download, at walang account &mdash; gumagana ang lahat direkta sa iyong browser. Sinusuportahan din nito ang mga video mula sa TikTok Lite at Douyin (ang Chinese na bersyon ng TikTok, dating kilala bilang Musically). Gumagamit ka man ng <a href="/download-tiktok-videos-sa-android" style={{ color: "#ff3b5c", textDecoration: "none" }}>Android</a>, <a href="/download-tiktok-videos-sa-iphone" style={{ color: "#ff3b5c", textDecoration: "none" }}>iPhone</a>, <a href="/download-sa-pc" style={{ color: "#ff3b5c", textDecoration: "none" }}>Windows</a>, o Mac, handa itong gamitin anumang oras.</p>
               </div>
               <div className="intro-split__media">
                 <div style={{ position: "relative", borderRadius: 22, overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)", background: "linear-gradient(180deg, rgba(255,59,92,0.12), rgba(255,255,255,0.03))", boxShadow: "0 24px 70px rgba(0,0,0,0.35)" }}>
@@ -284,7 +297,7 @@ export default function HomePage() {
                 {
                   svg: <svg viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z" fill="currentColor"/><path d="M7.2 7.2 16.8 16.8" stroke="#fff" strokeWidth="2.3" strokeLinecap="round"/><path d="M8.2 12.5h3.2m1.8-1h2.6" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" opacity=".85"/></svg>,
                   title: "Walang Watermark",
-                  desc: "I-save ang malinis na TikTok na mga video nang walang anumang watermark, perpekto para sa offline na panonood."
+                  desc: <>I-save ang malinis na TikTok video nang walang anumang watermark. Awtomatiko nitong <strong>tinatanggal ang watermark</strong> at TikTok logo, kaya hindi mo na kailangan ng hiwalay na <strong>logo remover</strong>.</>
                 },
                 {
                   svg: <svg viewBox="0 0 24 24" fill="none"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" fill="currentColor"/><path d="M8 20h8M10 17l-.7 3M14 17l.7 3" stroke="#fff" strokeWidth="1.8" strokeLinecap="round"/><path d="M8 9h3v3H8zM13 9h3v3h-3z" fill="#fff" opacity=".9"/></svg>,
@@ -321,7 +334,7 @@ export default function HomePage() {
           {/* Why You Need It */}
           <section style={{ marginTop: 40 }}>
             <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 14 }}>Bakit Kailangan Mo ng TikTok Downloader?</h2>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Ang aming tool ay perpekto para sa pag-download ng mga video na walang watermark para sa offline na panonood o pagbabahagi sa mga kaibigan. Tinutulungan ka nitong permanenteng i-save ang iyong mga paboritong clip, kahit na ang orihinal na video ay tinanggal na ng platform sa ibang pagkakataon.</p>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Ang aming tool ay perpekto para sa pag-download ng mga video na walang watermark para sa offline na panonood o pagbabahagi sa mga kaibigan. Tinutulungan ka nitong permanenteng i-save ang iyong mga paboritong clip, kahit na ang orihinal na video ay tinanggal na ng platform sa ibang pagkakataon. Bukod sa pag-download, gumagana rin ang aming tool bilang isang <strong style={{ color: "#fff" }}>TikTok watermark remover</strong> &mdash; awtomatiko nitong tinatanggal ang TikTok logo at username sa video, kaya malinis ang makukuha mong file.</p>
             <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Maaari mong i-save ang iyong mga video nang walang logo ng TikTok at i-repost ang mga ito sa mga platform tulad ng YouTube Shorts, Instagram Reels, at Facebook para palakihin ang iyong audience.</p>
             <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Mabilis, libre, at gumagana sa lahat ng device &mdash; walang login, walang app, walang limitasyon.</p>
           </section>
@@ -329,7 +342,7 @@ export default function HomePage() {
           {/* What You Can Download */}
           <section style={{ marginTop: 40 }}>
             <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 14 }}>Ano ang Maaari Mong I-download Gamit ang Aming Downloader?</h2>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 16 }}>Sinusuportahan ng aming tool ang maraming opsyon sa pag-download upang matugunan ang iba&rsquo;t ibang pangangailangan:</p>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 16 }}>Sinusuportahan ng aming tool ang maraming opsyon sa pag-download upang matugunan ang iba&rsquo;t ibang pangangailangan. Kilala rin ang tool na ito bilang isang <strong style={{ color: "#fff" }}>TikTok saver</strong> o <strong style={{ color: "#fff" }}>TikTok video downloader</strong> &mdash; iba&rsquo;t ibang pangalan, iisang layunin: i-save ang gusto mong video nang mabilis at libre.</p>
             <div className="row g-0 download-options-grid" style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, overflow: "hidden", marginBottom: 28 }}>
               <div className="col-12 col-md-6">
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
