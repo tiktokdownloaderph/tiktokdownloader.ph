@@ -266,21 +266,40 @@ export default function HomePage() {
 
           {/* Specs Table */}
           <section style={{ marginTop: 40 }}>
-            <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 16 }}>Pinakamahusay na TikTok MP4 Downloader</h2>
+            <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 16 }}>TikTok Downloader &mdash; Buod ng mga Tampok</h2>
             <div style={{ borderRadius: 10, overflow: "hidden", border: "1px solid rgba(255,255,255,0.08)" }}>
-              <table className="table table-dark mb-0" style={{ fontSize: ".9rem", borderColor: "rgba(255,255,255,0.06)" }}>
+              <table className="table table-dark mb-0" style={{ fontSize: ".9rem", borderColor: "rgba(255,255,255,0.06)", tableLayout: "fixed", width: "100%" }}>
+                <thead>
+                  <tr>
+                    <th scope="col" style={{ padding: "12px 18px", color: "#fff", width: "38%" }}>Katangian</th>
+                    <th scope="col" style={{ padding: "12px 18px", color: "#fff" }}>Detalye</th>
+                  </tr>
+                </thead>
                 <tbody>
-                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.5)", width: "36%" }}>Format ng Video</td><td style={{ padding: "12px 18px", color: "#fff", fontWeight: 500 }}>MP4 (Universal Compatibility)</td></tr>
-                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.5)" }}>Kalidad ng Output</td><td style={{ padding: "12px 18px", color: "#fff", fontWeight: 500 }}>Hanggang 1080p Full HD (depende sa orihinal na upload)</td></tr>
-                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.5)" }}>Watermark</td><td style={{ padding: "12px 18px", color: "#fff", fontWeight: 600 }}>Walang Watermark</td></tr>
-                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.5)" }}>Bilis ng Pag-download</td><td style={{ padding: "12px 18px", color: "#fff", fontWeight: 500 }}>Instant at Napakabilis</td></tr>
-                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.5)" }}>Limitasyon ng Gumagamit</td><td style={{ padding: "12px 18px", color: "#fff", fontWeight: 600 }}>Walang Pang-araw-araw na Limitasyon</td></tr>
-                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.5)" }}>Presyo ng Serbisyo</td><td style={{ padding: "12px 18px", color: "#fff", fontWeight: 600 }}>100% Libre (Walang Subscription)</td></tr>
-                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.5)" }}>Suporta sa Device</td><td style={{ padding: "12px 18px", color: "#fff", fontWeight: 500 }}>Android, iOS, Windows, Mac</td></tr>
-                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.5)", borderBottom: "none" }}>Seguridad</td><td style={{ padding: "12px 18px", color: "#fff", fontWeight: 600, borderBottom: "none" }}>Ligtas, Pribado, at Secure</td></tr>
+                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.72)", width: "38%" }}><strong>Format ng Output</strong></td><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.82)" }}>MP4 (video), MP3 (audio) &mdash; universal compatibility sa lahat ng device</td></tr>
+                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.72)" }}><strong>Kalidad</strong></td><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.82)" }}>Hanggang 1080p Full HD, depende sa orihinal na upload ng creator</td></tr>
+                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.72)" }}><strong>Bilis ng Pag-download</strong></td><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.82)" }}>Karaniwang 5&ndash;15 segundo bawat video</td></tr>
+                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.72)" }}><strong>Limitasyon</strong></td><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.82)" }}>Walang limitasyon &mdash; unlimited na pag-download</td></tr>
+                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.72)" }}><strong>Presyo</strong></td><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.82)" }}>100% libre, walang subscription o nakatagong bayad</td></tr>
+                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.72)" }}><strong>Suporta sa Device</strong></td><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.82)" }}>Android, iPhone, iPad, Windows, Mac, Linux</td></tr>
+                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.72)", borderBottom: "none" }}><strong>Seguridad</strong></td><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.82)", borderBottom: "none" }}>SSL-encrypted, walang login, walang naka-imbak na data</td></tr>
                 </tbody>
               </table>
             </div>
+          </section>
+
+          {/* Formats and Quality */}
+          <section style={{ marginTop: 40 }}>
+            <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 14 }}>Mga Format at Kalidad na Sinusuportahan</h2>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 18 }}>Iba&rsquo;t ibang format ang maaari mong makuha depende sa kung ano ang kailangan mo &mdash; video, audio, o mataas na kalidad na file para sa pag-edit.</p>
+            <h3 style={{ color: "#fff", fontSize: "1.1rem", fontWeight: 700, margin: "20px 0 8px" }}>MP4 (Video)</h3>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 12 }}>Ang <strong style={{ color: "#fff" }}>MP4</strong> ang pangunahing format ng aming downloader. Gumagamit ito ng <strong style={{ color: "#fff" }}>H.264</strong> na compression, kaya maliit ang file size pero mataas pa rin ang kalidad. Nagpe-play ang MP4 sa halos lahat ng device at editor &mdash; Android, iPhone, Windows, Mac, CapCut, at Canva &mdash; nang walang extra na software.</p>
+            <h3 style={{ color: "#fff", fontSize: "1.1rem", fontWeight: 700, margin: "20px 0 8px" }}>MP3 (Audio)</h3>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 12 }}>Kung ang tunog lang ang kailangan mo, i-convert ang TikTok sa <strong style={{ color: "#fff" }}>MP3</strong>. Perpekto ito para sa musika, trending sounds, podcast clips, o kahit ringtone. Kinukuha nito ang orihinal na audio nang hindi kasama ang video.</p>
+            <h3 style={{ color: "#fff", fontSize: "1.1rem", fontWeight: 700, margin: "20px 0 8px" }}>HD, Full HD, at 1080p</h3>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 12 }}>Kinukuha ng tool ang <strong style={{ color: "#fff" }}>pinakamataas na resolution na available sa orihinal na post</strong> &mdash; kadalasang <strong style={{ color: "#fff" }}>720p HD</strong> o <strong style={{ color: "#fff" }}>1080p Full HD</strong>. Kung mataas ang kalidad ng na-upload ng creator, mataas din ang makukuha mo. Ngunit tandaan: kung mababa o na-compress ang orihinal, hindi ito magiging mas malinaw pagkatapos i-download. Walang downloader ang makakadagdag ng detalye na wala sa orihinal na file &mdash; ang <strong style={{ color: "#fff" }}>bitrate</strong> at <strong style={{ color: "#fff" }}>resolution</strong> ay laging nakadepende sa source.</p>
+            <h3 style={{ color: "#fff", fontSize: "1.1rem", fontWeight: 700, margin: "20px 0 8px" }}>Puwede bang gawing GIF?</h3>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Sa kasalukuyan, hindi direktang sumusuporta ang tool sa <strong style={{ color: "#fff" }}>GIF</strong> na output. Puwede mo namang i-download ang video bilang MP4 at gamitin ang isang libreng MP4-to-GIF converter kung kailangan mo ng GIF format.</p>
           </section>
 
           {/* Features */}
@@ -341,39 +360,17 @@ export default function HomePage() {
 
           {/* What You Can Download */}
           <section style={{ marginTop: 40 }}>
-            <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 14 }}>Ano ang Maaari Mong I-download Gamit ang Aming Downloader?</h2>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 16 }}>Sinusuportahan ng aming tool ang maraming opsyon sa pag-download upang matugunan ang iba&rsquo;t ibang pangangailangan. Kilala rin ang tool na ito bilang isang <strong style={{ color: "#fff" }}>TikTok saver</strong> o <strong style={{ color: "#fff" }}>TikTok video downloader</strong> &mdash; iba&rsquo;t ibang pangalan, iisang layunin: i-save ang gusto mong video nang mabilis at libre.</p>
-            <div className="row g-0 download-options-grid" style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, overflow: "hidden", marginBottom: 28 }}>
-              <div className="col-12 col-md-6">
-                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  <li style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 18px", borderBottom: "1px solid rgba(255,255,255,0.06)", fontSize: ".9rem", color: "rgba(255,255,255,0.75)" }}><span className="download-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7.5A2.5 2.5 0 0 1 7.5 5h6A2.5 2.5 0 0 1 16 7.5v9A2.5 2.5 0 0 1 13.5 19h-6A2.5 2.5 0 0 1 5 16.5v-9Z"/><path d="m16 10 3.5-2v8L16 14"/></svg></span>Mga TikTok na video nang walang watermark</li>
-                  <li style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 18px", borderBottom: "1px solid rgba(255,255,255,0.06)", fontSize: ".9rem", color: "rgba(255,255,255,0.75)" }}><span className="download-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 5h12v14H6z"/><path d="M9 9h6M9 13h4"/><path d="m15 16 3 3"/></svg></span>Mga TikTok na video na may watermark</li>
-                  <li style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 18px", borderBottom: "1px solid rgba(255,255,255,0.06)", fontSize: ".9rem", color: "rgba(255,255,255,0.75)" }}><span className="download-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 4h7l4 4v12H7z"/><path d="M14 4v5h5"/><path d="M10 14h5M10 17h3"/></svg></span>I-convert ang TikTok na video sa MP4</li>
-                </ul>
-              </div>
-              <div className="col-12 col-md-6">
-                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  <li style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 18px", borderBottom: "1px solid rgba(255,255,255,0.06)", fontSize: ".9rem", color: "rgba(255,255,255,0.75)" }}><span className="download-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18V6l10-2v12"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="16" r="2"/></svg></span>Musika at mga trending na tunog</li>
-                  <li style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 18px", borderBottom: "1px solid rgba(255,255,255,0.06)", fontSize: ".9rem", color: "rgba(255,255,255,0.75)" }}><span className="download-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16v10H4z"/><path d="M8 11h2v2H8zM14 11h2v2h-2z"/><path d="M7 20h10"/></svg></span>Mga video sa orihinal na kalidad ng HD</li>
-                  <li style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 18px", borderBottom: "1px solid rgba(255,255,255,0.06)", fontSize: ".9rem", color: "rgba(255,255,255,0.75)" }}><span className="download-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v10"/><path d="m8 10 4 4 4-4"/><path d="M5 18h14"/></svg></span>Para sa offline na panonood at personal na paggamit</li>
-                </ul>
-              </div>
-            </div>
-            <h3 style={{ color: "#fff", fontSize: "1.1rem", fontWeight: 600, marginBottom: 12 }}>Paano Mag-download ng Mga TikTok Video na Walang Watermark</h3>
-            <ol style={{ listStyle: "none", padding: 0, margin: 0 }}>
-              {[
-                "Buksan ang TikTok at kopyahin ang link ng video na gusto mong i-download.",
-                <>Bisitahin ang <a href="https://tiktokdownloader.ph/" style={{ color: "#ff3b5c", textDecoration: "none" }}>tiktokdownloader.ph</a> sa iyong Android, iPhone, PC, o Mac.</>,
-                "I-paste ang URL ng video ng TikTok sa input box.",
-                <><strong style={{ color: "#fff" }}>I-click ang I-download</strong> at piliin ang iyong gustong opsyon sa pag-download.</>,
-                "I-save ang video at panoorin ito offline anumang oras."
-              ].map((step, i) => (
-                <li key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start", padding: "10px 0", borderBottom: i < 4 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>
-                  <span style={{ minWidth: 26, height: 26, borderRadius: "50%", background: "rgba(255,59,92,0.12)", border: "1px solid rgba(255,59,92,0.25)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: ".75rem", fontWeight: 700, color: "#ff3b5c", flexShrink: 0 }}>{i + 1}</span>
-                  <span style={{ color: "rgba(255,255,255,0.68)", fontSize: ".9rem", lineHeight: 1.7, paddingTop: 3 }}>{step}</span>
-                </li>
-              ))}
-            </ol>
+            <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 14 }}>Ano ang Puwede Mong I-download</h2>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 16 }}>Hindi lang basic na video ang kaya ng aming tool. Sinusuportahan nito ang halos lahat ng uri ng TikTok content:</p>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              <li style={{ padding: "12px 0", borderBottom: "1px solid rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.68)", fontSize: ".92rem", lineHeight: 1.75 }}><strong style={{ color: "#fff" }}>TikTok Video (walang watermark)</strong> &mdash; ang pangunahing gamit: i-save ang kahit anong public na video bilang malinis na MP4. <a href="https://tiktokdownloader.ph/tiktok-to-mp4" style={{ color: "#ff3b5c", textDecoration: "none" }}>I-convert sa MP4</a></li>
+              <li style={{ padding: "12px 0", borderBottom: "1px solid rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.68)", fontSize: ".92rem", lineHeight: 1.75 }}><strong style={{ color: "#fff" }}>TikTok Photo at Slideshow</strong> &mdash; i-download ang bawat larawan sa isang photo post o carousel bilang HD JPG, o ang buong slideshow bilang video. <a href="https://tiktokdownloader.ph/download-ang-larawan-at-slide-ng-tiktok" style={{ color: "#ff3b5c", textDecoration: "none" }}>Download Slideshow</a></li>
+              <li style={{ padding: "12px 0", borderBottom: "1px solid rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.68)", fontSize: ".92rem", lineHeight: 1.75 }}><strong style={{ color: "#fff" }}>TikTok Stories</strong> &mdash; i-save ang mga TikTok Stories bago ito mawala pagkatapos ng 24 oras. <a href="https://tiktokdownloader.ph/download-tiktok-stories" style={{ color: "#ff3b5c", textDecoration: "none" }}>Download Stories</a></li>
+              <li style={{ padding: "12px 0", borderBottom: "1px solid rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.68)", fontSize: ".92rem", lineHeight: 1.75 }}><strong style={{ color: "#fff" }}>Sound at Musika (MP3)</strong> &mdash; kunin ang audio, trending sound, o kanta bilang MP3 file, perpekto rin bilang ringtone. <a href="https://tiktokdownloader.ph/download-tiktok-mp3" style={{ color: "#ff3b5c", textDecoration: "none" }}>Download MP3</a></li>
+              <li style={{ padding: "12px 0", borderBottom: "1px solid rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.68)", fontSize: ".92rem", lineHeight: 1.75 }}><strong style={{ color: "#fff" }}>Duet at Stitch</strong> &mdash; i-download ang mga collaborative na video tulad ng duet at stitch, kasama ang orihinal na audio.</li>
+              <li style={{ padding: "12px 0", borderBottom: "1px solid rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.68)", fontSize: ".92rem", lineHeight: 1.75 }}><strong style={{ color: "#fff" }}>Live Replay</strong> &mdash; hindi puwedeng kunin ang live habang nangyayari pa, ngunit puwede mong i-download ang naka-save na replay ng isang public na TikTok Live.</li>
+              <li style={{ padding: "12px 0", color: "rgba(255,255,255,0.68)", fontSize: ".92rem", lineHeight: 1.75 }}><strong style={{ color: "#fff" }}>Subtitles / Caption</strong> &mdash; kung may naka-burn na caption ang video, kasama ito sa na-download na MP4. (Hindi kayang kunin ang auto-generated na subtitle bilang hiwalay na file.)</li>
+            </ul>
           </section>
 
           {/* Pros and Cons */}
