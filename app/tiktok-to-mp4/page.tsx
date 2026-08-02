@@ -5,7 +5,7 @@ const pageTitle = "TikTok to MP4 Converter — Mag-download ng TikTok MP4 HD (Li
 const pageDescription = "Libreng TikTok to MP4 converter. I-paste ang link at mag-download ng TikTok MP4 video sa HD, walang watermark, walang app at walang sign-up. Gumagana sa Android, iPhone at PC.";
 const pageUrl = "https://tiktokdownloader.ph/tiktok-to-mp4";
 const imageUrl = "https://tiktokdownloader.ph/images/featuredimg8.webp";
-const publishedAt = "2026-07-23T22:03:14+08:00";
+const publishedAt = "2026-08-02T21:18:21+08:00";
 
 export const metadata: Metadata = {
   title: pageTitle,
