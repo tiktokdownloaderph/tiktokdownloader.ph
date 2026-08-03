@@ -31,8 +31,8 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/",
       "author": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
       "publisher": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
-      "datePublished": "2026-08-02T21:18:21+08:00",
-      "dateModified": "2026-08-02T21:18:21+08:00",
+      "datePublished": "2026-08-03T13:39:04+08:00",
+      "dateModified": "2026-08-03T13:39:04+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph/#webpage" }
     },
     {
@@ -373,6 +373,21 @@ export default function HomePage() {
             </ul>
           </section>
 
+          {/* Device and Browser Compatibility */}
+          <section style={{ marginTop: 40 }}>
+            <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 14 }}>Gumagana sa Lahat ng Device at Browser</h2>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 18 }}>Ang aming TikTok Downloader ay ganap na web-based &mdash; walang app o APK na kailangang i-install. Basta&rsquo;t may browser at internet ka, gumagana ito kahit saang device.</p>
+            <h3 style={{ color: "#fff", fontSize: "1.1rem", fontWeight: 700, margin: "20px 0 8px" }}>Mga Suportadong Device</h3>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 12 }}>Gumagana ang tool sa lahat ng modernong device: <strong style={{ color: "#fff" }}>Android</strong> phone at <strong style={{ color: "#fff" }}>tablet</strong>, <strong style={{ color: "#fff" }}>iPhone</strong> at <strong style={{ color: "#fff" }}>iPad</strong> (<strong style={{ color: "#fff" }}>iOS</strong>), <strong style={{ color: "#fff" }}>Windows</strong> PC, <strong style={{ color: "#fff" }}>Mac</strong> (<strong style={{ color: "#fff" }}>macOS</strong>), <strong style={{ color: "#fff" }}>Linux</strong>, at kahit <strong style={{ color: "#fff" }}>Chromebook</strong>. Pareho ang simpleng proseso saan ka man naka-download &mdash; kopyahin, i-paste, i-save.</p>
+            <h3 style={{ color: "#fff", fontSize: "1.1rem", fontWeight: 700, margin: "20px 0 8px" }}>Mga Suportadong Phone Brand</h3>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 12 }}>Sinubukan at gumagana ang downloader sa lahat ng sikat na brand sa Pilipinas &mdash; <strong style={{ color: "#fff" }}>Samsung</strong> (Galaxy), <strong style={{ color: "#fff" }}>Xiaomi</strong>, <strong style={{ color: "#fff" }}>Redmi</strong>, <strong style={{ color: "#fff" }}>POCO</strong>, <strong style={{ color: "#fff" }}>OPPO</strong>, <strong style={{ color: "#fff" }}>realme</strong>, <strong style={{ color: "#fff" }}>vivo</strong>, <strong style={{ color: "#fff" }}>Google Pixel</strong>, at <strong style={{ color: "#fff" }}>OnePlus</strong>. Walang espesyal na setting na kailangan; pareho ang hakbang sa lahat ng device.</p>
+            <h3 style={{ color: "#fff", fontSize: "1.1rem", fontWeight: 700, margin: "20px 0 8px" }}>Mga Suportadong Browser</h3>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 12 }}>Buksan lang ang site sa kahit anong browser: <strong style={{ color: "#fff" }}>Chrome</strong>, <strong style={{ color: "#fff" }}>Safari</strong>, <strong style={{ color: "#fff" }}>Firefox</strong>, <strong style={{ color: "#fff" }}>Microsoft Edge</strong>, <strong style={{ color: "#fff" }}>Opera</strong>, o <strong style={{ color: "#fff" }}>Samsung Internet</strong> &mdash; na siyang default browser sa maraming Samsung phone sa Pilipinas. Lahat ng ito ay sumusuporta sa mabilis at ligtas na pag-download.</p>
+            <h3 style={{ color: "#fff", fontSize: "1.1rem", fontWeight: 700, margin: "20px 0 8px" }}>Panonood sa Malaking Screen</h3>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 12 }}>Dahil MP4 ang output, puwede mong panoorin ang mga na-download na video offline sa <strong style={{ color: "#fff" }}>Smart TV</strong>, laptop, o tablet &mdash; walang kailangang app, walang buffering.</p>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Dahil malinis at walang watermark ang mga na-download na video, direkta mo itong magagamit sa mga editing app tulad ng <strong style={{ color: "#fff" }}>CapCut</strong>, <strong style={{ color: "#fff" }}>VN</strong>, at <strong style={{ color: "#fff" }}>Canva</strong> para sa iyong sariling content.</p>
+          </section>
+
           {/* Pros and Cons */}
           <section className="pros-cons">
             <h2>Mga Kalamangan at Kahinaan ng TikTok Downloader</h2>
@@ -439,7 +454,7 @@ export default function HomePage() {
 
 function HomeFaq() {
   const faqs = [
-    { q: "Ligtas ba ang TikTok Downloader?", a: <p className="mb-0">Oo, ligtas itong gamitin. Hindi ito nangangailangan ng pag-login, pagpaparehistro, o personal na impormasyon, at hindi ito nag-iimbak ng data ng user o mga na-download na file.</p> },
+    { q: "Ligtas ba ang TikTok Downloader?", a: <p className="mb-0">Oo, ligtas na ligtas. Protektado ng <strong>SSL encryption</strong> ang lahat ng koneksyon sa aming site, kaya secure ang iyong data. Hindi ito naglalaman ng <strong>malware</strong> o <strong>virus</strong>, hindi humihingi ng login o password, at <strong>anonymous</strong> ang paggamit &mdash; walang tracking at walang naka-imbak na history ng iyong mga pinanood o na-download. Ligtas itong gamitin sa anumang device.</p> },
     { q: "Paano Gamitin ang Tool na Ito?", a: <p className="mb-0">I-paste ang link ng TikTok video sa input box sa itaas at i-click ang Load Video. Kapag lumabas ang mga download button, piliin ang iyong gustong format &mdash; MP4 na walang watermark, MP4 na may watermark, o MP3 audio.</p> },
     { q: "Maaari Ko Bang Mag-download ng TikTok Videos Nang Walang Watermark sa Aking Telepono?", a: <p className="mb-0">Oo! Gumagana ang web app na ito sa halos bawat platform &mdash; iPhone, iPad, Android, iOS, Windows, Mac, at Linux &mdash; direkta mula sa iyong browser nang walang anumang pag-install.</p> },
     { q: "Maaari Ko Bang I-convert ang isang TikTok sa MP3?", a: <p className="mb-0">Oo! I-paste ang link sa itaas, i-load ang video, at i-click ang Download Audio button para i-save ang audio bilang MP3.</p> },
