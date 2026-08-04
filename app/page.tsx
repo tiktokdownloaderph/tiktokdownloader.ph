@@ -31,8 +31,8 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/",
       "author": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
       "publisher": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
-      "datePublished": "2026-08-03T13:39:04+08:00",
-      "dateModified": "2026-08-03T13:39:04+08:00",
+      "datePublished": "2026-08-04T14:39:38+08:00",
+      "dateModified": "2026-08-04T14:39:38+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph/#webpage" }
     },
     {
@@ -388,6 +388,28 @@ export default function HomePage() {
             <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Dahil malinis at walang watermark ang mga na-download na video, direkta mo itong magagamit sa mga editing app tulad ng <strong style={{ color: "#fff" }}>CapCut</strong>, <strong style={{ color: "#fff" }}>VN</strong>, at <strong style={{ color: "#fff" }}>Canva</strong> para sa iyong sariling content.</p>
           </section>
 
+          {/* Philippines Download Context */}
+          <section style={{ marginTop: 40 }}>
+            <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 14 }}>Paano Mag-download ng TikTok sa Pilipinas</h2>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Ginawa ang aming TikTok Downloader para gumana nang maayos para sa mga Pinoy &mdash; kahit sa iba&rsquo;t ibang klase ng koneksyon at network dito sa Pilipinas.</p>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Gumagana ito sa lahat ng major na network: <strong style={{ color: "#fff" }}>Globe</strong>, <strong style={{ color: "#fff" }}>Smart</strong>, at <strong style={{ color: "#fff" }}>DITO</strong> para sa mobile data, at <strong style={{ color: "#fff" }}>Converge</strong>, <strong style={{ color: "#fff" }}>PLDT Home</strong>, o iba pang home WiFi para sa mas mabilis na pag-download. Dahil web-based ang tool, hindi ito humihingi ng sobrang bilis &mdash; gumagana pa rin ito kahit sa <strong style={{ color: "#fff" }}>mabagal na LTE</strong> o sa lugar na mahina ang signal, tulad ng ilang bahagi ng probinsya. Bumabagal lang ang download kung mabagal ang koneksyon, pero hindi ito humihinto.</p>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Marami ring Pinoy ang nag-do-download gamit ang libreng WiFi &mdash; sa <strong style={{ color: "#fff" }}>Piso WiFi</strong>, <strong style={{ color: "#fff" }}>GoWiFi</strong>, o WiFi ng kapitbahay o kainan. Dahil maliit lang ang karaniwang file ng TikTok video, mabilis itong matatapos kahit sa ganitong koneksyon, na malaking tulong kung nagtitipid ka sa <strong style={{ color: "#fff" }}>prepaid load</strong>.</p>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Saan ka man sa Pilipinas, libre at pareho ang serbisyo &mdash; walang region lock at walang extra na bayad.</p>
+          </section>
+
+          {/* Data Usage */}
+          <section style={{ marginTop: 40 }}>
+            <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 14 }}>Gaano Karaming Data ang Kinakain ng Pag-download?</h2>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Kaunti lang. Ang isang karaniwang 15&ndash;30 segundong TikTok video sa HD ay humigit-kumulang <strong style={{ color: "#fff" }}>5&ndash;15 MB</strong> lang &mdash; mas maliit pa kaysa sa isang larawang mataas ang resolution. Ibig sabihin, kahit nasa mobile data ka, hindi nito lalamunin agad ang iyong load.</p>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 8 }}>Ilang halimbawa:</p>
+            <ul style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 12, paddingLeft: 20 }}>
+              <li><strong style={{ color: "#fff" }}>Maikling video (15 seg, HD):</strong> mga 5&ndash;8 MB</li>
+              <li><strong style={{ color: "#fff" }}>Mas mahabang video (60 seg, HD):</strong> mga 12&ndash;20 MB</li>
+              <li><strong style={{ color: "#fff" }}>MP3 audio lang:</strong> mas maliit pa, mga 1&ndash;3 MB</li>
+            </ul>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Kung marami kang plano i-download o mahahabang video, mas mainam gumamit ng <strong style={{ color: "#fff" }}>WiFi</strong> para makatipid sa prepaid data. Pero para sa isa o dalawang video, kaya ito ng kahit maliit na data allowance.</p>
+          </section>
+
           {/* Pros and Cons */}
           <section className="pros-cons">
             <h2>Mga Kalamangan at Kahinaan ng TikTok Downloader</h2>
@@ -421,8 +443,8 @@ export default function HomePage() {
                 { title: "Igalang ang Copyright", text: "Ang mga video ng TikTok ay pagmamay-ari ng kani-kanilang mga tagalikha. Palaging humingi ng pahintulot bago i-repost o gamitin ang nilalaman." },
                 { title: "Gamitin para sa Personal o Pang-edukasyon na Layunin", text: "Ang na-download na nilalaman ay dapat gamitin sa etikal na paraan para sa personal na pagtingin, pag-aaral, o mga layunin ng sanggunian lamang." },
                 { title: "Magbigay ng Credit", text: "Kapag nagbabahagi ng mga video sa ibang mga platform, palaging bigyan ng kredito ang orihinal na lumikha sa pamamagitan ng pagbanggit sa kanilang TikTok username." },
-                { title: "Mag-download sa Wi-Fi para Makatipid sa Data", text: "Ang bawat video ay karaniwang 10–50 MB. Kung nasa Globe, Smart, o DITO ka at mababa ang data mo, i-download sa Wi-Fi para maiwasan ang dagdag na gastos. Ang 1-day data promo ay sapat na para sa maraming beses na pag-download." },
-                { title: "Gumagana Kahit sa Mabagal na LTE Connection", text: "Kahit nasa provincial area ka na mabagal ang signal, gumagana pa rin ang tool — basta may koneksyon. Kung mabagal ang pag-load ng video, hintayin lang nang konti bago pindutin ang download button." },
+                { title: "Mag-download sa Wi-Fi Kapag Marami ang Ise-save", text: "Kung sunod-sunod ang ida-download mo o mahaba ang video, mas praktikal gumamit ng Wi-Fi para mas tuloy-tuloy ang proseso at hindi mabilis maubos ang data mo." },
+                { title: "Hintayin ang Pag-load Bago Mag-download", text: "Kung mabagal ang pag-load ng video, hintayin munang lumabas ang mga download option bago pindutin ang button para mas maayos ang pag-save." },
                 { title: "I-save ang Mga Viral Video Bago Pa Matanggal", text: "Minsan tinatanggal ng mga creator ang kanilang mga video o ginagawang pribado. Kung may gusto kang i-save — viral dance, tutorial, o memorable clip — i-download agad bago pa mawala ang video." }
               ].map((tip, i) => (
                 <div key={i} style={{ padding: "16px 18px", background: "rgba(255,255,255,0.04)", borderRadius: 9, borderLeft: "2px solid rgba(255,59,92,0.5)" }}>
