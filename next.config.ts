@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
     inlineCss: true,
   },
   trailingSlash: false,
+  images: {
+    qualities: [50, 60, 75],
+  },
   async headers() {
     return [
       {
