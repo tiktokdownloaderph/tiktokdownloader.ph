@@ -2938,7 +2938,7 @@ a:hover {
 @media (max-width: 767.98px) {
   /* Navbar brand always visible and correct size */
   .navbar-brand {
-    font-size: 20px !important;
+    font-size: 19px !important;
   }
   .navbar-brand img {
     width: 36px !important;
@@ -3552,4 +3552,25 @@ main [style*="rgba(255, 255, 255, 0.58)"] {
   border-top: 2px solid rgba(255, 255, 255, 8%);
   border-bottom: 2px solid rgba(255, 255, 255, 8%);
   height: 60px;
+}
+
+/* Sitewide heading and content readability overrides */
+main h1 {
+  font-size: 32px !important;
+  line-height: 1.18 !important;
+}
+
+main h2 {
+  font-size: 25px !important;
+  line-height: 1.22 !important;
+}
+
+main h3 {
+  font-size: 19px !important;
+  line-height: 1.28 !important;
+}
+
+main h4 {
+  font-size: 19px !important;
+  line-height: 1.35 !important;
 }
