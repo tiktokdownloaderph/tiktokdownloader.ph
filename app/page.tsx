@@ -31,8 +31,8 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/",
       "author": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
       "publisher": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
-      "datePublished": "2026-08-04T14:39:38+08:00",
-      "dateModified": "2026-08-04T14:39:38+08:00",
+      "datePublished": "2026-08-18T04:12:11+08:00",
+      "dateModified": "2026-08-18T04:12:11+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph/#webpage" }
     },
     {
@@ -358,6 +358,13 @@ export default function HomePage() {
             <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Mabilis, libre, at gumagana sa lahat ng device &mdash; walang login, walang app, walang limitasyon.</p>
           </section>
 
+          {/* Downloader vs Watermark Remover */}
+          <section style={{ marginTop: 40 }}>
+            <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 14 }}>TikTok Downloader vs Watermark Remover &mdash; Pareho Ba?</h2>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Madalas itong ipinagkakamali, pero magkaugnay lang ang dalawa. Ang <strong style={{ color: "#fff" }}>TikTok downloader</strong> ang tool na nagse-save ng video mula sa TikTok papunta sa iyong device. Ang <strong style={{ color: "#fff" }}>watermark remover</strong> naman ay tumutukoy sa proseso ng pagtanggal ng TikTok logo at username sa video.</p>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Ang mabuting balita: sa aming tool, iisang hakbang lang ang dalawa. Kapag nag-download ka gamit ang aming <strong style={{ color: "#fff" }}>TikTok Downloader</strong>, awtomatiko nang tinatanggal ang watermark &mdash; kaya malinis na ang makukuha mong file nang hindi na kailangan ng hiwalay na app o <strong style={{ color: "#fff" }}>watermark remover</strong>.</p>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Kaya kung naghahanap ka man ng &quot;TikTok downloader&quot; o &quot;TikTok watermark remover,&quot; iisa lang ang sagot: kopyahin ang link, i-paste sa itaas, at makukuha mo agad ang video nang walang watermark &mdash; libre at walang app.</p>
+          </section>
           {/* What You Can Download */}
           <section style={{ marginTop: 40 }}>
             <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 14 }}>Ano ang Puwede Mong I-download</h2>
