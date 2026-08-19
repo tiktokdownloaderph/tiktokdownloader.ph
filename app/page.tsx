@@ -31,8 +31,8 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/",
       "author": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
       "publisher": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
-      "datePublished": "2026-08-18T04:12:11+08:00",
-      "dateModified": "2026-08-18T04:12:11+08:00",
+      "datePublished": "2026-08-19T12:46:38+08:00",
+      "dateModified": "2026-08-19T12:46:38+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph/#webpage" }
     },
     {
@@ -153,36 +153,26 @@ export default function HomePage() {
   return (
     <main>
       <div className="container">
-        {/* H1 rendered server-side — stays in SSR HTML regardless of client hydration */}
-        <div className="d-flex justify-content-center" style={{ paddingTop: 28 }}>
-          <h1
-            className="text-center"
-            style={{
-              fontSize: "clamp(1.35rem, 5.5vw, 1.75rem)",
-              fontWeight: 700,
-              marginBottom: 6,
-              marginTop: 0,
-              maxWidth: 512,
-              width: "100%",
-            }}
-          >
-            TikTok Downloader Without Watermark
-          </h1>
-        </div>
-        <DeferredDownloader />
-        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 8, marginTop: 12, marginBottom: 0 }} aria-label="TikTok Downloader benefits">
-          {[
-            { label: "Unlimited", text: "Walang limitasyon sa pag-download", icon: <svg viewBox="0 0 24 24" fill="none" width="16" height="16" aria-hidden="true"><path d="M7.5 8.5c-2.2 0-4 1.6-4 3.5s1.8 3.5 4 3.5c1.8 0 3.2-1 4.5-3.5 1.3-2.5 2.7-3.5 4.5-3.5 2.2 0 4 1.6 4 3.5s-1.8 3.5-4 3.5c-1.8 0-3.2-1-4.5-3.5-1.3-2.5-2.7-3.5-4.5-3.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg> },
-            { label: "No Watermark", text: "Malinis, walang TikTok logo", icon: <svg viewBox="0 0 24 24" fill="none" width="16" height="16" aria-hidden="true"><path d="M12 3.5 19 6v5.2c0 4.4-2.8 7.9-7 9.3-4.2-1.4-7-4.9-7-9.3V6l7-2.5Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/><path d="m8.8 12.2 2.1 2.1 4.4-4.8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg> },
-            { label: "MP4 & MP3", text: "Video o audio, ikaw ang pipili", icon: <svg viewBox="0 0 24 24" fill="none" width="16" height="16" aria-hidden="true"><path d="M5 5.5h8.5v13H5z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/><path d="M13.5 9.5 19 7v10l-5.5-2.5" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/><path d="M8 9.5v5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg> }
-          ].map((chip) => (
-            <span key={chip.label} style={{ display: "inline-flex", alignItems: "center", gap: 8, maxWidth: "100%", padding: "8px 11px", borderRadius: 999, border: "1px solid rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.04)", color: "rgba(255,255,255,0.7)", fontSize: ".78rem", lineHeight: 1.2 }}>
-              <span style={{ color: "#ff3b5c", display: "inline-flex", flexShrink: 0 }}>{chip.icon}</span>
-              <span style={{ display: "inline-flex", gap: 5, flexWrap: "wrap", alignItems: "baseline" }}><strong style={{ color: "#fff", fontWeight: 700 }}>{chip.label}</strong><span>{chip.text}</span></span>
-            </span>
-          ))}
-        </div>
-        <p style={{ color: "rgba(255,255,255,0.72)", fontSize: ".95rem", lineHeight: 1.8, margin: "18px auto 0", maxWidth: 900, textAlign: "center" }}>Ang <strong style={{ color: "#fff" }}>TikTok Downloader</strong> ay isang libreng online tool na nagbibigay-daan sa iyong mag-download at mag-save ng mga TikTok video nang walang watermark, sa HD MP4 o MP3 na format, direkta mula sa iyong browser &mdash; walang app, walang APK, at walang kailangang account.</p>
+        {/* H1 rendered server-side ? stays in SSR HTML regardless of client hydration */}
+        <section className="home-hero-redesign">
+          <div className="home-hero-redesign__inner">
+            <h1 className="home-hero-redesign__title">TikTok Downloader Without Watermark</h1>
+            <p className="home-hero-redesign__copy">Ang <strong>TikTok Downloader</strong> ay isang libreng online tool na nagbibigay-daan sa iyong mag-download at mag-save ng mga TikTok video nang walang watermark, sa HD MP4 o MP3 na format, direkta mula sa iyong browser &mdash; walang app, walang APK, at walang kailangang account.</p>
+            <DeferredDownloader />
+            <div className="home-hero-redesign__chips" aria-label="TikTok Downloader benefits">
+              {[
+                { label: "Unlimited", icon: <svg viewBox="0 0 24 24" fill="none" width="16" height="16" aria-hidden="true"><path d="M7.5 8.5c-2.2 0-4 1.6-4 3.5s1.8 3.5 4 3.5c1.8 0 3.2-1 4.5-3.5 1.3-2.5 2.7-3.5 4.5-3.5 2.2 0 4 1.6 4 3.5s-1.8 3.5-4 3.5c-1.8 0-3.2-1-4.5-3.5-1.3-2.5-2.7-3.5-4.5-3.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg> },
+                { label: "No Watermark", icon: <svg viewBox="0 0 24 24" fill="none" width="16" height="16" aria-hidden="true"><path d="M12 3.5 19 6v5.2c0 4.4-2.8 7.9-7 9.3-4.2-1.4-7-4.9-7-9.3V6l7-2.5Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/><path d="m8.8 12.2 2.1 2.1 4.4-4.8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg> },
+                { label: "MP4 & MP3", icon: <svg viewBox="0 0 24 24" fill="none" width="16" height="16" aria-hidden="true"><path d="M5 5.5h8.5v13H5z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/><path d="M13.5 9.5 19 7v10l-5.5-2.5" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/><path d="M8 9.5v5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg> }
+              ].map((chip) => (
+                <span key={chip.label} className="home-hero-redesign__chip">
+                  <span className="home-hero-redesign__chip-icon">{chip.icon}</span>
+                  <span><strong>{chip.label}</strong></span>
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <div style={{ marginTop: 32, paddingBottom: 20 }}>
 
@@ -196,7 +186,7 @@ export default function HomePage() {
               </div>
               <div className="intro-split__media">
                 <div style={{ position: "relative", borderRadius: 22, overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)", background: "linear-gradient(180deg, rgba(255,59,92,0.12), rgba(255,255,255,0.03))", boxShadow: "0 24px 70px rgba(0,0,0,0.35)" }}>
-                  <Image src="/images/tiktok-downloader.webp" alt="TikTok Downloader preview" width={960} height={600} loading="lazy" quality={60} sizes="(max-width: 991px) 100vw, 50vw" style={{ display: "block", width: "100%", height: "auto", aspectRatio: "16/10", objectFit: "cover" }} />
+                  <Image src="/images/tiktok-downloader.webp" alt={"TikTok Downloader na walang watermark \u2014 libreng tool para mag-download ng TikTok video sa HD"} width={960} height={600} loading="lazy" quality={60} sizes="(max-width: 991px) 100vw, 50vw" style={{ display: "block", width: "100%", height: "auto", aspectRatio: "16/10", objectFit: "cover" }} />
                 </div>
               </div>
             </div>
@@ -218,10 +208,10 @@ export default function HomePage() {
                 <div className="how-to-step-media">
                   <div className="step-image-strip step-image-strip--between">
                     <div className="step-image-strip__item">
-                      <Image className="step-image-strip__img" src="/images/i-tap-ang-ibahagi.webp" alt="I-tap ang Ibahagi" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
+                      <Image className="step-image-strip__img" src="/images/i-tap-ang-ibahagi.webp" alt="I-tap ang Share button sa TikTok para kopyahin ang video link" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
                     </div>
                     <div className="step-image-strip__item">
-                      <Image className="step-image-strip__img" src="/images/Kopyahin-ang-Link-ng-Video.webp" alt="Kopyahin ang Link ng Video" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
+                      <Image className="step-image-strip__img" src="/images/Kopyahin-ang-Link-ng-Video.webp" alt="Kopyahin ang link ng TikTok video mula sa Share button" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
                     </div>
                   </div>
                 </div>
@@ -237,10 +227,10 @@ export default function HomePage() {
                 <div className="how-to-step-media">
                   <div className="step-image-strip step-image-strip--between">
                     <div className="step-image-strip__item">
-                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng-i-paste.webp" alt="I-tap ang pindutan ng i-paste" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
+                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng-i-paste.webp" alt="I-paste ang TikTok link sa downloader box" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
                     </div>
                     <div className="step-image-strip__item">
-                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng-i-paste2.webp" alt="I-tap ang pindutan ng i-paste 2" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
+                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng-i-paste2.webp" alt="I-tap ang Paste para ilagay ang TikTok URL sa downloader" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
                     </div>
                   </div>
                 </div>
@@ -256,11 +246,32 @@ export default function HomePage() {
                 <div className="how-to-step-media">
                   <div className="step-image-strip step-image-strip--between">
                     <div className="step-image-strip__item">
-                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng pag-download.webp" alt="I-tap ang pindutan ng pag-download" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
+                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng pag-download.webp" alt="I-download ang TikTok video bilang MP4 na walang watermark" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </section>
+
+
+          {/* Screenshot Gallery */}
+          <section style={{ marginTop: 40 }}>
+            <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 8 }}>Mga Larawan ng Tool na Gumagana</h2>
+            <p className="text-center" style={{ color: "rgba(255,255,255,0.55)", fontSize: ".875rem", marginBottom: 20 }}>Tingnan ang aktwal na daloy ng pag-copy, pag-paste, at pag-download sa TikTok Downloader.</p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 14 }}>
+              {[
+                { src: "/images/i-tap-ang-ibahagi.webp", alt: "TikTok app na ipinapakita ang Share button para kopyahin ang video link", caption: "Ibahagi" },
+                { src: "/images/Kopyahin-ang-Link-ng-Video.webp", alt: "Pagkopya ng TikTok video link mula sa share menu", caption: "Copy Link" },
+                { src: "/images/i-tap-ang-pindutan-ng-i-paste.webp", alt: "TikTok link na ipina-paste sa downloader box", caption: "I-paste ang link" },
+                { src: "/images/i-tap-ang-pindutan-ng-i-paste2.webp", alt: "Downloader box na may TikTok URL na handa nang i-load", caption: "Handa nang i-load" },
+                { src: "/images/i-tap-ang-pindutan-ng pag-download.webp", alt: "Pag-download ng TikTok video bilang MP4 na walang watermark", caption: "Download MP4" }
+              ].map((shot) => (
+                <figure key={shot.src} style={{ margin: 0, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: 10 }}>
+                  <Image src={shot.src} alt={shot.alt} width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 45vw, 180px" style={{ display: "block", width: "100%", height: "auto", borderRadius: 8 }} />
+                  <figcaption style={{ color: "rgba(255,255,255,0.62)", fontSize: ".78rem", textAlign: "center", marginTop: 8 }}>{shot.caption}</figcaption>
+                </figure>
+              ))}
             </div>
           </section>
 
@@ -309,32 +320,32 @@ export default function HomePage() {
             <div className="row g-3 row-cols-1 row-cols-md-2 row-cols-lg-3">
               {[
                 {
-                  svg: <svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 13h6l-1 9 11-13h-6l-1-7Z" fill="currentColor"/><path d="M8 13h4l-.5 4.5L16 9h-4l-.4-3.2L8 13Z" fill="#fff" opacity=".9"/></svg>,
+                  svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2 4 14h7l-1 8 10-13h-7l0-7Z" /></svg>,
                   title: "Mabilis na Bilis ng Pag-download",
                   desc: "Pinoproseso ng aming tool ang mga link ng video at inihahanda ang mga file sa loob lamang ng ilang segundo."
                 },
                 {
-                  svg: <svg viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z" fill="currentColor"/><path d="M7.2 7.2 16.8 16.8" stroke="#fff" strokeWidth="2.3" strokeLinecap="round"/><path d="M8.2 12.5h3.2m1.8-1h2.6" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" opacity=".85"/></svg>,
+                  svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l7 3v5c0 4.6-2.9 7.6-7 9-4.1-1.4-7-4.4-7-9V6l7-3Z" /><path d="m9 12 2 2 4-5" /></svg>,
                   title: "Walang Watermark",
                   desc: <>I-save ang malinis na TikTok video nang walang anumang watermark. Awtomatiko nitong <strong>tinatanggal ang watermark</strong> at TikTok logo, kaya hindi mo na kailangan ng hiwalay na <strong>logo remover</strong>.</>
                 },
                 {
-                  svg: <svg viewBox="0 0 24 24" fill="none"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" fill="currentColor"/><path d="M8 20h8M10 17l-.7 3M14 17l.7 3" stroke="#fff" strokeWidth="1.8" strokeLinecap="round"/><path d="M8 9h3v3H8zM13 9h3v3h-3z" fill="#fff" opacity=".9"/></svg>,
+                  svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m10 9 5 3-5 3V9Z" /><path d="M7 3v4" /><path d="M17 3v4" /></svg>,
                   title: "Suporta sa HD MP4 Format",
                   desc: "Mag-download ng mga video sa HD MP4 na format at makakuha ng mataas na kalidad na nilalaman nang madali."
                 },
                 {
-                  svg: <svg viewBox="0 0 24 24" fill="none"><path d="M5 20h14" stroke="#fff" strokeWidth="2" strokeLinecap="round" opacity=".85"/><rect x="6" y="11" width="3" height="7" rx="1.2" fill="currentColor"/><rect x="10.5" y="6" width="3" height="12" rx="1.2" fill="currentColor"/><rect x="15" y="9" width="3" height="9" rx="1.2" fill="currentColor"/><path d="M7.5 8.5 12 4l4.5 4.5" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+                  svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 15c-2 0-4-1.6-4-4s2-4 4-4c1.4 0 2.7.8 3.4 2" /><path d="M17 9c2 0 4 1.6 4 4s-2 4-4 4c-1.4 0-2.7-.8-3.4-2" /><path d="M8 12h8" /></svg>,
                   title: "Walang Limitasyon sa Pag-download",
                   desc: "Mag-download ng maraming video hangga't gusto mo nang walang anumang pang-araw-araw na limitasyon."
                 },
                 {
-                  svg: <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M5 20a7 7 0 0 1 14 0" fill="currentColor"/><path d="m15.5 5.5 3 3 4-5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+                  svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M17 8l5-5" /><path d="M22 8l-5-5" /></svg>,
                   title: "Walang Kinakailangang Sign-up",
                   desc: "Gamitin kaagad ang TikTok video downloader nang hindi nagsa-sign up o nagbabahagi ng personal na impormasyon."
                 },
                 {
-                  svg: <svg viewBox="0 0 24 24" fill="none"><path d="M12 2.5 20 6v6c0 5.2-3.4 8.2-8 9.5-4.6-1.3-8-4.3-8-9.5V6l8-3.5Z" fill="currentColor"/><path d="m8.5 12 2.2 2.2 4.8-5" stroke="#fff" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+                  svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="11" width="16" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /><path d="m9 16 2 2 4-4" /></svg>,
                   title: "Ligtas at Secure",
                   desc: "Gumagamit kami ng mga secure na koneksyon upang protektahan ang iyong data at matiyak ang ligtas na karanasan."
                 }
