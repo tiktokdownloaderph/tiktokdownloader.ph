@@ -31,8 +31,8 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/",
       "author": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
       "publisher": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
-      "datePublished": "2026-08-19T12:46:38+08:00",
-      "dateModified": "2026-08-19T12:46:38+08:00",
+      "datePublished": "2026-08-21T13:34:28+08:00",
+      "dateModified": "2026-08-21T13:34:28+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph/#webpage" }
     },
     {
@@ -177,17 +177,15 @@ export default function HomePage() {
         <div style={{ marginTop: 32, paddingBottom: 20 }}>
 
           {/* Intro */}
-          <section style={{ marginTop: 32 }}>
-            <div className="intro-split">
-              <div className="intro-split__text">
-                <h2 style={{ color: "#fff", fontSize: "1.15rem", fontWeight: 700, marginBottom: 10, marginTop: 0 }}>I-download ang TikTok nang Walang Watermark — Libre at Mabilis</h2>
-                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Kung sinubukan mo nang mag-save ng mga video sa TikTok, malamang na naranasan mo na ang mga karaniwang problema &mdash; watermark, mababang kalidad, o mga tool na humihingi ng pagpaparehistro bago ka makapag-download. Tinatanggal ng aming TikTok Downloader ang mga hadlang na iyon at ginagawang simple ang buong proseso: kopyahin, i-paste, i-download.</p>
-                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Isa itong libreng TikTok video downloader na nagpapahintulot sa iyong mag-save ng mga video nang walang watermark sa mataas na kalidad na MP4. Walang kailangang app, walang APK na ida-download, at walang account &mdash; gumagana ang lahat direkta sa iyong browser. Sinusuportahan din nito ang mga video mula sa TikTok Lite at Douyin (ang Chinese na bersyon ng TikTok, dating kilala bilang Musically). Gumagamit ka man ng <a href="/download-tiktok-videos-sa-android" style={{ color: "#ff3b5c", textDecoration: "none" }}>Android</a>, <a href="/download-tiktok-videos-sa-iphone" style={{ color: "#ff3b5c", textDecoration: "none" }}>iPhone</a>, <a href="/download-sa-pc" style={{ color: "#ff3b5c", textDecoration: "none" }}>Windows</a>, o Mac, handa itong gamitin anumang oras.</p>
+          <section className="home-intro-white">
+            <h2>TikTok Downloader</h2>
+            <div className="home-intro-white__body">
+              <div className="home-intro-white__text">
+                <p>Kung sinubukan mo nang mag-save ng mga video sa TikTok, malamang na naranasan mo na ang mga karaniwang problema &mdash; watermark, mababang kalidad, o mga tool na humihingi ng pagpaparehistro bago ka makapag-download. Tinatanggal ng aming TikTok Downloader ang mga hadlang na iyon at ginagawang simple ang buong proseso: kopyahin, i-paste, i-download.</p>
+                <p>Isa itong libreng TikTok video downloader na nagpapahintulot sa iyong mag-save ng mga video nang walang watermark sa mataas na kalidad na MP4. Walang kailangang app, walang APK na ida-download, at walang account &mdash; gumagana ang lahat direkta sa iyong browser. Sinusuportahan din nito ang mga video mula sa TikTok Lite at Douyin (ang Chinese na bersyon ng TikTok, dating kilala bilang Musically). Gumagamit ka man ng <a href="/download-tiktok-videos-sa-android">Android</a>, <a href="/download-tiktok-videos-sa-iphone">iPhone</a>, <a href="/download-sa-pc">Windows</a>, o Mac, handa itong gamitin anumang oras.</p>
               </div>
-              <div className="intro-split__media">
-                <div style={{ position: "relative", borderRadius: 22, overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)", background: "linear-gradient(180deg, rgba(255,59,92,0.12), rgba(255,255,255,0.03))", boxShadow: "0 24px 70px rgba(0,0,0,0.35)" }}>
-                  <Image src="/images/tiktok-downloader.webp" alt={"TikTok Downloader na walang watermark \u2014 libreng tool para mag-download ng TikTok video sa HD"} width={960} height={600} loading="lazy" quality={60} sizes="(max-width: 991px) 100vw, 50vw" style={{ display: "block", width: "100%", height: "auto", aspectRatio: "16/10", objectFit: "cover" }} />
-                </div>
+              <div className="home-intro-white__media">
+                <Image src="/images/tiktok-downloader.webp" alt={"TikTok Downloader na walang watermark \u2014 libreng tool para mag-download ng TikTok video sa HD"} width={960} height={600} loading="lazy" quality={60} sizes="(max-width: 991px) 100vw, 50vw" />
               </div>
             </div>
           </section>

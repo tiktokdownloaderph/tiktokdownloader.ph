@@ -31,7 +31,7 @@ export default function DownloaderShell() {
                       autoCapitalize="off"
                       autoCorrect="off"
                       enterKeyHint="go"
-                      placeholder="example.com/@example/video/....."
+                      placeholder="Paste TikTok video URL here..."
                       aria-label="TikTok Link"
                     />
                     <label className="form-label d-flex align-items-center" htmlFor="tiktokUrl-shell" style={{ fontSize: 16 }}>

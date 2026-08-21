@@ -2879,7 +2879,7 @@ html ::-webkit-scrollbar-track {
 body {
   color: #fff;
   overflow-x: hidden;
-  font-family: Proxima Nova, Arial, Tahoma, PingFangSC, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background: #121212;
 }
 .navbar .nav-link {
@@ -3049,6 +3049,98 @@ h5 {
   margin-bottom: 42px !important;
 }
 
+/* Homepage white intro section */
+.home-intro-white {
+  margin: 0 calc(50% - 50vw) 42px;
+  padding: clamp(42px, 6vw, 72px) max(18px, calc((100vw - 1120px) / 2));
+  background: #ffffff;
+  color: #212529;
+}
+
+.home-intro-white h2 {
+  width: 100%;
+  margin: 0 0 30px;
+  color: #212529 !important;
+  font-size: 3.5rem !important;
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.home-intro-white__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.88fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+}
+
+.home-intro-white__text {
+  min-width: 0;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home-intro-white p {
+  margin: 0 0 18px;
+  color: #212529 !important;
+  font-size: 17px !important;
+  font-weight: 400;
+  line-height: 1.85;
+}
+
+.home-intro-white p:last-child {
+  margin-bottom: 0;
+}
+
+.home-intro-white strong {
+  color: inherit !important;
+}
+
+.home-intro-white a {
+  color: #212529 !important;
+  font-weight: 700;
+  text-decoration-color: rgba(33, 37, 41, 0.45) !important;
+}
+
+.home-intro-white__media {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(33, 37, 41, 0.12);
+  border-radius: 10px;
+  background: #f5f6f7;
+  box-shadow: 0 24px 60px rgba(33, 37, 41, 0.14);
+}
+
+.home-intro-white__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+@media (max-width: 767.98px) {
+  .home-intro-white {
+    margin-bottom: 34px;
+    padding-top: 36px;
+    padding-bottom: 40px;
+  }
+
+  .home-intro-white h2 {
+    margin-bottom: 22px;
+    font-size: 2.5rem !important;
+  }
+
+  .home-intro-white__body {
+    grid-template-columns: 1fr;
+  }
+
+  .home-intro-white p {
+    font-size: 16px !important;
+  }
+}
+
 /* Homepage reference-style hero */
 .home-hero-redesign {
   position: relative;
@@ -3075,6 +3167,7 @@ h5 {
   max-width: 760px;
   margin: 0 auto 18px;
   color: #fff;
+  font-size: 54px !important;
   font-weight: 800;
   line-height: 1.12;
 }
@@ -3155,8 +3248,10 @@ h5 {
   box-shadow: none !important;
 }
 
-.home-hero-redesign [id^="tiktokUrl"]::placeholder {
-  color: rgba(31, 35, 40, 0.48);
+.home-hero-redesign [id^="tiktokUrl"]::placeholder,
+.home-hero-redesign [id^="tiktokUrl"]:focus::placeholder {
+  color: rgba(31, 35, 40, 0.48) !important;
+  opacity: 1 !important;
 }
 
 .home-hero-redesign .form-clean > .row {
@@ -3814,4 +3909,22 @@ main .how-to-step-copy strong,
 main .faq-item strong,
 main .accordion-body strong {
   color: inherit !important;
+}
+
+/* Unified header navigation color */
+.navbar.navbar-dark .navbar-nav .nav-link,
+.navbar.navbar-dark .navbar-nav .nav-link.active,
+.navbar.navbar-dark .navbar-nav .nav-link.show,
+.navbar.navbar-dark .navbar-nav .nav-link:focus,
+.navbar.navbar-dark .navbar-nav .nav-link:hover,
+.navbar.navbar-dark .nav-dropdown-button,
+.navbar.navbar-dark .dropdown-item,
+.navbar.navbar-dark .dropdown-item:focus,
+.navbar.navbar-dark .dropdown-item:hover,
+.mobile-nav-panel .nav-link,
+.mobile-nav-panel .nav-link.active,
+.mobile-nav-panel .nav-link:hover,
+.mobile-nav-panel .nav-link:focus {
+  color: #fff !important;
+  opacity: 1 !important;
 }

@@ -168,7 +168,7 @@ export default function Downloader() {
                         autoCapitalize="off"
                         autoCorrect="off"
                         enterKeyHint="go"
-                        placeholder="example.com/@example/video/....."
+                        placeholder="Paste TikTok video URL here..."
                         onKeyDown={(e) => e.key === "Enter" && loadVideo()}
                       />
                       <label className="form-label d-flex align-items-center" htmlFor="tiktokUrl" style={{ fontSize: 16 }}>
