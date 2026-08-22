@@ -31,8 +31,8 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/",
       "author": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
       "publisher": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
-      "datePublished": "2026-08-21T13:34:28+08:00",
-      "dateModified": "2026-08-21T13:34:28+08:00",
+      "datePublished": "2026-08-22T15:34:55+08:00",
+      "dateModified": "2026-08-22T15:34:55+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph/#webpage" }
     },
     {
@@ -77,7 +77,7 @@ const JSON_LD = {
       "@type": "HowTo",
       "@id": "https://tiktokdownloader.ph/#howto",
       "name": "Paano Mag-download ng TikTok Videos without Watermark",
-      "description": "Tatlong hakbang lang — kopyahin ang link, i-paste sa downloader, at i-download ang MP4 na walang watermark.",
+      "description": "Tatlong hakbang lang â€” kopyahin ang link, i-paste sa downloader, at i-download ang MP4 na walang watermark.",
       "totalTime": "PT1M",
       "estimatedCost": { "@type": "MonetaryAmount", "currency": "PHP", "value": "0" },
       "tool": [
@@ -97,7 +97,7 @@ const JSON_LD = {
         { "@type": "Question", "name": "Libre ba ang TikTok Downloader?", "acceptedAnswer": { "@type": "Answer", "text": "Oo, ang TikTokDownloader.ph ay 100% libre na gamitin. Walang nakatagong bayad, subscription, o kinakailangang account. Maaari kang mag-download ng walang limitasyong bilang ng mga video nang walang bayad." } },
         { "@type": "Question", "name": "Paano mag-download ng TikTok video nang walang watermark?", "acceptedAnswer": { "@type": "Answer", "text": "Kopyahin ang link ng TikTok video sa pamamagitan ng Share > Copy Link. Pumunta sa TikTokDownloader.ph at i-paste ang link sa input box. I-click ang Load Video, pagkatapos ay piliin ang 'Download Video HD MP4' para makuha ang video nang walang watermark nang libre." } },
         { "@type": "Question", "name": "Anong mga format ang sinusuportahan ng TikTok Downloader?", "acceptedAnswer": { "@type": "Answer", "text": "Sinusuportahan ng TikTokDownloader.ph ang HD MP4 (walang watermark), standard MP4 (may watermark), at MP3 (audio only). Ang lahat ng format ay available nang libre at walang limitasyon sa laki ng file." } },
-        { "@type": "Question", "name": "Gumagana ba ang TikTok Downloader sa iPhone at Android?", "acceptedAnswer": { "@type": "Answer", "text": "Oo, gumagana ang TikTokDownloader.ph sa lahat ng device — iPhone, Android, Windows PC, at Mac. Web-based ang tool kaya walang kailangang i-install na app. Buksan lang ang aming website sa iyong browser at simulan na mag-download." } },
+        { "@type": "Question", "name": "Gumagana ba ang TikTok Downloader sa iPhone at Android?", "acceptedAnswer": { "@type": "Answer", "text": "Oo, gumagana ang TikTokDownloader.ph sa lahat ng device â€” iPhone, Android, Windows PC, at Mac. Web-based ang tool kaya walang kailangang i-install na app. Buksan lang ang aming website sa iyong browser at simulan na mag-download." } },
         { "@type": "Question", "name": "Mayroon bang limitasyon sa bilang ng pag-download?", "acceptedAnswer": { "@type": "Answer", "text": "Wala. Maaari kang mag-download ng maraming TikTok video hangga't gusto mo nang walang pang-araw-araw na limitasyon, walang rate limit, at walang kinakailangang pag-sign up." } },
         { "@type": "Question", "name": "Paano mag-download ng TikTok video sa PC o laptop?", "acceptedAnswer": { "@type": "Answer", "text": "Buksan ang TikTok sa iyong browser, i-click ang Share icon ng video, at kopyahin ang link. Pumunta sa TikTokDownloader.ph sa isang bagong tab, i-paste ang link, at i-click ang Load Video. Pipiliin mo ang format (HD MP4 o MP3) at awtomatikong mae-save ang file sa Downloads folder ng iyong PC." } },
         { "@type": "Question", "name": "Maaari bang i-convert ang TikTok video sa MP3?", "acceptedAnswer": { "@type": "Answer", "text": "Oo. Pagkatapos mag-load ng TikTok video sa TikTokDownloader.ph, makikita mo ang 'Download Audio MP3' button. I-click ito para makuha ang audio track ng video sa MP3 format nang libre at walang kinakailangang pag-install ng software." } }
@@ -106,7 +106,7 @@ const JSON_LD = {
     {
       "@type": "ItemList",
       "@id": "https://tiktokdownloader.ph/#articles",
-      "name": "Mga Gabay at Artikulo — TikTok Downloader Blog",
+      "name": "Mga Gabay at Artikulo â€” TikTok Downloader Blog",
       "description": "Mga step-by-step na gabay at tips para sa pag-download ng TikTok videos.",
       "numberOfItems": 8,
       "itemListElement": [
@@ -191,85 +191,89 @@ export default function HomePage() {
           </section>
 
           {/* How to Download */}
-          <section style={{ marginTop: 40 }} id="step1">
-            <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 6 }}>Paano Mag-download ng TikTok Videos without Watermark</h2>
-            <p className="text-center" style={{ color: "rgba(255,255,255,0.45)", fontSize: ".875rem", marginBottom: 20 }}>Tatlong hakbang lang &mdash; kopyahin, i-paste, i-download.</p>
-            <div className="how-to-steps">
-              <div className="how-to-step-row">
-                <div className="how-to-step-copy">
-                  <div style={{ background: "#212529", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: 22, height: "100%", textAlign: "center" }}>
-                    <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(255,59,92,0.12)", border: "1px solid rgba(255,59,92,0.3)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 14px", fontSize: ".82rem", fontWeight: 700, color: "#ff3b5c" }}>1</div>
-                    <h3 style={{ color: "#fff", fontSize: ".95rem", fontWeight: 600, marginBottom: 8 }}>Kopyahin ang Link ng Video</h3>
-                    <p style={{ color: "rgba(255,255,255,0.55)", fontSize: ".875rem", margin: 0, lineHeight: 1.7 }}>Buksan ang TikTok, i-tap ang <strong style={{ color: "#fff" }}>Ibahagi</strong>, at piliin ang <strong style={{ color: "#fff" }}>Copy Link</strong>.</p>
-                  </div>
-                </div>
-                <div className="how-to-step-media">
-                  <div className="step-image-strip step-image-strip--between">
-                    <div className="step-image-strip__item">
-                      <Image className="step-image-strip__img" src="/images/i-tap-ang-ibahagi.webp" alt="I-tap ang Share button sa TikTok para kopyahin ang video link" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
-                    </div>
-                    <div className="step-image-strip__item">
-                      <Image className="step-image-strip__img" src="/images/Kopyahin-ang-Link-ng-Video.webp" alt="Kopyahin ang link ng TikTok video mula sa Share button" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
-                    </div>
-                  </div>
-                </div>
+          <section className="home-howto-showcase" id="step1">
+            <div className="home-howto-showcase__inner">
+              <div className="home-howto-showcase__heading">
+                <h2>Paano Mag-download ng TikTok Videos without Watermark</h2>
+                <p>Tatlong malinaw na hakbang lang: kunin ang link, idikit sa downloader, at i-save ang video.</p>
               </div>
-              <div className="how-to-step-row how-to-step-row--reverse" id="step2">
-                <div className="how-to-step-copy">
-                  <div style={{ background: "#212529", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: 22, height: "100%", textAlign: "center" }}>
-                    <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(255,59,92,0.12)", border: "1px solid rgba(255,59,92,0.3)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 14px", fontSize: ".82rem", fontWeight: 700, color: "#ff3b5c" }}>2</div>
-                    <h3 style={{ color: "#fff", fontSize: ".95rem", fontWeight: 600, marginBottom: 8 }}>Idikit ang Link</h3>
-                    <p style={{ color: "rgba(255,255,255,0.55)", fontSize: ".875rem", margin: 0, lineHeight: 1.7 }}>I-paste ang URL sa input box sa itaas at hayaang kunin ng tool ang video.</p>
-                  </div>
-                </div>
-                <div className="how-to-step-media">
-                  <div className="step-image-strip step-image-strip--between">
-                    <div className="step-image-strip__item">
-                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng-i-paste.webp" alt="I-paste ang TikTok link sa downloader box" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
-                    </div>
-                    <div className="step-image-strip__item">
-                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng-i-paste2.webp" alt="I-tap ang Paste para ilagay ang TikTok URL sa downloader" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="how-to-step-row" id="step3">
-                <div className="how-to-step-copy">
-                  <div style={{ background: "#212529", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: 22, height: "100%", textAlign: "center" }}>
-                    <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(255,59,92,0.12)", border: "1px solid rgba(255,59,92,0.3)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 14px", fontSize: ".82rem", fontWeight: 700, color: "#ff3b5c" }}>3</div>
-                    <h3 style={{ color: "#fff", fontSize: ".95rem", fontWeight: 600, marginBottom: 8 }}>I-download ang Video</h3>
-                    <p style={{ color: "rgba(255,255,255,0.55)", fontSize: ".875rem", margin: 0, lineHeight: 1.7 }}>I-click ang download button at i-save ang MP4 na walang watermark sa iyong device.</p>
-                  </div>
-                </div>
-                <div className="how-to-step-media">
-                  <div className="step-image-strip step-image-strip--between">
-                    <div className="step-image-strip__item">
-                      <Image className="step-image-strip__img" src="/images/i-tap-ang-pindutan-ng pag-download.webp" alt="I-download ang TikTok video bilang MP4 na walang watermark" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 46vw, 360px" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
 
+              <div className="home-howto-showcase__grid">
+                <div className="home-howto-steps" aria-label="Mga hakbang sa pag-download ng TikTok video">
+                  <article className="home-howto-step">
+                    <div className="home-howto-step__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M10 13a5 5 0 0 0 7.07 0l2.12-2.12a5 5 0 0 0-7.07-7.07L11 4.93" />
+                        <path d="M14 11a5 5 0 0 0-7.07 0L4.81 13.12a5 5 0 0 0 7.07 7.07L13 19.07" />
+                      </svg>
+                    </div>
+                    <div className="home-howto-step__body">
+                      <span className="home-howto-step__number">Hakbang 1</span>
+                      <h3>Kopyahin ang Link ng Video</h3>
+                      <p>Buksan ang TikTok, i-tap ang <strong>Ibahagi</strong>, at piliin ang <strong>Copy Link</strong>.</p>
+                    </div>
+                  </article>
 
-          {/* Screenshot Gallery */}
-          <section style={{ marginTop: 40 }}>
-            <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 8 }}>Mga Larawan ng Tool na Gumagana</h2>
-            <p className="text-center" style={{ color: "rgba(255,255,255,0.55)", fontSize: ".875rem", marginBottom: 20 }}>Tingnan ang aktwal na daloy ng pag-copy, pag-paste, at pag-download sa TikTok Downloader.</p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 14 }}>
-              {[
-                { src: "/images/i-tap-ang-ibahagi.webp", alt: "TikTok app na ipinapakita ang Share button para kopyahin ang video link", caption: "Ibahagi" },
-                { src: "/images/Kopyahin-ang-Link-ng-Video.webp", alt: "Pagkopya ng TikTok video link mula sa share menu", caption: "Copy Link" },
-                { src: "/images/i-tap-ang-pindutan-ng-i-paste.webp", alt: "TikTok link na ipina-paste sa downloader box", caption: "I-paste ang link" },
-                { src: "/images/i-tap-ang-pindutan-ng-i-paste2.webp", alt: "Downloader box na may TikTok URL na handa nang i-load", caption: "Handa nang i-load" },
-                { src: "/images/i-tap-ang-pindutan-ng pag-download.webp", alt: "Pag-download ng TikTok video bilang MP4 na walang watermark", caption: "Download MP4" }
-              ].map((shot) => (
-                <figure key={shot.src} style={{ margin: 0, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: 10 }}>
-                  <Image src={shot.src} alt={shot.alt} width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 767px) 45vw, 180px" style={{ display: "block", width: "100%", height: "auto", borderRadius: 8 }} />
-                  <figcaption style={{ color: "rgba(255,255,255,0.62)", fontSize: ".78rem", textAlign: "center", marginTop: 8 }}>{shot.caption}</figcaption>
-                </figure>
-              ))}
+                  <article className="home-howto-step" id="step2">
+                    <div className="home-howto-step__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="8" y="2" width="8" height="4" rx="1" />
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                        <path d="M9 14h6" />
+                        <path d="M12 11v6" />
+                      </svg>
+                    </div>
+                    <div className="home-howto-step__body">
+                      <span className="home-howto-step__number">Hakbang 2</span>
+                      <h3>Idikit ang Link</h3>
+                      <p>I-paste ang URL sa input box sa itaas at hayaang kunin ng tool ang video.</p>
+                    </div>
+                  </article>
+
+                  <article className="home-howto-step" id="step3">
+                    <div className="home-howto-step__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 3v12" />
+                        <path d="m7 10 5 5 5-5" />
+                        <path d="M5 21h14" />
+                      </svg>
+                    </div>
+                    <div className="home-howto-step__body">
+                      <span className="home-howto-step__number">Hakbang 3</span>
+                      <h3>I-download ang Video</h3>
+                      <p>I-click ang download button at i-save ang MP4 na walang watermark sa iyong device.</p>
+                    </div>
+                  </article>
+                </div>
+
+                <div className="home-howto-slider" aria-label="Mga larawan ng proseso ng pag-download">
+                  <div className="home-howto-slider__screen">
+                    <figure className="home-howto-slide home-howto-slide--1">
+                      <Image src="/images/i-tap-ang-ibahagi.webp" alt="I-tap ang Share button sa TikTok para kopyahin ang video link" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 991px) 82vw, 360px" />
+                      <figcaption>1 / 5</figcaption>
+                    </figure>
+                    <figure className="home-howto-slide home-howto-slide--2">
+                      <Image src="/images/Kopyahin-ang-Link-ng-Video.webp" alt="Kopyahin ang link ng TikTok video mula sa Share button" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 991px) 82vw, 360px" />
+                      <figcaption>2 / 5</figcaption>
+                    </figure>
+                    <figure className="home-howto-slide home-howto-slide--3">
+                      <Image src="/images/i-tap-ang-pindutan-ng-i-paste.webp" alt="I-paste ang TikTok link sa downloader box" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 991px) 82vw, 360px" />
+                      <figcaption>3 / 5</figcaption>
+                    </figure>
+                    <figure className="home-howto-slide home-howto-slide--4">
+                      <Image src="/images/i-tap-ang-pindutan-ng-i-paste2.webp" alt="I-tap ang Paste para ilagay ang TikTok URL sa downloader" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 991px) 82vw, 360px" />
+                      <figcaption>4 / 5</figcaption>
+                    </figure>
+                    <figure className="home-howto-slide home-howto-slide--5">
+                      <Image src="/images/i-tap-ang-pindutan-ng pag-download.webp" alt="I-download ang TikTok video bilang MP4 na walang watermark" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 991px) 82vw, 360px" />
+                      <figcaption>5 / 5</figcaption>
+                    </figure>
+                  </div>
+                  <div className="home-howto-slider__dots" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -461,7 +465,7 @@ export default function HomePage() {
                 { title: "Magbigay ng Credit", text: "Kapag nagbabahagi ng mga video sa ibang mga platform, palaging bigyan ng kredito ang orihinal na lumikha sa pamamagitan ng pagbanggit sa kanilang TikTok username." },
                 { title: "Mag-download sa Wi-Fi Kapag Marami ang Ise-save", text: "Kung sunod-sunod ang ida-download mo o mahaba ang video, mas praktikal gumamit ng Wi-Fi para mas tuloy-tuloy ang proseso at hindi mabilis maubos ang data mo." },
                 { title: "Hintayin ang Pag-load Bago Mag-download", text: "Kung mabagal ang pag-load ng video, hintayin munang lumabas ang mga download option bago pindutin ang button para mas maayos ang pag-save." },
-                { title: "I-save ang Mga Viral Video Bago Pa Matanggal", text: "Minsan tinatanggal ng mga creator ang kanilang mga video o ginagawang pribado. Kung may gusto kang i-save — viral dance, tutorial, o memorable clip — i-download agad bago pa mawala ang video." }
+                { title: "I-save ang Mga Viral Video Bago Pa Matanggal", text: "Minsan tinatanggal ng mga creator ang kanilang mga video o ginagawang pribado. Kung may gusto kang i-save â€” viral dance, tutorial, o memorable clip â€” i-download agad bago pa mawala ang video." }
               ].map((tip, i) => (
                 <div key={i} style={{ padding: "16px 18px", background: "rgba(255,255,255,0.04)", borderRadius: 9, borderLeft: "2px solid rgba(255,59,92,0.5)" }}>
                   <strong style={{ color: "#fff", fontSize: ".95rem", display: "block", marginBottom: 4 }}>{tip.title}</strong>
