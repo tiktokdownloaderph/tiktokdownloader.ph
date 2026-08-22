@@ -7,9 +7,14 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://tiktokdownloader.ph"),
   icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
-    shortcut: "/favicon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-48.png", type: "image/png", sizes: "48x48" },
+      { url: "/icon-96.png", type: "image/png", sizes: "96x96" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" }],
+    shortcut: "/favicon.ico",
   },
   manifest: "/manifest.json",
 };
@@ -25,10 +30,6 @@ export default function RootLayout({
     <html lang="fil-PH" data-bs-theme="dark" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#121212" />
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="shortcut icon" type="image/png" href="/favicon.png" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />
-        <link rel="apple-touch-icon" type="image/png" sizes="96x96" href="/favicon.png" />
       </head>
       <body suppressHydrationWarning>
         <Navbar />

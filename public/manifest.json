@@ -1,23 +1,41 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
   "short_name": "TikTok Downloader",
-  "name": "TikTok Downloader",
+  "name": "TikTok Downloader Philippines",
   "icons": [
     {
-      "src": "/favicon.png",
+      "src": "/icon-48.png",
+      "type": "image/png",
+      "sizes": "48x48",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-96.png",
       "type": "image/png",
       "sizes": "96x96",
       "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "/",
-  "background_color": "#000000",
+  "background_color": "#121212",
   "theme_color": "#121212",
   "display": "standalone",
   "orientation": "portrait",
-  "description": "TikTok Downloader allows you to download a TikTok video with no watermark in just one click using our free TikTok video downloader tool. Save to any device as MP4 in HD or MP3 audio.",
+  "description": "Libreng TikTok Downloader para mag-download ng TikTok video sa MP4 o MP3 nang walang watermark, direkta sa browser.",
   "dir": "ltr",
-  "lang": "en",
+  "lang": "fil-PH",
   "categories": ["productivity", "social", "utilities"],
   "display_override": [
     "standalone",
