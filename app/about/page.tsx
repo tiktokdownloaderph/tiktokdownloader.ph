@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Tungkol sa Amin - TikTok Downloader PH",
-  description: "Alamin ang tungkol sa TikTok Downloader PH â€” ang aming misyon, serbisyo, at pangako sa aming mga gumagamit.",
+  description: "Alamin ang tungkol sa TikTok Downloader PH Ã¢â‚¬â€ ang aming misyon, serbisyo, at pangako sa aming mga gumagamit.",
   robots: { index: true, follow: true },
   alternates: { canonical: "https://tiktokdownloader.ph/about" },
   openGraph: {
     title: "Tungkol sa Amin - TikTok Downloader PH",
-    description: "Alamin ang tungkol sa TikTok Downloader PH â€” ang aming misyon, serbisyo, at pangako sa aming mga gumagamit.",
+    description: "Alamin ang tungkol sa TikTok Downloader PH Ã¢â‚¬â€ ang aming misyon, serbisyo, at pangako sa aming mga gumagamit.",
     type: "website",
     url: "https://tiktokdownloader.ph/about",
     siteName: "TikTok Downloader",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Tungkol sa Amin - TikTok Downloader PH",
-    description: "Alamin ang tungkol sa TikTok Downloader PH â€” ang aming misyon, serbisyo, at pangako sa aming mga gumagamit.",
+    description: "Alamin ang tungkol sa TikTok Downloader PH Ã¢â‚¬â€ ang aming misyon, serbisyo, at pangako sa aming mga gumagamit.",
     images: ["https://tiktokdownloader.ph/images/tiktok-downloader.webp"],
   },
   other: { referrer: "no-referrer" },
@@ -33,7 +33,7 @@ const JSON_LD = {
       "description": "Alamin ang tungkol sa TikTok Downloader PH.",
       "inLanguage": "tl",
       "isPartOf": { "@id": "https://tiktokdownloader.ph/#website" },
-      "dateModified": "2026-08-22T15:34:55+08:00"
+      "dateModified": "2026-08-23T19:39:17+08:00"
     },
     {
       "@type": "BreadcrumbList",

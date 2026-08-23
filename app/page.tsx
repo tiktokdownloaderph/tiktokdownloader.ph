@@ -31,8 +31,8 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/",
       "author": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
       "publisher": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
-      "datePublished": "2026-08-22T15:34:55+08:00",
-      "dateModified": "2026-08-22T15:34:55+08:00",
+      "datePublished": "2026-08-23T19:39:17+08:00",
+      "dateModified": "2026-08-23T19:39:17+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph/#webpage" }
     },
     {
@@ -77,7 +77,7 @@ const JSON_LD = {
       "@type": "HowTo",
       "@id": "https://tiktokdownloader.ph/#howto",
       "name": "Paano Mag-download ng TikTok Videos without Watermark",
-      "description": "Tatlong hakbang lang â€” kopyahin ang link, i-paste sa downloader, at i-download ang MP4 na walang watermark.",
+      "description": "Tatlong hakbang lang ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â kopyahin ang link, i-paste sa downloader, at i-download ang MP4 na walang watermark.",
       "totalTime": "PT1M",
       "estimatedCost": { "@type": "MonetaryAmount", "currency": "PHP", "value": "0" },
       "tool": [
@@ -97,7 +97,7 @@ const JSON_LD = {
         { "@type": "Question", "name": "Libre ba ang TikTok Downloader?", "acceptedAnswer": { "@type": "Answer", "text": "Oo, ang TikTokDownloader.ph ay 100% libre na gamitin. Walang nakatagong bayad, subscription, o kinakailangang account. Maaari kang mag-download ng walang limitasyong bilang ng mga video nang walang bayad." } },
         { "@type": "Question", "name": "Paano mag-download ng TikTok video nang walang watermark?", "acceptedAnswer": { "@type": "Answer", "text": "Kopyahin ang link ng TikTok video sa pamamagitan ng Share > Copy Link. Pumunta sa TikTokDownloader.ph at i-paste ang link sa input box. I-click ang Load Video, pagkatapos ay piliin ang 'Download Video HD MP4' para makuha ang video nang walang watermark nang libre." } },
         { "@type": "Question", "name": "Anong mga format ang sinusuportahan ng TikTok Downloader?", "acceptedAnswer": { "@type": "Answer", "text": "Sinusuportahan ng TikTokDownloader.ph ang HD MP4 (walang watermark), standard MP4 (may watermark), at MP3 (audio only). Ang lahat ng format ay available nang libre at walang limitasyon sa laki ng file." } },
-        { "@type": "Question", "name": "Gumagana ba ang TikTok Downloader sa iPhone at Android?", "acceptedAnswer": { "@type": "Answer", "text": "Oo, gumagana ang TikTokDownloader.ph sa lahat ng device â€” iPhone, Android, Windows PC, at Mac. Web-based ang tool kaya walang kailangang i-install na app. Buksan lang ang aming website sa iyong browser at simulan na mag-download." } },
+        { "@type": "Question", "name": "Gumagana ba ang TikTok Downloader sa iPhone at Android?", "acceptedAnswer": { "@type": "Answer", "text": "Oo, gumagana ang TikTokDownloader.ph sa lahat ng device ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â iPhone, Android, Windows PC, at Mac. Web-based ang tool kaya walang kailangang i-install na app. Buksan lang ang aming website sa iyong browser at simulan na mag-download." } },
         { "@type": "Question", "name": "Mayroon bang limitasyon sa bilang ng pag-download?", "acceptedAnswer": { "@type": "Answer", "text": "Wala. Maaari kang mag-download ng maraming TikTok video hangga't gusto mo nang walang pang-araw-araw na limitasyon, walang rate limit, at walang kinakailangang pag-sign up." } },
         { "@type": "Question", "name": "Paano mag-download ng TikTok video sa PC o laptop?", "acceptedAnswer": { "@type": "Answer", "text": "Buksan ang TikTok sa iyong browser, i-click ang Share icon ng video, at kopyahin ang link. Pumunta sa TikTokDownloader.ph sa isang bagong tab, i-paste ang link, at i-click ang Load Video. Pipiliin mo ang format (HD MP4 o MP3) at awtomatikong mae-save ang file sa Downloads folder ng iyong PC." } },
         { "@type": "Question", "name": "Maaari bang i-convert ang TikTok video sa MP3?", "acceptedAnswer": { "@type": "Answer", "text": "Oo. Pagkatapos mag-load ng TikTok video sa TikTokDownloader.ph, makikita mo ang 'Download Audio MP3' button. I-click ito para makuha ang audio track ng video sa MP3 format nang libre at walang kinakailangang pag-install ng software." } }
@@ -106,7 +106,7 @@ const JSON_LD = {
     {
       "@type": "ItemList",
       "@id": "https://tiktokdownloader.ph/#articles",
-      "name": "Mga Gabay at Artikulo â€” TikTok Downloader Blog",
+      "name": "Mga Gabay at Artikulo ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â TikTok Downloader Blog",
       "description": "Mga step-by-step na gabay at tips para sa pag-download ng TikTok videos.",
       "numberOfItems": 8,
       "itemListElement": [
@@ -278,29 +278,30 @@ export default function HomePage() {
           </section>
 
           {/* Specs Table */}
-          <section style={{ marginTop: 40 }}>
-            <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 16 }}>TikTok Downloader &mdash; Buod ng mga Tampok</h2>
-            <div style={{ borderRadius: 10, overflow: "hidden", border: "1px solid rgba(255,255,255,0.08)" }}>
-              <table className="table table-dark mb-0" style={{ fontSize: ".9rem", borderColor: "rgba(255,255,255,0.06)", tableLayout: "fixed", width: "100%" }}>
-                <thead>
-                  <tr>
-                    <th scope="col" style={{ padding: "12px 18px", color: "#fff", width: "38%" }}>Katangian</th>
-                    <th scope="col" style={{ padding: "12px 18px", color: "#fff" }}>Detalye</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.72)", width: "38%" }}><strong>Format ng Output</strong></td><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.82)" }}>MP4 (video), MP3 (audio) &mdash; universal compatibility sa lahat ng device</td></tr>
-                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.72)" }}><strong>Kalidad</strong></td><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.82)" }}>Hanggang 1080p Full HD, depende sa orihinal na upload ng creator</td></tr>
-                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.72)" }}><strong>Bilis ng Pag-download</strong></td><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.82)" }}>Karaniwang 5&ndash;15 segundo bawat video</td></tr>
-                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.72)" }}><strong>Limitasyon</strong></td><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.82)" }}>Walang limitasyon &mdash; unlimited na pag-download</td></tr>
-                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.72)" }}><strong>Presyo</strong></td><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.82)" }}>100% libre, walang subscription o nakatagong bayad</td></tr>
-                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.72)" }}><strong>Suporta sa Device</strong></td><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.82)" }}>Android, iPhone, iPad, Windows, Mac, Linux</td></tr>
-                  <tr><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.72)", borderBottom: "none" }}><strong>Seguridad</strong></td><td style={{ padding: "12px 18px", color: "rgba(255,255,255,0.82)", borderBottom: "none" }}>SSL-encrypted, walang login, walang naka-imbak na data</td></tr>
-                </tbody>
-              </table>
+          <section className="home-specs-white">
+            <div className="home-specs-white__inner">
+              <h2>Buod ng mga Tampok ng TikTok Downloader</h2>
+              <div className="home-specs-table-wrap">
+                <table className="home-specs-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Katangian</th>
+                      <th scope="col">Detalye</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>Format ng Output</strong></td><td>MP4 (video) at MP3 (audio), universal compatibility sa lahat ng device</td></tr>
+                    <tr><td><strong>Kalidad</strong></td><td>Hanggang 1080p Full HD, depende sa orihinal na upload ng creator</td></tr>
+                    <tr><td><strong>Bilis ng Pag-download</strong></td><td>Karaniwang 5 hanggang 15 segundo bawat video</td></tr>
+                    <tr><td><strong>Limitasyon</strong></td><td>Walang limitasyon sa bilang ng pag-download</td></tr>
+                    <tr><td><strong>Presyo</strong></td><td>100% libre, walang subscription o nakatagong bayad</td></tr>
+                    <tr><td><strong>Suporta sa Device</strong></td><td>Android, iPhone, iPad, Windows, Mac, at Linux</td></tr>
+                    <tr><td><strong>Seguridad</strong></td><td>SSL-encrypted, walang login, at walang naka-imbak na data</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </section>
-
           {/* Formats and Quality */}
           <section style={{ marginTop: 40 }}>
             <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 14 }}>Mga Format at Kalidad na Sinusuportahan</h2>
@@ -465,7 +466,7 @@ export default function HomePage() {
                 { title: "Magbigay ng Credit", text: "Kapag nagbabahagi ng mga video sa ibang mga platform, palaging bigyan ng kredito ang orihinal na lumikha sa pamamagitan ng pagbanggit sa kanilang TikTok username." },
                 { title: "Mag-download sa Wi-Fi Kapag Marami ang Ise-save", text: "Kung sunod-sunod ang ida-download mo o mahaba ang video, mas praktikal gumamit ng Wi-Fi para mas tuloy-tuloy ang proseso at hindi mabilis maubos ang data mo." },
                 { title: "Hintayin ang Pag-load Bago Mag-download", text: "Kung mabagal ang pag-load ng video, hintayin munang lumabas ang mga download option bago pindutin ang button para mas maayos ang pag-save." },
-                { title: "I-save ang Mga Viral Video Bago Pa Matanggal", text: "Minsan tinatanggal ng mga creator ang kanilang mga video o ginagawang pribado. Kung may gusto kang i-save â€” viral dance, tutorial, o memorable clip â€” i-download agad bago pa mawala ang video." }
+                { title: "I-save ang Mga Viral Video Bago Pa Matanggal", text: "Minsan tinatanggal ng mga creator ang kanilang mga video o ginagawang pribado. Kung may gusto kang i-save ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â viral dance, tutorial, o memorable clip ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â i-download agad bago pa mawala ang video." }
               ].map((tip, i) => (
                 <div key={i} style={{ padding: "16px 18px", background: "rgba(255,255,255,0.04)", borderRadius: 9, borderLeft: "2px solid rgba(255,59,92,0.5)" }}>
                   <strong style={{ color: "#fff", fontSize: ".95rem", display: "block", marginBottom: 4 }}>{tip.title}</strong>
