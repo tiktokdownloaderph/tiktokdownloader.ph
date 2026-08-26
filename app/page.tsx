@@ -31,8 +31,8 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/",
       "author": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
       "publisher": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
-      "datePublished": "2026-08-25T04:17:27+08:00",
-      "dateModified": "2026-08-25T04:17:27+08:00",
+      "datePublished": "2026-08-26T12:45:25+08:00",
+      "dateModified": "2026-08-26T12:45:25+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph/#webpage" }
     },
     {
@@ -374,53 +374,55 @@ export default function HomePage() {
             </div>
           </section>
           {/* Features */}
-          <section style={{ marginTop: 40 }}>
-            <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 6 }}>Mga Tampok ng TikTok Downloader</h2>
-            <p className="text-center" style={{ color: "rgba(255,255,255,0.5)", fontSize: ".875rem", marginBottom: 20 }}>Binuo para sa bilis, kalidad, at pagiging simple sa lahat ng device.</p>
-            <div className="row g-3 row-cols-1 row-cols-md-2 row-cols-lg-3">
-              {[
-                {
-                  svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2 4 14h7l-1 8 10-13h-7l0-7Z" /></svg>,
-                  title: "Mabilis na Bilis ng Pag-download",
-                  desc: "Pinoproseso ng aming tool ang mga link ng video at inihahanda ang mga file sa loob lamang ng ilang segundo."
-                },
-                {
-                  svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l7 3v5c0 4.6-2.9 7.6-7 9-4.1-1.4-7-4.4-7-9V6l7-3Z" /><path d="m9 12 2 2 4-5" /></svg>,
-                  title: "Walang Watermark",
-                  desc: <>I-save ang malinis na TikTok video nang walang anumang watermark. Awtomatiko nitong <strong>tinatanggal ang watermark</strong> at TikTok logo, kaya hindi mo na kailangan ng hiwalay na <strong>logo remover</strong>.</>
-                },
-                {
-                  svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m10 9 5 3-5 3V9Z" /><path d="M7 3v4" /><path d="M17 3v4" /></svg>,
-                  title: "Suporta sa HD MP4 Format",
-                  desc: "Mag-download ng mga video sa HD MP4 na format at makakuha ng mataas na kalidad na nilalaman nang madali."
-                },
-                {
-                  svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 15c-2 0-4-1.6-4-4s2-4 4-4c1.4 0 2.7.8 3.4 2" /><path d="M17 9c2 0 4 1.6 4 4s-2 4-4 4c-1.4 0-2.7-.8-3.4-2" /><path d="M8 12h8" /></svg>,
-                  title: "Walang Limitasyon sa Pag-download",
-                  desc: "Mag-download ng maraming video hangga't gusto mo nang walang anumang pang-araw-araw na limitasyon."
-                },
-                {
-                  svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M17 8l5-5" /><path d="M22 8l-5-5" /></svg>,
-                  title: "Walang Kinakailangang Sign-up",
-                  desc: "Gamitin kaagad ang TikTok video downloader nang hindi nagsa-sign up o nagbabahagi ng personal na impormasyon."
-                },
-                {
-                  svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="11" width="16" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /><path d="m9 16 2 2 4-4" /></svg>,
-                  title: "Ligtas at Secure",
-                  desc: "Gumagamit kami ng mga secure na koneksyon upang protektahan ang iyong data at matiyak ang ligtas na karanasan."
-                }
-              ].map((f, i) => (
-                <div className="col" key={i}>
-                  <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: 20, height: "100%" }}>
-                    <span className="feature-icon" aria-hidden="true">{f.svg}</span>
-                    <h3 style={{ color: "#fff", fontSize: ".95rem", fontWeight: 600, marginBottom: 6 }}>{f.title}</h3>
-                    <p style={{ color: "rgba(255,255,255,0.52)", fontSize: ".875rem", margin: 0, lineHeight: 1.7 }}>{f.desc}</p>
-                  </div>
-                </div>
-              ))}
+          <section className="home-features-white">
+            <div className="home-features-white__inner">
+              <div className="home-features-white__heading">
+                <h2>Mga Tampok ng TikTok Downloader</h2>
+                <p>Binuo para sa bilis, kalidad, at pagiging simple sa lahat ng device.</p>
+              </div>
+
+              <div className="home-feature-list">
+                {[
+                  {
+                    svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2 4 14h7l-1 8 10-13h-7l0-7Z" /></svg>,
+                    title: "Mabilis na Bilis ng Pag-download",
+                    desc: "Pinoproseso ng aming tool ang mga link ng video at inihahanda ang mga file sa loob lamang ng ilang segundo."
+                  },
+                  {
+                    svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l7 3v5c0 4.6-2.9 7.6-7 9-4.1-1.4-7-4.4-7-9V6l7-3Z" /><path d="m9 12 2 2 4-5" /></svg>,
+                    title: "Walang Watermark",
+                    desc: <>I-save ang malinis na TikTok video nang walang anumang watermark. Awtomatiko nitong <strong>tinatanggal ang watermark</strong> at TikTok logo, kaya hindi mo na kailangan ng hiwalay na <strong>logo remover</strong>.</>
+                  },
+                  {
+                    svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m10 9 5 3-5 3V9Z" /><path d="M7 3v4" /><path d="M17 3v4" /></svg>,
+                    title: "Suporta sa HD MP4 Format",
+                    desc: "Mag-download ng mga video sa HD MP4 na format at makakuha ng mataas na kalidad na nilalaman nang madali."
+                  },
+                  {
+                    svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 15c-2 0-4-1.6-4-4s2-4 4-4c1.4 0 2.7.8 3.4 2" /><path d="M17 9c2 0 4 1.6 4 4s-2 4-4 4c-1.4 0-2.7-.8-3.4-2" /><path d="M8 12h8" /></svg>,
+                    title: "Walang Limitasyon sa Pag-download",
+                    desc: "Mag-download ng maraming video hangga't gusto mo nang walang anumang pang-araw-araw na limitasyon."
+                  },
+                  {
+                    svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M17 8l5-5" /><path d="M22 8l-5-5" /></svg>,
+                    title: "Walang Kinakailangang Sign-up",
+                    desc: "Gamitin kaagad ang TikTok video downloader nang hindi nagsa-sign up o nagbabahagi ng personal na impormasyon."
+                  },
+                  {
+                    svg: <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="11" width="16" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /><path d="m9 16 2 2 4-4" /></svg>,
+                    title: "Ligtas at Secure",
+                    desc: "Gumagamit kami ng mga secure na koneksyon upang protektahan ang iyong data at matiyak ang ligtas na karanasan."
+                  }
+                ].map((feature, i) => (
+                  <article className="home-feature-box" key={i}>
+                    <span className="home-feature-box__icon" aria-hidden="true">{feature.svg}</span>
+                    <h3>{feature.title}</h3>
+                    <p>{feature.desc}</p>
+                  </article>
+                ))}
+              </div>
             </div>
           </section>
-
           {/* Why You Need It */}
           <section style={{ marginTop: 40 }}>
             <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 14 }}>Bakit Kailangan Mo ng TikTok Downloader?</h2>
