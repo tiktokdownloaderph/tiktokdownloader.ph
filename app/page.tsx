@@ -31,8 +31,8 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/",
       "author": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
       "publisher": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
-      "datePublished": "2026-08-26T12:45:25+08:00",
-      "dateModified": "2026-08-26T12:45:25+08:00",
+      "datePublished": "2026-08-27T16:58:11+08:00",
+      "dateModified": "2026-08-27T16:58:11+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph/#webpage" }
     },
     {
@@ -178,11 +178,11 @@ export default function HomePage() {
 
           {/* Intro */}
           <section className="home-intro-white">
-            <h2>TikTok Downloader</h2>
+            <h2 style={{ color: "#212529", WebkitTextFillColor: "#212529" }}>TikTok Downloader</h2>
             <div className="home-intro-white__body">
               <div className="home-intro-white__text">
-                <p>Kung sinubukan mo nang mag-save ng mga video sa TikTok, malamang na naranasan mo na ang mga karaniwang problema tulad ng watermark, mababang kalidad, o mga tool na humihingi ng pagpaparehistro bago ka makapag-download. Tinatanggal ng aming TikTok Downloader ang mga hadlang na iyon at ginagawang simple ang buong proseso: kopyahin, i-paste, i-download.</p>
-                <p>Isa itong libreng TikTok video downloader na nagpapahintulot sa iyong mag-save ng mga video nang walang watermark sa mataas na kalidad na MP4. Walang kailangang app, walang APK na ida-download, at walang account, at gumagana ang lahat direkta sa iyong browser. Sinusuportahan din nito ang mga video mula sa TikTok Lite at Douyin (ang Chinese na bersyon ng TikTok, dating kilala bilang Musically). Gumagamit ka man ng <a href="/download-tiktok-videos-sa-android">Android</a>, <a href="/download-tiktok-videos-sa-iphone">iPhone</a>, <a href="/download-sa-pc">Windows</a>, o Mac, handa itong gamitin anumang oras.</p>
+                <p style={{ color: "rgba(33, 37, 41, 0.78)", WebkitTextFillColor: "rgba(33, 37, 41, 0.78)" }}>Kung sinubukan mo nang mag-save ng mga video sa TikTok, malamang na naranasan mo na ang mga karaniwang problema tulad ng watermark, mababang kalidad, o mga tool na humihingi ng pagpaparehistro bago ka makapag-download. Tinatanggal ng aming TikTok Downloader ang mga hadlang na iyon at ginagawang simple ang buong proseso: kopyahin, i-paste, i-download.</p>
+                <p style={{ color: "rgba(33, 37, 41, 0.78)", WebkitTextFillColor: "rgba(33, 37, 41, 0.78)" }}>Isa itong libreng TikTok video downloader na nagpapahintulot sa iyong mag-save ng mga video nang walang watermark sa mataas na kalidad na MP4. Walang kailangang app, walang APK na ida-download, at walang account, at gumagana ang lahat direkta sa iyong browser. Sinusuportahan din nito ang mga video mula sa TikTok Lite at Douyin (ang Chinese na bersyon ng TikTok, dating kilala bilang Musically). Gumagamit ka man ng <a href="/download-tiktok-videos-sa-android">Android</a>, <a href="/download-tiktok-videos-sa-iphone">iPhone</a>, <a href="/download-sa-pc">Windows</a>, o Mac, handa itong gamitin anumang oras.</p>
               </div>
               <div className="home-intro-white__media">
                 <Image src="/images/tiktok-downloader.webp" alt={"TikTok Downloader na walang watermark \u2014 libreng tool para mag-download ng TikTok video sa HD"} width={960} height={600} loading="lazy" quality={60} sizes="(max-width: 991px) 100vw, 50vw" />
@@ -280,7 +280,7 @@ export default function HomePage() {
           {/* Specs Table */}
           <section className="home-specs-white">
             <div className="home-specs-white__inner">
-              <h2>Buod ng mga Tampok ng TikTok Downloader</h2>
+              <h2 style={{ color: "#212529", WebkitTextFillColor: "#212529" }}>Buod ng mga Tampok ng TikTok Downloader</h2>
               <div className="home-specs-table-wrap">
                 <table className="home-specs-table">
                   <thead>
@@ -377,8 +377,8 @@ export default function HomePage() {
           <section className="home-features-white">
             <div className="home-features-white__inner">
               <div className="home-features-white__heading">
-                <h2>Mga Tampok ng TikTok Downloader</h2>
-                <p>Binuo para sa bilis, kalidad, at pagiging simple sa lahat ng device.</p>
+                <h2 style={{ color: "#212529", WebkitTextFillColor: "#212529" }}>Mga Tampok ng TikTok Downloader</h2>
+                <p style={{ color: "rgba(33, 37, 41, 0.74)", WebkitTextFillColor: "rgba(33, 37, 41, 0.74)" }}>Binuo para sa bilis, kalidad, at pagiging simple sa lahat ng device.</p>
               </div>
 
               <div className="home-feature-list">
@@ -416,8 +416,8 @@ export default function HomePage() {
                 ].map((feature, i) => (
                   <article className="home-feature-box" key={i}>
                     <span className="home-feature-box__icon" aria-hidden="true">{feature.svg}</span>
-                    <h3>{feature.title}</h3>
-                    <p>{feature.desc}</p>
+                    <h3 style={{ color: "#212529", WebkitTextFillColor: "#212529" }}>{feature.title}</h3>
+                    <p style={{ color: "rgba(33, 37, 41, 0.76)", WebkitTextFillColor: "rgba(33, 37, 41, 0.76)" }}>{feature.desc}</p>
                   </article>
                 ))}
               </div>
