@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://tiktokdownloader.ph";
-  const today = new Date("2026-08-27");
+  const today = new Date("2026-08-30");
 
   return [
     { url: `${base}/`, lastModified: today, changeFrequency: "daily", priority: 1.0 },
