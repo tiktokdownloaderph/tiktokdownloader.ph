@@ -34,7 +34,7 @@ const JSON_LD = {
       "isPartOf": {
         "@id": "https://tiktokdownloader.ph/#website"
       },
-      "dateModified": "2026-09-01T15:14:10+08:00"
+      "dateModified": "2026-09-03T01:43:39+08:00"
     },
     {
       "@type": "BreadcrumbList",
