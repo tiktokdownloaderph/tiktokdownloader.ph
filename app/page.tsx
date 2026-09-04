@@ -31,8 +31,8 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/",
       "author": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
       "publisher": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
-      "datePublished": "2026-09-03T01:43:39+08:00",
-      "dateModified": "2026-09-03T01:43:39+08:00",
+      "datePublished": "2026-09-05T01:21:10+08:00",
+      "dateModified": "2026-09-05T01:21:10+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph/#webpage" }
     },
     {
@@ -495,19 +495,19 @@ export default function HomePage() {
             <h2>Mga Kalamangan at Kahinaan ng TikTok Downloader</h2>
             <div className="pros-cons__grid">
               <div className="pros-cons__panel pros-cons__panel--pros">
-                <p className="pros-cons__badge">Mga Kalamangan <span aria-hidden="true">+</span></p>
+                <p className="pros-cons__badge"><span aria-hidden="true" className="pros-cons__badge-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 21H4.8A1.8 1.8 0 0 1 3 19.2v-7.4A1.8 1.8 0 0 1 4.8 10H7v11Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/><path d="M7 10l4.2-6.2c.5-.8 1.7-.9 2.4-.2.4.4.6 1 .5 1.6L13.5 9H19a2 2 0 0 1 2 2.3l-1.2 7.2A3 3 0 0 1 16.8 21H7V10Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/></svg></span>Mga Kalamangan</p>
                 <ul className="pros-cons__list">
                   {["Palaging libre, walang mga nakatagong bayad", "Ligtas, secure, at madaling gamitin", "Mabilis at maayos na pag-download", "Mag-download ng mga video sa HD na kalidad", "Walang kinakailangang pag-install ng app", "Maramihang mga pagpipilian sa pag-download"].map((item, i) => (
-                    <li key={i}><span className="pros-cons__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"/></svg></span>{item}</li>
+                    <li key={i}><span className="pros-cons__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 21H4.8A1.8 1.8 0 0 1 3 19.2v-7.4A1.8 1.8 0 0 1 4.8 10H7v11Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/><path d="M7 10l4.2-6.2c.5-.8 1.7-.9 2.4-.2.4.4.6 1 .5 1.6L13.5 9H19a2 2 0 0 1 2 2.3l-1.2 7.2A3 3 0 0 1 16.8 21H7V10Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/></svg></span>{item}</li>
                   ))}
                 </ul>
               </div>
               <div className="pros-cons__divider" aria-hidden="true"></div>
               <div className="pros-cons__panel pros-cons__panel--cons">
-                <p className="pros-cons__badge">Mga Kahinaan <span aria-hidden="true">-</span></p>
+                <p className="pros-cons__badge"><span aria-hidden="true" className="pros-cons__badge-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M17 3h2.2A1.8 1.8 0 0 1 21 4.8v7.4a1.8 1.8 0 0 1-1.8 1.8H17V3Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/><path d="M17 14l-4.2 6.2c-.5.8-1.7.9-2.4.2-.4-.4-.6-1-.5-1.6l.6-3.8H5a2 2 0 0 1-2-2.3l1.2-7.2A3 3 0 0 1 7.2 3H17v11Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/></svg></span>Mga Kahinaan</p>
                 <ul className="pros-cons__list">
                   {["Sinusuportahan lamang ang nilalaman ng TikTok", "Kinakailangan ang koneksyon sa internet", "Hindi makapag-download ng mga pribadong video", "Hindi sinusuportahan ang pag-scrape ng profile", "Maaaring hindi available ang inalis na content"].map((item, i) => (
-                    <li key={i}><span className="pros-cons__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m18 6-12 12M6 6l12 12" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round"/></svg></span>{item}</li>
+                    <li key={i}><span className="pros-cons__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M17 3h2.2A1.8 1.8 0 0 1 21 4.8v7.4a1.8 1.8 0 0 1-1.8 1.8H17V3Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/><path d="M17 14l-4.2 6.2c-.5.8-1.7.9-2.4.2-.4-.4-.6-1-.5-1.6l.6-3.8H5a2 2 0 0 1-2-2.3l1.2-7.2A3 3 0 0 1 7.2 3H17v11Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/></svg></span>{item}</li>
                   ))}
                 </ul>
               </div>
