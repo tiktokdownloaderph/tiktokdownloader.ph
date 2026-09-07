@@ -33,7 +33,7 @@ const JSON_LD = {
       "description": "Alamin ang tungkol sa TikTok Downloader PH.",
       "inLanguage": "tl",
       "isPartOf": { "@id": "https://tiktokdownloader.ph/#website" },
-      "dateModified": "2026-09-05T14:08:24+08:00"
+      "dateModified": "2026-09-07T15:51:53+08:00"
     },
     {
       "@type": "BreadcrumbList",
