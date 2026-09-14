@@ -6788,3 +6788,409 @@ body main .home-features-white .home-feature-box__icon * {
     font-size: 15.5px !important;
   }
 }
+/* Download Photo and Slideshow page redesign, aligned with the homepage visual language */
+.download-photo-redesign {
+  overflow: hidden;
+  background: #121212;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.download-photo-redesign,
+.download-photo-redesign * {
+  box-sizing: border-box;
+}
+
+.download-photo-redesign > .container {
+  width: 100%;
+  max-width: 1120px;
+  padding-right: 18px;
+  padding-left: 18px;
+}
+
+.download-photo-redesign > .container > div:first-child {
+  width: 100vw;
+  margin: 0 calc(50% - 50vw) !important;
+  padding: clamp(42px, 7vw, 72px) max(18px, calc((100vw - 1040px) / 2)) clamp(34px, 5vw, 56px) !important;
+  overflow: hidden;
+  background: #121212;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.download-photo-redesign > .container > div:first-child .row {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.download-photo-redesign > .container > div:first-child .col,
+.download-photo-redesign > .container > div:first-child .form-clean,
+.download-photo-redesign > .container > div:first-child .form-floatingx {
+  min-width: 0;
+}
+
+.download-photo-redesign > .container > div:first-child .row[style*="max-width: 512px"] {
+  width: min(100%, 820px) !important;
+  max-width: 820px !important;
+}
+
+.download-photo-redesign > .container > div:first-child h1 {
+  max-width: 860px;
+  margin: 0 auto 18px !important;
+  overflow-wrap: anywhere;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  font-family: inherit !important;
+  font-size: 54px !important;
+  font-weight: 800 !important;
+  line-height: 1.12 !important;
+  letter-spacing: 0 !important;
+  text-wrap: balance;
+}
+
+.download-photo-redesign > .container > div:first-child h1 + p {
+  max-width: 780px;
+  margin: 0 auto 26px !important;
+  color: rgba(255, 255, 255, 0.74) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.74) !important;
+  font-size: 16px !important;
+  font-weight: 450 !important;
+  line-height: 1.75 !important;
+}
+
+.download-photo-redesign > .container > div:first-child .form-clean {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 164px;
+  align-items: stretch;
+  width: min(100%, 680px) !important;
+  max-width: 680px !important;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 24px 52px rgba(0, 0, 0, 0.22);
+}
+
+.download-photo-redesign > .container > div:first-child .form-floatingx {
+  position: relative;
+  width: 100%;
+  background: #fff;
+}
+
+.download-photo-redesign > .container > div:first-child .form-floatingx .form-label {
+  display: none !important;
+}
+
+.download-photo-redesign > .container > div:first-child .form-floatingx > button {
+  z-index: 2;
+  right: 14px !important;
+  top: 50% !important;
+  margin-top: 0 !important;
+  transform: translateY(-50%) !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: #1f2328 !important;
+  -webkit-text-fill-color: #1f2328 !important;
+}
+
+.download-photo-redesign > .container > div:first-child #tiktokUrl {
+  display: block;
+  width: 100% !important;
+  height: 56px !important;
+  min-height: 56px;
+  padding: 17px 106px 17px 24px !important;
+  border: 0 !important;
+  border-radius: 999px 0 0 999px !important;
+  background: #fff !important;
+  color: #1f2328 !important;
+  -webkit-text-fill-color: #1f2328 !important;
+  font-size: 15px !important;
+  font-weight: 450 !important;
+}
+
+.download-photo-redesign > .container > div:first-child #tiktokUrl::placeholder {
+  color: rgba(31, 35, 40, 0.5) !important;
+  -webkit-text-fill-color: rgba(31, 35, 40, 0.5) !important;
+  opacity: 1 !important;
+}
+
+.download-photo-redesign > .container > div:first-child .form-clean > .row,
+.download-photo-redesign > .container > div:first-child .form-clean > .row > .col {
+  height: 56px;
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+.download-photo-redesign > .container > div:first-child #loadVideos {
+  width: 100%;
+  height: 56px;
+  min-height: 56px;
+  border: 0 !important;
+  border-radius: 0 999px 999px 0 !important;
+  background: linear-gradient(135deg, #ff3b5c, #d91845) !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  box-shadow: none !important;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) {
+  margin-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) > p {
+  width: 100vw;
+  max-width: none;
+  margin: 0 calc(50% - 50vw) !important;
+  padding: 0 max(18px, calc((100vw - 960px) / 2)) 16px !important;
+  background: #fff;
+  color: #212529 !important;
+  -webkit-text-fill-color: #212529 !important;
+  font-size: 17px !important;
+  font-weight: 450 !important;
+  line-height: 1.85 !important;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) > p:first-child {
+  padding-top: clamp(50px, 6vw, 76px) !important;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) > p:nth-of-type(4) {
+  padding-bottom: clamp(48px, 6vw, 72px) !important;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) > p strong {
+  color: #212529 !important;
+  -webkit-text-fill-color: #212529 !important;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) > p a {
+  color: #c9163d !important;
+  -webkit-text-fill-color: #c9163d !important;
+  font-weight: 800;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) > section,
+.download-photo-redesign > .container > div:nth-child(2) > figure {
+  width: 100vw;
+  max-width: none;
+  margin: 0 calc(50% - 50vw) !important;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) > section {
+  padding: clamp(52px, 7vw, 82px) max(18px, calc((100vw - 980px) / 2)) !important;
+  border: 0 !important;
+  background: #121212;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) > section:nth-of-type(even):not(.home-faq):not(.closing-callout) {
+  background: #fff;
+  color: #212529;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) > figure {
+  padding: 0 max(18px, calc((100vw - 920px) / 2)) clamp(54px, 7vw, 82px);
+  background: #121212;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) > figure img {
+  display: block;
+  width: 100% !important;
+  max-width: 920px;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+}
+
+.download-photo-redesign > .container > div:nth-child(2) > section > * {
+  max-width: 940px;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) h2 {
+  margin-top: 0 !important;
+  margin-bottom: 20px !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  font-size: 40px !important;
+  font-weight: 800 !important;
+  line-height: 1.14 !important;
+  letter-spacing: 0 !important;
+  text-wrap: balance;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) h3 {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  font-size: 19px !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) section p,
+.download-photo-redesign > .container > div:nth-child(2) section li,
+.download-photo-redesign > .container > div:nth-child(2) section td,
+.download-photo-redesign > .container > div:nth-child(2) section th {
+  color: rgba(255, 255, 255, 0.74) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.74) !important;
+  font-size: 17px !important;
+  font-weight: 450 !important;
+  line-height: 1.78 !important;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) section strong {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) section a {
+  color: #ff5b76 !important;
+  -webkit-text-fill-color: #ff5b76 !important;
+  font-weight: 800;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) > section:nth-of-type(even):not(.home-faq):not(.closing-callout) h2,
+.download-photo-redesign > .container > div:nth-child(2) > section:nth-of-type(even):not(.home-faq):not(.closing-callout) h3,
+.download-photo-redesign > .container > div:nth-child(2) > section:nth-of-type(even):not(.home-faq):not(.closing-callout) p,
+.download-photo-redesign > .container > div:nth-child(2) > section:nth-of-type(even):not(.home-faq):not(.closing-callout) li,
+.download-photo-redesign > .container > div:nth-child(2) > section:nth-of-type(even):not(.home-faq):not(.closing-callout) td,
+.download-photo-redesign > .container > div:nth-child(2) > section:nth-of-type(even):not(.home-faq):not(.closing-callout) th,
+.download-photo-redesign > .container > div:nth-child(2) > section:nth-of-type(even):not(.home-faq):not(.closing-callout) strong {
+  color: #212529 !important;
+  -webkit-text-fill-color: #212529 !important;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) > section:nth-of-type(even):not(.home-faq):not(.closing-callout) a {
+  color: #c9163d !important;
+  -webkit-text-fill-color: #c9163d !important;
+}
+
+.download-photo-redesign > .container > div:nth-child(2) section div[style*="rgba(255,255,255,0.04)"],
+.download-photo-redesign > .container > div:nth-child(2) section div[style*="background:#212529"] {
+  border-color: rgba(255, 255, 255, 0.09) !important;
+  border-radius: 8px !important;
+  background: #1b1f23 !important;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.18);
+}
+
+.download-photo-redesign > .container > div:nth-child(2) > section:nth-of-type(even):not(.home-faq):not(.closing-callout) div[style*="rgba(255,255,255,0.04)"],
+.download-photo-redesign > .container > div:nth-child(2) > section:nth-of-type(even):not(.home-faq):not(.closing-callout) div[style*="background:#212529"] {
+  border-color: rgba(33, 37, 41, 0.12) !important;
+  background: #f5f6f7 !important;
+  box-shadow: 0 14px 34px rgba(33, 37, 41, 0.08);
+}
+
+.download-photo-redesign > .container > div:nth-child(2) table {
+  min-width: 680px;
+}
+
+.download-photo-redesign .home-faq {
+  padding-right: max(18px, calc((100vw - 820px) / 2)) !important;
+  padding-left: max(18px, calc((100vw - 820px) / 2)) !important;
+  background: #121212 !important;
+}
+
+.download-photo-redesign .home-faq .faq-list {
+  max-width: 760px !important;
+  margin: 0 auto !important;
+}
+
+.download-photo-redesign .closing-callout {
+  padding-right: max(18px, calc((100vw - 900px) / 2)) !important;
+  padding-left: max(18px, calc((100vw - 900px) / 2)) !important;
+  background: #1b1f23 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+@media (max-width: 767.98px) {
+  .download-photo-redesign > .container {
+    max-width: 100%;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .download-photo-redesign > .container > div:first-child {
+    padding: 48px 18px 42px !important;
+  }
+
+  .download-photo-redesign > .container > div:first-child h1 {
+    max-width: 100%;
+    font-size: 38px !important;
+    line-height: 1.12 !important;
+  }
+
+  .download-photo-redesign > .container > div:first-child h1 + p {
+    max-width: 100%;
+    font-size: 15px !important;
+  }
+
+  .download-photo-redesign > .container > div:first-child .form-clean {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .download-photo-redesign > .container > div:first-child .form-floatingx {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 999px;
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.24);
+  }
+
+  .download-photo-redesign > .container > div:first-child .form-floatingx > button {
+    display: none !important;
+  }
+
+  .download-photo-redesign > .container > div:first-child #tiktokUrl {
+    width: 100% !important;
+    padding-right: 18px !important;
+    padding-left: 18px !important;
+    border-radius: 999px !important;
+  }
+
+  .download-photo-redesign > .container > div:first-child .form-clean > .row,
+  .download-photo-redesign > .container > div:first-child .form-clean > .row > .col {
+    width: 100% !important;
+    height: auto;
+  }
+
+  .download-photo-redesign > .container > div:first-child #loadVideos {
+    width: 100% !important;
+    margin-top: 10px;
+    border-radius: 999px !important;
+  }
+
+  .download-photo-redesign > .container > div:nth-child(2) h2 {
+    font-size: 32px !important;
+  }
+
+  .download-photo-redesign > .container > div:nth-child(2) h3 {
+    font-size: 19px !important;
+  }
+
+  .download-photo-redesign > .container > div:nth-child(2) > p,
+  .download-photo-redesign > .container > div:nth-child(2) section p,
+  .download-photo-redesign > .container > div:nth-child(2) section li,
+  .download-photo-redesign > .container > div:nth-child(2) section td,
+  .download-photo-redesign > .container > div:nth-child(2) section th {
+    font-size: 15.5px !important;
+  }
+
+  .download-photo-redesign > .container > div:nth-child(2) > section {
+    padding-right: 18px !important;
+    padding-left: 18px !important;
+  }
+}
