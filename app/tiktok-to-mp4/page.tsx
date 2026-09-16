@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import ToolDownloader from "@/components/ToolDownloader";
 
-const pageTitle = "TikTok to MP4 Converter ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Mag-download ng TikTok MP4 HD (Libre)";
+const pageTitle = "TikTok to MP4 Converter - Mag-download ng TikTok MP4 HD (Libre)";
 const pageDescription = "Libreng TikTok to MP4 converter. I-paste ang link at mag-download ng TikTok MP4 video sa HD, walang watermark, walang app at walang sign-up. Gumagana sa Android, iPhone at PC.";
 const pageUrl = "https://tiktokdownloader.ph/tiktok-to-mp4";
 const imageUrl = "https://tiktokdownloader.ph/images/featuredimg8.webp";
-const publishedAt = "2026-09-15T13:55:35+08:00";
+const publishedAt = "2026-09-16T23:47:37+08:00";
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -204,7 +204,7 @@ function ProsConsLegalFaq() {
 export default function Page() {
   return (
     <>
-      <main><div className="container"><DownloaderBox /><div style={{ marginTop: 32, paddingBottom: 20 }}><IntroAndHowTo /><SupportAndQuality /><BenefitsAndFeatures /><DeviceAndProblems /><ProsConsLegalFaq /></div></div></main>
+      <main className="tiktok-mp4-redesign"><div className="container"><DownloaderBox /><div style={{ marginTop: 32, paddingBottom: 20 }}><IntroAndHowTo /><SupportAndQuality /><BenefitsAndFeatures /><DeviceAndProblems /><ProsConsLegalFaq /></div></div></main>
       <ToolDownloader />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
     </>
