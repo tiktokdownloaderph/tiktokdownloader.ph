@@ -16,7 +16,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main>
+    <main className="site-info-page site-info-page--contact">
       <div className="container" style={{ paddingTop: 36, paddingBottom: 56 }}>
         <h1 style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 6, textAlign: "center" }}>Makipag-ugnayan sa Amin</h1>
         <p className="text-center" style={{ color: "rgba(255,255,255,0.45)", fontSize: ".875rem", marginBottom: 32 }}>May tanong o mungkahi? Nandito kami para tumulong.</p>

@@ -34,7 +34,7 @@ const JSON_LD = {
       "isPartOf": {
         "@id": "https://tiktokdownloader.ph/#website"
       },
-      "dateModified": "2026-09-18T02:57:16+08:00"
+      "dateModified": "2026-09-21T13:35:20+08:00"
     },
     {
       "@type": "BreadcrumbList",
@@ -62,7 +62,7 @@ const MAIN_HTML = "<div class=\"container\" style=\"padding-top: 44px; padding-b
 export default function Page() {
   return (
     <>
-      <main dangerouslySetInnerHTML={{ __html: MAIN_HTML }} />
+      <main className="blog-redesign" dangerouslySetInnerHTML={{ __html: MAIN_HTML }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}

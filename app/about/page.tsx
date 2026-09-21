@@ -33,7 +33,7 @@ const JSON_LD = {
       "description": "Alamin ang tungkol sa TikTok Downloader PH.",
       "inLanguage": "tl",
       "isPartOf": { "@id": "https://tiktokdownloader.ph/#website" },
-      "dateModified": "2026-09-18T02:57:16+08:00"
+      "dateModified": "2026-09-21T13:35:20+08:00"
     },
     {
       "@type": "BreadcrumbList",
@@ -48,7 +48,7 @@ const JSON_LD = {
 
 export default function AboutPage() {
   return (
-    <main>
+    <main className="site-info-page site-info-page--about">
       <div className="container" style={{ paddingTop: 36, paddingBottom: 56 }}>
         <h1 style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 6, textAlign: "center" }}>Tungkol sa TikTok Downloader PH</h1>
         <p className="text-center" style={{ color: "rgba(255,255,255,0.45)", fontSize: ".875rem", marginBottom: 32 }}>Ang aming misyon, serbisyo, at pangako sa aming mga gumagamit</p>
