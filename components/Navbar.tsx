@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { LOGO_B64 } from "./logo";
 
 type NavLinkItem = { href: string; label: string; active?: boolean; muted?: boolean };
 
@@ -36,7 +35,7 @@ const mobileLinks: NavLinkItem[] = [
 function Brand() {
   return (
     <Link className="navbar-brand d-flex align-items-center" href="/" title="TikTok Downloader" translate="no" style={{ fontSize: 26 }}>
-      <img className="img-fluid" src={LOGO_B64} width={45} height={45} alt="TikTok Downloader Logo" style={{ marginRight: 2 }} fetchPriority="high" loading="eager" />
+      <img className="img-fluid" src="/tiktok-logo.png" width={45} height={45} alt="TikTok Downloader Logo" style={{ marginRight: 2 }} fetchPriority="high" loading="eager" decoding="async" />
       <span className="d-flex justify-content-center align-items-center" style={{ marginRight: "0 !important", fontWeight: 800 }}>
         TikTok Downloader
       </span>

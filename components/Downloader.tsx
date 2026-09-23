@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface MediaItem {
   url: string;
@@ -19,7 +19,7 @@ interface VideoInfo {
   audio?: MediaItem;
 }
 
-export default function Downloader() {
+export default function Downloader({ initialUrl = "", autoFocus = false }: { initialUrl?: string; autoFocus?: boolean }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -28,6 +28,10 @@ export default function Downloader() {
   const [downloadModal, setDownloadModal] = useState(false);
   const [progressText, setProgressText] = useState("Preparing download...");
   const [downloadProgress, setDownloadProgress] = useState(0);
+
+  useEffect(() => {
+    if (autoFocus) inputRef.current?.focus({ preventScroll: true });
+  }, [autoFocus]);
 
   async function pasteUrl() {
     try {
@@ -159,6 +163,7 @@ export default function Downloader() {
                         className="form-control-lg form-control"
                         id="tiktokUrl"
                         ref={inputRef}
+                        defaultValue={initialUrl}
                         required
                         name="url"
                         autoComplete="off"

@@ -5620,6 +5620,23 @@ body main .home-features-white .home-feature-box__icon * {
   outline-offset: 3px;
 }
 
+/* Keep mobile first paint focused on the hero; later content renders near the viewport. */
+@media (max-width: 767.98px) {
+  main > .container > .home-hero-redesign + div > section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 720px;
+  }
+
+  .site-footer {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 420px;
+  }
+
+  .home-hero-redesign .form-floatingx {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+  }
+}
+
 .site-footer__bottom {
   padding-top: 22px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
