@@ -5595,20 +5595,29 @@ body main .home-features-white .home-feature-box__icon * {
 }
 
 .site-footer__social-icon {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: inline-grid;
   place-items: center;
   border-radius: 50%;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.09);
-  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  color: #fff !important;
+  background: #2b3035;
+  text-decoration: none;
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.16);
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .site-footer__social-icon:hover {
-  transform: translateY(-2px);
-  color: #fff;
+  transform: translateY(-3px);
+  border-color: #ff3b5c;
+  color: #fff !important;
   background: #ff3b5c;
+}
+
+.site-footer__social-icon:focus-visible {
+  outline: 3px solid rgba(255, 59, 92, 0.4);
+  outline-offset: 3px;
 }
 
 .site-footer__bottom {
