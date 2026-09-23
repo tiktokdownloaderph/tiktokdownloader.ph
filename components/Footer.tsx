@@ -3,26 +3,17 @@ import Link from "next/link";
 const socials = [
   {
     label: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61594866052702",
     icon: <path d="M14 8.2h2.2V4.6A14 14 0 0 0 13 4.4c-3.2 0-5.4 1.9-5.4 5.5V13H4v4h3.6v9h4.4v-9h3.4l.6-4h-4V10.3c0-1.2.3-2.1 2-2.1Z" />,
   },
   {
     label: "X",
+    href: "https://x.com/tiktokdowload",
     icon: <path d="M18.7 4h3.1l-6.8 7.8L23 22h-6.2l-4.9-6.3L6.4 22H3.2l7.3-8.4L2.8 4h6.4l4.4 5.8L18.7 4Zm-1.1 16.2h1.7L8.3 5.7H6.5l11.1 14.5Z" />,
   },
   {
-    label: "Instagram",
-    icon: <><rect x="5" y="5" width="14" height="14" rx="4" /><circle cx="12" cy="12" r="3.2" /><circle cx="16.4" cy="7.7" r=".8" /></>,
-  },
-  {
-    label: "YouTube",
-    icon: <><path d="M21 8.3a3 3 0 0 0-2.1-2.1C17 5.7 12 5.7 12 5.7s-5 0-6.9.5A3 3 0 0 0 3 8.3a31 31 0 0 0-.5 5.7 31 31 0 0 0 .5 5.7 3 3 0 0 0 2.1 2.1c1.9.5 6.9.5 6.9.5s5 0 6.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-5.7 31 31 0 0 0-.5-5.7Z" /><path d="m10 16.8 5.2-2.8L10 11.2v5.6Z" fill="#fff" stroke="none" /></>,
-  },
-  {
-    label: "LinkedIn",
-    icon: <><path d="M6.8 10H3.3v11h3.5V10Z" /><path d="M5.1 8.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" /><path d="M10 10h3.3v1.5c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.7V21h-3.5v-5c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21H10V10Z" /></>,
-  },
-  {
     label: "Pinterest",
+    href: "https://www.pinterest.com/tiktokdownloaderph/",
     icon: <path d="M12.3 3.5C7.5 3.5 5 6.7 5 10.3c0 2.1 1.2 4.7 3.1 5.5.3.1.5.1.6-.3l.3-1.3c.1-.4 0-.5-.2-.8-.6-.7-1-1.6-1-2.9 0-3 2.3-5.8 6.1-5.8 3.3 0 5.2 2 5.2 4.9 0 3.7-1.9 6.3-4.3 6.3-1.3 0-2.2-1.1-1.9-2.3.4-1.5 1.1-3.1 1.1-4.2 0-1-.5-1.8-1.6-1.8-1.3 0-2.3 1.3-2.3 3.1 0 1.1.4 1.9.4 1.9l-1.6 6.7c-.3 1.2-.2 2.8-.1 3.9h.2c.6-.9 1.3-2.2 1.6-3.4l.8-3.1c.5.9 1.8 1.6 3.2 1.6 4.2 0 7.3-3.9 7.3-8.8 0-4.2-3.4-7.7-8.6-7.7Z" />,
   },
 ];
@@ -53,11 +44,19 @@ export default function Footer() {
             <h2 id="footer-social-title">Follow Us</h2>
             <div className="site-footer__social-list">
               {socials.map((social) => (
-                <span key={social.label} className="site-footer__social-icon" aria-label={social.label} title={social.label}>
+                <a
+                  key={social.label}
+                  className="site-footer__social-icon"
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Follow TikTok Downloader on ${social.label}`}
+                  title={social.label}
+                >
                   <svg viewBox="0 0 28 28" width="18" height="18" fill="currentColor" stroke="currentColor" strokeWidth="0" aria-hidden="true">
                     {social.icon}
                   </svg>
-                </span>
+                </a>
               ))}
             </div>
           </section>
