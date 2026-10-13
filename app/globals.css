@@ -4775,6 +4775,11 @@ main .accordion-body strong {
   font-weight: 800;
 }
 
+body main .home-formats-white .home-specs-table td:first-child strong {
+  color: #212529 !important;
+  -webkit-text-fill-color: #212529 !important;
+}
+
 .home-specs-table tbody tr:nth-child(even) td {
   background-color: rgba(33, 37, 41, 0.025);
 }
@@ -5392,6 +5397,8 @@ body main .home-specs-white .home-specs-table td {
 
 body main .home-specs-white .home-specs-table th,
 body main .home-specs-white .home-specs-table th *,
+body main .home-features-white .home-specs-table th,
+body main .home-features-white .home-specs-table th *,
 body main .home-features-white .home-feature-box__icon,
 body main .home-features-white .home-feature-box__icon * {
   color: #fff !important;

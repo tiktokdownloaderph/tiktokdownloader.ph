@@ -4,7 +4,7 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      allow: "/",
+      allow: ["/", "/_next/image"],
       disallow: ["/api/", "/download/", "/downloads/", "/download?", "/*?url=", "/*?link=", "/*?q=", "/*?s=", "/*?download=", "/*?format="],
     },
     sitemap: "https://tiktokdownloader.ph/sitemap.xml",
