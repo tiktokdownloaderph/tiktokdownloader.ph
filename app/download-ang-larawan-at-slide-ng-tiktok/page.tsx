@@ -1,3 +1,4 @@
+import { SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 import ToolDownloader from "@/components/ToolDownloader";
 
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     description: "Libreng TikTok photo at slideshow downloader. I-save ang bawat larawan sa HD JPG, ang buong slideshow bilang MP4 na may musika, o ang audio bilang MP3 - walang watermark, walang app.",
     type: "article",
     url: "https://tiktokdownloader.ph/download-ang-larawan-at-slide-ng-tiktok",
-    siteName: "TikTok Downloader",
+    siteName: SITE_NAME,
     publishedTime: "2026-09-28T04:20:13+08:00",
     modifiedTime: "2026-09-28T04:20:13+08:00",
     images: [{ url: "https://tiktokdownloader.ph/images/featuredimg6.webp", width: 1200, height: 630 }],
@@ -29,9 +30,9 @@ const JSON_LD = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://tiktokdownloader.ph/#website",
-      "url": "https://tiktokdownloader.ph/",
-      "name": "TikTok Downloader",
+      "@id": "https://tiktokdownloader.ph#website",
+      "url": "https://tiktokdownloader.ph",
+      "name": SITE_NAME,
       "description": "TikTok downloader na walang watermark, mabilis, at libre."
     },
     {
@@ -40,34 +41,10 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/download-ang-larawan-at-slide-ng-tiktok",
       "name": "TikTok Photo Downloader — I-download ang TikTok Slideshow HD (Walang Watermark)",
       "description": "Libreng TikTok photo at slideshow downloader. I-save ang bawat larawan sa HD JPG, ang buong slideshow bilang MP4 na may musika, o ang audio bilang MP3 — walang watermark, walang app.",
-      "inLanguage": "tl",
+      "inLanguage": "fil-PH",
       "image": "https://tiktokdownloader.ph/images/featuredimg6.webp",
       "isPartOf": {
-        "@id": "https://tiktokdownloader.ph/#website"
-      }
-    },
-    {
-      "@type": "Article",
-      "@id": "https://tiktokdownloader.ph/download-ang-larawan-at-slide-ng-tiktok#article",
-      "headline": "TikTok Photo Downloader — I-download ang TikTok Slideshow HD (Walang Watermark)",
-      "description": "Libreng TikTok photo at slideshow downloader. I-save ang bawat larawan sa HD JPG, ang buong slideshow bilang MP4 na may musika, o ang audio bilang MP3 — walang watermark, walang app.",
-      "inLanguage": "tl",
-      "url": "https://tiktokdownloader.ph/download-ang-larawan-at-slide-ng-tiktok",
-      "image": "https://tiktokdownloader.ph/images/featuredimg6.webp",
-      "author": {
-        "@type": "Organization",
-        "name": "TikTok Downloader PH",
-        "url": "https://tiktokdownloader.ph/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "TikTok Downloader PH",
-        "url": "https://tiktokdownloader.ph/"
-      },
-      "datePublished": "2026-09-28T04:20:13+08:00",
-      "dateModified": "2026-09-28T04:20:13+08:00",
-      "isPartOf": {
-        "@id": "https://tiktokdownloader.ph/download-ang-larawan-at-slide-ng-tiktok#webpage"
+        "@id": "https://tiktokdownloader.ph#website"
       }
     },
     {
@@ -85,167 +62,6 @@ const JSON_LD = {
       }
     },
     {
-      "@type": "HowTo",
-      "@id": "https://tiktokdownloader.ph/download-ang-larawan-at-slide-ng-tiktok#howto",
-      "name": "Paano Mag-download ng TikTok Photos at Slideshow",
-      "description": "Sundan ang tatlong hakbang para i-save ang TikTok photos, slideshow MP4, o audio MP3 gamit ang browser.",
-      "totalTime": "PT1M",
-      "estimatedCost": {
-        "@type": "MonetaryAmount",
-        "currency": "PHP",
-        "value": "0"
-      },
-      "image": "https://tiktokdownloader.ph/images/featuredimg6.webp",
-      "tool": [
-        {
-          "@type": "HowToTool",
-          "name": "TikTok Downloader (tiktokdownloader.ph)"
-        },
-        {
-          "@type": "HowToTool",
-          "name": "Web browser"
-        }
-      ],
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "Kopyahin ang link ng photo post",
-          "text": "Buksan ang TikTok app o tiktok.com, hanapin ang slideshow o photo post, i-tap ang Share, at piliin ang Copy link."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "I-paste ang link dito",
-          "text": "Bumalik sa page na ito, i-paste ang link sa input box, at i-tap ang Load Photos."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "Piliin kung ano ang ida-download",
-          "text": "Piliin ang Download Photo HD, Download Video MP4, o Download Audio MP3 depende sa kailangan mo."
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://tiktokdownloader.ph/download-ang-larawan-at-slide-ng-tiktok#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Paano ko i-download ang isang TikTok slideshow?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Kopyahin ang link ng photo post, i-paste ito sa box sa itaas, i-tap ang Load Photos, at piliin ang JPG, MP4, o MP3 na opsyon."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Puwede ko bang i-download ang lahat ng larawan sa isang slideshow?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo. Ipinapakita ng tool ang bawat larawan sa carousel — hanggang 35 slide — at puwede mong i-save ang alinman o lahat ng ito."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "May watermark ba ang mga na-download na larawan?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Wala. Malinis ang mga larawan — walang TikTok logo at walang @username overlay."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Anong kalidad ang mga larawan?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ang pinakamataas na available mula sa orihinal na post, kadalasan ay 1080×1920 JPG."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Puwede bang gawing video ang buong slideshow?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo. Piliin ang **Download Video MP4** at pagsasama-samahin ang lahat ng slide sa isang video na may kasabay na musika, tulad ng orihinal sa TikTok."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Puwede ko bang kunin ang musika lang?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo. Piliin ang **Download Audio MP3** para makuha ang background sound bilang audio file."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Libre ba ito?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo, 100% libre. Walang bayad, walang subscription, at walang hidden na limitasyon."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Kailangan ba ng app o account?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Hindi. Online tool ito na gumagana sa browser. Walang installation, walang registration, at walang TikTok login."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Puwede ba sa video mula sa private account?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Hindi. Public na post lang ang maaaring i-access, para sa privacy ng mga user."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Gumagana ba ito sa iPhone?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo. Gamitin ang Safari, at i-save ang larawan sa Photos o sa Files app."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "May limitasyon ba sa dami ng download?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Wala. Walang daily limit at walang queue."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Bakit ang unang larawan lang ang lumalabas?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Malamang ay video link ang na-paste, hindi photo post. Tingnan kung may `/photo/` ang URL."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Ligtas ba ang tool na ito?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo. Hindi ito humihingi ng password, hindi nag-iinstall ng software, at hindi nag-iimbak ng iyong mga file."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Puwede ko bang gamitin ang larawan sa sarili kong post?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Para sa personal na paggamit, oo. Para sa pag-repost o komersyal na paggamit, kailangan mo ng pahintulot mula sa creator."
-          }
-        }
-      ]
-    },
-    {
       "@type": "BreadcrumbList",
       "@id": "https://tiktokdownloader.ph/download-ang-larawan-at-slide-ng-tiktok#breadcrumb",
       "itemListElement": [
@@ -253,7 +69,7 @@ const JSON_LD = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://tiktokdownloader.ph/"
+          "item": "https://tiktokdownloader.ph"
         },
         {
           "@type": "ListItem",

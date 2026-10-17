@@ -1,3 +1,4 @@
+import { SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 import Image from "next/image";
 import DeferredDownloader from "@/components/DeferredDownloader";
@@ -7,44 +8,33 @@ const JSON_LD = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://tiktokdownloader.ph/#website",
-      "url": "https://tiktokdownloader.ph/",
-      "name": "TikTok Downloader",
+      "@id": "https://tiktokdownloader.ph#website",
+      "url": "https://tiktokdownloader.ph",
+      "name": SITE_NAME,
       "description": "TikTok downloader na walang watermark, mabilis, at libre. I-convert sa MP3 na may walang limitasyong pag-download."
     },
     {
       "@type": "WebPage",
-      "@id": "https://tiktokdownloader.ph/#webpage",
-      "url": "https://tiktokdownloader.ph/",
+      "@id": "https://tiktokdownloader.ph#webpage",
+      "url": "https://tiktokdownloader.ph",
       "name": "TikTok Downloader na Walang Watermark - HD at Mabilis",
       "description": "Mag-download ng TikTok video nang walang watermark sa HD. Libre at mabilis, walang app o login. Gumagana sa Android, iPhone, PC at Mac.",
-      "inLanguage": "tl",
-      "isPartOf": { "@id": "https://tiktokdownloader.ph/#website" },
-      "about": { "@id": "https://tiktokdownloader.ph/#app" }
-    },
-    {
-      "@type": "Article",
-      "@id": "https://tiktokdownloader.ph/#article",
-      "headline": "TikTok Downloader na Walang Watermark - HD at Mabilis",
-      "description": "Mag-download ng TikTok video nang walang watermark sa HD. Libre at mabilis, walang app o login. Gumagana sa Android, iPhone, PC at Mac.",
-      "inLanguage": "tl",
-      "url": "https://tiktokdownloader.ph/",
-      "author": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
-      "publisher": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" },
-      "datePublished": "2026-09-28T04:20:13+08:00",
-      "dateModified": "2026-09-28T04:20:13+08:00",
-      "isPartOf": { "@id": "https://tiktokdownloader.ph/#webpage" }
+      "inLanguage": "fil-PH",
+      "datePublished": "2026-10-17T17:18:11+08:00",
+      "dateModified": "2026-10-17T17:18:11+08:00",
+      "isPartOf": { "@id": "https://tiktokdownloader.ph#website" },
+      "about": { "@id": "https://tiktokdownloader.ph#app" }
     },
     {
       "@type": "Organization",
-      "@id": "https://tiktokdownloader.ph/#organization",
-      "name": "TikTok Downloader PH",
-      "url": "https://tiktokdownloader.ph/",
+      "@id": "https://tiktokdownloader.ph#organization",
+      "name": SITE_NAME,
+      "url": "https://tiktokdownloader.ph",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://tiktokdownloader.ph/favicon.png",
-        "width": 180,
-        "height": 180
+        "url": "https://tiktokdownloader.ph/icon-192.png",
+        "width": 192,
+        "height": 192
       },
       "contactPoint": {
         "@type": "ContactPoint",
@@ -54,58 +44,28 @@ const JSON_LD = {
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://tiktokdownloader.ph/#app",
-      "name": "TikTok Downloader",
-      "url": "https://tiktokdownloader.ph/",
+      "@id": "https://tiktokdownloader.ph#app",
+      "name": SITE_NAME,
+      "url": "https://tiktokdownloader.ph",
       "applicationCategory": "MultimediaApplication",
       "applicationSubCategory": "VideoDownloader",
       "operatingSystem": "Android, iOS, Windows, macOS, Web Browser",
       "browserRequirements": "Requires JavaScript. Works in Chrome, Firefox, Edge, Safari.",
       "description": "Libreng TikTok video downloader na nagbibigay-daan sa pag-save ng mga TikTok video nang walang watermark sa HD MP4 o MP3 na format. Walang login, walang app, walang limitasyon.",
       "featureList": [
-        "Download TikTok videos without watermark",
+        "Mag-download ng TikTok video nang walang watermark",
         "HD MP4 hanggang 1080p Full HD, depende sa orihinal",
-        "MP3 audio extraction",
-        "No registration required",
-        "No daily download limits",
-        "Works on all devices"
+        "Pag-extract ng MP3 audio",
+        "Walang kailangang pagpaparehistro",
+        "Walang pang-araw-araw na limitasyon",
+        "Gumagana sa lahat ng device"
       ],
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PHP" },
-      "isPartOf": { "@id": "https://tiktokdownloader.ph/#website" }
-    },
-    {
-      "@type": "HowTo",
-      "@id": "https://tiktokdownloader.ph/#howto",
-      "name": "Paano Mag-download ng TikTok Video nang Walang Watermark",
-      "description": "Tatlong hakbang lang: kopyahin ang link, i-paste sa downloader, at i-download ang MP4 na walang watermark.",
-      "totalTime": "PT1M",
-      "estimatedCost": { "@type": "MonetaryAmount", "currency": "PHP", "value": "0" },
-      "tool": [
-        { "@type": "HowToTool", "name": "TikTok Downloader (tiktokdownloader.ph)" },
-        { "@type": "HowToTool", "name": "Web browser (Chrome, Firefox, Edge, Safari)" }
-      ],
-      "step": [
-        { "@type": "HowToStep", "position": 1, "name": "Kopyahin ang Link ng Video", "text": "Buksan ang TikTok sa iyong device. Hanapin ang video na gusto mong i-download, i-tap ang Ibahagi (share icon), at piliin ang 'Copy Link' upang makopya ang URL ng video.", "url": "https://tiktokdownloader.ph/#step1" },
-        { "@type": "HowToStep", "position": 2, "name": "I-paste ang Link sa TikTok Downloader", "text": "Pumunta sa tiktokdownloader.ph at i-paste ang kinopyang TikTok URL sa input box. I-click ang 'Hanapin ang Video' button at hintaying ma-load ang video.", "url": "https://tiktokdownloader.ph/#step2" },
-        { "@type": "HowToStep", "position": 3, "name": "I-download ang Video o Audio", "text": "Piliin ang gusto mong format: 'Download Video HD MP4' para sa walang watermark na video, o 'Download Audio MP3' para sa audio lamang. I-click ang button at awtomatikong mase-save ang file sa iyong device.", "url": "https://tiktokdownloader.ph/#step3" }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://tiktokdownloader.ph/#faq",
-      "mainEntity": [
-        { "@type": "Question", "name": "Libre ba ang TikTok Downloader?", "acceptedAnswer": { "@type": "Answer", "text": "Oo, ang TikTokDownloader.ph ay 100% libre na gamitin. Walang nakatagong bayad, subscription, o kinakailangang account. Maaari kang mag-download ng walang limitasyong bilang ng mga video nang walang bayad." } },
-        { "@type": "Question", "name": "Paano mag-download ng TikTok video nang walang watermark?", "acceptedAnswer": { "@type": "Answer", "text": "Kopyahin ang link ng TikTok video sa pamamagitan ng Share > Copy Link. Pumunta sa TikTokDownloader.ph at i-paste ang link sa input box. I-click ang Hanapin ang Video, pagkatapos ay piliin ang 'Download Video HD MP4' para makuha ang video nang walang watermark nang libre." } },
-        { "@type": "Question", "name": "Anong mga format ang sinusuportahan ng TikTok Downloader?", "acceptedAnswer": { "@type": "Answer", "text": "Sinusuportahan ng TikTokDownloader.ph ang HD MP4 (walang watermark), standard MP4 (may watermark), at MP3 (audio only). Ang lahat ng format ay available nang libre at walang limitasyon sa laki ng file." } },
-        { "@type": "Question", "name": "Gumagana ba ang TikTok Downloader sa iPhone at Android?", "acceptedAnswer": { "@type": "Answer", "text": "Oo, gumagana ang TikTokDownloader.ph sa lahat ng device: iPhone, Android, Windows PC, at Mac. Web-based ang tool kaya walang kailangang i-install na app. Buksan lang ang aming website sa iyong browser at simulan na mag-download." } },
-        { "@type": "Question", "name": "Mayroon bang limitasyon sa bilang ng pag-download?", "acceptedAnswer": { "@type": "Answer", "text": "Wala. Maaari kang mag-download ng maraming TikTok video hangga't gusto mo nang walang pang-araw-araw na limitasyon, walang rate limit, at walang kinakailangang pag-sign up." } },
-        { "@type": "Question", "name": "Paano mag-download ng TikTok video sa PC o laptop?", "acceptedAnswer": { "@type": "Answer", "text": "Buksan ang TikTok sa iyong browser, i-click ang Share icon ng video, at kopyahin ang link. Pumunta sa TikTokDownloader.ph sa isang bagong tab, i-paste ang link, at i-click ang Hanapin ang Video. Pipiliin mo ang format (HD MP4 o MP3) at awtomatikong mae-save ang file sa Downloads folder ng iyong PC." } },
-        { "@type": "Question", "name": "Maaari bang i-convert ang TikTok video sa MP3?", "acceptedAnswer": { "@type": "Answer", "text": "Oo. Pagkatapos mag-load ng TikTok video sa TikTokDownloader.ph, makikita mo ang 'Download Audio MP3' button. I-click ito para makuha ang audio track ng video sa MP3 format nang libre at walang kinakailangang pag-install ng software." } }
-      ]
+      "isPartOf": { "@id": "https://tiktokdownloader.ph#website" }
     },
     {
       "@type": "ItemList",
-      "@id": "https://tiktokdownloader.ph/#articles",
+      "@id": "https://tiktokdownloader.ph#articles",
       "name": "Mga Gabay at Artikulo - TikTok Downloader Blog",
       "description": "Mga step-by-step na gabay at tips para sa pag-download ng TikTok videos.",
       "numberOfItems": 8,
@@ -127,20 +87,21 @@ export const metadata: Metadata = {
   title: "TikTok Downloader na Walang Watermark - HD at Mabilis",
   description: "Mag-download ng TikTok video nang walang watermark sa HD. Libre at mabilis, walang app o login. Gumagana sa Android, iPhone, PC at Mac.",
   robots: { index: true, follow: true },
-  alternates: { canonical: "https://tiktokdownloader.ph/" },
+  alternates: { canonical: "/" },
   openGraph: {
-    siteName: "TikTok Downloader",
+    siteName: SITE_NAME,
     title: "TikTok Downloader na Walang Watermark - HD at Mabilis",
     description: "Mag-download ng TikTok video nang walang watermark sa HD. Libre at mabilis, walang app o login. Gumagana sa Android, iPhone, PC at Mac.",
     type: "website",
-    url: "https://tiktokdownloader.ph/",
-    images: [{ url: "https://tiktokdownloader.ph/images/homepage-og-1200x630.webp", width: 1200, height: 630 }],
+    url: "/",
+    locale: "fil_PH",
+    images: [{ url: "https://tiktokdownloader.ph/images/homepage-og-1200x630.webp", width: 1200, height: 630, alt: "TikTok Downloader na walang watermark" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "TikTok Downloader na Walang Watermark - HD at Mabilis",
     description: "Mag-download ng TikTok video nang walang watermark sa HD. Libre at mabilis, walang app o login. Gumagana sa Android, iPhone, PC at Mac.",
-    images: ["https://tiktokdownloader.ph/images/homepage-og-1200x630.webp"],
+    images: [{ url: "https://tiktokdownloader.ph/images/homepage-og-1200x630.webp", alt: "TikTok Downloader na walang watermark" }],
   },
   other: {
     "google-site-verification": "hnAYVvigNOIi0f_kuc4Vp21YY9U7B49_ndP9cuSIiI0",
@@ -506,7 +467,7 @@ function HomeFaq() {
   ];
 
   return (
-    <div className="home-faq" itemScope itemType="https://schema.org/FAQPage">
+    <div className="home-faq">
       <h2 className="text-center">Mga Madalas Itanong</h2>
       <p className="home-faq__intro">Hanapin ang mabilis na sagot tungkol sa TikTok Downloader, mga format, seguridad, at paggamit sa iba&apos;t ibang device.</p>
       <div className="faq-list">
@@ -520,10 +481,10 @@ function HomeFaq() {
 
 function FaqItem({ question, answer }: { question: string; answer: React.ReactNode }) {
   return (
-    <details className="faq-item" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-      <summary itemProp="name">{question}</summary>
-      <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-        <div itemProp="text">{answer}</div>
+    <details className="faq-item">
+      <summary>{question}</summary>
+      <div>
+        <div>{answer}</div>
       </div>
     </details>
   );

@@ -1,3 +1,4 @@
+import { SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 import ToolDownloader from "@/components/ToolDownloader";
 
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     description: "Tingnan at i-save ang mga TikTok story nang anonymous online nang libre, sa UHD quality.",
     type: "article",
     url: "https://tiktokdownloader.ph/download-tiktok-stories",
-    siteName: "TikTok Downloader",
+    siteName: SITE_NAME,
     publishedTime: "2026-09-28T04:20:13+08:00",
     modifiedTime: "2026-09-28T04:20:13+08:00",
     images: [{ url: "https://tiktokdownloader.ph/images/featuredimg5.webp", width: 1200, height: 630 }],
@@ -29,9 +30,9 @@ const JSON_LD = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://tiktokdownloader.ph/#website",
-      "url": "https://tiktokdownloader.ph/",
-      "name": "TikTok Downloader",
+      "@id": "https://tiktokdownloader.ph#website",
+      "url": "https://tiktokdownloader.ph",
+      "name": SITE_NAME,
       "description": "TikTok downloader na walang watermark, mabilis, at libre. I-convert sa MP3 na may walang limitasyong pag-download."
     },
     {
@@ -40,34 +41,10 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/download-tiktok-stories",
       "name": "Manood at mag-download ng mga TikTok Story",
       "description": "Tingnan at i-save ang mga TikTok story nang anonymous online nang libre, sa UHD quality.",
-      "inLanguage": "tl",
+      "inLanguage": "fil-PH",
       "image": "https://tiktokdownloader.ph/images/featuredimg5.webp",
       "isPartOf": {
-        "@id": "https://tiktokdownloader.ph/#website"
-      }
-    },
-    {
-      "@type": "Article",
-      "@id": "https://tiktokdownloader.ph/download-tiktok-stories#article",
-      "headline": "Manood at mag-download ng mga TikTok Story",
-      "description": "Tingnan at i-save ang mga TikTok story nang anonymous online nang libre, sa UHD quality.",
-      "inLanguage": "tl",
-      "url": "https://tiktokdownloader.ph/download-tiktok-stories",
-      "image": "https://tiktokdownloader.ph/images/featuredimg5.webp",
-      "author": {
-        "@type": "Organization",
-        "name": "TikTok Downloader PH",
-        "url": "https://tiktokdownloader.ph/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "TikTok Downloader PH",
-        "url": "https://tiktokdownloader.ph/"
-      },
-      "datePublished": "2026-09-28T04:20:13+08:00",
-      "dateModified": "2026-09-28T04:20:13+08:00",
-      "isPartOf": {
-        "@id": "https://tiktokdownloader.ph/download-tiktok-stories#webpage"
+        "@id": "https://tiktokdownloader.ph#website"
       }
     },
     {
@@ -85,139 +62,10 @@ const JSON_LD = {
       }
     },
     {
-      "@type": "HowTo",
-      "@id": "https://tiktokdownloader.ph/download-tiktok-stories#howto",
-      "name": "Paano Mag-download ng TikTok Stories",
-      "description": "Sundan ang tatlong hakbang na ito para i-save ang anumang TikTok story sa mataas na kalidad nang libre at walang watermark.",
-      "totalTime": "PT2M",
-      "estimatedCost": {
-        "@type": "MonetaryAmount",
-        "currency": "PHP",
-        "value": "0"
-      },
-      "image": "https://tiktokdownloader.ph/images/featuredimg5.webp",
-      "tool": [
-        {
-          "@type": "HowToTool",
-          "name": "TikTok Downloader (tiktokdownloader.ph)"
-        },
-        {
-          "@type": "HowToTool",
-          "name": "Web browser (Chrome, Firefox, Edge, Safari)"
-        }
-      ],
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "Kopyahin ang Link ng TikTok Story",
-          "text": "Buksan ang TikTok app o website, i-play ang story na gusto mo, i-tap ang Share button, at kopyahin ang link ng story."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "I-paste ang Link",
-          "text": "I-paste ang kinopyang URL ng TikTok Story sa input box sa pahinang ito at hintaying makuha ng system ang impormasyon ng Story."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "Mag-download ng Story",
-          "text": "I-click ang Download button at piliin ang format. Mase-save ang iyong Story file sa iyong device sa loob ng ilang segundo."
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://tiktokdownloader.ph/download-tiktok-stories#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Paano mag-download ng TikTok story gamit ang username?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Maaari mong i-download ang mga TikTok story gamit ang username sa pamamagitan lamang ng paglalagay ng username sa aming tool. Kukunin nito agad ang mga available na kwento, na magbibigay-daan sa iyong i-download ang mga ito sa kalidad ng HD nang walang watermark."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Maaari ko bang tingnan ang mga TikTok story nang hindi nagpapakilala?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo, ang aming tool ay gumagana bilang isang hindi nagpapakilalang TikTok story viewer. Maaari kang manood at mag-download ng mga kwento nang hindi nagla-log in o nag-aabiso sa user."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Libre bang gamitin ang TikTok story downloader na ito?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo, ang aming TikTok story downloader ay libre. Walang mga nakatagong singil, subscription, o limitasyon."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Maaari ba akong mag-download ng mga TikTok story nang walang watermark?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Talaga. Maaari kang mag-download ng mga TikTok story sa kalidad ng HD nang walang watermark gamit ang aming online tool."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Kailangan ko bang mag-install ng anumang app para mag-download ng mga TikTok story?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Hindi, hindi mo kailangang mag-install ng anumang app o software. Ang aming tool ay gumagana nang buo online sa lahat ng device."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Sinusuportahan ba ng tool na ito ang pag-download ng TikTok story sa pamamagitan ng link?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo, maaari mong i-paste ang link ng TikTok story sa input box at agad na i-download ang story."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Maaari ba akong mag-download ng mga video ng TikTok story sa HD na kalidad?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo, lahat ng story ay maaaring i-download sa high-definition (HD) na kalidad na may malinaw na video at audio."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Posible bang mag-download ng mga TikTok story nang hindi nagpapakilala?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo, maaari kang mag-download ng mga TikTok story nang hindi nagpapakilala nang hindi nagla-log in o inilalantad ang iyong pagkakakilanlan."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Gumagana ba ang TikTok story downloader na ito sa mobile at PC?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo, ang aming tool ay ganap na tugma sa mga mobile phone, tablet, at desktop device."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Maaari ba akong mag-download ng mga pribadong TikTok story?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Hindi, sinusuportahan lamang ng aming tool ang mga pampublikong TikTok story. Hindi maaaring ma-access o ma-download ang pribado o pinaghihigpitang nilalaman."
-          }
-        }
-      ]
-    },
-    {
       "@type": "BreadcrumbList",
       "@id": "https://tiktokdownloader.ph/download-tiktok-stories#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tiktokdownloader.ph/" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tiktokdownloader.ph" },
         { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://tiktokdownloader.ph/blog" },
         { "@type": "ListItem", "position": 3, "name": "Manood at mag-download ng mga TikTok Story", "item": "https://tiktokdownloader.ph/download-tiktok-stories" }
       ]

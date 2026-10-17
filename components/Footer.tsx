@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SITE_NAME } from "@/lib/site";
 
 const socials = [
   {
@@ -27,7 +28,7 @@ export default function Footer() {
       <div className="container site-footer__inner">
         <div className="site-footer__grid">
           <section className="site-footer__brand" aria-labelledby="footer-brand-title">
-            <h2 id="footer-brand-title">TikTok Downloader</h2>
+            <h2 id="footer-brand-title">{SITE_NAME}</h2>
             <p>Libreng online tool para mag-save ng TikTok video nang walang watermark sa MP4 o MP3, direkta sa browser.</p>
           </section>
 
@@ -67,7 +68,7 @@ export default function Footer() {
         </div>
 
         <div className="site-footer__bottom">
-          <p>&copy; 2026 TikTok Downloader. All rights reserved.</p>
+          <p>&copy; 2026 {SITE_NAME}. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -1,3 +1,4 @@
+import { SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     description: "Mga step-by-step na gabay, tips, at tricks para sa pag-download ng TikTok videos nang walang watermark sa Android, iPhone, at PC.",
     type: "website",
     url: "https://tiktokdownloader.ph/blog",
-    siteName: "TikTok Downloader",
+    siteName: SITE_NAME,
     images: [{ url: "https://tiktokdownloader.ph/images/tiktok-downloader.webp", width: 1200, height: 630 }],
   },
   twitter: {
@@ -30,9 +31,9 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/blog",
       "name": "Blog - TikTok Downloader PH",
       "description": "Mga tips at gabay tungkol sa TikTok downloading.",
-      "inLanguage": "tl",
+      "inLanguage": "fil-PH",
       "isPartOf": {
-        "@id": "https://tiktokdownloader.ph/#website"
+        "@id": "https://tiktokdownloader.ph#website"
       },
       "dateModified": "2026-09-28T04:20:13+08:00"
     },
@@ -44,7 +45,7 @@ const JSON_LD = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://tiktokdownloader.ph/"
+          "item": "https://tiktokdownloader.ph"
         },
         {
           "@type": "ListItem",

@@ -1,3 +1,4 @@
+import { SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 import ToolDownloader from "@/components/ToolDownloader";
 
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     description: "Mag-download ng TikTok video sa Android nang walang watermark sa Full HD - walang app, walang APK, direkta sa Chrome o Samsung Internet.",
     type: "article",
     url: "https://tiktokdownloader.ph/download-tiktok-videos-sa-android",
-    siteName: "TikTok Downloader",
+    siteName: SITE_NAME,
     publishedTime: "2026-09-28T04:20:13+08:00",
     modifiedTime: "2026-09-28T04:20:13+08:00",
     images: [{ url: "https://tiktokdownloader.ph/images/featuredimg2.webp", width: 1200, height: 630 }],
@@ -29,9 +30,9 @@ const JSON_LD = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://tiktokdownloader.ph/#website",
-      "url": "https://tiktokdownloader.ph/",
-      "name": "TikTok Downloader",
+      "@id": "https://tiktokdownloader.ph#website",
+      "url": "https://tiktokdownloader.ph",
+      "name": SITE_NAME,
       "description": "TikTok downloader na walang watermark, mabilis, at libre."
     },
     {
@@ -40,161 +41,17 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/download-tiktok-videos-sa-android",
       "name": "Mag-download ng mga TikTok Video sa Android",
       "description": "Mag-download ng TikTok video sa Android nang walang watermark sa Full HD - walang app, walang APK, direkta sa Chrome o Samsung Internet.",
-      "inLanguage": "tl",
+      "inLanguage": "fil-PH",
       "image": "https://tiktokdownloader.ph/images/featuredimg2.webp",
       "isPartOf": {
-        "@id": "https://tiktokdownloader.ph/#website"
+        "@id": "https://tiktokdownloader.ph#website"
       }
-    },
-    {
-      "@type": "Article",
-      "@id": "https://tiktokdownloader.ph/download-tiktok-videos-sa-android#article",
-      "headline": "Mag-download ng mga TikTok Video sa Android",
-      "description": "Mag-download ng TikTok video sa Android nang walang watermark sa Full HD - walang app, walang APK, direkta sa Chrome o Samsung Internet.",
-      "inLanguage": "tl",
-      "url": "https://tiktokdownloader.ph/download-tiktok-videos-sa-android",
-      "image": "https://tiktokdownloader.ph/images/featuredimg2.webp",
-      "author": {
-        "@type": "Organization",
-        "name": "TikTok Downloader PH",
-        "url": "https://tiktokdownloader.ph/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "TikTok Downloader PH",
-        "url": "https://tiktokdownloader.ph/"
-      },
-      "datePublished": "2026-09-28T04:20:13+08:00",
-      "dateModified": "2026-09-28T04:20:13+08:00"
-    },
-    {
-      "@type": "HowTo",
-      "@id": "https://tiktokdownloader.ph/download-tiktok-videos-sa-android#howto",
-      "name": "Paano Mag-download ng TikTok Video sa Android",
-      "description": "Tatlong hakbang para i-save ang anumang TikTok video sa iyong Android nang libre at walang watermark.",
-      "totalTime": "PT2M",
-      "estimatedCost": {
-        "@type": "MonetaryAmount",
-        "currency": "PHP",
-        "value": "0"
-      },
-      "tool": [
-        {
-          "@type": "HowToTool",
-          "name": "TikTok Downloader (tiktokdownloader.ph)"
-        },
-        {
-          "@type": "HowToTool",
-          "name": "Android browser (Chrome, Samsung Internet, Opera, Firefox)"
-        }
-      ],
-      "image": "https://tiktokdownloader.ph/images/featuredimg2.webp",
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "Kopyahin ang Link mula sa TikTok App",
-          "text": "Buksan ang TikTok app sa iyong Android device at mag-navigate sa video na nais mong i-save. Pindutin ang Share icon at piliin ang 'Copy Link'. Kapag nakita mo na ang kumpirmasyon ng 'Link Copied', handa ka na para sa susunod na hakbang.",
-          "image": "https://tiktokdownloader.ph/images/tiktok%20downloader%20android1.webp"
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "I-paste ang URL sa tiktokdownloader.ph",
-          "text": "Buksan ang Google Chrome, Samsung Internet, o anumang mobile browser at bisitahin ang tiktokdownloader.ph. I-tap at hawakan ang loob ng search box hanggang lumabas ang opsyong Paste. I-tap ang Paste para ipasok ang iyong TikTok video link, pagkatapos ay pindutin ang Download button.",
-          "image": "https://tiktokdownloader.ph/images/tiktok%20downloader2.webp"
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "I-download at I-save sa Iyong Telepono",
-          "text": "Kapag nag-load na ang mga detalye ng video, gamitin ang Dropdown Menu para piliin ang gusto mong format, tulad ng Download MP4 No Watermark o Download MP3. I-click ang Download Now button, at ang file ay agad na mase-save sa Downloads folder ng iyong telepono. Mahahanap mo ito anumang oras sa pamamagitan ng Files o My Files app, at sa maraming device ay lilitaw din ito sa Gallery o Photos app para sa offline na panonood."
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://tiktokdownloader.ph/download-tiktok-videos-sa-android#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Saan naka-save ang aking mga TikTok video sa Android?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Bilang default, lahat ng na-download na video ay naka-save sa folder na Downloads ng iyong device. Maaari mo ring tingnan ang mga ito nang direkta sa Gallery o Photos app ng iyong telepono."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Kailangan ko bang mag-install ng app para magamit ang downloader?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Hindi, ito ay isang web-based na tool. Maaari kang mag-download ng mga TikTok video sa Android gamit ang anumang mobile browser tulad ng Chrome o Samsung Internet nang hindi nag-i-install ng mga mapanganib na APK."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Libre ba ang pag-download ng mga TikTok nang walang watermark?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo, ang aming serbisyo ay 100% libre at nagbibigay-daan sa iyong mag-save ng walang limitasyong mga video sa high-definition (HD)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Maaari ba akong mag-download ng TikTok MP3 audio sa Android?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo, pinapayagan ka nitong kumuha ng mataas na kalidad na audio. Piliin lamang ang opsyong Download MP3 mula sa menu ng format bago i-save."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Gumagana ba ang TikTok Downloader sa lahat ng bersyon ng Android?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo, dahil ito ay nakabatay sa browser, gumagana ito sa lahat ng modernong bersyon at device ng Android, kabilang ang Samsung, Google Pixel, Xiaomi, at OnePlus."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Mayroon bang limitasyon sa kung gaano karaming mga video ang maaari kong i-download?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Wala. Nag-aalok ito ng walang limitasyong pag-download nang libre. Maaari kang mag-save ng maraming video hangga't gusto mo nang walang anumang pang-araw-araw na paghihigpit."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Bakit hindi lumalabas sa Gallery ang na-download kong video?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sa ilang Android device, lalo na sa Android 10 pataas, hindi agad nakikita ng Gallery ang mga bagong download. Hindi ito nawawala - nasa Downloads folder lang ito. Buksan ang Files o My Files app at pumunta sa Downloads, i-restart ang phone, o sa Samsung ay tingnan ang Gallery Albums Download."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Gaano karaming data ang kinakain ng pag-download?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Isang tipikal na 30-segundong HD video ay humigit-kumulang 5 hanggang 15 MB. Kung marami kang ida-download o mahahabang video, mas mainam gumamit ng WiFi para makatipid sa data."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Puwede ko bang gamitin ang na-download na video sa CapCut o iba pang editor?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo. Dahil MP4 file ang na-save, direkta mo itong mai-import sa CapCut, VN, o Canva, at puwede mo ring i-share sa Messenger, WhatsApp, o Facebook nang walang watermark."
-          }
-        }
-      ]
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://tiktokdownloader.ph/download-tiktok-videos-sa-android#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tiktokdownloader.ph/" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tiktokdownloader.ph" },
         { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://tiktokdownloader.ph/blog" },
         { "@type": "ListItem", "position": 3, "name": "Mag-download ng mga TikTok Video sa Android", "item": "https://tiktokdownloader.ph/download-tiktok-videos-sa-android" }
       ]

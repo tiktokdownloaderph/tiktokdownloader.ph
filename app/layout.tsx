@@ -4,9 +4,10 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tiktokdownloader.ph"),
+  metadataBase: new URL(SITE_URL),
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },

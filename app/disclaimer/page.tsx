@@ -1,3 +1,4 @@
+import { SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     description: "Basahin ang aming disclaimer tungkol sa paggamit ng TikTok Downloader PH at mga limitasyon ng aming serbisyo.",
     type: "website",
     url: "https://tiktokdownloader.ph/disclaimer",
-    siteName: "TikTok Downloader",
+    siteName: SITE_NAME,
     images: [{ url: "https://tiktokdownloader.ph/images/tiktok-downloader.webp", width: 1200, height: 630 }],
   },
   twitter: {

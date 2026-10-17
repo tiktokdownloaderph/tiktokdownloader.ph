@@ -1,3 +1,4 @@
+import { SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 import ToolDownloader from "@/components/ToolDownloader";
 
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     description: "Mag-download ng mga video sa pinakamataas na kalidad nang walang logo o bayad gamit ang TikTok downloader.",
     type: "article",
     url: "https://tiktokdownloader.ph/paano-mag-download-ng-mga-video-sa-tiktok",
-    siteName: "TikTok Downloader",
+    siteName: SITE_NAME,
     publishedTime: "2026-09-28T04:20:13+08:00",
     modifiedTime: "2026-09-28T04:20:13+08:00",
     images: [{ url: "https://tiktokdownloader.ph/images/featuredimg4.webp", width: 1200, height: 630 }],
@@ -29,9 +30,9 @@ const JSON_LD = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://tiktokdownloader.ph/#website",
-      "url": "https://tiktokdownloader.ph/",
-      "name": "TikTok Downloader",
+      "@id": "https://tiktokdownloader.ph#website",
+      "url": "https://tiktokdownloader.ph",
+      "name": SITE_NAME,
       "description": "TikTok downloader na walang watermark, mabilis, at libre."
     },
     {
@@ -40,244 +41,17 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/paano-mag-download-ng-mga-video-sa-tiktok",
       "name": "Mag-download ng mga video ng TikTok gamit ang TikTok Downloader",
       "description": "Mag-download ng mga video sa pinakamataas na kalidad nang walang logo o bayad gamit ang TikTok downloader.",
-      "inLanguage": "tl",
+      "inLanguage": "fil-PH",
       "image": "https://tiktokdownloader.ph/images/featuredimg4.webp",
       "isPartOf": {
-        "@id": "https://tiktokdownloader.ph/#website"
+        "@id": "https://tiktokdownloader.ph#website"
       }
-    },
-    {
-      "@type": "Article",
-      "@id": "https://tiktokdownloader.ph/paano-mag-download-ng-mga-video-sa-tiktok#article",
-      "headline": "Mag-download ng mga video ng TikTok gamit ang TikTok Downloader",
-      "description": "Mag-download ng mga video sa pinakamataas na kalidad nang walang logo o bayad gamit ang TikTok downloader.",
-      "inLanguage": "tl",
-      "url": "https://tiktokdownloader.ph/paano-mag-download-ng-mga-video-sa-tiktok",
-      "image": "https://tiktokdownloader.ph/images/featuredimg4.webp",
-      "author": {
-        "@type": "Organization",
-        "name": "TikTok Downloader PH",
-        "url": "https://tiktokdownloader.ph/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "TikTok Downloader PH",
-        "url": "https://tiktokdownloader.ph/"
-      },
-      "datePublished": "2026-09-28T04:20:13+08:00",
-      "dateModified": "2026-09-28T04:20:13+08:00",
-      "isPartOf": {
-        "@id": "https://tiktokdownloader.ph/paano-mag-download-ng-mga-video-sa-tiktok#webpage"
-      }
-    },
-    {
-      "@type": "HowTo",
-      "@id": "https://tiktokdownloader.ph/paano-mag-download-ng-mga-video-sa-tiktok#howto-ios",
-      "name": "Paano Mag-download ng TikTok Video sa iOS",
-      "description": "Sundan ang mga hakbang na ito para mag-download ng TikTok video nang walang watermark sa iPhone o iPad.",
-      "totalTime": "PT3M",
-      "estimatedCost": {
-        "@type": "MonetaryAmount",
-        "currency": "PHP",
-        "value": "0"
-      },
-      "image": "https://tiktokdownloader.ph/images/featuredimg4.webp",
-      "tool": [
-        {
-          "@type": "HowToTool",
-          "name": "tiktokdownloader.ph"
-        }
-      ],
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "Piliin ang Video",
-          "text": "Mag-browse sa TikTok at hanapin ang video na gusto mong i-download."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "Kopyahin ang Link",
-          "text": "I-tap ang Share icon at piliin ang Copy Link mula sa mga opsyon."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "Bisitahin ang tiktokdownloader.ph",
-          "text": "Buksan ang iyong browser at pumunta sa tiktokdownloader.ph."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 4,
-          "name": "I-paste ang Link at I-download",
-          "text": "I-paste ang kinopyang link ng video ng TikTok sa input field at pindutin ang Download button."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 5,
-          "name": "Piliin ang Iyong Opsyon sa Pag-download",
-          "text": "Sa loob ng ilang segundo, ipapakita ang mga opsyon sa pag-download. Piliin ang pinakaangkop sa iyo."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 6,
-          "name": "I-save ang Video",
-          "text": "I-tap ang iyong gustong pagpipilian sa pag-download at ang video ay mase-save sa iyong device."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 7,
-          "name": "Hanapin ang Download sa Files App",
-          "text": "Pumunta sa Files app sa iyong iPhone at hanapin ang na-download na video."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 8,
-          "name": "I-save bilang Video",
-          "text": "I-tap ang Share icon at piliin ang I-save bilang Video para i-save ito sa iyong gallery."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 9,
-          "name": "Tapos na!",
-          "text": "Buksan ang Photos app at tamasahin ang iyong watermark-free na TikTok video."
-        }
-      ]
-    },
-    {
-      "@type": "HowTo",
-      "@id": "https://tiktokdownloader.ph/paano-mag-download-ng-mga-video-sa-tiktok#howto-android",
-      "name": "Paano Mag-download ng TikTok Video sa Android",
-      "description": "Mga simpleng hakbang para mag-download ng TikTok video nang walang watermark sa Android device.",
-      "totalTime": "PT2M",
-      "estimatedCost": {
-        "@type": "MonetaryAmount",
-        "currency": "PHP",
-        "value": "0"
-      },
-      "image": "https://tiktokdownloader.ph/images/featuredimg4.webp",
-      "tool": [
-        {
-          "@type": "HowToTool",
-          "name": "tiktokdownloader.ph"
-        }
-      ],
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "Kunin ang Link ng Video",
-          "text": "Sa TikTok app o website, piliin ang video at pindutin ang Copy Link."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "I-paste sa Downloader",
-          "text": "Buksan ang tiktokdownloader.ph sa browser at i-paste ang link ng video."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "I-tap ang Download Button",
-          "text": "Pindutin ang Download at hintaying maproseso ang link."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 4,
-          "name": "Piliin ang Iyong Mga Opsyon sa Pag-download",
-          "text": "Piliin ang format o kalidad na gusto mong i-download."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 5,
-          "name": "I-download",
-          "text": "Mase-save ang video sa gallery o downloads folder ng iyong Android device."
-        }
-      ]
-    },
-    {
-      "@type": "HowTo",
-      "@id": "https://tiktokdownloader.ph/paano-mag-download-ng-mga-video-sa-tiktok#howto-desktop",
-      "name": "Paano Mag-download ng TikTok Video sa Desktop",
-      "description": "Sundan ang mga hakbang na ito para mag-save ng TikTok video sa Windows o Mac gamit ang browser.",
-      "totalTime": "PT2M",
-      "estimatedCost": {
-        "@type": "MonetaryAmount",
-        "currency": "PHP",
-        "value": "0"
-      },
-      "image": "https://tiktokdownloader.ph/images/featuredimg4.webp",
-      "tool": [
-        {
-          "@type": "HowToTool",
-          "name": "tiktokdownloader.ph"
-        }
-      ],
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "Kopyahin ang Link",
-          "text": "Pumunta sa TikTok website, piliin ang video at kopyahin ang link mula sa Share button."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "I-paste ang Link ng Video",
-          "text": "Buksan ang tiktokdownloader.ph at i-paste ang link sa input field."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "I-download mula sa Mga Opsyon",
-          "text": "Piliin ang format na gusto mo at i-click ang Download and Save."
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://tiktokdownloader.ph/paano-mag-download-ng-mga-video-sa-tiktok#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Paano ako makakapag-download ng TikTok video nang walang watermark?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Kopyahin lamang ang link ng TikTok video, buksan ang tiktokdownloader.ph, i-paste ang link, at piliin ang iyong gustong opsyon sa pag-download nang walang watermark."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Kailangan ko bang mag-install ng app para mag-save ng TikTok video?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Hindi. Ang tool ay gumagana direkta sa browser sa mobile, tablet, at desktop nang walang kinakailangang app o software."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Gumagana ba ito sa iPhone, Android, at PC?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo. Maaari mong gamitin ang TikTok downloader sa iPhone, Android, Windows, at Mac hangga't may browser at internet connection ka."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Maaari din ba akong mag-download ng TikTok audio o MP3?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo. Bukod sa video download, maaari ka ring mag-download ng TikTok audio sa mataas na bitrate gamit ang aming MP3 downloader page."
-          }
-        }
-      ]
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://tiktokdownloader.ph/paano-mag-download-ng-mga-video-sa-tiktok#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tiktokdownloader.ph/" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tiktokdownloader.ph" },
         { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://tiktokdownloader.ph/blog" },
         { "@type": "ListItem", "position": 3, "name": "Mag-download ng mga video ng TikTok gamit ang TikTok Downloader", "item": "https://tiktokdownloader.ph/paano-mag-download-ng-mga-video-sa-tiktok" }
       ]

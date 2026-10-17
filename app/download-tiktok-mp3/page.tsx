@@ -1,3 +1,4 @@
+import { SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 import ToolDownloader from "@/components/ToolDownloader";
 
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     description: "I-convert ang TikTok video sa MP3 at i-save ang musika, kanta, sound, o tunog nang libre. Gumagana sa lahat ng device nang walang app.",
     type: "article",
     url: "https://tiktokdownloader.ph/download-tiktok-mp3",
-    siteName: "TikTok Downloader",
+    siteName: SITE_NAME,
     publishedTime: "2026-09-28T04:20:13+08:00",
     modifiedTime: "2026-09-28T04:20:13+08:00",
     images: [{ url: "https://tiktokdownloader.ph/images/featuredimg7.webp", width: 1200, height: 630 }],
@@ -29,9 +30,9 @@ const JSON_LD = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://tiktokdownloader.ph/#website",
-      "url": "https://tiktokdownloader.ph/",
-      "name": "TikTok Downloader",
+      "@id": "https://tiktokdownloader.ph#website",
+      "url": "https://tiktokdownloader.ph",
+      "name": SITE_NAME,
       "description": "TikTok downloader na walang watermark, mabilis, at libre."
     },
     {
@@ -40,34 +41,10 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/download-tiktok-mp3",
       "name": "TikTok MP3 Downloader - I-save ang Music, Kanta, at Tunog ng TikTok.",
       "description": "I-convert ang TikTok video sa MP3 at i-save ang musika, kanta, sound, o tunog nang libre. Gumagana sa lahat ng device nang walang app.",
-      "inLanguage": "tl",
+      "inLanguage": "fil-PH",
       "image": "https://tiktokdownloader.ph/images/featuredimg7.webp",
       "isPartOf": {
-        "@id": "https://tiktokdownloader.ph/#website"
-      }
-    },
-    {
-      "@type": "Article",
-      "@id": "https://tiktokdownloader.ph/download-tiktok-mp3#article",
-      "headline": "TikTok MP3 Downloader - I-save ang Music, Kanta, at Tunog ng TikTok.",
-      "description": "I-convert ang TikTok video sa MP3 at i-save ang musika, kanta, sound, o tunog nang libre. Gumagana sa lahat ng device nang walang app.",
-      "inLanguage": "tl",
-      "url": "https://tiktokdownloader.ph/download-tiktok-mp3",
-      "image": "https://tiktokdownloader.ph/images/featuredimg7.webp",
-      "author": {
-        "@type": "Organization",
-        "name": "TikTok Downloader PH",
-        "url": "https://tiktokdownloader.ph/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "TikTok Downloader PH",
-        "url": "https://tiktokdownloader.ph/"
-      },
-      "datePublished": "2026-09-28T04:20:13+08:00",
-      "dateModified": "2026-09-28T04:20:13+08:00",
-      "isPartOf": {
-        "@id": "https://tiktokdownloader.ph/download-tiktok-mp3#webpage"
+        "@id": "https://tiktokdownloader.ph#website"
       }
     },
     {
@@ -85,123 +62,10 @@ const JSON_LD = {
       }
     },
     {
-      "@type": "HowTo",
-      "@id": "https://tiktokdownloader.ph/download-tiktok-mp3#howto",
-      "name": "Paano Mag-download ng TikTok MP3 Audio",
-      "description": "Sundan ang tatlong hakbang na ito para i-convert at i-save ang TikTok audio bilang MP3 nang libre.",
-      "totalTime": "PT1M",
-      "estimatedCost": {
-        "@type": "MonetaryAmount",
-        "currency": "PHP",
-        "value": "0"
-      },
-      "image": "https://tiktokdownloader.ph/images/featuredimg7.webp",
-      "tool": [
-        {
-          "@type": "HowToTool",
-          "name": "TikTok Downloader (tiktokdownloader.ph)"
-        },
-        {
-          "@type": "HowToTool",
-          "name": "Web browser (Chrome, Firefox, Edge, Safari)"
-        }
-      ],
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "Kopyahin ang TikTok Video Link",
-          "text": "Buksan ang TikTok app o website, i-play ang video na gusto mo, i-tap ang Share button, at kopyahin ang video link."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "I-paste ang Link",
-          "text": "I-paste ang kinopyang TikTok video URL sa input box sa pahinang ito at hintaying makuha ng system ang impormasyon ng video."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "I-download ang TikTok MP3",
-          "text": "I-click ang Download button at piliin ang MP3 format. Mase-save ang iyong audio file sa iyong device sa loob ng ilang segundo."
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://tiktokdownloader.ph/download-tiktok-mp3#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Paano ako mag-download ng TikTok MP3 online?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Kopyahin lang ang link ng TikTok video, i-paste ito sa input box sa itaas, at i-download agad ang MP3 audio file."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Maaari ko bang i-save ang mga tunog ng TikTok nang hindi nag-i-install ng app?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo, ang TikTok MP3 downloader na ito ay gumagana nang ganap online nang walang anumang pag-install ng app."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Libre ba gamitin ang TikTok MP3 downloader na ito?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo, ito ay 100% libre at nagbibigay-daan sa walang limitasyong pag-download ng MP3."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Magiging mataas ba ang kalidad ng na-download na MP3 audio?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo, lahat ng MP3 file ay inihahatid sa malinaw at mataas na kalidad na format ng audio."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Gumagana ba ito sa iPhone, Android, at PC?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo, gumagana ang tool sa iPhone, mga Android device, tablet, at mga desktop computer."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Maaari ba akong mag-download ng mga tunog ng TikTok MP3 para sa mga ringtone?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo! Kapag nag-download ka ng mga mp3 file ng TikTok, ang audio ay sine-save sa mataas na kalidad na format. Madali mong magagamit ang mga naka-save na tunog na ito bilang mga ringtone o background music para sa iyong sariling mga pag-edit ng video."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "May limitasyon ba kung gaano karaming mga mp3 file ng TikTok ang maaari kong i-save?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Wala, walang limitasyon. Maaari mong gamitin ang aming TikTok MP3 downloader para mag-save ng kahit ilang audio tracks hangga't gusto mo."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Paano mag-download ng MP3 TikTok sa Android o iPhone?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Simple lang ang proseso para sa lahat ng mobile device. Kopyahin lang ang link ng video mula sa app, i-paste ito sa search bar gamit ang iyong mobile browser, at i-tap ang Download. Ito ang pinakamabilis na paraan para mag-download ng MP3 TikTok nang direkta sa storage ng iyong telepono."
-          }
-        }
-      ]
-    },
-    {
       "@type": "BreadcrumbList",
       "@id": "https://tiktokdownloader.ph/download-tiktok-mp3#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tiktokdownloader.ph/" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tiktokdownloader.ph" },
         { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://tiktokdownloader.ph/blog" },
         { "@type": "ListItem", "position": 3, "name": "TikTok MP3 Downloader - I-save ang Music, Kanta, at Tunog ng TikTok", "item": "https://tiktokdownloader.ph/download-tiktok-mp3" }
       ]

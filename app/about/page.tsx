@@ -1,3 +1,4 @@
+import { SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     description: "Alamin ang tungkol sa TikTok Downloader PH ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ang aming misyon, serbisyo, at pangako sa aming mga gumagamit.",
     type: "website",
     url: "https://tiktokdownloader.ph/about",
-    siteName: "TikTok Downloader",
+    siteName: SITE_NAME,
     images: [{ url: "https://tiktokdownloader.ph/images/tiktok-downloader.webp", width: 1200, height: 630 }],
   },
   twitter: {
@@ -31,15 +32,15 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/about",
       "name": "Tungkol sa Amin - TikTok Downloader PH",
       "description": "Alamin ang tungkol sa TikTok Downloader PH.",
-      "inLanguage": "tl",
-      "isPartOf": { "@id": "https://tiktokdownloader.ph/#website" },
+      "inLanguage": "fil-PH",
+      "isPartOf": { "@id": "https://tiktokdownloader.ph#website" },
       "dateModified": "2026-09-28T04:20:13+08:00"
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://tiktokdownloader.ph/about#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tiktokdownloader.ph/" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tiktokdownloader.ph" },
         { "@type": "ListItem", "position": 2, "name": "Tungkol sa Amin - TikTok Downloader PH", "item": "https://tiktokdownloader.ph/about" }
       ]
     }

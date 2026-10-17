@@ -1,3 +1,4 @@
+import { SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 import ToolDownloader from "@/components/ToolDownloader";
 
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     description: "Mag-download ng mga video sa TikTok sa iyong PC nang may HD quality; hindi kailangan ng software o pag-log in.",
     type: "article",
     url: "https://tiktokdownloader.ph/download-sa-pc",
-    siteName: "TikTok Downloader",
+    siteName: SITE_NAME,
     publishedTime: "2026-09-28T04:20:13+08:00",
     modifiedTime: "2026-09-28T04:20:13+08:00",
     images: [{ url: "https://tiktokdownloader.ph/images/featuredimg1.webp", width: 1200, height: 630 }],
@@ -29,9 +30,9 @@ const JSON_LD = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://tiktokdownloader.ph/#website",
-      "url": "https://tiktokdownloader.ph/",
-      "name": "TikTok Downloader",
+      "@id": "https://tiktokdownloader.ph#website",
+      "url": "https://tiktokdownloader.ph",
+      "name": SITE_NAME,
       "description": "TikTok downloader na walang watermark, mabilis, at libre. I-convert sa MP3 na may walang limitasyong pag-download."
     },
     {
@@ -40,141 +41,17 @@ const JSON_LD = {
       "url": "https://tiktokdownloader.ph/download-sa-pc",
       "name": "Mag-download ng kahit anong TikTok video sa PC nang libre",
       "description": "Mag-download ng mga video sa TikTok sa iyong PC nang may HD quality; hindi kailangan ng software o pag-log in.",
-      "inLanguage": "tl",
+      "inLanguage": "fil-PH",
       "image": "https://tiktokdownloader.ph/images/featuredimg1.webp",
       "isPartOf": {
-        "@id": "https://tiktokdownloader.ph/#website"
+        "@id": "https://tiktokdownloader.ph#website"
       }
-    },
-    {
-      "@type": "Article",
-      "@id": "https://tiktokdownloader.ph/download-sa-pc#article",
-      "headline": "Mag-download ng kahit anong TikTok video sa PC nang libre",
-      "description": "Mag-download ng mga video sa TikTok sa iyong PC nang may HD quality; hindi kailangan ng software o pag-log in.",
-      "inLanguage": "tl",
-      "url": "https://tiktokdownloader.ph/download-sa-pc",
-      "image": "https://tiktokdownloader.ph/images/featuredimg1.webp",
-      "author": {
-        "@type": "Organization",
-        "name": "TikTok Downloader PH",
-        "url": "https://tiktokdownloader.ph/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "TikTok Downloader PH",
-        "url": "https://tiktokdownloader.ph/"
-      },
-      "datePublished": "2026-09-28T04:20:13+08:00",
-      "dateModified": "2026-09-28T04:20:13+08:00",
-      "isPartOf": {
-        "@id": "https://tiktokdownloader.ph/download-sa-pc#webpage"
-      }
-    },
-    {
-      "@type": "HowTo",
-      "@id": "https://tiktokdownloader.ph/download-sa-pc#howto",
-      "name": "Paano Mag-download ng TikTok Video sa PC",
-      "description": "Sundan ang tatlong hakbang na ito para i-save ang anumang TikTok video sa iyong Windows o Mac computer nang libre at walang watermark.",
-      "totalTime": "PT2M",
-      "estimatedCost": {
-        "@type": "MonetaryAmount",
-        "currency": "PHP",
-        "value": "0"
-      },
-      "tool": [
-        {
-          "@type": "HowToTool",
-          "name": "TikTok Downloader (tiktokdownloader.ph)"
-        },
-        {
-          "@type": "HowToTool",
-          "name": "Web browser (Chrome, Firefox, Edge, Safari)"
-        }
-      ],
-      "image": "https://tiktokdownloader.ph/images/featuredimg1.webp",
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "Kopyahin ang Link ng Video",
-          "text": "Buksan ang TikTok sa iyong browser at hanapin ang video na gusto mong i-save. I-click ang icon na Ibahagi (karaniwan ay nasa kanang bahagi) at piliin ang 'Kopyahin ang Link.'",
-          "image": "https://tiktokdownloader.ph/images/tiktokdownloader%20pc%201.webp"
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "I-paste ang URL",
-          "text": "Buksan ang TikTokDownloader.ph sa isang bagong tab. I-paste ang link sa search box sa itaas ng pahinang ito. Maaari kang mag-right-click at piliin ang I-paste, o gamitin ang keyboard shortcut na Ctrl + V.",
-          "image": "https://tiktokdownloader.ph/images/tiktokdownloader%20pc%202.webp"
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "Piliin ang Format at I-download",
-          "text": "Pagkatapos i-click ang Load Video button, maghintay ng ilang segundo para lumabas ang mga detalye ng video. Piliin ang iyong gustong format (HD MP4 o MP3) at i-click ang download button para i-save sa iyong PC.",
-          "image": "https://tiktokdownloader.ph/images/tiktokdownloader%20pc%203.webp"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://tiktokdownloader.ph/download-sa-pc#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Saan naka-save ang mga na-download na video sa aking PC?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Awtomatikong naka-save ang mga video sa default na folder na 'Downloads' ng iyong browser. Maaari mong pindutin ang Ctrl + J sa Windows o Cmd + Shift + J sa Mac para makita ang iyong mga kamakailang download."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Maaari ba akong mag-download ng mga TikTok video sa 1080p HD?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo. Kinukuha nito ang pinakamataas na kalidad na magagamit. Piliin lamang ang opsyong 'I-download ang MP4 HD' mula sa menu para i-save ang video sa orihinal nitong mataas na resolution."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Kailangan ko bang mag-install ng anumang software o extension?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Hindi. Ito ay isang web-based na tool. Hindi mo kailangang mag-install ng anumang Chrome extension o .exe software para mag-download ng mga video sa iyong computer."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Maaari ko bang i-save lamang ang audio (MP3) sa aking PC?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo. I-paste ang link ng video at piliin ang 'I-download ang MP3' mula sa dropdown menu para i-save nang hiwalay ang background music o audio file."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Gumagana ba ito sa parehong Windows at Mac?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oo. Ito ay ganap na tugma sa Windows 10/11, macOS, at Linux gamit ang anumang modernong browser tulad ng Chrome, Firefox, Safari, o Edge."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "May limitasyon ba sa kung gaano karaming mga video ang maaari kong i-download?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Wala. Nag-aalok ito ng walang limitasyong pag-download nang libre. Maaari kang mag-save ng maraming video hangga't gusto mo nang walang anumang pang-araw-araw na paghihigpit."
-          }
-        }
-      ]
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://tiktokdownloader.ph/download-sa-pc#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tiktokdownloader.ph/" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tiktokdownloader.ph" },
         { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://tiktokdownloader.ph/blog" },
         { "@type": "ListItem", "position": 3, "name": "Mag-download ng kahit anong TikTok video sa PC nang libre", "item": "https://tiktokdownloader.ph/download-sa-pc" }
       ]

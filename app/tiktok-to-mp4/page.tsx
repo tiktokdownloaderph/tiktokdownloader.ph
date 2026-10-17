@@ -1,3 +1,4 @@
+import { SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 import ToolDownloader from "@/components/ToolDownloader";
 
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   description: pageDescription,
   robots: { index: true, follow: true },
   alternates: { canonical: pageUrl },
-  openGraph: { title: pageTitle, description: pageDescription, type: "article", url: pageUrl, siteName: "TikTok Downloader", publishedTime: publishedAt, modifiedTime: publishedAt, images: [{ url: imageUrl, width: 1200, height: 630 }] },
+  openGraph: { title: pageTitle, description: pageDescription, type: "article", url: pageUrl, siteName: SITE_NAME, publishedTime: publishedAt, modifiedTime: publishedAt, images: [{ url: imageUrl, width: 1200, height: 630 }] },
   twitter: { card: "summary_large_image", title: pageTitle, description: pageDescription, images: [imageUrl] },
 };
 
@@ -61,13 +62,10 @@ const faqItems = [
 const JSON_LD = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "WebSite", "@id": "https://tiktokdownloader.ph/#website", "url": "https://tiktokdownloader.ph/", "name": "TikTok Downloader", "description": "TikTok downloader na walang watermark, mabilis, at libre." },
-    { "@type": "WebPage", "@id": "https://tiktokdownloader.ph/tiktok-to-mp4#webpage", "url": pageUrl, "name": pageTitle, "description": pageDescription, "inLanguage": "tl", "image": imageUrl, "isPartOf": { "@id": "https://tiktokdownloader.ph/#website" } },
-    { "@type": "Article", "@id": "https://tiktokdownloader.ph/tiktok-to-mp4#article", "headline": pageTitle, "description": pageDescription, "inLanguage": "tl", "url": pageUrl, "image": imageUrl, "author": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" }, "publisher": { "@type": "Organization", "name": "TikTok Downloader PH", "url": "https://tiktokdownloader.ph/" }, "datePublished": publishedAt, "dateModified": publishedAt, "isPartOf": { "@id": "https://tiktokdownloader.ph/tiktok-to-mp4#webpage" } },
+    { "@type": "WebSite", "@id": "https://tiktokdownloader.ph#website", "url": "https://tiktokdownloader.ph", "name": SITE_NAME, "description": "TikTok downloader na walang watermark, mabilis, at libre." },
+    { "@type": "WebPage", "@id": "https://tiktokdownloader.ph/tiktok-to-mp4#webpage", "url": pageUrl, "name": pageTitle, "description": pageDescription, "inLanguage": "fil-PH", "image": imageUrl, "isPartOf": { "@id": "https://tiktokdownloader.ph#website" } },
     { "@type": "SoftwareApplication", "@id": "https://tiktokdownloader.ph/tiktok-to-mp4#app", "name": "TikTok to MP4 Converter", "description": pageDescription, "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "url": pageUrl, "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PHP" } },
-    { "@type": "HowTo", "@id": "https://tiktokdownloader.ph/tiktok-to-mp4#howto", "name": "Paano Mag-download ng TikTok MP4 Video", "description": "Sundan ang tatlong hakbang para i-convert at i-save ang TikTok video sa MP4 format nang libre.", "totalTime": "PT1M", "estimatedCost": { "@type": "MonetaryAmount", "currency": "PHP", "value": "0" }, "image": imageUrl, "tool": [{ "@type": "HowToTool", "name": "TikTok Downloader (tiktokdownloader.ph)" }, { "@type": "HowToTool", "name": "Web browser" }], "step": [{ "@type": "HowToStep", "position": 1, "name": "Kopyahin ang link ng TikTok video", "text": "Buksan ang TikTok app o tiktok.com, i-play ang video, i-tap ang Share, at piliin ang Copy link." }, { "@type": "HowToStep", "position": 2, "name": "I-paste ang link sa download box", "text": "Bumalik sa page na ito, i-paste ang link sa input box, at pindutin ang Download." }, { "@type": "HowToStep", "position": 3, "name": "I-save ang MP4 file", "text": "Piliin ang MP4 na walang watermark o HD option kung available, pagkatapos ay i-download ang file." }] },
-    { "@type": "FAQPage", "@id": "https://tiktokdownloader.ph/tiktok-to-mp4#faq", "mainEntity": faqItems.map(([question, answer]) => ({ "@type": "Question", "name": question, "acceptedAnswer": { "@type": "Answer", "text": answer } })) },
-    { "@type": "BreadcrumbList", "@id": "https://tiktokdownloader.ph/tiktok-to-mp4#breadcrumb", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tiktokdownloader.ph/" }, { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://tiktokdownloader.ph/blog" }, { "@type": "ListItem", "position": 3, "name": "TikTok to MP4 Converter", "item": pageUrl }] }
+    { "@type": "BreadcrumbList", "@id": "https://tiktokdownloader.ph/tiktok-to-mp4#breadcrumb", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tiktokdownloader.ph" }, { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://tiktokdownloader.ph/blog" }, { "@type": "ListItem", "position": 3, "name": "TikTok to MP4 Converter", "item": pageUrl }] }
   ]
 };
 

@@ -1,3 +1,4 @@
+import { SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     description: "Basahin ang aming Patakaran sa Privacy para malaman kung paano namin pinangangalagaan ang inyong personal na impormasyon.",
     type: "website",
     url: "https://tiktokdownloader.ph/privacy-policy",
-    siteName: "TikTok Downloader",
+    siteName: SITE_NAME,
     images: [{ url: "https://tiktokdownloader.ph/images/tiktok-downloader.webp", width: 1200, height: 630 }],
   },
   twitter: {
