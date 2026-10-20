@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fil-PH" data-bs-theme="dark" suppressHydrationWarning>
+    <html lang="fil-PH" data-bs-theme="dark" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#121212" />
       </head>

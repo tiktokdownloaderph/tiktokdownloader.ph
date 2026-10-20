@@ -2,13 +2,13 @@ import { SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Makipag-ugnayan - TikTok Downloader PH",
-  description: "Makipag-ugnayan sa TikTok Downloader PH. May tanong, feedback, o alalahanin? Nandito kami para tumulong.",
+  title: "Makipag-ugnayan - tiktokdownloader.ph",
+  description: "Makipag-ugnayan sa tiktokdownloader.ph. May tanong, feedback, o alalahanin? Nandito kami para tumulong.",
   robots: { index: true, follow: true },
   alternates: { canonical: "https://tiktokdownloader.ph/contact" },
   openGraph: {
-    title: "Makipag-ugnayan - TikTok Downloader PH",
-    description: "Makipag-ugnayan sa TikTok Downloader PH. May tanong, feedback, o alalahanin? Nandito kami para tumulong.",
+    title: "Makipag-ugnayan - tiktokdownloader.ph",
+    description: "Makipag-ugnayan sa tiktokdownloader.ph. May tanong, feedback, o alalahanin? Nandito kami para tumulong.",
     type: "website",
     url: "https://tiktokdownloader.ph/contact",
     siteName: SITE_NAME,
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Makipag-ugnayan - TikTok Downloader PH",
-    description: "Makipag-ugnayan sa TikTok Downloader PH. May tanong, feedback, o alalahanin? Nandito kami para tumulong.",
+    title: "Makipag-ugnayan - tiktokdownloader.ph",
+    description: "Makipag-ugnayan sa tiktokdownloader.ph. May tanong, feedback, o alalahanin? Nandito kami para tumulong.",
     images: ["https://tiktokdownloader.ph/images/tiktok-downloader.webp"],
   },
 };

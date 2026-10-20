@@ -5,8 +5,8 @@ type NavLinkItem = { href: string; label: string; active?: boolean; muted?: bool
 const primaryLinks: NavLinkItem[] = [
   { href: "/", label: "Home", active: true },
   { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact Us" },
-  { href: "/about", label: "About" },
+  { href: "/contact", label: "Makipag-ugnayan" },
+  { href: "/about", label: "Tungkol sa Amin" },
 ];
 
 const paanoLinks: NavLinkItem[] = [
@@ -17,10 +17,10 @@ const paanoLinks: NavLinkItem[] = [
 ];
 
 const downloaderLinks: NavLinkItem[] = [
-  { href: "/download-tiktok-stories", label: "TikTok Stories Downloader" },
-  { href: "/download-ang-larawan-at-slide-ng-tiktok", label: "Download TikTok Slideshows" },
-  { href: "/download-tiktok-mp3", label: "Download TikTok MP3" },
-  { href: "/tiktok-to-mp4", label: "TikTok to MP4" },
+  { href: "/download-tiktok-stories", label: "Story Downloader" },
+  { href: "/download-ang-larawan-at-slide-ng-tiktok", label: "Tiktok Photo downloader" },
+  { href: "/download-tiktok-mp3", label: "Tiktok Sound & Audio Downloader" },
+  { href: "/tiktok-to-mp4", label: "MP4 Downloader" },
 ];
 
 const mobileLinks: NavLinkItem[] = [
@@ -59,14 +59,14 @@ export default function Navbar() {
   const firstMutedIndex = mobileLinks.findIndex((item) => item.muted);
 
   return (
-    <nav className="navbar navbar-expand-md bg-dark py-3 navbar-dark" style={{ borderBottom: "2px solid rgba(255, 255, 255, 8%)" }}>
+    <nav className="site-header navbar navbar-expand-md bg-dark py-3 navbar-dark" style={{ borderBottom: "2px solid rgba(255, 255, 255, 8%)" }}>
       <div className="container">
         <Brand />
         <div className="collapse navbar-collapse" id="navcol-1">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item"><Link className="nav-link active" href="/"><NavIcon type="home" />&nbsp;Home</Link></li>
             <li className="nav-item"><Link className="nav-link" href="/blog"><NavIcon type="blog" />&nbsp;Blog</Link></li>
-            <li className="nav-item"><Link className="nav-link" href="/contact"><NavIcon type="contact" />&nbsp;Contact Us</Link></li>
+            <li className="nav-item"><Link className="nav-link" href="/contact"><NavIcon type="contact" />&nbsp;Makipag-ugnayan</Link></li>
             <li className="nav-item dropdown">
               <button className="nav-link dropdown-toggle nav-dropdown-button" type="button" aria-expanded="false"><NavIcon type="menu" />&nbsp;Paano</button>
               <ul className="dropdown-menu dropdown-menu-dark" style={{ minWidth: 220 }}>
@@ -74,12 +74,12 @@ export default function Navbar() {
               </ul>
             </li>
             <li className="nav-item dropdown">
-              <button className="nav-link dropdown-toggle nav-dropdown-button" type="button" aria-expanded="false"><NavIcon type="download" />&nbsp;TikTok Downloaders</button>
-              <ul className="dropdown-menu dropdown-menu-dark" style={{ minWidth: 210 }}>
+              <button className="nav-link dropdown-toggle nav-dropdown-button" type="button" aria-expanded="false"><NavIcon type="download" />&nbsp;More Downloaders</button>
+              <ul className="dropdown-menu dropdown-menu-dark" style={{ minWidth: 290 }}>
                 {downloaderLinks.map((link) => <li key={link.href}><Link className="dropdown-item" href={link.href}>{link.label}</Link></li>)}
               </ul>
             </li>
-            <li className="nav-item"><Link className="nav-link d-lg-flex" href="/about"><NavIcon type="about" />&nbsp;About</Link></li>
+            <li className="nav-item"><Link className="nav-link d-lg-flex" href="/about"><NavIcon type="about" />&nbsp;Tungkol sa Amin</Link></li>
           </ul>
         </div>
         <details className="mobile-nav-shell d-md-none">

@@ -40,7 +40,6 @@ export default function Footer() {
               <Link href="/privacy-policy">Privacy Policy</Link>
               <Link href="/disclaimer">Disclaimer</Link>
               <Link href="/terms">Terms Of Service</Link>
-              <Link href="/blog">Blog</Link>
             </nav>
           </section>
 
@@ -55,10 +54,10 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Follow TikTok Downloader on ${social.label}`}
+                  aria-label={`Follow ${SITE_NAME} on ${social.label}`}
                   title={social.label}
                 >
-                  <svg viewBox="0 0 16 16" width="21" height="21" fill="currentColor" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false">
                     {social.icon}
                   </svg>
                 </a>

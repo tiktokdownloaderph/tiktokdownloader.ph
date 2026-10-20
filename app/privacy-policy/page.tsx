@@ -2,12 +2,12 @@ import { SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Patakaran sa Privacy - TikTok Downloader PH",
+  title: "Patakaran sa Privacy - tiktokdownloader.ph",
   description: "Basahin ang aming Patakaran sa Privacy para malaman kung paano namin pinangangalagaan ang inyong personal na impormasyon.",
   robots: { index: true, follow: true },
   alternates: { canonical: "https://tiktokdownloader.ph/privacy-policy" },
   openGraph: {
-    title: "Patakaran sa Privacy - TikTok Downloader PH",
+    title: "Patakaran sa Privacy - tiktokdownloader.ph",
     description: "Basahin ang aming Patakaran sa Privacy para malaman kung paano namin pinangangalagaan ang inyong personal na impormasyon.",
     type: "website",
     url: "https://tiktokdownloader.ph/privacy-policy",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Patakaran sa Privacy - TikTok Downloader PH",
+    title: "Patakaran sa Privacy - tiktokdownloader.ph",
     description: "Basahin ang aming Patakaran sa Privacy para malaman kung paano namin pinangangalagaan ang inyong personal na impormasyon.",
     images: ["https://tiktokdownloader.ph/images/tiktok-downloader.webp"],
   },
@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
             <h1 style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 6 }}>Patakaran sa Privacy</h1>
             <p style={{ color: "rgba(255,255,255,0.38)", fontSize: ".8rem", marginBottom: 28 }}>Huling na-update: Setyembre 28, 2026</p>
             <div style={{ color: "rgba(255,255,255,0.68)", fontSize: ".9rem", lineHeight: 1.85 }}>
-              <p>Ang tiktokdownloader.ph ay nakatuon sa pagprotekta ng iyong privacy. Ang Patakaran sa Privacy na ito ay nagpapaliwanag kung paano namin pinamamahalaan ang impormasyon kapag ginamit mo ang aming website.</p>
+              <p>Ang <a href="/" style={{ color: "inherit", textDecoration: "underline", textUnderlineOffset: "3px" }}>tiktokdownloader.ph</a> ay nakatuon sa pagprotekta ng iyong privacy. Ang Patakaran sa Privacy na ito ay nagpapaliwanag kung paano namin pinamamahalaan ang impormasyon kapag ginamit mo ang aming website.</p>
               <h2 style={s}>1. Impormasyong Hindi Namin Kinokolekta</h2>
               <p>Hindi namin kinokolekta o iniimbak ang personal na impormasyon, mga TikTok URL pagkatapos maproseso, mga na-download na video o audio file, kasaysayan ng pag-download, o data ng account.</p>
               <h2 style={s}>2. Awtomatikong Data</h2>
