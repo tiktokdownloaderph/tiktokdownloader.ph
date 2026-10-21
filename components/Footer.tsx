@@ -33,18 +33,18 @@ export default function Footer() {
           </section>
 
           <section className="site-footer__links" aria-labelledby="footer-links-title">
-            <h2 id="footer-links-title">Links</h2>
-            <nav aria-label="Footer links">
-              <Link href="/about">About Us</Link>
-              <Link href="/contact">Contact Us</Link>
-              <Link href="/privacy-policy">Privacy Policy</Link>
-              <Link href="/disclaimer">Disclaimer</Link>
-              <Link href="/terms">Terms Of Service</Link>
+            <h2 id="footer-links-title">Mga Link</h2>
+            <nav aria-label="Mga link sa footer">
+              <Link href="/about">Tungkol sa Amin</Link>
+              <Link href="/contact">Makipag-ugnayan</Link>
+              <Link href="/privacy-policy">Patakaran sa Privacy</Link>
+              <Link href="/disclaimer">Pagtatanggi</Link>
+              <Link href="/terms">Mga Tuntunin ng Serbisyo</Link>
             </nav>
           </section>
 
           <section className="site-footer__social" aria-labelledby="footer-social-title">
-            <h2 id="footer-social-title">Follow Us</h2>
+            <h2 id="footer-social-title">Sundan Kami</h2>
             <div className="site-footer__social-list">
               {socials.map((social) => (
                 <a
@@ -54,7 +54,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Follow ${SITE_NAME} on ${social.label}`}
+                  aria-label={`Sundan ang ${SITE_NAME} sa ${social.label}`}
                   title={social.label}
                 >
                   <svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false">
@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
 
         <div className="site-footer__bottom">
-          <p>&copy; 2026 {SITE_NAME}. All rights reserved.</p>
+          <p>&copy; 2026 {SITE_NAME}. Nakalaan ang lahat ng karapatan.</p>
         </div>
       </div>
     </footer>
