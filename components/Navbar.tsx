@@ -18,7 +18,7 @@ const paanoLinks: NavLinkItem[] = [
 
 const downloaderLinks: NavLinkItem[] = [
   { href: "/download-tiktok-stories", label: "Story Downloader" },
-  { href: "/download-ang-larawan-at-slide-ng-tiktok", label: "Tiktok Photo downloader" },
+  { href: "/tiktok-photo-downloader", label: "Tiktok Photo downloader" },
   { href: "/download-tiktok-mp3", label: "Tiktok Sound & Audio Downloader" },
   { href: "/tiktok-to-mp4", label: "MP4 Downloader" },
 ];

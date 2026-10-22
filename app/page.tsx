@@ -74,7 +74,7 @@ const JSON_LD = {
         { "@type": "ListItem", "position": 2, "url": "https://tiktokdownloader.ph/download-tiktok-videos-sa-android", "name": "Mag-download ng mga TikTok Video sa Android (Walang Watermark)" },
         { "@type": "ListItem", "position": 3, "url": "https://tiktokdownloader.ph/tiktok-to-mp4", "name": "TikTok to MP4 Converter Online" },
         { "@type": "ListItem", "position": 4, "url": "https://tiktokdownloader.ph/download-tiktok-mp3", "name": "Download TikTok MP3 Online" },
-        { "@type": "ListItem", "position": 5, "url": "https://tiktokdownloader.ph/download-ang-larawan-at-slide-ng-tiktok", "name": "Download TikTok Photos & Slideshows" },
+        { "@type": "ListItem", "position": 5, "url": "https://tiktokdownloader.ph/tiktok-photo-downloader", "name": "Download TikTok Photos & Slideshows" },
         { "@type": "ListItem", "position": 6, "url": "https://tiktokdownloader.ph/download-tiktok-stories", "name": "Download TikTok Stories Without Watermark" },
         { "@type": "ListItem", "position": 7, "url": "https://tiktokdownloader.ph/paano-mag-download-ng-mga-video-sa-tiktok", "name": "Paano Mag-save ng TikTok Video gamit ang TikTok Downloader" },
         { "@type": "ListItem", "position": 8, "url": "https://tiktokdownloader.ph/download-tiktok-videos-sa-iphone", "name": "Mag-download ng mga TikTok Video sa iPhone at iPad" }
@@ -257,7 +257,7 @@ export default function HomePage() {
                     <tr><td><strong>MP4</strong></td><td>Video na may tunog, hanggang HD</td><td><a href="/tiktok-to-mp4">TikTok to MP4</a></td></tr>
                     <tr><td><strong>MP3</strong></td><td>Tunog lang, mabuti para sa ringtone</td><td><a href="/download-tiktok-mp3">TikTok MP3</a></td></tr>
                     <tr><td><strong>Stories</strong></td><td>Post na nawawala pagkatapos ng 24 oras</td><td><a href="/download-tiktok-stories">TikTok Stories</a></td></tr>
-                    <tr><td><strong>Slideshow</strong></td><td>Photo post na may musika</td><td><a href="/download-ang-larawan-at-slide-ng-tiktok">TikTok Photo Downloader (Larawan at Slide)</a></td></tr>
+                    <tr><td><strong>Slideshow</strong></td><td>Photo post na may musika</td><td><a href="/tiktok-photo-downloader">TikTok Photo Downloader (Larawan at Slide)</a></td></tr>
                   </tbody>
                 </table>
               </div>
