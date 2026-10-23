@@ -18,10 +18,10 @@ const JSON_LD = {
       "@id": "https://tiktokdownloader.ph#webpage",
       "url": "https://tiktokdownloader.ph",
       "name": "TikTok Downloader na Walang Watermark - HD at Mabilis",
-      "description": "Mag-download ng TikTok video nang walang watermark sa HD. Libre at mabilis, walang app o login. Gumagana sa Android, iPhone, PC at Mac.",
+      "description": "I-save ang paborito mong videos gamit ang TikTok Downloader. Libre, HD at walang watermark, walang app o login. Gumagana sa Android, iPhone at PC.",
       "inLanguage": "fil-PH",
-      "datePublished": "2026-10-21T17:37:06+08:00",
-      "dateModified": "2026-10-21T17:37:06+08:00",
+      "datePublished": "2026-10-24T00:53:18+08:00",
+      "dateModified": "2026-10-24T00:53:18+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph#website" },
       "about": { "@id": "https://tiktokdownloader.ph#app" }
     },
@@ -85,13 +85,13 @@ const JSON_LD = {
 
 export const metadata: Metadata = {
   title: "TikTok Downloader Without Watermark - Free HD Videos",
-  description: "Mag-download ng TikTok video nang walang watermark sa HD. Libre at mabilis, walang app o login. Gumagana sa Android, iPhone, PC at Mac.",
+  description: "I-save ang paborito mong videos gamit ang TikTok Downloader. Libre, HD at walang watermark, walang app o login. Gumagana sa Android, iPhone at PC.",
   robots: { index: true, follow: true },
   alternates: { canonical: "/" },
   openGraph: {
     siteName: SITE_NAME,
     title: "TikTok Downloader Without Watermark - Free HD Videos",
-    description: "Mag-download ng TikTok video nang walang watermark sa HD. Libre at mabilis, walang app o login. Gumagana sa Android, iPhone, PC at Mac.",
+    description: "I-save ang paborito mong videos gamit ang TikTok Downloader. Libre, HD at walang watermark, walang app o login. Gumagana sa Android, iPhone at PC.",
     type: "website",
     url: "/",
     locale: "fil_PH",
@@ -100,7 +100,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "TikTok Downloader Without Watermark - Free HD Videos",
-    description: "Mag-download ng TikTok video nang walang watermark sa HD. Libre at mabilis, walang app o login. Gumagana sa Android, iPhone, PC at Mac.",
+    description: "I-save ang paborito mong videos gamit ang TikTok Downloader. Libre, HD at walang watermark, walang app o login. Gumagana sa Android, iPhone at PC.",
     images: [{ url: "https://tiktokdownloader.ph/images/homepage-og-1200x630.webp", alt: "TikTok Downloader na walang watermark" }],
   },
   other: {

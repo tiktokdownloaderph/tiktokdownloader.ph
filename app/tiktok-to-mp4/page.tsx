@@ -2,8 +2,8 @@ import { SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 import ToolDownloader from "@/components/ToolDownloader";
 
-const pageTitle = "TikTok to MP4 Converter - Mag-download ng TikTok MP4 HD (Libre)";
-const pageDescription = "Libreng TikTok to MP4 converter. I-paste ang link at mag-download ng TikTok MP4 video sa HD, walang watermark, walang app at walang sign-up. Gumagana sa Android, iPhone at PC.";
+const pageTitle = "TikTok MP4 Downloader - Save Videos Without Watermark";
+const pageDescription = "Mag-save ng TikTok videos gamit ang libreng TikTok MP4 downloader. HD hanggang 1080p, depende sa source, walang app o login. Para sa Android, iPhone at PC.";
 const pageUrl = "https://tiktokdownloader.ph/tiktok-to-mp4";
 const imageUrl = "https://tiktokdownloader.ph/images/featuredimg8.webp";
 const publishedAt = "2026-09-28T04:20:13+08:00";
@@ -80,7 +80,7 @@ function DownloaderBox() {
         <div className="col d-flex justify-content-center">
           <div className="row gx-0 gy-3 row-cols-1 flex-grow-1 justify-content-center align-items-center" style={{ maxWidth: 512 }}>
             <div className="col">
-              <h1 className="text-center" style={{ color: "#fff", fontSize: "clamp(1.45rem,5.8vw,1.9rem)", fontWeight: 700 }}>TikTok to MP4 Converter</h1>
+              <h1 className="text-center" style={{ color: "#fff", fontSize: "clamp(1.45rem,5.8vw,1.9rem)", fontWeight: 700 }}>TikTok MP4 Downloader</h1>
               <p className="text-center" style={{ ...mutedText, marginTop: 12, marginBottom: 20 }}>I-convert at i-download ang TikTok videos sa MP4 - HD quality, walang watermark, direkta sa browser.</p>
               <div className="d-flex justify-content-center align-items-center">
                 <div className="flex-grow-1 form-clean">
@@ -122,6 +122,7 @@ function IntroAndHowTo() {
   return <>
     <section style={{ marginTop: 32 }}>
       <p style={{ ...mutedText, marginBottom: 12 }}>Kailangan mong i-save ang isang TikTok video bilang MP4 file? Kopyahin ang link ng video, i-paste ito sa box sa itaas, at handa na ang iyong MP4 sa loob ng ilang segundo.</p>
+      <p style={{ ...mutedText, marginBottom: 12 }}>Gamitin ang aming TikTok to MP4 downloader para i-save ang mga public na video kasama ang orihinal na tunog, direkta sa iyong browser.</p>
       <p style={{ ...mutedText, marginBottom: 12 }}>Ang MP4 ang pinakakaraniwang format ng video sa mundo - nagpe-play ito nang diretso sa Android, iPhone, iPad, Windows, macOS, smart TV, at halos lahat ng media player at video editor. Kaya kapag ni-save mo ang isang TikTok bilang MP4, hindi mo na kailangan ng anumang converter app pagkatapos.</p>
       <p style={{ ...mutedText, margin: 0 }}>Gumagana ang aming tool sa loob mismo ng browser mo. Walang app na ida-download, walang extension, at walang account na kailangang gawin. Kung audio lang ang kailangan mo, gamitin ang aming <a href="/download-tiktok-mp3" style={{ color: "#ff3b5c", textDecoration: "none" }}>TikTok to MP3 downloader</a>.</p>
     </section>
