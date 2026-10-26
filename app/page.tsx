@@ -20,8 +20,8 @@ const JSON_LD = {
       "name": "TikTok Downloader na Walang Watermark - HD at Mabilis",
       "description": "I-save ang paborito mong videos gamit ang TikTok Downloader. Libre, HD at walang watermark, walang app o login. Gumagana sa Android, iPhone at PC.",
       "inLanguage": "fil-PH",
-      "datePublished": "2026-10-24T00:53:18+08:00",
-      "dateModified": "2026-10-24T00:53:18+08:00",
+      "datePublished": "2026-10-26T23:25:29+08:00",
+      "dateModified": "2026-10-26T23:25:29+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph#website" },
       "about": { "@id": "https://tiktokdownloader.ph#app" }
     },
@@ -235,6 +235,16 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+          </section>
+
+          <section className="home-dark-content-section">
+            <h2 className="text-center">Paano Mag-download ng TikTok Videos sa iPhone o iPad</h2>
+            <p>I-tap ang Share sa TikTok at piliin ang Copy Link. Buksan ang Safari, pumunta sa tiktokdownloader.ph, i-paste ang link, at pindutin ang Download. Piliin ang MP4 para sa video o MP3 para sa audio. Mase-save ang file sa iyong device, karaniwan sa Downloads folder ng Files app.</p>
+          </section>
+
+          <section className="home-dark-content-section">
+            <h2 className="text-center">Paano Mag-download ng TikTok Videos sa PC</h2>
+            <p>Kopyahin ang link ng TikTok video mula sa website. Buksan ang tiktokdownloader.ph, i-paste ang link, at pindutin ang Download. Piliin ang bersyong walang watermark at i-save ang video sa iyong computer para mapanood offline, maibahagi, o ma-edit.</p>
           </section>
 
           {/* Download formats */}
