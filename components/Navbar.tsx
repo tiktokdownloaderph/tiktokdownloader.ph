@@ -35,7 +35,10 @@ const mobileLinks: NavLinkItem[] = [
 function Brand() {
   return (
     <Link className="navbar-brand d-flex align-items-center" href="/" title="TikTok Downloader" translate="no" style={{ fontSize: 26 }}>
+      {/* Original logo retained while previewing the favicon replacement.
       <img className="img-fluid" src="/tiktok-logo.png" width={45} height={45} alt="TikTok Downloader Logo" style={{ marginRight: 2 }} fetchPriority="high" loading="eager" decoding="async" />
+      */}
+      <img className="img-fluid" src="/icon-192.png" width={45} height={45} alt="TikTok Downloader Logo" style={{ marginRight: 2 }} fetchPriority="high" loading="eager" decoding="async" />
       <span className="d-flex justify-content-center align-items-center" style={{ marginRight: "0 !important", fontWeight: 800 }}>
         TikTok Downloader
       </span>

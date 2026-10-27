@@ -20,8 +20,8 @@ const JSON_LD = {
       "name": "TikTok Downloader na Walang Watermark - HD at Mabilis",
       "description": "I-save ang paborito mong videos gamit ang TikTok Downloader. Libre, HD at walang watermark, walang app o login. Gumagana sa Android, iPhone at PC.",
       "inLanguage": "fil-PH",
-      "datePublished": "2026-10-26T23:25:29+08:00",
-      "dateModified": "2026-10-26T23:25:29+08:00",
+      "datePublished": "2026-10-27T14:09:57+08:00",
+      "dateModified": "2026-10-27T14:09:57+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph#website" },
       "about": { "@id": "https://tiktokdownloader.ph#app" }
     },
@@ -142,7 +142,7 @@ export default function HomePage() {
             <div className="home-intro-white__body">
               <div className="home-intro-white__text">
                 <p style={{ color: "rgba(33, 37, 41, 0.78)", WebkitTextFillColor: "rgba(33, 37, 41, 0.78)" }}>Kung sinubukan mo nang mag-save ng mga video sa TikTok, malamang na naranasan mo na ang mga karaniwang problema tulad ng watermark, mababang kalidad, o mga tool na humihingi ng pagpaparehistro bago ka makapag-download. Tinatanggal ng aming TikTok Downloader ang mga hadlang na iyon at ginagawang simple ang buong proseso: kopyahin, i-paste, i-download.</p>
-                <p style={{ color: "rgba(33, 37, 41, 0.78)", WebkitTextFillColor: "rgba(33, 37, 41, 0.78)" }}>Isa itong libreng TikTok video downloader na nagpapahintulot sa iyong mag-save ng mga video na walang TikTok logo sa mataas na kalidad na MP4. Walang kailangang app, walang APK na ida-download, at walang account, at gumagana ang lahat direkta sa iyong browser. Sinusuportahan din nito ang mga video mula sa TikTok Lite at Douyin (ang Chinese na bersyon ng TikTok, dating kilala bilang Musically). Gumagamit ka man ng <a href="/download-tiktok-videos-sa-android">Android</a>, <a href="/download-tiktok-videos-sa-iphone">iPhone</a>, <a href="/download-sa-pc">Windows</a>, o Mac, handa itong gamitin anumang oras.</p>
+                <p style={{ color: "rgba(33, 37, 41, 0.78)", WebkitTextFillColor: "rgba(33, 37, 41, 0.78)" }}>Isa itong libreng TikTok video downloader na nagpapahintulot sa iyong mag-save ng mga video na walang TikTok logo sa mataas na kalidad na MP4. Walang kailangang app, walang APK na ida-download, at walang account, at gumagana ang lahat direkta sa iyong browser. Sinusuportahan din nito ang mga video mula sa TikTok Lite at Douyin (ang Chinese na bersyon ng TikTok, dating kilala bilang Musically). Gumagamit ka man ng <strong>Android</strong>, <strong>iPhone</strong>, <strong>Windows</strong>, o Mac, handa itong gamitin anumang oras.</p>
               </div>
               <div className="home-intro-white__media">
                 <Image src="/images/tiktok-downloader.webp" alt="Tiktok downloader free HD" width={1619} height={971} loading="eager" fetchPriority="high" quality={75} sizes="(max-width: 991px) 100vw, 50vw" />
@@ -239,12 +239,21 @@ export default function HomePage() {
 
           <section className="home-dark-content-section">
             <h2 className="text-center">Paano Mag-download ng TikTok Videos sa iPhone o iPad</h2>
-            <p>I-tap ang Share sa TikTok at piliin ang Copy Link. Buksan ang Safari, pumunta sa tiktokdownloader.ph, i-paste ang link, at pindutin ang Download. Piliin ang MP4 para sa video o MP3 para sa audio. Mase-save ang file sa iyong device, karaniwan sa Downloads folder ng Files app.</p>
+            <ol style={{ maxWidth: 980, margin: "20px auto 0", paddingLeft: 24 }}>
+              <li>I-tap ang Share sa TikTok at piliin ang Copy Link.</li>
+              <li>Buksan ang Safari, pumunta sa tiktokdownloader.ph, i-paste ang link, at pindutin ang Download.</li>
+              <li>Piliin ang MP4 para sa video o MP3 para sa audio.</li>
+              <li>Mase-save ang file sa iyong device, karaniwan sa Downloads folder ng Files app.</li>
+            </ol>
           </section>
 
           <section className="home-dark-content-section">
             <h2 className="text-center">Paano Mag-download ng TikTok Videos sa PC</h2>
-            <p>Kopyahin ang link ng TikTok video mula sa website. Buksan ang tiktokdownloader.ph, i-paste ang link, at pindutin ang Download. Piliin ang bersyong walang watermark at i-save ang video sa iyong computer para mapanood offline, maibahagi, o ma-edit.</p>
+            <ol style={{ maxWidth: 980, margin: "20px auto 0", paddingLeft: 24 }}>
+              <li>Kopyahin ang link ng TikTok video mula sa website.</li>
+              <li>Buksan ang tiktokdownloader.ph, i-paste ang link, at pindutin ang Download.</li>
+              <li>Piliin ang bersyong walang watermark at i-save ang video sa iyong computer para mapanood offline, maibahagi, o ma-edit.</li>
+            </ol>
           </section>
 
           {/* Download formats */}

@@ -45,17 +45,17 @@ export default function DeferredDownloader() {
     };
   }, [loadDownloader]);
 
-  if (Downloader) {
-    return <Downloader initialUrl={initialUrl} autoFocus={focusRef.current} />;
-  }
-
   return (
     <div
-      onPointerEnter={() => loadDownloader()}
-      onPointerDownCapture={() => loadDownloader(true)}
-      onFocusCapture={() => loadDownloader(true)}
+      onPointerEnter={Downloader ? undefined : () => loadDownloader()}
+      onPointerDownCapture={Downloader ? undefined : () => loadDownloader(true)}
+      onFocusCapture={Downloader ? undefined : () => loadDownloader(true)}
     >
-      <DownloaderShell />
+      {Downloader ? (
+        <Downloader initialUrl={initialUrl} autoFocus={focusRef.current} />
+      ) : (
+        <DownloaderShell />
+      )}
     </div>
   );
 }
