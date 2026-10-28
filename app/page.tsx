@@ -20,8 +20,8 @@ const JSON_LD = {
       "name": "TikTok Downloader na Walang Watermark - HD at Mabilis",
       "description": "I-save ang paborito mong videos gamit ang TikTok Downloader. Libre, HD at walang watermark, walang app o login. Gumagana sa Android, iPhone at PC.",
       "inLanguage": "fil-PH",
-      "datePublished": "2026-10-27T14:09:57+08:00",
-      "dateModified": "2026-10-27T14:09:57+08:00",
+      "datePublished": "2026-10-28T14:45:41+08:00",
+      "dateModified": "2026-10-28T14:45:41+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph#website" },
       "about": { "@id": "https://tiktokdownloader.ph#app" }
     },
@@ -145,7 +145,7 @@ export default function HomePage() {
                 <p style={{ color: "rgba(33, 37, 41, 0.78)", WebkitTextFillColor: "rgba(33, 37, 41, 0.78)" }}>Isa itong libreng TikTok video downloader na nagpapahintulot sa iyong mag-save ng mga video na walang TikTok logo sa mataas na kalidad na MP4. Walang kailangang app, walang APK na ida-download, at walang account, at gumagana ang lahat direkta sa iyong browser. Sinusuportahan din nito ang mga video mula sa TikTok Lite at Douyin (ang Chinese na bersyon ng TikTok, dating kilala bilang Musically). Gumagamit ka man ng <strong>Android</strong>, <strong>iPhone</strong>, <strong>Windows</strong>, o Mac, handa itong gamitin anumang oras.</p>
               </div>
               <div className="home-intro-white__media">
-                <Image src="/images/tiktok-downloader.webp" alt="Tiktok downloader free HD" width={1619} height={971} loading="eager" fetchPriority="high" quality={75} sizes="(max-width: 991px) 100vw, 50vw" />
+                <Image src="/images/tiktokdownloader.webp" alt="Tiktok downloader free HD" width={1586} height={992} loading="eager" fetchPriority="high" quality={75} sizes="(max-width: 991px) 100vw, 50vw" />
               </div>
             </div>
           </section>
@@ -235,25 +235,6 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-          </section>
-
-          <section className="home-dark-content-section">
-            <h2 className="text-center">Paano Mag-download ng TikTok Videos sa iPhone o iPad</h2>
-            <ol style={{ maxWidth: 980, margin: "20px auto 0", paddingLeft: 24 }}>
-              <li>I-tap ang Share sa TikTok at piliin ang Copy Link.</li>
-              <li>Buksan ang Safari, pumunta sa tiktokdownloader.ph, i-paste ang link, at pindutin ang Download.</li>
-              <li>Piliin ang MP4 para sa video o MP3 para sa audio.</li>
-              <li>Mase-save ang file sa iyong device, karaniwan sa Downloads folder ng Files app.</li>
-            </ol>
-          </section>
-
-          <section className="home-dark-content-section">
-            <h2 className="text-center">Paano Mag-download ng TikTok Videos sa PC</h2>
-            <ol style={{ maxWidth: 980, margin: "20px auto 0", paddingLeft: 24 }}>
-              <li>Kopyahin ang link ng TikTok video mula sa website.</li>
-              <li>Buksan ang tiktokdownloader.ph, i-paste ang link, at pindutin ang Download.</li>
-              <li>Piliin ang bersyong walang watermark at i-save ang video sa iyong computer para mapanood offline, maibahagi, o ma-edit.</li>
-            </ol>
           </section>
 
           {/* Download formats */}
@@ -361,20 +342,6 @@ export default function HomePage() {
             <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Madalas itong ipinagkakamali, pero magkaugnay lang ang dalawa. Ang <strong style={{ color: "#fff" }}>TikTok downloader</strong> ang tool na nagse-save ng video mula sa TikTok papunta sa iyong device. Ang <strong style={{ color: "#fff" }}>remover</strong> naman ay tumutukoy sa proseso ng pagtanggal ng TikTok logo sa video.</p>
             <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Ang mabuting balita: sa aming tool, iisang hakbang lang ang dalawa. Kapag nag-download ka rito, awtomatiko nang tinatanggal ang logo, kaya malinis na ang makukuha mong file nang hindi na kailangan ng hiwalay na app.</p>
             <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Kaya kung naghahanap ka man ng downloader o remover, iisa lang ang sagot: kopyahin ang link, i-paste sa itaas, at makukuha mo agad ang malinis na video, libre at walang app.</p>
-          </section>
-          {/* Device and Browser Compatibility */}
-          <section className="home-dark-content-section home-dark-content-section--detail">
-            <h2 className="text-center">Gumagana sa Lahat ng Device at Browser</h2>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 18 }}>Ang aming TikTok Downloader ay ganap na web-based, walang app o APK na kailangang i-install. Basta&rsquo;t may browser at internet ka, gumagana ito kahit saang device.</p>
-            <h3 style={{ color: "#fff", fontSize: "1.1rem", fontWeight: 700, margin: "20px 0 8px" }}>Mga Suportadong Device</h3>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 12 }}>Gumagana ang tool sa lahat ng modernong device: <strong style={{ color: "#fff" }}>Android</strong> phone at <strong style={{ color: "#fff" }}>tablet</strong>, <strong style={{ color: "#fff" }}>iPhone</strong> at <strong style={{ color: "#fff" }}>iPad</strong> (<strong style={{ color: "#fff" }}>iOS</strong>), <strong style={{ color: "#fff" }}>Windows</strong> PC, <strong style={{ color: "#fff" }}>Mac</strong> (<strong style={{ color: "#fff" }}>macOS</strong>), <strong style={{ color: "#fff" }}>Linux</strong>, at kahit <strong style={{ color: "#fff" }}>Chromebook</strong>. Pareho ang simpleng proseso saan ka man naka-download: kopyahin, i-paste, i-save.</p>
-            <h3 style={{ color: "#fff", fontSize: "1.1rem", fontWeight: 700, margin: "20px 0 8px" }}>Mga Suportadong Phone Brand</h3>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 12 }}>Sinubukan at gumagana ang downloader sa lahat ng sikat na brand sa Pilipinas, kasama ang <strong style={{ color: "#fff" }}>Samsung</strong> (Galaxy), <strong style={{ color: "#fff" }}>Xiaomi</strong>, <strong style={{ color: "#fff" }}>Redmi</strong>, <strong style={{ color: "#fff" }}>POCO</strong>, <strong style={{ color: "#fff" }}>OPPO</strong>, <strong style={{ color: "#fff" }}>realme</strong>, <strong style={{ color: "#fff" }}>vivo</strong>, <strong style={{ color: "#fff" }}>Google Pixel</strong>, at <strong style={{ color: "#fff" }}>OnePlus</strong>. Walang espesyal na setting na kailangan; pareho ang hakbang sa lahat ng device.</p>
-            <h3 style={{ color: "#fff", fontSize: "1.1rem", fontWeight: 700, margin: "20px 0 8px" }}>Mga Suportadong Browser</h3>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 12 }}>Buksan lang ang site sa kahit anong browser: <strong style={{ color: "#fff" }}>Chrome</strong>, <strong style={{ color: "#fff" }}>Safari</strong>, <strong style={{ color: "#fff" }}>Firefox</strong>, <strong style={{ color: "#fff" }}>Microsoft Edge</strong>, <strong style={{ color: "#fff" }}>Opera</strong>, o <strong style={{ color: "#fff" }}>Samsung Internet</strong>, na siyang default browser sa maraming Samsung phone sa Pilipinas. Lahat ng ito ay sumusuporta sa mabilis at ligtas na pag-download.</p>
-            <h3 style={{ color: "#fff", fontSize: "1.1rem", fontWeight: 700, margin: "20px 0 8px" }}>Panonood sa Malaking Screen</h3>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 12 }}>Dahil MP4 ang output, puwede mong panoorin ang mga na-download na video offline sa <strong style={{ color: "#fff" }}>Smart TV</strong>, laptop, o tablet, walang kailangang app, walang buffering.</p>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Dahil malinis ang mga na-download na video, direkta mo itong magagamit sa mga editing app tulad ng <strong style={{ color: "#fff" }}>CapCut</strong>, <strong style={{ color: "#fff" }}>VN</strong>, at <strong style={{ color: "#fff" }}>Canva</strong> para sa iyong sariling content.</p>
           </section>
 
           {/* Data Usage */}
@@ -486,7 +453,7 @@ function HomeFaq() {
   ];
 
   return (
-    <div className="home-faq">
+    <div className="home-faq home-faq--polished">
       <h2 className="text-center">Mga Madalas Itanong</h2>
       <p className="home-faq__intro">Hanapin ang mabilis na sagot tungkol sa TikTok Downloader, mga format, seguridad, at paggamit sa iba&apos;t ibang device.</p>
       <div className="faq-list">
@@ -502,9 +469,7 @@ function FaqItem({ question, answer }: { question: string; answer: React.ReactNo
   return (
     <details className="faq-item">
       <summary>{question}</summary>
-      <div>
-        <div>{answer}</div>
-      </div>
+      <div className="faq-answer">{answer}</div>
     </details>
   );
 }

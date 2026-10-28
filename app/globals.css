@@ -2476,6 +2476,53 @@ textarea.form-control-lg {
   font-size: 0.93rem !important;
   line-height: 1.75 !important;
 }
+.home-faq--polished .faq-list {
+  gap: 12px;
+}
+
+.home-faq--polished .faq-item {
+  border-radius: 8px !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: none;
+}
+
+.home-faq--polished .faq-item[open] {
+  border-color: rgba(255, 59, 92, 0.4) !important;
+  box-shadow: none;
+}
+
+.home-faq--polished .faq-answer {
+  margin: 0 24px;
+  padding: 18px 0 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #d5d9dd;
+  -webkit-text-fill-color: currentColor;
+  font-size: 16px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.home-faq--polished .faq-answer p {
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+.home-faq--polished .faq-answer > :last-child,
+.home-faq--polished .faq-answer ul:last-child {
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 767.98px) {
+  .home-faq--polished .faq-answer {
+    margin-right: 18px;
+    margin-left: 18px;
+    padding-bottom: 20px;
+    font-size: 15px;
+  }
+}
+
 .form-clean .form-floatingx .form-control {
   background: rgba(0, 0, 0, 0.2);
   color: var(--tclight2);
@@ -3488,13 +3535,13 @@ h5 {
   font-weight: 800;
 }
 
-.tiktok-mp4-redesign > .container > div:nth-child(2) > section:nth-child(odd) h2,
-.tiktok-mp4-redesign > .container > div:nth-child(2) > section:nth-child(odd) h3,
-.tiktok-mp4-redesign > .container > div:nth-child(2) > section:nth-child(odd) p,
-.tiktok-mp4-redesign > .container > div:nth-child(2) > section:nth-child(odd) li,
-.tiktok-mp4-redesign > .container > div:nth-child(2) > section:nth-child(odd) td,
-.tiktok-mp4-redesign > .container > div:nth-child(2) > section:nth-child(odd) th,
-.tiktok-mp4-redesign > .container > div:nth-child(2) > section:nth-child(odd) strong {
+.tiktok-mp4-redesign > .container > div:nth-child(2) > section:nth-child(odd):not(.home-faq) h2,
+.tiktok-mp4-redesign > .container > div:nth-child(2) > section:nth-child(odd):not(.home-faq) h3,
+.tiktok-mp4-redesign > .container > div:nth-child(2) > section:nth-child(odd):not(.home-faq) p,
+.tiktok-mp4-redesign > .container > div:nth-child(2) > section:nth-child(odd):not(.home-faq) li,
+.tiktok-mp4-redesign > .container > div:nth-child(2) > section:nth-child(odd):not(.home-faq) td,
+.tiktok-mp4-redesign > .container > div:nth-child(2) > section:nth-child(odd):not(.home-faq) th,
+.tiktok-mp4-redesign > .container > div:nth-child(2) > section:nth-child(odd):not(.home-faq) strong {
   color: #212529 !important;
   -webkit-text-fill-color: #212529 !important;
 }
