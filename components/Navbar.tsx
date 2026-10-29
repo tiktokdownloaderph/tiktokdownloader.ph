@@ -1,4 +1,5 @@
 import Link from "next/link";
+import MobileNav from "./MobileNav";
 
 type NavLinkItem = { href: string; label: string; active?: boolean; muted?: boolean };
 
@@ -85,14 +86,7 @@ export default function Navbar() {
             <li className="nav-item"><Link className="nav-link d-lg-flex" href="/about"><NavIcon type="about" />&nbsp;Tungkol sa Amin</Link></li>
           </ul>
         </div>
-        <details className="mobile-nav-shell d-md-none">
-          <summary aria-label="Menu" className="btn btn-primary d-flex justify-content-center align-items-center mobile-nav-trigger">
-            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" style={{ fontSize: 22 }} aria-hidden="true">
-              <path d="M4 6H20M4 12H20m-7 6h7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </summary>
-          <div className="mobile-nav-panel">
-            <div className="offcanvas-header mobile-nav-header"><Brand /></div>
+        <MobileNav brand={<Brand />}>
             <div className="offcanvas-body" style={{ padding: 0, paddingTop: 16 }}>
               <nav className="navbar navbar-dark" style={{ padding: "5px 10px" }}>
                 <div className="container" style={{ padding: 0 }}>
@@ -106,8 +100,7 @@ export default function Navbar() {
                 </div>
               </nav>
             </div>
-          </div>
-        </details>
+        </MobileNav>
       </div>
     </nav>
   );
