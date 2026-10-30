@@ -35,7 +35,7 @@ const JSON_LD = {
       "isPartOf": {
         "@id": "https://tiktokdownloader.ph#website"
       },
-      "dateModified": "2026-09-28T04:20:13+08:00"
+      "dateModified": "2026-10-30T13:32:07+08:00"
     },
     {
       "@type": "BreadcrumbList",
@@ -64,10 +64,22 @@ const SAFETY_CARD = "<!-- Safety guide -->\r\n          <div class=\"col\">\r\n 
 
 const BLURRY_CARD = "<!-- Blurry video guide -->\r\n          <div class=\"col\">\r\n            <a href=\"/bakit-malabo-ang-tiktok-video\" style=\"text-decoration:none;display:block;height:100%;\">\r\n              <article style=\"background:rgba(255,255,255,0.04);border:1px solid rgba(255,59,92,0.2);border-radius:16px;overflow:hidden;height:100%;display:flex;flex-direction:column;transition:border-color .25s,box-shadow .25s;\" onmouseover=\"this.style.borderColor='rgba(255,59,92,0.5)';this.style.boxShadow='0 8px 40px rgba(255,59,92,0.12)'\" onmouseout=\"this.style.borderColor='rgba(255,59,92,0.2)';this.style.boxShadow='none'\">\r\n                <div style=\"position:relative;overflow:hidden;height:200px;background:#1a1a1a;\">\r\n                  <img src=\"/images/Why-Videos-Look-Blurry.webp\" alt=\"Gabay sa pag-aayos ng malabong TikTok video pagkatapos i-download\" loading=\"lazy\" width=\"1774\" height=\"887\" style=\"width:100%;height:100%;object-fit:cover;opacity:.65;\" />\r\n                  <div style=\"position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(18,18,18,.95) 100%);\"></div>\r\n                  <span style=\"position:absolute;top:16px;left:18px;background:#ff3b5c;color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:4px 11px;border-radius:20px;\">Gabay</span>\r\n                </div>\r\n                <div style=\"padding:22px 24px 24px;flex:1;display:flex;flex-direction:column;\">\r\n                  <div style=\"display:flex;align-items:center;gap:12px;margin-bottom:12px;color:rgba(255,255,255,0.38);font-size:.8rem;\">\r\n                    <span style=\"display:flex;align-items:center;gap:5px;\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\"><circle cx=\"12\" cy=\"12\" r=\"9\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M12 7v5l3 3\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg>7 minutong pagbasa</span>\r\n                    <span>Kalidad ng Video</span>\r\n                  </div>\r\n                  <h2 style=\"color:#fff;font-size:1.1rem;font-weight:700;line-height:1.45;margin-bottom:10px;\">Bakit Malabo ang TikTok Video Pagkatapos I-download?</h2>\r\n                  <p style=\"color:rgba(255,255,255,0.58);font-size:.875rem;line-height:1.75;margin-bottom:20px;flex:1;\">Alamin ang limang dahilan ng malabong TikTok download at ang mga hakbang para makuha ang pinakamagandang available na kalidad.</p>\r\n                  <div style=\"display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;\">\r\n                    <div style=\"display:flex;gap:6px;flex-wrap:wrap;\">\r\n                      <span style=\"background:rgba(255,59,92,0.1);color:rgba(255,59,92,0.85);font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:20px;border:1px solid rgba(255,59,92,0.2);\">HD</span>\r\n                      <span style=\"background:rgba(255,59,92,0.1);color:rgba(255,59,92,0.85);font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:20px;border:1px solid rgba(255,59,92,0.2);\">Compression</span>\r\n                      <span style=\"background:rgba(255,59,92,0.1);color:rgba(255,59,92,0.85);font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:20px;border:1px solid rgba(255,59,92,0.2);\">Mga Solusyon</span>\r\n                    </div>\r\n                    <span style=\"display:inline-flex;align-items:center;gap:5px;background:#ff3b5c;color:#fff;font-size:.8rem;font-weight:700;padding:7px 16px;border-radius:8px;\">Basahin <svg width=\"13\" height=\"13\" viewBox=\"0 0 20 20\" fill=\"none\"><path d=\"M7 5l5 5-5 5\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>\r\n                  </div>\r\n                </div>\r\n              </article>\r\n            </a>\r\n          </div>";
 
+const TROUBLESHOOTING_CARD = BLURRY_CARD
+  .replace("<!-- Blurry video guide -->", "<!-- Download troubleshooting guide -->")
+  .replace("/bakit-malabo-ang-tiktok-video", "/tiktok-video-hindi-nadadownload")
+  .replace("/images/Why-Videos-Look-Blurry.webp", "/images/Why-TikTok-Videos-Won’t-Download.webp")
+  .replace("Gabay sa pag-aayos ng malabong TikTok video pagkatapos i-download", "Gabay sa pag-aayos ng TikTok video na hindi ma-download")
+  .replace('width="1774" height="887"', 'width="1672" height="941"')
+  .replace("Kalidad ng Video", "Problema sa Download")
+  .replace("Bakit Malabo ang TikTok Video Pagkatapos I-download?", "Hindi Nada-download ang TikTok Video? 5 Madaling Solusyon")
+  .replace("Alamin ang limang dahilan ng malabong TikTok download at ang mga hakbang para makuha ang pinakamagandang available na kalidad.", "Hindi nada-download ang TikTok video mo? Alamin ang mga solusyon para sa private, deleted at maling link, plus mga tip para hindi na maulit.")
+  .replace(">HD</span>", ">Video Link</span>")
+  .replace(">Compression</span>", ">Koneksyon</span>");
+
 export default function Page() {
   return (
     <>
-      <main className="blog-redesign" dangerouslySetInnerHTML={{ __html: MAIN_HTML.replace("<!-- Card 1: PC -->", BLURRY_CARD + SAFETY_CARD + "<!-- Card 1: PC -->") }} />
+      <main className="blog-redesign" dangerouslySetInnerHTML={{ __html: MAIN_HTML.replace("<!-- Card 1: PC -->", TROUBLESHOOTING_CARD + BLURRY_CARD + SAFETY_CARD + "<!-- Card 1: PC -->") }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}

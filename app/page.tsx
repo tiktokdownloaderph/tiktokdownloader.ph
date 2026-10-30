@@ -2,6 +2,7 @@ import { SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 import Image from "next/image";
 import DeferredDownloader from "@/components/DeferredDownloader";
+import HowToSlider from "@/components/HowToSlider";
 
 const JSON_LD = {
   "@context": "https://schema.org",
@@ -20,8 +21,8 @@ const JSON_LD = {
       "name": "TikTok Downloader na Walang Watermark - HD at Mabilis",
       "description": "I-save ang paborito mong videos gamit ang TikTok Downloader. Libre, HD at walang watermark, walang app o login. Gumagana sa Android, iPhone at PC.",
       "inLanguage": "fil-PH",
-      "datePublished": "2026-10-29T14:31:59+08:00",
-      "dateModified": "2026-10-29T14:31:59+08:00",
+      "datePublished": "2026-10-30T15:51:50+08:00",
+      "dateModified": "2026-10-30T15:51:50+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph#website" },
       "about": { "@id": "https://tiktokdownloader.ph#app" }
     },
@@ -212,33 +213,7 @@ export default function HomePage() {
                   </article>
                 </div>
 
-                <div className="home-howto-slider" aria-label="Mga larawan ng proseso ng pag-download">
-                  <div className="home-howto-slider__screen">
-                    <figure className="home-howto-slide home-howto-slide--1">
-                      <Image src="/images/i-tap-ang-ibahagi.webp" alt="I-tap ang Share button sa TikTok para kopyahin ang video link" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 991px) 82vw, 360px" />
-                      <figcaption>1 / 5</figcaption>
-                    </figure>
-                    <figure className="home-howto-slide home-howto-slide--2">
-                      <Image src="/images/Kopyahin-ang-Link-ng-Video.webp" alt="Kopyahin ang link ng TikTok video mula sa Share button" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 991px) 82vw, 360px" />
-                      <figcaption>2 / 5</figcaption>
-                    </figure>
-                    <figure className="home-howto-slide home-howto-slide--3">
-                      <Image src="/images/i-tap-ang-pindutan-ng-i-paste.webp" alt="I-paste ang TikTok link sa downloader box" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 991px) 82vw, 360px" />
-                      <figcaption>3 / 5</figcaption>
-                    </figure>
-                    <figure className="home-howto-slide home-howto-slide--4">
-                      <Image src="/images/i-tap-ang-pindutan-ng-i-paste2.webp" alt="I-tap ang Paste para ilagay ang TikTok URL sa downloader" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 991px) 82vw, 360px" />
-                      <figcaption>4 / 5</figcaption>
-                    </figure>
-                    <figure className="home-howto-slide home-howto-slide--5">
-                      <Image src="/images/i-tap-ang-pindutan-ng-pag-download.webp" alt="I-download ang TikTok video bilang MP4 na walang watermark" width={400} height={650} loading="lazy" quality={50} sizes="(max-width: 991px) 82vw, 360px" />
-                      <figcaption>5 / 5</figcaption>
-                    </figure>
-                  </div>
-                  <div className="home-howto-slider__dots" aria-hidden="true">
-                    <span></span><span></span><span></span><span></span><span></span>
-                  </div>
-                </div>
+                <HowToSlider />
               </div>
             </div>
           </section>
