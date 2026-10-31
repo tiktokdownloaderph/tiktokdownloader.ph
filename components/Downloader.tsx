@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { fetchVideoDetails } from "@/lib/fetch-video-details";
 
 interface MediaItem {
   url: string;
@@ -21,6 +22,7 @@ interface VideoInfo {
 
 export default function Downloader({ initialUrl = "", autoFocus = false }: { initialUrl?: string; autoFocus?: boolean }) {
   const inputRef = useRef<HTMLInputElement>(null);
+  const requestRunning = useRef(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [videoInfo, setVideoInfo] = useState<VideoInfo | null>(null);
@@ -44,19 +46,19 @@ export default function Downloader({ initialUrl = "", autoFocus = false }: { ini
 
   async function loadVideo() {
     const url = inputRef.current?.value?.trim();
-    if (!url) return;
+    if (!url || requestRunning.current) return;
+    requestRunning.current = true;
     setLoading(true);
     setError(null);
     setVideoInfo(null);
     try {
-      const res = await fetch(`/api/tiktok?url=${encodeURIComponent(url)}`);
-      if (!res.ok) throw new Error("Failed to load video");
-      const data = await res.json();
+      const data = await fetchVideoDetails(url);
       const info = parseApiResponse(data);
       setVideoInfo(info);
-    } catch {
-      setError("Hindi ma-load ang video. Tiyaking tama ang link at subukan ulit.");
+    } catch (error) {
+      setError(error instanceof Error ? error.message : "Hindi ma-load ang video. Subukan ulit.");
     } finally {
+      requestRunning.current = false;
       setLoading(false);
     }
   }

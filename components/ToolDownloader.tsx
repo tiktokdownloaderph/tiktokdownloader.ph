@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { fetchVideoDetails } from "@/lib/fetch-video-details";
 
 interface ApiData {
   [key: string]: unknown;
@@ -107,18 +108,21 @@ export default function ToolDownloader() {
 
     if (!input || !loadBtn) return;
 
-    // Paste from clipboard
-    pasteBtn?.addEventListener("click", async () => {
+    let requestRunning = false;
+    async function pasteUrl() {
       try {
-        input.value = await navigator.clipboard.readText();
+        const text = await navigator.clipboard.readText();
+        if (input) input.value = text;
       } catch {
         // clipboard denied silently
       }
-    });
+    }
+    pasteBtn?.addEventListener("click", pasteUrl);
 
     async function loadVideo() {
       const url = input?.value?.trim();
-      if (!url) return;
+      if (!url || requestRunning) return;
+      requestRunning = true;
 
       loadBtn!.classList.add("disabled");
       spinner?.classList.remove("d-none");
@@ -128,9 +132,7 @@ export default function ToolDownloader() {
       document.querySelector(".td-error-msg")?.remove();
 
       try {
-        const res = await fetch(`/api/tiktok?url=${encodeURIComponent(url)}`);
-        if (!res.ok) throw new Error("api");
-        const d: ApiData = await res.json();
+        const d: ApiData = await fetchVideoDetails(url);
 
         const hdUrl    = pick(d, "hdUrl", "hd_url", "nowm", "no_watermark", "url");
         const wmUrl    = pick(d, "wmUrl", "wm_url", "wm", "watermark");
@@ -166,18 +168,18 @@ export default function ToolDownloader() {
         wireBtn(downloadWM,      wmUrl,    "tiktok_wm.mp4");
         wireBtn(downloadAudioEl, audioUrl, "tiktok_audio.mp3");
 
-      } catch {
+      } catch (error) {
         const div = document.createElement("div");
         div.className = "td-error-msg";
         div.style.cssText =
           "background:rgba(220,53,69,.12);border:1px solid rgba(220,53,69,.3);color:#ff6b7a;" +
           "border-radius:8px;padding:12px 16px;font-size:.9rem;margin-top:8px;" +
           "max-width:512px;margin-left:auto;margin-right:auto";
-        div.textContent =
-          "Hindi ma-load ang video. Tiyaking tama ang link at subukan ulit.";
+        div.setAttribute("role", "alert");
+        div.textContent = error instanceof Error ? error.message : "Hindi ma-load ang video. Subukan ulit.";
         loadBtn!.closest(".row")?.after(div);
-        setTimeout(() => div.remove(), 5000);
       } finally {
+        requestRunning = false;
         loadBtn!.classList.remove("disabled");
         spinner?.classList.add("d-none");
         loader?.classList.add("d-none");
@@ -187,9 +189,15 @@ export default function ToolDownloader() {
     }
 
     loadBtn.addEventListener("click", loadVideo);
-    input.addEventListener("keydown", (e) => {
+    function onKeyDown(e: KeyboardEvent) {
       if (e.key === "Enter") loadVideo();
-    });
+    }
+    input.addEventListener("keydown", onKeyDown);
+    return () => {
+      pasteBtn?.removeEventListener("click", pasteUrl);
+      loadBtn.removeEventListener("click", loadVideo);
+      input.removeEventListener("keydown", onKeyDown);
+    };
   }, []);
 
   return null;
