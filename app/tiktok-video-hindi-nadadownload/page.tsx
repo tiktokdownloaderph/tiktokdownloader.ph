@@ -8,7 +8,7 @@ const pageUrl = `${SITE_URL}/tiktok-video-hindi-nadadownload`;
 const featuredImagePath = "/images/Why-TikTok-Videos-Won’t-Download.webp";
 const featuredImage = `${SITE_URL}${featuredImagePath}`;
 const featuredImageAlt = "Hindi ma-download ang TikTok video sa phone dahil sa link o koneksyon";
-const publishedAt = "2026-10-30T13:32:07+08:00";
+const publishedAt = "2026-11-01T04:29:56+08:00";
 
 export const metadata: Metadata = {
   title,

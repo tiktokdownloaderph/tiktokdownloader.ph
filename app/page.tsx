@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import DeferredDownloader from "@/components/DeferredDownloader";
 import HowToSlider from "@/components/HowToSlider";
+import { Children, isValidElement, type ReactNode } from "react";
 
 const JSON_LD = {
   "@context": "https://schema.org",
@@ -21,8 +22,8 @@ const JSON_LD = {
       "name": "TikTok Downloader na Walang Watermark - HD at Mabilis",
       "description": "I-save ang paborito mong videos gamit ang TikTok Downloader. Libre, HD at walang watermark, walang app o login. Gumagana sa Android, iPhone at PC.",
       "inLanguage": "fil-PH",
-      "datePublished": "2026-10-30T15:51:50+08:00",
-      "dateModified": "2026-10-30T15:51:50+08:00",
+      "datePublished": "2026-11-01T04:29:56+08:00",
+      "dateModified": "2026-11-01T04:29:56+08:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph#website" },
       "about": { "@id": "https://tiktokdownloader.ph#app" }
     },
@@ -402,23 +403,29 @@ export default function HomePage() {
   );
 }
 
+function faqAnswerText(answer: ReactNode): string {
+  function textContent(node: ReactNode): string {
+    return Children.toArray(node).map((child) => {
+      if (typeof child === "string" || typeof child === "number") return String(child);
+      if (!isValidElement<{ children?: ReactNode; "aria-hidden"?: boolean | "true" | "false" }>(child)) return "";
+      if (child.props["aria-hidden"] === true || child.props["aria-hidden"] === "true") return "";
+      const separator = typeof child.type === "string" && ["p", "div", "li", "br"].includes(child.type) ? " " : "";
+      return textContent(child.props.children) + separator;
+    }).join("");
+  }
+  return textContent(answer).replace(/\s+/g, " ").trim();
+}
+
 function HomeFaq() {
   const faqs = [
-    { q: "Ligtas ba ang TikTok Downloader?", a: <p className="mb-0">Oo, ligtas na ligtas. Protektado ng <strong>SSL encryption</strong> ang lahat ng koneksyon sa aming site, kaya secure ang iyong data. Hindi ito naglalaman ng <strong>malware</strong> o <strong>virus</strong>, hindi humihingi ng login o password, at <strong>anonymous</strong> ang paggamit, walang tracking at walang naka-imbak na history ng iyong mga pinanood o na-download. Ligtas itong gamitin sa anumang device.</p> },
-    { q: "Paano Gamitin ang Tool na Ito?", a: <p className="mb-0">I-paste ang link ng TikTok video sa input box sa itaas at i-click ang Hanapin ang Video. Kapag lumabas ang mga download button, piliin ang iyong gustong format: MP4 na walang watermark, MP4 na may watermark, o MP3 audio.</p> },
-    { q: "Maaari Ko Bang Mag-download ng TikTok Videos Nang Walang Watermark sa Aking Telepono?", a: <p className="mb-0">Oo! Gumagana ang web app na ito sa halos bawat platform: iPhone, iPad, Android, iOS, Windows, Mac, at Linux, direkta mula sa iyong browser nang walang anumang pag-install.</p> },
+    { q: "Ligtas ba ang TikTok Downloader?", a: <p className="mb-0">Oo, ligtas na ligtas. Protektado ng <strong>SSL encryption</strong> ang lahat ng koneksyon sa aming site, kaya secure ang iyong data. Hindi ito naglalaman ng <strong>malware</strong> o <strong>virus</strong>, hindi humihingi ng login o password, at <strong>anonymous</strong> ang paggamit, walang tracking at walang naka-imbak na history ng iyong mga pinanood o na-download. Hindi kami nag-iimbak ng mga video o nagtatago ng mga kopya ng na-download na nilalaman. Ang lahat ng mga file ay naka-save sa iyong device. Ligtas itong gamitin sa anumang device.</p> },
+    { q: "Maaari Ko Bang Mag-download ng TikTok Videos sa Android?", a: <p className="mb-0">Oo! Buksan ang tiktokdownloader.ph sa Chrome, Samsung Internet, o ibang browser sa Android. I-paste ang link ng TikTok video, pindutin ang Hanapin ang Video, at piliin ang download option. Mase-save ang file sa Downloads folder ng iyong device, nang walang kailangang i-install na app.</p> },
     { q: "Maaari Ko Bang I-convert ang isang TikTok sa MP3?", a: <p className="mb-0">Oo! I-paste ang link sa itaas, i-load ang video, at i-click ang Download Audio button para i-save ang audio bilang MP3.</p> },
     { q: "Paano Mag-download ng TikTok Videos sa iOS?", a: <p className="mb-0">Kopyahin ang link ng video mula sa TikTok app, bisitahin ang tiktokdownloader.ph sa Safari o ibang browser, i-paste ang link, at i-click ang download. Maaari mong i-save ang video nang direkta sa iyong camera roll o photos library.</p> },
-    { q: "Gaano Katagal ang Pag-download ng Video?", a: <p className="mb-0">Ang bilis ng pag-download ay depende sa iyong koneksyon sa internet at laki ng video. Ang aming tool ay na-optimize para maging mabilis, karamihan sa mga video ay handa sa loob ng ilang segundo.</p> },
     { q: "Libre ba ang TikTok Downloader na Gamitin?", a: <p className="mb-0">Oo, ganap na libre itong gamitin. Walang nakatagong singil, subscription, o kinakailangan sa pagbabayad, mag-download ng walang limitasyong TikTok video nang libre.</p> },
     { q: "Kailangan Ko Bang Mag-install ng Anumang Software, App, o Extension ng Browser?", a: <p className="mb-0">Hindi! Ito ay isang ganap na online na tool, walang software, app, o browser extension ay kinakailangan. Buksan lamang ito sa iyong browser, i-paste ang link ng TikTok video, at i-download kaagad ang iyong video.</p> },
     { q: "Maaari ba akong Mag-download ng Mga Video mula sa Mga Pribadong Account?", a: <p className="mb-0">Hindi. Makakapag-download lang ng mga pampublikong TikTok na video. Pribado o pinaghihigpitang nilalaman ay hindi suportado.</p> },
-    { q: "Ano ang Kalidad ng mga Na-download na TikTok Video?", a: <p className="mb-0">Sinusuportahan ng platform ang pag-download ng mga TikTok na video sa HD MP4 na format, hanggang 1080p Full HD, depende sa orihinal na upload.</p> },
-    { q: "Sinusuportahan ba nito ang Bultuhang Pag-download ng mga TikTok Video?", a: <p className="mb-0">Sa kasalukuyan, sinusuportahan nito ang pag-download ng isang TikTok video o audio file sa isang pagkakataon.</p> },
-    { q: "Maaari ba akong Mag-download ng Mga TikTok Video ayon sa Username, Hashtag, o Account?", a: <p className="mb-0">Hindi, kasalukuyang hindi sumusuporta sa pag-download ng mga video sa pamamagitan ng username, hashtag, o buong profile. Kailangan mong i-paste ang direct link ng isang partikular na TikTok na video para ma-download ito.</p> },
-    { q: "Bakit Hindi Gumagana ang Downloader sa Aking Device?", a: <p className="mb-0">Ito ay maaaring dahil sa mga isyu sa browser, isang di-wastong link ng video, o isang pansamantalang paghihigpit sa TikTok. I-refresh ang page, tingnan ang link, o subukan ang ibang browser.</p> },
-    { q: "Mayroon bang Magagamit na App sa Google Play Store?", a: <p className="mb-0">Hindi. Wala kaming opisyal na mobile app. Ito ay dinisenyo upang gumana online sa pamamagitan ng mga web browser.</p> },
-    { q: "Iniimbak ba namin ang Mga Kopya ng Na-download na TikTok Video?", a: <p className="mb-0">Hindi. Hindi kami nag-iimbak ng mga video o nagtatago ng mga kopya ng na-download na nilalaman. Ang lahat ng mga file ay naka-save sa iyong device.</p> },
+    { q: "Ano ang Kalidad ng mga Na-download na TikTok Video?", a: <p className="mb-0">Sinusuportahan ng platform ang pag-download ng mga TikTok na video sa HD MP4 na format, hanggang 1080p Full HD, depende sa orihinal na upload. Kung malabo ang nakuha mong file, alamin <a href="/bakit-malabo-ang-tiktok-video">bakit malabo ang TikTok video pagkatapos i-download</a> at kung ano ang puwedeng gawin.</p> },
     { q: "Mayroon bang Limitasyon sa Pag-download?", a: <p className="mb-0">Hindi. Sinusuportahan namin ang walang limitasyong pag-download.</p> },
     { q: "Saan Nakaimbak ang Mga TikTok Video Pagkatapos Mag-download?", a: <p className="mb-0">Ang mga na-download na video at audio file ay naka-save sa default na folder ng pag-download ng iyong device.</p> },
     { q: "Bakit Nabigo o Hindi Gumagana ang Aking TikTok Video Download?", a: (
@@ -429,9 +436,20 @@ function HomeFaq() {
           <li style={{ display: "flex", gap: 8, padding: "4px 0" }}><span style={{ color: "#ff3b5c", lineHeight: 1.4 }} aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" style={{ display: "block", marginTop: 4 }}><circle cx="12" cy="12" r="9" fill="rgba(255,59,92,0.18)"/><path d="M8 12l2.5 2.5L16 9" stroke="#ff3b5c" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg></span><span><strong style={{ color: "#fff" }}>Pribadong Account:</strong> Hindi mada-download ang mga video mula sa mga pribadong account.</span></li>
           <li style={{ display: "flex", gap: 8, padding: "4px 0" }}><span style={{ color: "#ff3b5c", lineHeight: 1.4 }} aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" style={{ display: "block", marginTop: 4 }}><circle cx="12" cy="12" r="9" fill="rgba(255,59,92,0.18)"/><path d="M8 12l2.5 2.5L16 9" stroke="#ff3b5c" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg></span><span><strong style={{ color: "#fff" }}>Maling URL:</strong> Tiyaking i-paste mo ang tama at kumpletong link ng video o audio ng TikTok.</span></li>
         </ul>
+        <p className="mb-0">Kung tama ang link at pampubliko ang video pero hindi pa rin gumagana, maaaring may isyu sa browser o pansamantalang paghihigpit sa TikTok. I-refresh ang page o subukan ang ibang browser. Tingnan din ang mga <a href="/tiktok-video-hindi-nadadownload">solusyon kapag hindi nada-download ang TikTok video</a>.</p>
       </div>
     )}
   ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faqAnswerText(faq.a) },
+    })),
+  };
 
   return (
     <div className="home-faq home-faq--polished">
@@ -442,6 +460,7 @@ function HomeFaq() {
           <FaqItem key={i} question={faq.q} answer={faq.a} />
         ))}
       </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }} />
     </div>
   );
 }
