@@ -82,12 +82,17 @@ export function createTikTokService(options: Options = {}) {
     try {
       // Independent, documented free API. Never follow the promotional links in its response.
       const response = await fetcher(`https://freeapi.pro/api/alldl?${new URLSearchParams({ url: target })}`, {
-        headers: { Accept: "application/json" }, signal: AbortSignal.timeout(15000), cache: "no-store", redirect: "error",
+        headers: { Accept: "application/json" }, signal: AbortSignal.timeout(15000), cache: "no-store", redirect: "manual",
       });
       if (!response.ok) {
         await response.body?.cancel();
         blockedUntil.set("freeapi", now() + COOLDOWN);
         return failed(`http-${response.status}`);
+      }
+      if (!response.headers.get("content-type")?.includes("application/json")) {
+        await response.body?.cancel();
+        blockedUntil.set("freeapi", now() + COOLDOWN);
+        return failed("non-json-response");
       }
       const json = object(await response.json());
       if (json.success !== true) { blockedUntil.set("freeapi", now() + COOLDOWN); return failed("provider-error"); }
@@ -110,7 +115,13 @@ export function createTikTokService(options: Options = {}) {
         authorUrl: string(author.unique_id) ? `https://www.tiktok.com/@${encodeURIComponent(string(author.unique_id))}` : "#",
         authorThumb: media(author.avatar),
       } };
-    } catch { blockedUntil.set("freeapi", now() + COOLDOWN); return failed("connection-or-json"); }
+    } catch (error) {
+      blockedUntil.set("freeapi", now() + COOLDOWN);
+      const name = error instanceof Error ? error.name : "unknown";
+      const message = error instanceof Error ? error.message : "";
+      const reason = /redirect/i.test(message) ? "redirect" : /certificate|SSL|TLS/i.test(message) ? "tls" : /cache/i.test(message) ? "cache" : /1042|cross.worker/i.test(message) ? "worker-routing" : "request";
+      return failed(`${reason}-${["SyntaxError", "TypeError", "TimeoutError", "AbortError"].includes(name) ? name : "error"}`);
+    }
   }
 
   async function request(videoUrl: string, apiKey: string | undefined, provider: string): Promise<ApiResult> {

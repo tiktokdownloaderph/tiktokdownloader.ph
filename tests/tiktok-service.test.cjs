@@ -35,6 +35,7 @@ test('falls back after quota, caches success, and skips cooling primary', async 
   const api = createTikTokService({ freeFallback: true, fetcher: async (input, options) => {
     if (input === 'https://www.tikwm.com/api/') { primary++; return Response.json({ code: -1, msg: 'quota exceeded' }); }
     assert.equal(new URL(input).origin, 'https://freeapi.pro');
+    assert.equal(options.redirect, 'manual'); // Workers rejects the standard "error" redirect mode.
     assert.equal(options.headers['x-tikwmapi-key'], undefined);
     pages++; return fallbackSuccess();
   } });
@@ -75,6 +76,15 @@ test('secondary rate limits cool down without repeatedly consuming requests', as
   assert.equal((await api.load(url)).status, 503);
   await api.load(url.replace('8570', '8571'));
   assert.equal(calls, 1);
+});
+
+test('fallback does not follow provider redirects', async () => {
+  const api = createTikTokService({ freeFallback: true, fetcher: async input => input === 'https://www.tikwm.com/api/'
+    ? new Response('', { status: 503 })
+    : new Response('', { status: 302, headers: { location: 'https://ads.example/' } }) });
+  const result = await api.load(url);
+  assert.equal(result.status, 503);
+  assert.equal(result.fallbackStatus, 'http-302');
 });
 
 test('validates links before making an upstream request', async () => {
