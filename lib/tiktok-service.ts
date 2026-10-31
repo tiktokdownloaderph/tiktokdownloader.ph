@@ -1,5 +1,5 @@
 type JsonObject = Record<string, unknown>;
-type ApiResult = { status: number; body: JsonObject; retryAfter?: number };
+type ApiResult = { status: number; body: JsonObject; retryAfter?: number; fallbackStatus?: string };
 type Options = { fetcher?: typeof fetch; now?: () => number; getApiKey?: () => string | undefined; freeFallback?: boolean };
 
 const CACHE_TTL = 5 * 60 * 1000;
@@ -57,7 +57,8 @@ export function createTikTokService(options: Options = {}) {
         ? { status: 503, body: { code: "UPSTREAM_LIMIT", error: "Video service capacity is temporarily unavailable." }, retryAfter: Math.ceil(cooldown / 1000) }
         : await request(input.url, apiKey, provider);
       if (primary.status < 500 || options.freeFallback === false) return primary;
-      return await freeApi(input.url) ?? primary;
+      const fallback = await freeApi(input.url);
+      return fallback.status === 200 ? fallback : { ...primary, fallbackStatus: fallback.fallbackStatus };
     })();
     pending.set(key, task);
     try {
@@ -73,10 +74,11 @@ export function createTikTokService(options: Options = {}) {
     }
   }
 
-  async function freeApi(value: string): Promise<ApiResult | null> {
-    if ((blockedUntil.get("freeapi") ?? 0) > now()) return null;
+  async function freeApi(value: string): Promise<ApiResult> {
+    const failed = (fallbackStatus: string): ApiResult => ({ status: 503, body: {}, fallbackStatus });
+    if ((blockedUntil.get("freeapi") ?? 0) > now()) return failed("cooldown");
     const target = /^\d+$/.test(value) ? `https://www.tiktok.com/@_/video/${value}` : value;
-    if (!new URL(target).hostname.endsWith("tiktok.com")) return null;
+    if (!new URL(target).hostname.endsWith("tiktok.com")) return failed("unsupported");
     try {
       // Independent, documented free API. Never follow the promotional links in its response.
       const response = await fetcher(`https://freeapi.pro/api/alldl?${new URLSearchParams({ url: target })}`, {
@@ -85,10 +87,10 @@ export function createTikTokService(options: Options = {}) {
       if (!response.ok) {
         await response.body?.cancel();
         blockedUntil.set("freeapi", now() + COOLDOWN);
-        return null;
+        return failed(`http-${response.status}`);
       }
       const json = object(await response.json());
-      if (json.success !== true) { blockedUntil.set("freeapi", now() + COOLDOWN); return null; }
+      if (json.success !== true) { blockedUntil.set("freeapi", now() + COOLDOWN); return failed("provider-error"); }
       const info = object(json.mediaInfo);
       const media = (value: unknown) => {
         try {
@@ -98,17 +100,17 @@ export function createTikTokService(options: Options = {}) {
         } catch { return ""; }
       };
       const playback = media(info.videoUrl);
-      if (!playback) return null;
+      if (!playback) return failed("no-video");
       const audio = media(info.audioUrl) || media(info.musicUrl);
       const author = object(info.author);
-      return { status: 200, body: {
+      return { status: 200, fallbackStatus: "success", body: {
         hdUrl: playback, wmUrl: "", music: audio, audioUrl: audio,
         thumbnail: media(info.thumbnail) || media(info.coverImage),
         author: string(author.nickname) || string(info.authorName) || "tiktok",
         authorUrl: string(author.unique_id) ? `https://www.tiktok.com/@${encodeURIComponent(string(author.unique_id))}` : "#",
         authorThumb: media(author.avatar),
       } };
-    } catch { blockedUntil.set("freeapi", now() + COOLDOWN); return null; }
+    } catch { blockedUntil.set("freeapi", now() + COOLDOWN); return failed("connection-or-json"); }
   }
 
   async function request(videoUrl: string, apiKey: string | undefined, provider: string): Promise<ApiResult> {

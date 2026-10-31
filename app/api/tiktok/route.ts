@@ -11,6 +11,7 @@ export async function GET(request: Request) {
   };
   if (!videoUrl) return Response.json({ code: "INVALID_URL", error: "url required" }, { status: 400, headers });
   const result = await service.load(videoUrl);
+  if (result.fallbackStatus) headers["X-Video-Fallback"] = result.fallbackStatus;
   if (result.retryAfter) headers["Retry-After"] = String(result.retryAfter);
   return Response.json(result.body, { status: result.status, headers });
 }
