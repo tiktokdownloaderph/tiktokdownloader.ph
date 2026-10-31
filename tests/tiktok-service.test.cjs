@@ -17,13 +17,65 @@ function loadTypeScript(file) {
   return loaded.exports;
 }
 
-const { createTikTokService } = loadTypeScript('lib/tiktok-service.ts');
+const { createTikTokService: createService } = loadTypeScript('lib/tiktok-service.ts');
+const createTikTokService = (options = {}) => createService({ freeFallback: false, ...options });
 const url = 'https://www.tiktok.com/@test/video/7231338487075638570';
 const success = () => Response.json({ code: 0, data: {
   play: 'https://v.tiktokcdn.com/video.mp4', hdplay: 'https://v.tiktokcdn.com/hd.mp4',
   wmplay: 'https://v.tiktokcdn.com/wm.mp4', music: 'https://v.tiktokcdn.com/audio.mp3',
   cover: 'https://p.tiktokcdn.com/cover.jpg', author: { nickname: 'Test', unique_id: 'test', avatar: 'https://p.tiktokcdn.com/avatar.jpg' },
 } });
+
+const fallbackSuccess = () => Response.json({ success: true, links: ['https://ads.example/'], mediaInfo: {
+  videoUrl: 'https://v.tiktokcdn.com/direct.mp4', thumbnail: 'https://p.tiktokcdn.com/cover.jpg', musicUrl: 'https://v.tiktokcdn.com/audio.mp3',
+} });
+
+test('falls back after quota, caches success, and skips cooling primary', async () => {
+  let primary = 0, pages = 0;
+  const api = createTikTokService({ freeFallback: true, fetcher: async (input, options) => {
+    if (input === 'https://www.tikwm.com/api/') { primary++; return Response.json({ code: -1, msg: 'quota exceeded' }); }
+    assert.equal(new URL(input).origin, 'https://freeapi.pro');
+    assert.equal(options.headers['x-tikwmapi-key'], undefined);
+    pages++; return fallbackSuccess();
+  } });
+  assert.equal((await api.load(url)).body.hdUrl, 'https://v.tiktokcdn.com/direct.mp4');
+  await api.load(url);
+  assert.equal(pages, 1);
+  assert.equal((await api.load(url.replace('8570', '8571'))).status, 200);
+  assert.equal(primary, 1);
+  assert.equal(pages, 2);
+});
+
+test('rejects untrusted media URLs and never uses promotional links', async () => {
+  let calls = 0;
+  const api = createTikTokService({ freeFallback: true, fetcher: async input => {
+    calls++;
+    if (input === 'https://www.tikwm.com/api/') return new Response('', { status: 503 });
+    return Response.json({ success: true, links: ['https://v.tiktokcdn.com/advertisement'], mediaInfo: { videoUrl: 'https://tiktokcdn.com.evil.example/video.mp4' } });
+  } });
+  assert.equal((await api.load('https://vm.tiktok.com/test/')).status, 503);
+  assert.equal(calls, 2);
+});
+
+test('does not retry private videos and handles malformed fallback responses', async () => {
+  let calls = 0;
+  const privateApi = createTikTokService({ freeFallback: true, fetcher: async () => { calls++; return Response.json({ code: -1, msg: 'Video is private' }); } });
+  assert.equal((await privateApi.load(url)).status, 422);
+  assert.equal(calls, 1);
+  const api = createTikTokService({ freeFallback: true, fetcher: async input => input === 'https://www.tikwm.com/api/' ? new Response('', { status: 503 }) : new Response('<html>challenge</html>') });
+  assert.equal((await api.load(url)).status, 503);
+});
+
+test('secondary rate limits cool down without repeatedly consuming requests', async () => {
+  let calls = 0;
+  const api = createTikTokService({ freeFallback: true, fetcher: async input => {
+    if (input === 'https://www.tikwm.com/api/') return Response.json({ code: -1, msg: 'quota exceeded' });
+    calls++; return new Response('', { status: 429 });
+  } });
+  assert.equal((await api.load(url)).status, 503);
+  await api.load(url.replace('8570', '8571'));
+  assert.equal(calls, 1);
+});
 
 test('validates links before making an upstream request', async () => {
   let calls = 0;

@@ -22,6 +22,18 @@ Make sure the provider account has adequate remaining quota. Adding a key does
 not remove the provider's plan limits. An exhausted public quota cannot be fixed
 by this code alone.
 
+When TikWM reports quota exhaustion, a server/authentication error, or a timeout,
+the route now tries the independent free API documented at
+https://freeapi.pro/alldl (`GET /api/alldl?url=...`). No account or key is
+required for this fallback. Only validated TikTok media URLs from `mediaInfo`
+are used; promotional `links` are ignored. The response is normalized to the
+existing frontend fields. Unavailable/private videos are not retried elsewhere.
+
+Both services have independent per-instance cooldowns. The fallback is a
+third-party fair-use service, not a guarantee of unlimited capacity or uptime.
+It may not supply a separate watermarked version or audio for every post.
+The requested public video URL is sent to the fallback only after TikWM fails.
+
 Successful results are cached for five minutes and simultaneous requests for
 the same video are combined. These are bounded **per-instance** caches; they
 are not persistent or shared between serverless instances. Quota failures start
