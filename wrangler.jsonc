@@ -13,3 +13,10 @@
     "enabled": true
   }
 }
+{
+  // ...
+  "vars": {
+    "TIKWM_API_KEY": "9f1e8be4a72d994c1c0f7fe3abcc1f78"
+  },
+  // ...
+}
