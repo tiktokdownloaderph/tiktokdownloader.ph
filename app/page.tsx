@@ -22,8 +22,8 @@ const JSON_LD = {
       "name": "TikTok Downloader na Walang Watermark - HD at Mabilis",
       "description": "I-save ang paborito mong videos gamit ang TikTok Downloader. Libre, HD at walang watermark, walang app o login. Gumagana sa Android, iPhone at PC.",
       "inLanguage": "fil-PH",
-      "datePublished": "2026-11-01T04:29:56+08:00",
-      "dateModified": "2026-11-01T04:29:56+08:00",
+      "datePublished": "2026-11-02T00:00:00+05:00",
+      "dateModified": "2026-11-02T00:00:00+05:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph#website" },
       "about": { "@id": "https://tiktokdownloader.ph#app" }
     },

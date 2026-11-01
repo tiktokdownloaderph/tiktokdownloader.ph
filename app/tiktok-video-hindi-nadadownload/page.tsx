@@ -8,7 +8,7 @@ const pageUrl = `${SITE_URL}/tiktok-video-hindi-nadadownload`;
 const featuredImagePath = "/images/Why-TikTok-Videos-Won’t-Download.webp";
 const featuredImage = `${SITE_URL}${featuredImagePath}`;
 const featuredImageAlt = "Hindi ma-download ang TikTok video sa phone dahil sa link o koneksyon";
-const publishedAt = "2026-11-01T04:29:56+08:00";
+const publishedAt = "2026-11-02T00:00:00+05:00";
 
 export const metadata: Metadata = {
   title,
@@ -90,6 +90,7 @@ export default function DownloadTroubleshootingGuidePage() {
             <p>Minsan ay may hawak pang lumang data ang browser mo na pumipigil sa mga page na mag-load nang tama. Ang pag-clear ng cache mo o ang simpleng pagbukas sa downloader namin sa private o incognito window ay madalas nakakalutas sa mga hindi inaasahang error sa pag-download nang walang kailangang ibang pagbabago.</p>
             <h3>Tingnan ang Download Permissions ng Browser Mo</h3>
             <p>May ilang browser na humaharang sa pag-download ng file kung naka-off ang ilang permissions. Siguraduhing pinapayagan ng browser mo ang mga download bago subukan muli. Lalo itong sulit tingnan kung gumagana ang download sa ibang website pero dito hindi.</p>
+            <p>Huwag mag-install ng hindi kilalang app o magbigay ng TikTok password para lang maayos ang error. Basahin ang gabay sa <a href="/is-it-safe-to-download-tiktok-videos">ligtas na pag-download ng TikTok videos</a> para malaman kung ano ang dapat iwasan.</p>
             <h3>Subukan ang Ibang Network</h3>
             <p>Kung nasa office, school, o public Wi-Fi network ka, maaaring ang network mismo ang humaharang sa access sa ilang website o sa pag-download ng file. Ang paglipat sa mobile data connection mo ay karaniwang agad na naglulutas nito.</p>
             <figure style={{ margin: "28px 0 0" }}>
