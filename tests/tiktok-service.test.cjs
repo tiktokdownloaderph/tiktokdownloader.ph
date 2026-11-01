@@ -13,12 +13,14 @@ function loadTypeScript(file) {
   const loaded = new Module(filename, module);
   loaded.filename = filename;
   loaded.paths = Module._nodeModulePaths(path.dirname(filename));
+  const originalRequire = loaded.require.bind(loaded);
+  loaded.require = id => id.startsWith('@/') ? loadTypeScript(id.slice(2) + '.ts') : originalRequire(id);
   loaded._compile(compiled, filename);
   return loaded.exports;
 }
 
 const { createTikTokService: createService } = loadTypeScript('lib/tiktok-service.ts');
-const createTikTokService = (options = {}) => createService({ freeFallback: false, ...options });
+const createTikTokService = (options = {}) => createService({ freeFallback: false, getExtractor: () => undefined, ...options });
 const url = 'https://www.tiktok.com/@test/video/7231338487075638570';
 const success = () => Response.json({ code: 0, data: {
   play: 'https://v.tiktokcdn.com/video.mp4', hdplay: 'https://v.tiktokcdn.com/hd.mp4',
@@ -29,6 +31,86 @@ const success = () => Response.json({ code: 0, data: {
 const fallbackSuccess = () => Response.json({ success: true, links: ['https://ads.example/'], mediaInfo: {
   videoUrl: 'https://v.tiktokcdn.com/direct.mp4', thumbnail: 'https://p.tiktokcdn.com/cover.jpg', musicUrl: 'https://v.tiktokcdn.com/audio.mp3',
 } });
+
+const extractor = { url: 'https://test.onrender.com', key: 'test-secret-only-not-real-123456789012' };
+const renderVideo = extractor.url + '/media/' + 'A'.repeat(43);
+const renderAudio = extractor.url + '/media/' + 'B'.repeat(43);
+
+test('configured Render extractor is first and uses server-only authentication', async () => {
+  let calls = 0;
+  const api = createTikTokService({ getExtractor: () => extractor, fetcher: async (input, options) => {
+    calls++;
+    assert.equal(input, extractor.url + '/extract');
+    assert.equal(options.redirect, 'manual');
+    assert.equal(options.headers.Authorization, 'Bearer ' + extractor.key);
+    assert.equal(JSON.parse(options.body).url, url);
+    return Response.json({ hdUrl: renderVideo, audioUrl: renderAudio });
+  } });
+  const result = await api.load(url);
+  assert.equal(result.status, 200);
+  assert.equal(result.body.music, renderAudio);
+  assert.equal(result.fallbackStatus, 'render');
+  assert.ok(!JSON.stringify(result).includes(extractor.key));
+  await api.load(url);
+  assert.equal(calls, 1);
+});
+
+test('Render errors fall back without forwarding its secret to TikWM', async () => {
+  let calls = 0;
+  const api = createTikTokService({ getExtractor: () => extractor, fetcher: async (input, options) => {
+    calls++;
+    if (input === extractor.url + '/extract') return Response.json({ code: 'BUSY' }, { status: 503 });
+    assert.equal(input, 'https://www.tikwm.com/api/');
+    assert.equal(options.headers.Authorization, undefined);
+    return success();
+  } });
+  assert.equal((await api.load(url)).status, 200);
+  assert.equal(calls, 2);
+});
+
+test('Render restricted videos do not get retried and foreign media is rejected', async () => {
+  let calls = 0;
+  const restricted = createTikTokService({ getExtractor: () => extractor, fetcher: async () => { calls++; return Response.json({ reason: 'SOURCE_RESTRICTED' }, { status: 502 }); } });
+  assert.equal((await restricted.load(url)).status, 422);
+  assert.equal(calls, 1);
+  const foreign = createTikTokService({ getExtractor: () => extractor, fetcher: async input => input === extractor.url + '/extract'
+    ? Response.json({ hdUrl: 'https://evil.test/media/' + 'A'.repeat(43) }) : new Response('', { status: 503 }) });
+  assert.equal((await foreign.load(url)).status, 503);
+});
+
+const { createDownloadHandler } = loadTypeScript('lib/download-media.ts');
+const downloadRequest = (url, filename = 'test.mp4') => new Request('https://tiktokdownloader.ph/api/download?' + new URLSearchParams({ url, filename }));
+
+test('download proxy streams Render MP4 and MP3 without exposing backend key', async () => {
+  for (const [url, mime] of [[renderVideo, 'video/mp4'], [renderAudio, 'audio/mpeg']]) {
+    const handler = createDownloadHandler({ getExtractor: () => extractor, fetcher: async (input, options) => {
+      assert.equal(input, url);
+      assert.equal(options.redirect, 'manual');
+      assert.equal(options.headers.Authorization, undefined);
+      return new Response('media bytes', { headers: { 'Content-Type': mime } });
+    } });
+    const result = await handler(downloadRequest(url));
+    assert.equal(result.status, 200);
+    assert.equal(result.headers.get('content-type'), mime);
+    assert.equal(await result.text(), 'media bytes');
+  }
+});
+
+test('download proxy rejects untrusted hosts and arbitrary Render paths before fetch', async () => {
+  let calls = 0;
+  const handler = createDownloadHandler({ getExtractor: () => extractor, fetcher: async () => { calls++; return new Response(); } });
+  for (const url of ['https://evil.test/?tiktok=1', 'https://tiktok.com.evil.test/video', 'https://127.0.0.1/tiktok', extractor.url + '/extract', renderVideo + '?target=evil', 'https://other.onrender.com/media/' + 'A'.repeat(43)]) assert.equal((await handler(downloadRequest(url))).status, 400);
+  assert.equal(calls, 0);
+});
+
+test('download proxy validates redirects and refuses HTML masquerading as media', async () => {
+  let calls = 0;
+  const handler = createDownloadHandler({ getExtractor: () => extractor, fetcher: async () => { calls++; return new Response('', { status: 302, headers: { location: 'https://127.0.0.1/tiktok' } }); } });
+  assert.equal((await handler(downloadRequest(renderVideo))).status, 502);
+  assert.equal(calls, 1);
+  const html = createDownloadHandler({ getExtractor: () => extractor, fetcher: async () => new Response('<html>Error</html>', { headers: { 'Content-Type': 'text/html' } }) });
+  assert.equal((await html(downloadRequest(renderAudio))).status, 502);
+});
 
 test('shares successful results across instances without extending signed URL lifetime', async () => {
   let time = 100, calls = 0, writes = 0;

@@ -5,6 +5,9 @@
   "upload_source_maps": true,
   "compatibility_date": "2026-10-31",
   "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "EXTRACTOR_BACKEND_URL": "https://tiktok-extractor-test.onrender.com"
+  },
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"

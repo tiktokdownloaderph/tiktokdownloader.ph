@@ -1,5 +1,36 @@
 # TikTok API access
 
+## Self-hosted Render video and audio
+
+After the standalone Render test passes, configure the **production Worker's
+runtime Variables and Secrets**, not its Build variables:
+
+- Public variable `EXTRACTOR_BACKEND_URL` is already set in `wrangler.jsonc` to
+  `https://tiktok-extractor-test.onrender.com`; no manual entry is needed.
+- Secret `EXTRACTOR_API_KEY`: the same private value configured on Render.
+
+Save and deploy the Worker configuration. Never commit the key or use a
+`NEXT_PUBLIC_` variable. No DNS change or paid Cloudflare add-on is needed.
+Remove the secret to disable the Render path and return to legacy providers.
+
+When configured, public individual TikTok videos use Render first. Render keeps
+public extraction cookies server-side, streams MP4, and serves native or converted
+MP3 audio. Cloudflare only accepts `/media/<opaque-token>` URLs from the exact
+configured backend origin, and never forwards the backend API key on media fetches.
+Non-video routes continue through their existing providers. Service failures can
+fall back to legacy providers, but private/restricted videos are not retried.
+
+Render responses are cached for at most 60 seconds in the Worker because their
+media tokens are temporary. Free Render may sleep, has bandwidth/build limits,
+and with a payment method on file overage charges may apply. Keep the instance
+Free, monitor usage, and do not assume this is an unlimited zero-cost service.
+MP3 conversion is one-at-a-time and time-limited; a busy backend can return 503.
+
+Verify `/api/tiktok` reports `X-Video-Access: render`, load a fresh public video,
+then test both `/api/download` outputs: actual MP4 and actual decodable MP3 bytes.
+
+## Legacy providers
+
 The video route supports the authenticated API linked by TikWM:
 https://tikwmapi.com/docs.html
 

@@ -1,7 +1,24 @@
 type JsonObject = Record<string, unknown>;
 type ApiResult = { status: number; body: JsonObject; retryAfter?: number; fallbackStatus?: string };
 type SharedCache = Pick<Cache, "match" | "put">;
-type Options = { fetcher?: typeof fetch; now?: () => number; getApiKey?: () => string | undefined; freeFallback?: boolean; getSharedCache?: () => SharedCache | undefined };
+type ExtractorConfig = { url: string; key: string };
+type Options = { fetcher?: typeof fetch; now?: () => number; getApiKey?: () => string | undefined; freeFallback?: boolean; getSharedCache?: () => SharedCache | undefined; getExtractor?: () => ExtractorConfig | undefined };
+
+export function getExtractorConfig(): ExtractorConfig | undefined {
+  try {
+    const url = new URL(process.env.EXTRACTOR_BACKEND_URL || "");
+    const key = process.env.EXTRACTOR_API_KEY?.trim();
+    if (url.protocol !== "https:" || !url.hostname.endsWith(".onrender.com") || url.username || url.password || url.port || url.pathname !== "/" || url.search || url.hash || !key || key.length < 32) return undefined;
+    return { url: url.origin, key };
+  } catch { return undefined; }
+}
+
+export function isExtractorMediaUrl(value: string, base: string): boolean {
+  try {
+    const url = new URL(value);
+    return url.origin === new URL(base).origin && !url.username && !url.password && !url.search && !url.hash && /^\/media\/[A-Za-z0-9_-]{43}$/.test(url.pathname);
+  } catch { return false; }
+}
 
 const CACHE_TTL = 5 * 60 * 1000;
 const MAX_ENTRIES = 256;
@@ -36,6 +53,7 @@ export function createTikTokService(options: Options = {}) {
   const fetcher = options.fetcher ?? fetch;
   const now = options.now ?? Date.now;
   const getApiKey = options.getApiKey ?? (() => process.env.TIKWM_API_KEY);
+  const getExtractor = options.getExtractor ?? getExtractorConfig;
   const getSharedCache = options.getSharedCache ?? (() => (globalThis as typeof globalThis & { caches?: CacheStorage & { default?: SharedCache } }).caches?.default);
   const cache = new Map<string, { expires: number; result: ApiResult }>();
   const pending = new Map<string, Promise<ApiResult>>();
@@ -46,7 +64,10 @@ export function createTikTokService(options: Options = {}) {
     if (!input) return { status: 400, body: { code: "INVALID_URL", error: "A valid TikTok video link is required." } };
     const apiKey = getApiKey()?.trim();
     const provider = apiKey ? "authenticated" : "public";
-    const key = `${provider}:${input.id}`;
+    const extractor = getExtractor();
+    const useExtractor = extractor && (/^\d+$/.test(input.url) || /https:\/\/(?:www\.)?tiktok\.com\/@[^/]+\/video\/\d+/.test(input.url) || /https:\/\/(?:vm|vt)\.tiktok\.com\//.test(input.url));
+    const ttl = useExtractor ? 60 * 1000 : CACHE_TTL;
+    const key = `${useExtractor ? `render-mp3-v1:${extractor.url}` : provider}:${input.id}`;
     const cached = cache.get(key);
     if (cached && cached.expires > now()) return cached.result;
     if (cached) cache.delete(key);
@@ -67,6 +88,10 @@ export function createTikTokService(options: Options = {}) {
           }
         }
       } catch { /* Cache availability must not prevent a provider request. */ }
+      if (useExtractor) {
+        const extracted = await requestExtractor(input.url, extractor);
+        if (extracted.status === 200 || extracted.status === 422) return extracted;
+      }
       const primary: ApiResult = cooldown > 0
         ? { status: 503, body: { code: "UPSTREAM_LIMIT", error: "Video service capacity is temporarily unavailable." }, retryAfter: Math.ceil(cooldown / 1000) }
         : await request(input.url, apiKey, provider);
@@ -80,10 +105,10 @@ export function createTikTokService(options: Options = {}) {
       if (result.status === 200) {
         for (const [entryKey, entry] of cache) if (entry.expires <= now()) cache.delete(entryKey);
         if (cache.size >= MAX_ENTRIES) cache.delete(cache.keys().next().value!);
-        cache.set(key, { expires: sharedExpires ?? now() + CACHE_TTL, result });
+        cache.set(key, { expires: sharedExpires ?? now() + ttl, result });
         try {
-          if (!sharedExpires) await getSharedCache()?.put(sharedKey(key), Response.json({ expires: now() + CACHE_TTL, result }, {
-            headers: { "Cache-Control": `public, max-age=${CACHE_TTL / 1000}` },
+          if (!sharedExpires) await getSharedCache()?.put(sharedKey(key), Response.json({ expires: now() + ttl, result }, {
+            headers: { "Cache-Control": `public, max-age=${ttl / 1000}` },
           }));
         } catch { /* Return a successful download even if the edge cache cannot be written. */ }
       }
@@ -91,6 +116,28 @@ export function createTikTokService(options: Options = {}) {
     } finally {
       pending.delete(key);
     }
+  }
+
+  async function requestExtractor(value: string, config: ExtractorConfig): Promise<ApiResult> {
+    try {
+      const response = await fetcher(`${config.url}/extract`, {
+        method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${config.key}` },
+        body: JSON.stringify({ url: /^\d+$/.test(value) ? `https://www.tiktok.com/@_/video/${value}` : value }),
+        signal: AbortSignal.timeout(120000), cache: "no-store", redirect: "manual",
+      });
+      const data = object(await response.json());
+      if (!response.ok) {
+        if (data.reason === "SOURCE_RESTRICTED") return { status: 422, body: { code: "VIDEO_UNAVAILABLE", error: "This public video is unavailable." } };
+        return { status: 503, body: { code: "SERVICE_UNAVAILABLE", error: "Video service is temporarily unavailable." } };
+      }
+      const hdUrl = string(data.hdUrl), audioUrl = string(data.audioUrl);
+      if (!isExtractorMediaUrl(hdUrl, config.url) || (audioUrl && !isExtractorMediaUrl(audioUrl, config.url))) throw new Error("Invalid extractor media");
+      return { status: 200, fallbackStatus: "render", body: {
+        hdUrl, wmUrl: "", audioUrl, music: audioUrl,
+        thumbnail: string(data.thumbnail), author: string(data.author) || "tiktok",
+        authorUrl: string(data.authorUrl) || "#", authorThumb: string(data.authorThumb),
+      } };
+    } catch { return { status: 503, body: { code: "SERVICE_UNAVAILABLE", error: "Video service is temporarily unavailable." } }; }
   }
 
   function sharedKey(key: string) {
