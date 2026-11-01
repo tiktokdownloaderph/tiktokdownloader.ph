@@ -30,6 +30,45 @@ const fallbackSuccess = () => Response.json({ success: true, links: ['https://ad
   videoUrl: 'https://v.tiktokcdn.com/direct.mp4', thumbnail: 'https://p.tiktokcdn.com/cover.jpg', musicUrl: 'https://v.tiktokcdn.com/audio.mp3',
 } });
 
+test('shares successful results across instances without extending signed URL lifetime', async () => {
+  let time = 100, calls = 0, writes = 0;
+  const entries = new Map();
+  const shared = { match: async key => entries.get(key)?.clone(), put: async (key, response) => { writes++; entries.set(key, response.clone()); } };
+  const options = { now: () => time, getSharedCache: () => shared, fetcher: async () => { calls++; return success(); } };
+  await createTikTokService(options).load(url);
+  time += 100000;
+  assert.equal((await createTikTokService(options).load(url + '?tracking=1')).status, 200);
+  assert.equal(calls, 1);
+  assert.equal(writes, 1);
+  time = 300101;
+  await createTikTokService(options).load(url);
+  assert.equal(calls, 2);
+});
+
+test('edge cache failures do not break otherwise successful downloads', async () => {
+  const api = createTikTokService({ getSharedCache: () => ({ match: async () => { throw Error('cache unavailable'); }, put: async () => { throw Error('cache full'); } }), fetcher: async () => success() });
+  assert.equal((await api.load(url)).status, 200);
+});
+
+test('respects the longer provider Retry-After instead of retrying every minute', async () => {
+  let time = 0, calls = 0;
+  const api = createTikTokService({ now: () => time, freeFallback: true, fetcher: async input => {
+    calls++;
+    return new Response('', { status: 429, headers: { 'Retry-After': input === 'https://www.tikwm.com/api/' ? '120' : '300' } });
+  } });
+  assert.equal((await api.load(url)).retryAfter, 300);
+  time = 61000;
+  assert.equal((await api.load(url)).retryAfter, 239);
+  assert.equal(calls, 2);
+});
+
+test('failed provider results are never stored in the shared cache', async () => {
+  let writes = 0;
+  const api = createTikTokService({ getSharedCache: () => ({ match: async () => undefined, put: async () => { writes++; } }), fetcher: async () => new Response('', { status: 429 }) });
+  await api.load(url);
+  assert.equal(writes, 0);
+});
+
 test('falls back after quota, caches success, and skips cooling primary', async () => {
   let primary = 0, pages = 0;
   const api = createTikTokService({ freeFallback: true, fetcher: async (input, options) => {

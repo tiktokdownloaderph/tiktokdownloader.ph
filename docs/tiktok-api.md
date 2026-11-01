@@ -35,10 +35,15 @@ It may not supply a separate watermarked version or audio for every post.
 The requested public video URL is sent to the fallback only after TikWM fails.
 
 Successful results are cached for five minutes and simultaneous requests for
-the same video are combined. These are bounded **per-instance** caches; they
-are not persistent or shared between serverless instances. Quota failures start
-a one-minute per-instance cooldown to avoid hammering the provider. This is a
-retry backoff, not a promise that the daily quota resets in one minute.
+the same video are combined. Bounded per-instance caches are supplemented by
+the Workers Cache API, where available, to reuse successes across instances
+within the same Cloudflare data center. This is best-effort regional caching,
+not globally shared durable storage. Cache reads never extend signed URL lifetime,
+and failures are never cached. Unavailable caches do not block the providers.
+
+Provider cooldowns respect `Retry-After` (seconds or HTTP date), with a minimum
+one-minute backoff. This is not a promise that a daily quota resets in one minute.
+If both providers refuse a new video, caching cannot manufacture a valid result.
 
 After deployment, load a public TikTok video once, check that MP4/MP3 options
 appear, and download a file. Never include the API key in a public test URL.

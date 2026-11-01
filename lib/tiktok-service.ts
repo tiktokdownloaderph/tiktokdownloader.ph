@@ -1,6 +1,7 @@
 type JsonObject = Record<string, unknown>;
 type ApiResult = { status: number; body: JsonObject; retryAfter?: number; fallbackStatus?: string };
-type Options = { fetcher?: typeof fetch; now?: () => number; getApiKey?: () => string | undefined; freeFallback?: boolean };
+type SharedCache = Pick<Cache, "match" | "put">;
+type Options = { fetcher?: typeof fetch; now?: () => number; getApiKey?: () => string | undefined; freeFallback?: boolean; getSharedCache?: () => SharedCache | undefined };
 
 const CACHE_TTL = 5 * 60 * 1000;
 const MAX_ENTRIES = 256;
@@ -30,11 +31,12 @@ function normalizeUrl(value: string): { url: string; id: string } | null {
   }
 }
 
-// These bounded caches are per server instance, not a global/persistent quota store.
+// Memory caches deduplicate within an instance; Workers Cache also reuses successes across instances in a data center.
 export function createTikTokService(options: Options = {}) {
   const fetcher = options.fetcher ?? fetch;
   const now = options.now ?? Date.now;
   const getApiKey = options.getApiKey ?? (() => process.env.TIKWM_API_KEY);
+  const getSharedCache = options.getSharedCache ?? (() => (globalThis as typeof globalThis & { caches?: CacheStorage & { default?: SharedCache } }).caches?.default);
   const cache = new Map<string, { expires: number; result: ApiResult }>();
   const pending = new Map<string, Promise<ApiResult>>();
   const blockedUntil = new Map<string, number>();
@@ -52,13 +54,25 @@ export function createTikTokService(options: Options = {}) {
     const existing = pending.get(key);
     if (existing) return existing;
     if (pending.size >= 20) return { status: 503, body: { code: "SERVICE_BUSY", error: "Video service is busy. Please try again shortly." }, retryAfter: 10 };
+    let sharedExpires: number | undefined;
     const task = (async () => {
+      try {
+        const shared = await getSharedCache()?.match(sharedKey(key));
+        if (shared) {
+          const entry = object(await shared.json());
+          const result = object(entry.result);
+          if (typeof entry.expires === "number" && entry.expires > now() && result.status === 200 && string(object(result.body).hdUrl).startsWith("https://")) {
+            sharedExpires = entry.expires;
+            return result as ApiResult;
+          }
+        }
+      } catch { /* Cache availability must not prevent a provider request. */ }
       const primary: ApiResult = cooldown > 0
         ? { status: 503, body: { code: "UPSTREAM_LIMIT", error: "Video service capacity is temporarily unavailable." }, retryAfter: Math.ceil(cooldown / 1000) }
         : await request(input.url, apiKey, provider);
       if (primary.status < 500 || options.freeFallback === false) return primary;
       const fallback = await freeApi(input.url);
-      return fallback.status === 200 ? fallback : { ...primary, fallbackStatus: fallback.fallbackStatus };
+      return fallback.status === 200 ? fallback : { ...primary, fallbackStatus: fallback.fallbackStatus, retryAfter: Math.max(primary.retryAfter ?? 0, fallback.retryAfter ?? 0) || undefined };
     })();
     pending.set(key, task);
     try {
@@ -66,7 +80,12 @@ export function createTikTokService(options: Options = {}) {
       if (result.status === 200) {
         for (const [entryKey, entry] of cache) if (entry.expires <= now()) cache.delete(entryKey);
         if (cache.size >= MAX_ENTRIES) cache.delete(cache.keys().next().value!);
-        cache.set(key, { expires: now() + CACHE_TTL, result });
+        cache.set(key, { expires: sharedExpires ?? now() + CACHE_TTL, result });
+        try {
+          if (!sharedExpires) await getSharedCache()?.put(sharedKey(key), Response.json({ expires: now() + CACHE_TTL, result }, {
+            headers: { "Cache-Control": `public, max-age=${CACHE_TTL / 1000}` },
+          }));
+        } catch { /* Return a successful download even if the edge cache cannot be written. */ }
       }
       return result;
     } finally {
@@ -74,9 +93,21 @@ export function createTikTokService(options: Options = {}) {
     }
   }
 
+  function sharedKey(key: string) {
+    return `https://tiktokdownloader.ph/__video-cache/v1/${encodeURIComponent(key)}`;
+  }
+
+  function retrySeconds(response: Response) {
+    const value = response.headers.get("retry-after");
+    if (!value) return 60;
+    const seconds = /^\d+$/.test(value) ? Number(value) : Math.ceil((Date.parse(value) - now()) / 1000);
+    return Number.isFinite(seconds) ? Math.max(60, seconds) : 60;
+  }
+
   async function freeApi(value: string): Promise<ApiResult> {
-    const failed = (fallbackStatus: string): ApiResult => ({ status: 503, body: {}, fallbackStatus });
-    if ((blockedUntil.get("freeapi") ?? 0) > now()) return failed("cooldown");
+    const failed = (fallbackStatus: string, retryAfter?: number): ApiResult => ({ status: 503, body: {}, fallbackStatus, retryAfter });
+    const remaining = Math.ceil(((blockedUntil.get("freeapi") ?? 0) - now()) / 1000);
+    if (remaining > 0) return failed("cooldown", remaining);
     const target = /^\d+$/.test(value) ? `https://www.tiktok.com/@_/video/${value}` : value;
     if (!new URL(target).hostname.endsWith("tiktok.com")) return failed("unsupported");
     try {
@@ -85,9 +116,10 @@ export function createTikTokService(options: Options = {}) {
         headers: { Accept: "application/json" }, signal: AbortSignal.timeout(15000), cache: "no-store", redirect: "manual",
       });
       if (!response.ok) {
+        const retryAfter = retrySeconds(response);
         await response.body?.cancel();
-        blockedUntil.set("freeapi", now() + COOLDOWN);
-        return failed(`http-${response.status}`);
+        blockedUntil.set("freeapi", now() + retryAfter * 1000);
+        return failed(`http-${response.status}`, retryAfter);
       }
       if (!response.headers.get("content-type")?.includes("application/json")) {
         await response.body?.cancel();
@@ -141,8 +173,9 @@ export function createTikTokService(options: Options = {}) {
       try { json = object(await response.json()); } catch { /* Upstream may return a non-JSON error page. */ }
       const limited = response.status === 429 || (json.code !== 0 && /limit|quota|too many|exceed/i.test(string(json.msg)));
       if (limited) {
-        blockedUntil.set(provider, now() + COOLDOWN);
-        return { status: 503, body: { code: "UPSTREAM_LIMIT", error: "Video service capacity is temporarily unavailable." }, retryAfter: 60 };
+        const retryAfter = retrySeconds(response);
+        blockedUntil.set(provider, now() + retryAfter * 1000);
+        return { status: 503, body: { code: "UPSTREAM_LIMIT", error: "Video service capacity is temporarily unavailable." }, retryAfter };
       }
       if (!response.ok) return { status: 503, body: { code: "SERVICE_UNAVAILABLE", error: "Video service is temporarily unavailable." } };
       if (typeof json.code !== "number" || (json.code !== 0 && /api.?key|token|auth|subscription|balance|credit|permission|plan/i.test(string(json.msg)))) {
