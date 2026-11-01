@@ -1,4 +1,5 @@
 import hmac
+import importlib.util
 import os
 import re
 import secrets
@@ -41,6 +42,20 @@ def extract(url):
         return info
 
 
+def extraction_reason(error):
+    message = str(error).lower()
+    for pattern, reason in [
+        (r"\b429\b|rate.limit|too many requests", "SOURCE_RATE_LIMIT"),
+        (r"login|sign.in|private (?:video|account)|video is private|age.restrict", "SOURCE_RESTRICTED"),
+        (r"\b403\b|forbidden|access.denied|blocked", "SOURCE_BLOCKED"),
+        (r"unable to extract|webpage.*empty|json|challenge", "SOURCE_RESPONSE_UNREADABLE"),
+        (r"timeout|timed out|connection|certificate|ssl", "SOURCE_CONNECTION_FAILED"),
+    ]:
+        if re.search(pattern, message):
+            return reason
+    return "UNKNOWN_EXTRACTION_FAILURE"
+
+
 def create_app(extractor=extract, clock=time.monotonic):
     app = Flask(__name__)
     app.config["MAX_CONTENT_LENGTH"] = 4096
@@ -69,7 +84,7 @@ def create_app(extractor=extract, clock=time.monotonic):
     @app.get("/health")
     def health():
         ready = len(app.config["API_KEY"]) >= 32
-        return jsonify({"ready": ready, "engine": "yt-dlp", "version": yt_dlp.version.__version__}), 200 if ready else 503
+        return jsonify({"ready": ready, "engine": "yt-dlp", "version": yt_dlp.version.__version__, "browserTransport": importlib.util.find_spec("curl_cffi") is not None}), 200 if ready else 503
 
     @app.post("/extract")
     def load():
@@ -126,9 +141,10 @@ def create_app(extractor=extract, clock=time.monotonic):
                 while len(results) > 64:
                     results.popitem(last=False)
             return jsonify(result)
-        except Exception:
-            app.logger.warning("TikTok extraction failed; credentials and upstream URLs omitted")
-            return fail("EXTRACTION_FAILED", 502)
+        except Exception as error:
+            reason = extraction_reason(error)
+            app.logger.warning("TikTok extraction failed: %s; upstream details omitted", reason)
+            return jsonify({"code": "EXTRACTION_FAILED", "reason": reason}), 502
         finally:
             slots.release()
 

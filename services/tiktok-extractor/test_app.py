@@ -68,6 +68,14 @@ class ExtractorTests(unittest.TestCase):
         self.time = 601
         self.assertEqual(self.client.get(path).status_code, 410)
 
+    def test_extraction_failures_have_safe_diagnostics(self):
+        for message, reason in [("HTTP Error 403: secret URL", "SOURCE_BLOCKED"), ("HTTP Error 429", "SOURCE_RATE_LIMIT"), ("Login required", "SOURCE_RESTRICTED"), ("Unable to extract webpage video data", "SOURCE_RESPONSE_UNREADABLE")]:
+            self.extractor.side_effect = RuntimeError(message)
+            response = self.load()
+            self.assertEqual(response.status_code, 502)
+            self.assertEqual(response.get_json()["reason"], reason)
+            self.assertNotIn("secret URL", response.get_data(as_text=True))
+
     @patch("app.requests.Session")
     def test_media_uses_best_format_and_streams_bytes(self, session_class):
         path = self.load().get_json()["hdUrl"].replace("https://test.onrender.com", "")
