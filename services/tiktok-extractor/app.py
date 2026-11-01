@@ -3,6 +3,8 @@ import importlib.util
 import os
 import re
 import secrets
+import subprocess
+import tempfile
 import threading
 import time
 from collections import OrderedDict, deque
@@ -10,7 +12,8 @@ from urllib.parse import urljoin, urlsplit
 
 import requests
 import yt_dlp
-from flask import Flask, Response, jsonify, request, stream_with_context
+import imageio_ffmpeg
+from flask import Flask, Response, jsonify, request, send_file, stream_with_context
 
 MEDIA_HOSTS = ("tiktok.com", "tiktokcdn.com", "tiktokcdn-us.com", "tiktokcdn-eu.com", "muscdn.com", "byteoversea.com", "ibytedtos.com")
 MAX_BYTES = 150 * 1024 * 1024
@@ -61,7 +64,9 @@ def create_app(extractor=extract, clock=time.monotonic):
     app.config["MAX_CONTENT_LENGTH"] = 4096
     app.config["API_KEY"] = os.environ.get("EXTRACTOR_API_KEY", "")
     app.config["PUBLIC_BASE_URL"] = os.environ.get("RENDER_EXTERNAL_URL", "")
+    app.config["FFMPEG_PATH"] = imageio_ffmpeg.get_ffmpeg_exe()
     slots = threading.BoundedSemaphore(2)
+    conversion_slot = threading.BoundedSemaphore(1)
     lock = threading.Lock()
     media = OrderedDict()
     results = OrderedDict()
@@ -84,7 +89,7 @@ def create_app(extractor=extract, clock=time.monotonic):
     @app.get("/health")
     def health():
         ready = len(app.config["API_KEY"]) >= 32
-        return jsonify({"ready": ready, "engine": "yt-dlp", "version": yt_dlp.version.__version__, "browserTransport": importlib.util.find_spec("curl_cffi") is not None}), 200 if ready else 503
+        return jsonify({"ready": ready, "engine": "yt-dlp", "version": yt_dlp.version.__version__, "browserTransport": importlib.util.find_spec("curl_cffi") is not None, "mp3Conversion": bool(app.config["FFMPEG_PATH"])}), 200 if ready else 503
 
     @app.post("/extract")
     def load():
@@ -125,16 +130,17 @@ def create_app(extractor=extract, clock=time.monotonic):
             best = max(videos, key=lambda item: (item.get("height") or 0, item.get("tbr") or 0))
             audio = next((item for item in formats if allowed_url(item.get("url"), MEDIA_HOSTS) and item.get("vcodec") == "none" and item.get("ext") == "mp3"), None)
             # Media stays on this host because TikTok may bind it to the extractor's IP and headers.
-            def register(item):
+            def register(item, is_audio=False, convert=False):
                 if not item:
                     return ""
                 token = secrets.token_urlsafe(32)
                 with lock:
-                    media[token] = {"url": item["url"], "headers": {**(info.get("http_headers") or {}), **(item.get("http_headers") or {})}, "cookies": info.get("_media_cookies") or [], "expires": clock() + TTL, "audio": item is audio}
+                    media[token] = {"url": item["url"], "headers": {**(info.get("http_headers") or {}), **(item.get("http_headers") or {})}, "cookies": info.get("_media_cookies") or [], "expires": clock() + TTL, "audio": is_audio, "convert": convert}
                     while len(media) > 256:
                         media.popitem(last=False)
                 return base + "/media/" + token
-            playback, soundtrack = register(best), register(audio)
+            playback = register(best)
+            soundtrack = register(audio, True) if audio else register(best, True, True) if app.config["FFMPEG_PATH"] else ""
             result = {"hdUrl": playback, "wmUrl": "", "audioUrl": soundtrack, "music": soundtrack, "thumbnail": info.get("thumbnail") or "", "author": info.get("uploader") or "tiktok", "authorUrl": info.get("uploader_url") or "#", "authorThumb": ""}
             with lock:
                 results[url] = {"expires": clock() + 240, "body": result}
@@ -177,6 +183,42 @@ def create_app(extractor=extract, clock=time.monotonic):
                 upstream.close()
                 session.close()
                 return fail("MEDIA_UNAVAILABLE", 502)
+
+            if entry["convert"]:
+                if not conversion_slot.acquire(blocking=False):
+                    upstream.close()
+                    session.close()
+                    return fail("AUDIO_BUSY", 503)
+                temp = None
+                try:
+                    temp = tempfile.TemporaryDirectory(prefix="tiktok-audio-")
+                    source = os.path.join(temp.name, "source.mp4")
+                    output = os.path.join(temp.name, "audio.mp3")
+                    total = 0
+                    deadline = time.monotonic() + 30
+                    with open(source, "wb") as target_file:
+                        for chunk in upstream.iter_content(65536):
+                            total += len(chunk)
+                            if total > MAX_BYTES or time.monotonic() > deadline:
+                                raise ValueError("Audio input limit exceeded")
+                            target_file.write(chunk)
+                    subprocess.run([
+                        app.config["FFMPEG_PATH"], "-nostdin", "-hide_banner", "-loglevel", "error", "-y",
+                        "-protocol_whitelist", "file", "-i", source, "-map", "0:a:0", "-vn",
+                        "-c:a", "libmp3lame", "-b:a", "128k", "-threads", "1", output,
+                    ], check=True, timeout=45, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
+                    response = send_file(output, mimetype="audio/mpeg", as_attachment=True, download_name="tiktok.mp3", conditional=False)
+                    response.direct_passthrough = False
+                    response.call_on_close(temp.cleanup)
+                    return response
+                except (requests.RequestException, ValueError, OSError, subprocess.SubprocessError):
+                    if temp:
+                        temp.cleanup()
+                    return fail("AUDIO_CONVERSION_FAILED", 502)
+                finally:
+                    upstream.close()
+                    session.close()
+                    conversion_slot.release()
 
             def chunks():
                 total = 0

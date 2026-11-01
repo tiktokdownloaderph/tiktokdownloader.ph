@@ -65,14 +65,20 @@ import private cookies, or bypass login restrictions.
   add bandwidth charges. Do not upgrade or add a payment method for this test.
 - Public individual videos only, not profiles, playlists, stories, or photos.
 - Highest available progressive MP4 with sound; no upscaling or watermark-removal
-  claim. MP3 is offered only when the source exposes an actual MP3 audio stream.
+  claim. A native MP3 is used when available; otherwise bundled FFmpeg converts
+  the video's audio to a real 128 kbps MP3 on demand. This is lossy conversion,
+  not a claim to preserve the original audio bitrate.
+- Only one MP3 conversion runs at a time, with bounded input size, a 30-second
+  source-transfer budget and a 45-second conversion timeout. Conversion uses
+  temporary files removed after the response; it consumes CPU and bandwidth.
 - Media is streamed from Render (up to 150 MiB per request). This consumes its
   bandwidth. Tokens expire after ten minutes and are lost on restart.
 - Extraction requires the API key. Media URLs are temporary bearer capabilities.
 - Public-session cookies obtained by yt-dlp remain server-side and are reused
   for media delivery. No user login or private-account cookies are requested.
-- This is not connected to `/api/tiktok` or `/api/download` on the main site.
-  Website integration requires a separate verified change after this test passes.
+- Website integration is opt-in via server-only `EXTRACTOR_BACKEND_URL` and
+  `EXTRACTOR_API_KEY` on the Cloudflare Worker. Do not expose either as a
+  `NEXT_PUBLIC_` variable. See `docs/tiktok-api.md` for setup.
 
 Run mocked tests from this folder: `python -m unittest -v test_app.py`.
 

@@ -1,7 +1,10 @@
 import unittest
+import io
+import wave
 from unittest.mock import Mock, patch
 
 from app import create_app
+import imageio_ffmpeg
 
 URL = "https://www.tiktok.com/@livbedumb/video/7664638157358517534"
 KEY = "test-only-key-not-a-real-secret-123456789"
@@ -21,7 +24,7 @@ class ExtractorTests(unittest.TestCase):
         self.time = 0
         self.extractor = Mock(side_effect=lambda url: info())
         self.app = create_app(self.extractor, lambda: self.time)
-        self.app.config.update(TESTING=True, API_KEY=KEY, PUBLIC_BASE_URL="https://test.onrender.com")
+        self.app.config.update(TESTING=True, API_KEY=KEY, PUBLIC_BASE_URL="https://test.onrender.com", FFMPEG_PATH="")
         self.client = self.app.test_client()
 
     def load(self, url=URL):
@@ -53,6 +56,39 @@ class ExtractorTests(unittest.TestCase):
     def test_missing_audio_is_not_faked(self):
         self.extractor.side_effect = lambda url: {"formats": info()["formats"][:2]}
         self.assertEqual(self.load().get_json()["audioUrl"], "")
+
+    @patch("app.requests.Session")
+    def test_real_mp3_encoding_when_source_has_no_mp3(self, session_class):
+        self.app.config["FFMPEG_PATH"] = imageio_ffmpeg.get_ffmpeg_exe()
+        self.extractor.side_effect = lambda url: {"formats": info()["formats"][:2]}
+        path = self.load().get_json()["audioUrl"].replace("https://test.onrender.com", "")
+        source = io.BytesIO()
+        with wave.open(source, "wb") as wav:
+            wav.setnchannels(1)
+            wav.setsampwidth(2)
+            wav.setframerate(8000)
+            wav.writeframes(b"\x00\x00" * 8000)
+        upstream = Mock(status_code=200, headers={"Content-Type": "video/mp4"})
+        upstream.iter_content.return_value = [source.getvalue()]
+        session_class.return_value.get.return_value = upstream
+        response = self.client.get(path)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.content_type, "audio/mpeg")
+        self.assertTrue(response.data.startswith(b"ID3"))
+        self.assertGreater(len(response.data), 1000)
+        response.close()
+
+    @patch("app.requests.Session")
+    def test_failed_conversion_is_not_returned_as_mp3(self, session_class):
+        self.app.config["FFMPEG_PATH"] = imageio_ffmpeg.get_ffmpeg_exe()
+        self.extractor.side_effect = lambda url: {"formats": info()["formats"][:2]}
+        path = self.load().get_json()["audioUrl"].replace("https://test.onrender.com", "")
+        upstream = Mock(status_code=200, headers={"Content-Type": "video/mp4"})
+        upstream.iter_content.return_value = [b"invalid video"]
+        session_class.return_value.get.return_value = upstream
+        response = self.client.get(path)
+        self.assertEqual(response.status_code, 502)
+        self.assertEqual(response.get_json()["code"], "AUDIO_CONVERSION_FAILED")
 
     def test_no_video_and_failures_do_not_leak_details(self):
         self.extractor.side_effect = lambda url: {"formats": []}
