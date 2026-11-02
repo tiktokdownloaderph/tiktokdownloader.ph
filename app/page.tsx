@@ -22,8 +22,8 @@ const JSON_LD = {
       "name": "TikTok Downloader na Walang Watermark - HD at Mabilis",
       "description": "I-save ang paborito mong videos gamit ang TikTok Downloader. Libre, HD at walang watermark, walang app o login. Gumagana sa Android, iPhone at PC.",
       "inLanguage": "fil-PH",
-      "datePublished": "2026-11-02T00:00:00+05:00",
-      "dateModified": "2026-11-02T00:00:00+05:00",
+      "datePublished": "2026-11-02T10:53:35+05:00",
+      "dateModified": "2026-11-02T10:53:35+05:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph#website" },
       "about": { "@id": "https://tiktokdownloader.ph#app" }
     },
@@ -219,38 +219,12 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Download formats */}
-          <section className="home-formats-white">
-            <div className="home-formats-white__inner">
-              <div className="home-formats-white__heading">
-                <h2>Ano ang Puwede Mong I-save Gamit ang TikTok Video Downloader</h2>
-                <p>Piliin ang uri ng content na kailangan mo at buksan ang dedikadong page para sa kumpletong detalye.</p>
-              </div>
-              <div className="home-specs-table-wrap">
-                <table className="home-specs-table">
-                  <thead>
-                    <tr>
-                      <th scope="col">Format</th>
-                      <th scope="col">Ano ito</th>
-                      <th scope="col">Dedikadong page</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr><td><strong>MP4</strong></td><td>Video na may tunog, hanggang HD</td><td><a href="/tiktok-to-mp4">TikTok to MP4</a></td></tr>
-                    <tr><td><strong>MP3</strong></td><td>Tunog lang, mabuti para sa ringtone</td><td><a href="/download-tiktok-mp3">TikTok MP3</a></td></tr>
-                    <tr><td><strong>Stories</strong></td><td>Post na nawawala pagkatapos ng 24 oras</td><td><a href="/download-tiktok-stories">TikTok Stories</a></td></tr>
-                    <tr><td><strong>Slideshow</strong></td><td>Photo post na may musika</td><td><a href="/tiktok-photo-downloader">TikTok Photo Downloader (Larawan at Slide)</a></td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </section>
-          {/* Features */}
+          {/* Specifications */}
           <section className="home-features-white home-features-preview">
             <div className="home-features-white__inner">
               <div className="home-features-white__heading">
-                <h2 style={{ color: "#212529", WebkitTextFillColor: "#212529" }}>Mga Tampok at Benepisyo ng TikTok Downloader</h2>
-                <p style={{ color: "rgba(33, 37, 41, 0.74)", WebkitTextFillColor: "rgba(33, 37, 41, 0.74)" }}>Binuo para sa bilis, kalidad, at pagiging simple sa lahat ng device.</p>
+                <h2 style={{ color: "#212529", WebkitTextFillColor: "#212529" }}>Mga Detalye at Espesipikasyon ng TikTok Downloader</h2>
+                <p style={{ color: "rgba(33, 37, 41, 0.74)", WebkitTextFillColor: "rgba(33, 37, 41, 0.74)" }}>Mabilis at madaling i-download ang iyong mga paboritong TikTok video nang hindi kailangang mag-install ng app o gumawa ng account.</p>
               </div>
 
               <div className="home-specs-table-wrap" style={{ marginBottom: 28 }}>
@@ -267,7 +241,15 @@ export default function HomePage() {
                   </tbody>
                 </table>
               </div>
+            </div>
+          </section>
 
+          {/* Features */}
+          <section className="home-features-white home-features-preview">
+            <div className="home-features-white__inner">
+              <div className="home-features-white__heading">
+                <h2 style={{ color: "#212529", WebkitTextFillColor: "#212529" }}>Mga Tampok at Benepisyo ng TikTok Downloader</h2>
+              </div>
               <div className="home-feature-list">
                 {[
                   {
@@ -316,6 +298,33 @@ export default function HomePage() {
             <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Ang aming tool ay perpekto para sa pag-download ng mga video para sa offline na panonood o pagbabahagi sa mga kaibigan. Tinutulungan ka nitong permanenteng i-save ang iyong mga paboritong clip, kahit na ang orihinal na video ay tinanggal na ng platform sa ibang pagkakataon. Bukod sa pag-download, gumagana rin ang aming tool bilang isang <strong style={{ color: "#fff" }}>TikTok watermark remover</strong> na awtomatiko nitong tinatanggal ang TikTok logo at username sa video, kaya malinis ang makukuha mong file.</p>
             <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Maaari mong i-save ang iyong mga video nang walang logo ng TikTok at i-repost ang mga ito sa mga platform tulad ng YouTube Shorts, Instagram Reels, at Facebook para palakihin ang iyong audience.</p>
             <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Mabilis, libre, at gumagana sa lahat ng device: walang login, walang app, walang limitasyon.</p>
+          </section>
+
+          {/* Download formats */}
+          <section className="home-formats-white">
+            <div className="home-formats-white__inner">
+              <div className="home-formats-white__heading">
+                <h2>Mga Uri ng TikTok Content na Puwede Mong I-download</h2>
+                <p>Mag-download ng TikTok videos, MP3 audio, Stories, at photo slideshows nang libre. Piliin ang format na kailangan mo at i-save ito direkta sa iyong device.</p>
+              </div>
+              <div className="home-specs-table-wrap">
+                <table className="home-specs-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Uri ng Content</th>
+                      <th scope="col">Ano ang Mada-download?</th>
+                      <th scope="col">Download Tool</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>MP4 Video</strong></td><td>HD TikTok videos na may audio, walang watermark kung available</td><td><a href="/tiktok-to-mp4">TikTok to MP4</a></td></tr>
+                    <tr><td><strong>MP3 Audio</strong></td><td>TikTok music, sounds, at voiceovers bilang MP3</td><td><a href="/download-tiktok-mp3">TikTok MP3 Downloader</a></td></tr>
+                    <tr><td><strong>TikTok Stories</strong></td><td>Mga available na TikTok Stories bago mawala pagkalipas ng 24 oras</td><td><a href="/download-tiktok-stories">TikTok Story Downloader</a></td></tr>
+                    <tr><td><strong>Photos &amp; Slideshows</strong></td><td>Mga larawan mula sa TikTok photo posts at slideshows</td><td><a href="/tiktok-photo-downloader">TikTok Photo Downloader</a></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </section>
 
           {/* Downloader vs Watermark Remover */}

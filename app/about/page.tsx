@@ -34,7 +34,7 @@ const JSON_LD = {
       "description": "Alamin ang tungkol sa tiktokdownloader.ph.",
       "inLanguage": "fil-PH",
       "isPartOf": { "@id": "https://tiktokdownloader.ph#website" },
-      "dateModified": "2026-09-28T04:20:13+08:00"
+      "dateModified": "2026-11-02T10:53:35+05:00"
     },
     {
       "@type": "BreadcrumbList",
@@ -51,7 +51,7 @@ export default function AboutPage() {
   return (
     <main className="site-info-page site-info-page--about">
       <div className="container" style={{ paddingTop: 36, paddingBottom: 56 }}>
-        <h1 style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 6, textAlign: "center" }}>Tungkol sa <a href="/" style={{ color: "inherit", textDecoration: "underline", textUnderlineOffset: "3px" }}>tiktokdownloader.ph</a></h1>
+        <h1 style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 6, textAlign: "center" }}>Tungkol sa tiktokdownloader.ph</h1>
         <p className="text-center" style={{ color: "rgba(255,255,255,0.45)", fontSize: ".875rem", marginBottom: 32 }}>Ang aming misyon, serbisyo, at pangako sa aming mga gumagamit</p>
         <div className="row g-3">
           <div className="col-12 col-md-6"><div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: 22, height: "100%" }}><h2 style={{ color: "#ff3b5c", fontSize: ".95rem", fontWeight: 700, marginBottom: 10 }}>Sino Kami</h2><p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".9rem", lineHeight: 1.8, margin: 0 }}>Ang <a href="/" style={{ color: "inherit", textDecoration: "underline", textUnderlineOffset: "3px" }}>tiktokdownloader.ph</a> ay isang libreng online na tool na espesyal na ginawa para sa mga Pilipinong gumagamit ng TikTok. Naniniwala kami na ang pag-download ng mga video para sa personal na paggamit ay dapat maging simple, mabilis, at libre &mdash; nang walang ads, walang registration, at walang abala.</p></div></div>
@@ -60,7 +60,7 @@ export default function AboutPage() {
           <div className="col-12 col-md-6"><div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: 22, height: "100%" }}><h2 style={{ color: "#ff3b5c", fontSize: ".95rem", fontWeight: 700, marginBottom: 10 }}>Aming Pangako</h2><p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".9rem", lineHeight: 1.8, marginBottom: 10 }}>Hindi namin ino-store o ibinabahagi ang inyong data. Ang inyong privacy ay aming prayoridad.</p><p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".9rem", lineHeight: 1.8, margin: 0 }}>Para sa anumang katanungan, <a href="/contact" style={{ color: "#ff3b5c", textDecoration: "none" }}>makipag-ugnayan sa amin</a>.</p></div></div>
         </div>
         <div style={{ marginTop: 24, padding: "16px 20px", background: "rgba(255,59,92,0.05)", border: "1px solid rgba(255,59,92,0.18)", borderRadius: 10, textAlign: "center" }}>
-          <p style={{ color: "rgba(255,255,255,0.5)", fontSize: ".825rem", margin: 0 }}>Ang <a href="/" style={{ color: "inherit", textDecoration: "underline", textUnderlineOffset: "3px" }}>tiktokdownloader.ph</a> ay hindi kaakibat o ineendorso ng TikTok, Douyin, o ByteDance Ltd.</p>
+          <p style={{ color: "rgba(255,255,255,0.5)", fontSize: ".825rem", margin: 0 }}>Ang tiktokdownloader.ph ay hindi kaakibat o ineendorso ng TikTok, Douyin, o ByteDance Ltd.</p>
         </div>
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />

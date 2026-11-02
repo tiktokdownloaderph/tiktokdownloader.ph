@@ -85,7 +85,7 @@ export default function HowToSlider() {
         </button>
       </div>
       <div className="home-howto-slider__status">
-        <span>{active + 1} / {slides.length}</span>
+        <span translate="no">{`${active + 1} / ${slides.length}`}</span>
         <button type="button" className="home-howto-slider__control" aria-label={paused || reducedMotion ? "Ituloy ang slideshow" : "I-pause ang slideshow"} title={paused || reducedMotion ? "Ituloy ang slideshow" : "I-pause ang slideshow"} onClick={() => { setPaused(!paused && !reducedMotion); setReducedMotion(false); }}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paused || reducedMotion ? <path d="m8 5 11 7-11 7V5Z" /> : <path d="M8 5v14M16 5v14" />}</svg>
         </button>

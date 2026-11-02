@@ -75,7 +75,7 @@ function doDownload(mediaUrl: string, filename: string) {
     a.rel = "nofollow noreferrer";
     document.body.appendChild(a);
     a.click();
-    document.body.removeChild(a);
+    a.remove();
     window.setTimeout(() => updateDownloadModal("Download started!", 100), 360);
   } catch {
     updateDownloadModal("Download failed. Try the direct link.", 100);

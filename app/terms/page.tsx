@@ -31,17 +31,17 @@ export default function TermsPage() {
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8">
             <h1 style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 6 }}>Mga Tuntunin ng Paggamit</h1>
-            <p style={{ color: "rgba(255,255,255,0.38)", fontSize: ".8rem", marginBottom: 28 }}>Terms and Conditions &mdash; Huling na-update: Setyembre 28, 2026</p>
+            <p style={{ color: "rgba(255,255,255,0.38)", fontSize: ".8rem", marginBottom: 28 }}>Terms and Conditions &mdash; Huling na-update: <time dateTime="2026-11-02T10:53:35+05:00">Nobyembre 2, 2026, 10:53:35 AM (UTC+05:00)</time></p>
             <div style={{ color: "rgba(255,255,255,0.68)", fontSize: ".9rem", lineHeight: 1.85 }}>
               <p>Sa pag-access at paggamit ng <a href="/" style={{ color: "inherit", textDecoration: "underline", textUnderlineOffset: "3px" }}>tiktokdownloader.ph</a>, sumasang-ayon ka sa mga tuntunin at kundisyon na ito.</p>
               <h2 style={s}>1. Paglalarawan ng Serbisyo</h2>
-              <p>Ang <a href="/" style={{ color: "inherit", textDecoration: "underline", textUnderlineOffset: "3px" }}>tiktokdownloader.ph</a> ay nagbibigay ng libreng serbisyo para mag-download ng mga TikTok video para sa personal, non-commercial na paggamit.</p>
+              <p>Ang tiktokdownloader.ph ay nagbibigay ng libreng serbisyo para mag-download ng mga TikTok video para sa personal, non-commercial na paggamit.</p>
               <h2 style={s}>2. Katanggap-tanggap na Paggamit</h2>
               <p>Pinahihintulutan ang paggamit para sa personal na panonood. Ipinagbabawal ang komersyal na paggamit ng na-download na content nang walang pahintulot, pag-distribute ng copyrighted na content, at anumang ilegal na aktibidad.</p>
               <h2 style={s}>3. Intellectual Property</h2>
               <p>Ang lahat ng TikTok video ay may copyright na pag-aari ng kani-kanilang mga creator. Humingi ng pahintulot bago i-repost at bigyan ng credit ang orihinal na creator.</p>
               <h2 style={s}>4. Limitasyon ng Responsibilidad</h2>
-              <p>Hindi mananagot ang <a href="/" style={{ color: "inherit", textDecoration: "underline", textUnderlineOffset: "3px" }}>tiktokdownloader.ph</a> sa anumang pinsala o pagkalugi na nagmumula sa paggamit ng aming serbisyo.</p>
+              <p>Hindi mananagot ang tiktokdownloader.ph sa anumang pinsala o pagkalugi na nagmumula sa paggamit ng aming serbisyo.</p>
               <h2 style={s}>5. Mga Pagbabago</h2>
               <p style={{ margin: 0 }}>Nakalaan ang aming karapatang baguhin ang mga tuntuning ito anumang oras. Para sa mga katanungan: <a href="/contact" style={{ color: "#ff3b5c", textDecoration: "none" }}>makipag-ugnayan sa amin</a>.</p>
             </div>

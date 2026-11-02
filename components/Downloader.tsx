@@ -122,7 +122,7 @@ export default function Downloader({ initialUrl = "", autoFocus = false }: { ini
       link.rel = "nofollow noreferrer";
       document.body.appendChild(link);
       link.click();
-      document.body.removeChild(link);
+      link.remove();
       window.setTimeout(() => {
         setDownloadProgress(100);
         setProgressText("Download started!");
