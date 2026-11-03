@@ -1,6 +1,7 @@
 import { SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { BadgeCheck, BookOpenCheck, ShieldCheck, Wifi, Hourglass, BookmarkCheck } from "lucide-react";
 import DeferredDownloader from "@/components/DeferredDownloader";
 import HowToSlider from "@/components/HowToSlider";
 import { Children, isValidElement, type ReactNode } from "react";
@@ -22,8 +23,8 @@ const JSON_LD = {
       "name": "TikTok Downloader na Walang Watermark - HD at Mabilis",
       "description": "I-save ang paborito mong videos gamit ang TikTok Downloader. Libre, HD at walang watermark, walang app o login. Gumagana sa Android, iPhone at PC.",
       "inLanguage": "fil-PH",
-      "datePublished": "2026-11-02T10:53:35+05:00",
-      "dateModified": "2026-11-02T10:53:35+05:00",
+      "datePublished": "2026-11-03T11:31:43+05:00",
+      "dateModified": "2026-11-03T11:31:43+05:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph#website" },
       "about": { "@id": "https://tiktokdownloader.ph#app" }
     },
@@ -294,10 +295,9 @@ export default function HomePage() {
           </section>
           {/* Why You Need It */}
           <section className="home-dark-content-section">
-            <h2 className="text-center">Bakit Kailangan Mo ng TikTok Video Downloader na Walang Watermark?</h2>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Ang aming tool ay perpekto para sa pag-download ng mga video para sa offline na panonood o pagbabahagi sa mga kaibigan. Tinutulungan ka nitong permanenteng i-save ang iyong mga paboritong clip, kahit na ang orihinal na video ay tinanggal na ng platform sa ibang pagkakataon. Bukod sa pag-download, gumagana rin ang aming tool bilang isang <strong style={{ color: "#fff" }}>TikTok watermark remover</strong> na awtomatiko nitong tinatanggal ang TikTok logo at username sa video, kaya malinis ang makukuha mong file.</p>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Maaari mong i-save ang iyong mga video nang walang logo ng TikTok at i-repost ang mga ito sa mga platform tulad ng YouTube Shorts, Instagram Reels, at Facebook para palakihin ang iyong audience.</p>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Mabilis, libre, at gumagana sa lahat ng device: walang login, walang app, walang limitasyon.</p>
+            <h2 className="text-center">Bakit Kailangan Mo ng TikTok Video Downloader?</h2>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>May mga TikTok video na gusto mong magamit, hindi lang idagdag sa mga naka-save mong post. Mas madaling balikan ang isang cooking demo, gabay sa pagkukumpuni, o aralin kapag nakatabi ito kasama ng mga kaugnay mong tala at proyekto. Gamit ang <strong>TikTok video downloader</strong>, maaari mo itong gawing file na mapapangalanan at maaayos sa sarili mong mga folder para madaling mahanap kapag kailangan.</p>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Para sa sarili mong mga na-post na video, makakatulong din ang pagkakaroon ng kopya upang masuri ang iyong gawa. Maaari mong paghambingin ang mga nauna mong clip, tingnan kung paano nagbago ang paraan mo ng paglalahad, o gamitin ang isang upload sa susunod mong proyekto sa pag-edit. Sa halip na hanapin ang bawat video sa iyong profile, nakahanda na ang mga kopyang kailangan mo.</p>
           </section>
 
           {/* Download formats */}
@@ -325,14 +325,6 @@ export default function HomePage() {
                 </table>
               </div>
             </div>
-          </section>
-
-          {/* Downloader vs Watermark Remover */}
-          <section className="home-dark-content-section">
-            <h2 className="text-center">Downloader o Watermark Remover: Ano ang Pagkakaiba?</h2>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Madalas itong ipinagkakamali, pero magkaugnay lang ang dalawa. Ang <strong style={{ color: "#fff" }}>TikTok downloader</strong> ang tool na nagse-save ng video mula sa TikTok papunta sa iyong device. Ang <strong style={{ color: "#fff" }}>remover</strong> naman ay tumutukoy sa proseso ng pagtanggal ng TikTok logo sa video.</p>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>Ang mabuting balita: sa aming tool, iisang hakbang lang ang dalawa. Kapag nag-download ka rito, awtomatiko nang tinatanggal ang logo, kaya malinis na ang makukuha mong file nang hindi na kailangan ng hiwalay na app.</p>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Kaya kung naghahanap ka man ng downloader o remover, iisa lang ang sagot: kopyahin ang link, i-paste sa itaas, at makukuha mo agad ang malinis na video, libre at walang app.</p>
           </section>
 
           {/* Data Usage */}
@@ -373,10 +365,10 @@ export default function HomePage() {
           </section>
 
           {/* Responsible Use Tips */}
-          <section style={{ marginTop: 40 }}>
+          <section className="home-use-tips" style={{ marginTop: 40 }}>
             <h2 className="text-center" style={{ color: "#fff", fontSize: "1.5rem", fontWeight: 700, marginBottom: 14 }}>Mga Tip para sa Responsableng Paggamit</h2>
             <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 16 }}>Ang pag-download ng mga video ng TikTok ay maginhawa, ngunit ang mga gumagamit ay dapat palaging kumilos nang responsable at igalang ang mga tagalikha ng nilalaman.</p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            <div className="home-use-tips__grid">
               {[
                 { title: "Igalang ang Copyright", text: "Ang mga video ng TikTok ay pagmamay-ari ng kani-kanilang mga tagalikha. Palaging humingi ng pahintulot bago i-repost o gamitin ang nilalaman." },
                 { title: "Gamitin para sa Personal o Pang-edukasyon na Layunin", text: "Ang na-download na nilalaman ay dapat gamitin sa etikal na paraan para sa personal na pagtingin, pag-aaral, o mga layunin ng sanggunian lamang." },
@@ -385,10 +377,22 @@ export default function HomePage() {
                 { title: "Hintayin ang Pag-load Bago Mag-download", text: "Kung mabagal ang pag-load ng video, hintayin munang lumabas ang mga download option bago pindutin ang button para mas maayos ang pag-save." },
                 { title: "I-save ang Mga Viral Video Bago Pa Matanggal", text: "Minsan tinatanggal ng mga creator ang kanilang mga video o ginagawang pribado. Kung may gusto kang i-save, tulad ng viral dance, tutorial, o memorable clip, i-download agad bago pa mawala ang video." }
               ].map((tip, i) => (
-                <div key={i} style={{ padding: "16px 18px", background: "rgba(255,255,255,0.04)", borderRadius: 9, borderLeft: "2px solid rgba(255,59,92,0.5)" }}>
-                  <strong style={{ color: "#fff", fontSize: ".95rem", display: "block", marginBottom: 4 }}>{tip.title}</strong>
-                  <span style={{ color: "rgba(255,255,255,0.55)", fontSize: ".875rem", lineHeight: 1.7 }}>{tip.text}</span>
-                </div>
+                <article key={tip.title} className="home-use-tip">
+                  <span className="home-use-tip__icon" aria-hidden="true">
+                    {[
+                      <ShieldCheck key="copyright" size={28} strokeWidth={1.8} />,
+                      <BookOpenCheck key="education" size={28} strokeWidth={1.8} />,
+                      <BadgeCheck key="credit" size={28} strokeWidth={1.8} />,
+                      <Wifi key="wifi" size={28} strokeWidth={1.8} />,
+                      <Hourglass key="wait" size={28} strokeWidth={1.8} />,
+                      <BookmarkCheck key="save" size={28} strokeWidth={1.8} />,
+                    ][i]}
+                  </span>
+                  <div className="home-use-tip__body">
+                    <h3>{tip.title}</h3>
+                    <p>{tip.text}</p>
+                  </div>
+                </article>
               ))}
             </div>
           </section>
