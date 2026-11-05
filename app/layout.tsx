@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
   },
   manifest: "/manifest.json",
+  appleWebApp: { capable: true, title: "TikTok Downloader", statusBarStyle: "default" },
 };
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
@@ -32,6 +33,17 @@ export default function RootLayout({
     <html lang="fil-PH" data-bs-theme="dark" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#121212" />
+        <script
+          id="microsoft-clarity"
+          type="text/javascript"
+          dangerouslySetInnerHTML={{ __html: `
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "z8qsvo3e5n");
+          ` }}
+        />
       </head>
       <body suppressHydrationWarning>
         <Navbar />

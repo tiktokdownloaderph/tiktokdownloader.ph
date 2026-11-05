@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PwaInstall from "@/components/PwaInstall";
 import { SITE_NAME } from "@/lib/site";
 
 const socials = [
@@ -30,6 +31,7 @@ export default function Footer() {
           <section className="site-footer__brand" aria-labelledby="footer-brand-title">
             <h2 id="footer-brand-title">{SITE_NAME}</h2>
             <p>Libreng online tool para mag-save ng TikTok video nang walang watermark sa MP4 o MP3, direkta sa browser.</p>
+            <PwaInstall />
           </section>
 
           <section className="site-footer__links" aria-labelledby="footer-links-title">

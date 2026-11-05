@@ -8774,3 +8774,27 @@ body main .home-use-tips .home-use-tip p {
     transition: none;
   }
 }
+.site-footer .pwa-install { margin-top: 20px; }
+.site-footer .pwa-install button,
+.site-footer .pwa-install summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ff5270;
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 15px;
+  cursor: pointer;
+  list-style: none;
+}
+.site-footer .pwa-install summary::-webkit-details-marker { display: none; }
+.site-footer .pwa-install button:focus-visible,
+.site-footer .pwa-install summary:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.site-footer .pwa-install button:disabled { opacity: .65; cursor: wait; }
+.site-footer .pwa-install ol { margin: 14px 0 0; padding-left: 22px; color: #c8cdd1; font-size: 15px; line-height: 1.8; }
+.site-footer .pwa-install li { margin: 8px 0; }
+.site-footer .pwa-install svg { flex-shrink: 0; vertical-align: middle; }

@@ -2,6 +2,8 @@
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
   "short_name": "TikTok Downloader",
   "name": "TikTok Downloader Philippines",
+  "id": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/icon-48.png",

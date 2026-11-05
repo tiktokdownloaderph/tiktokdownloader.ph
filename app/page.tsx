@@ -23,8 +23,8 @@ const JSON_LD = {
       "name": "TikTok Downloader na Walang Watermark - HD at Mabilis",
       "description": "I-save ang paborito mong videos gamit ang TikTok Downloader. Libre, HD at walang watermark, walang app o login. Gumagana sa Android, iPhone at PC.",
       "inLanguage": "fil-PH",
-      "datePublished": "2026-11-03T11:31:43+05:00",
-      "dateModified": "2026-11-03T11:31:43+05:00",
+      "datePublished": "2026-11-05T12:43:50+05:00",
+      "dateModified": "2026-11-05T12:43:50+05:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph#website" },
       "about": { "@id": "https://tiktokdownloader.ph#app" }
     },
@@ -298,6 +298,16 @@ export default function HomePage() {
             <h2 className="text-center">Bakit Kailangan Mo ng TikTok Video Downloader?</h2>
             <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 10 }}>May mga TikTok video na gusto mong magamit, hindi lang idagdag sa mga naka-save mong post. Mas madaling balikan ang isang cooking demo, gabay sa pagkukumpuni, o aralin kapag nakatabi ito kasama ng mga kaugnay mong tala at proyekto. Gamit ang <strong>TikTok video downloader</strong>, maaari mo itong gawing file na mapapangalanan at maaayos sa sarili mong mga folder para madaling mahanap kapag kailangan.</p>
             <p style={{ color: "rgba(255,255,255,0.65)", fontSize: ".95rem", lineHeight: 1.8, marginBottom: 0 }}>Para sa sarili mong mga na-post na video, makakatulong din ang pagkakaroon ng kopya upang masuri ang iyong gawa. Maaari mong paghambingin ang mga nauna mong clip, tingnan kung paano nagbago ang paraan mo ng paglalahad, o gamitin ang isang upload sa susunod mong proyekto sa pag-edit. Sa halip na hanapin ang bawat video sa iyong profile, nakahanda na ang mga kopyang kailangan mo.</p>
+          </section>
+
+          {/* PWA installation */}
+          <section className="home-dark-content-section">
+            <h2 className="text-center">TikTok Downloader Progressive Web App (PWA)</h2>
+            <p>Para sa mga madalas gumamit, may Progressive Web App ang TikTok Downloader na nagbibigay ng karanasang parang app&mdash;hindi na kailangang pumunta sa app store. Idagdag ito sa iyong home screen para sa mabilis at madaling pag-access.</p>
+            <h3>Para sa mga Gumagamit ng Android</h3>
+            <p>Buksan ang Chrome at bisitahin ang <strong>tiktokdownloader.ph</strong>. I-tap ang menu na may tatlong tuldok, piliin ang <strong>Install app</strong> o <strong>Add to Home Screen</strong>, at sundin ang mga tagubilin.</p>
+            <h3>Para sa mga Gumagamit ng iOS</h3>
+            <p>Buksan ang Safari at bisitahin ang <strong>tiktokdownloader.ph</strong>. I-tap ang Share icon, piliin ang <strong>Add to Home Screen</strong>, at kumpirmahin. Pagkatapos, maaari mo nang buksan ang TikTok Downloader mula mismo sa iyong home screen.</p>
           </section>
 
           {/* Download formats */}
