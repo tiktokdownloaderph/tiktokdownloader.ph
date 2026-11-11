@@ -6,7 +6,7 @@ const pageTitle = "TikTok MP4 Downloader - Save Videos Without Watermark";
 const pageDescription = "Mag-save ng TikTok videos gamit ang libreng TikTok MP4 downloader. HD hanggang 1080p, depende sa source, walang app o login. Para sa Android, iPhone at PC.";
 const pageUrl = "https://tiktokdownloader.ph/tiktok-to-mp4";
 const imageUrl = "https://tiktokdownloader.ph/images/featuredimg8.webp";
-const publishedAt = "2026-11-07T23:31:32+05:00";
+const publishedAt = "2026-11-11T23:26:56+05:00";
 
 export const metadata: Metadata = {
   title: pageTitle,

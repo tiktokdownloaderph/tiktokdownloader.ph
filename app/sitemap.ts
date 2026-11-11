@@ -3,7 +3,7 @@ import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE_URL;
-  const homepageLastModified = new Date("2026-11-07T23:31:32+05:00");
+  const homepageLastModified = new Date("2026-11-11T23:26:56+05:00");
   const legalPagesLastModified = new Date("2026-11-02T10:53:35+05:00");
   const otherPagesLastModified = new Date("2026-09-28");
 
@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/tiktok-video-hindi-nadadownload`, lastModified: new Date("2026-11-02T00:00:00+05:00"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/about`, lastModified: legalPagesLastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/contact`, lastModified: legalPagesLastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/tiktok-to-mp4`, lastModified: new Date("2026-11-07T23:31:32+05:00"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/tiktok-to-mp4`, lastModified: new Date("2026-11-11T23:26:56+05:00"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/download-tiktok-mp3`, lastModified: new Date("2026-10-27T14:09:57+08:00"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/tiktok-photo-downloader`, lastModified: otherPagesLastModified, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/download-tiktok-stories`, lastModified: new Date("2026-10-29T14:31:59+08:00"), changeFrequency: "monthly", priority: 0.85 },
