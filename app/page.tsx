@@ -23,8 +23,8 @@ const JSON_LD = {
       "name": "TikTok Downloader na Walang Watermark - HD at Mabilis",
       "description": "I-save ang paborito mong videos gamit ang TikTok Downloader. Libre, HD at walang watermark, walang app o login. Gumagana sa Android, iPhone at PC.",
       "inLanguage": "fil-PH",
-      "datePublished": "2026-11-20T22:05:24+05:00",
-      "dateModified": "2026-11-20T22:05:24+05:00",
+      "datePublished": "2026-11-23T11:42:41+05:00",
+      "dateModified": "2026-11-23T11:42:41+05:00",
       "isPartOf": { "@id": "https://tiktokdownloader.ph#website" },
       "about": { "@id": "https://tiktokdownloader.ph#app" }
     },
@@ -307,7 +307,7 @@ export default function HomePage() {
             <h3>Para sa mga Gumagamit ng Android</h3>
             <p>Buksan ang Chrome at bisitahin ang <strong>tiktokdownloader.ph</strong>. I-tap ang menu na may tatlong tuldok, piliin ang <strong>Install app</strong> o <strong>Add to Home Screen</strong>, at sundin ang mga tagubilin.</p>
             <h3>Para sa mga Gumagamit ng iOS</h3>
-            <p>Buksan ang Safari at bisitahin ang <strong>tiktokdownloader.ph</strong>. I-tap ang Share icon, piliin ang <strong>Add to Home Screen</strong>, at kumpirmahin. Pagkatapos, maaari mo nang buksan ang TikTok Downloader mula mismo sa iyong home screen.</p>
+            <p>Buksan ang site na ito sa Safari. I-tap ang Share icon, piliin ang <strong>Add to Home Screen</strong>, at kumpirmahin. Pagkatapos, maaari mo nang buksan ang TikTok Downloader mula mismo sa iyong home screen.</p>
           </section>
 
           {/* Download formats */}
@@ -442,9 +442,9 @@ function faqAnswerText(answer: ReactNode): string {
 function HomeFaq() {
   const faqs = [
     { q: "Ligtas ba ang TikTok Downloader?", a: <p className="mb-0">Oo, ligtas na ligtas. Protektado ng <strong>SSL encryption</strong> ang lahat ng koneksyon sa aming site, kaya secure ang iyong data. Hindi ito naglalaman ng <strong>malware</strong> o <strong>virus</strong>, hindi humihingi ng login o password, at <strong>anonymous</strong> ang paggamit, walang tracking at walang naka-imbak na history ng iyong mga pinanood o na-download. Hindi kami nag-iimbak ng mga video o nagtatago ng mga kopya ng na-download na nilalaman. Ang lahat ng mga file ay naka-save sa iyong device. Ligtas itong gamitin sa anumang device.</p> },
-    { q: "Maaari Ko Bang Mag-download ng TikTok Videos sa Android?", a: <p className="mb-0">Oo! Buksan ang tiktokdownloader.ph sa Chrome, Samsung Internet, o ibang browser sa Android. I-paste ang link ng TikTok video, pindutin ang Hanapin ang Video, at piliin ang download option. Mase-save ang file sa Downloads folder ng iyong device, nang walang kailangang i-install na app.</p> },
+    { q: "Maaari Ko Bang Mag-download ng TikTok Videos sa Android?", a: <p className="mb-0">Oo! Buksan ang aming tool sa Chrome, Samsung Internet, o ibang browser sa Android. I-paste ang link ng TikTok video, pindutin ang Hanapin ang Video, at piliin ang download option. Mase-save ang file sa Downloads folder ng iyong device, nang walang kailangang i-install na app.</p> },
     { q: "Maaari Ko Bang I-convert ang isang TikTok sa MP3?", a: <p className="mb-0">Oo! I-paste ang link sa itaas, i-load ang video, at i-click ang Download Audio button para i-save ang audio bilang MP3.</p> },
-    { q: "Paano Mag-download ng TikTok Videos sa iOS?", a: <p className="mb-0">Kopyahin ang link ng video mula sa TikTok app, bisitahin ang tiktokdownloader.ph sa Safari o ibang browser, i-paste ang link, at i-click ang download. Maaari mong i-save ang video nang direkta sa iyong camera roll o photos library.</p> },
+    { q: "Paano Mag-download ng TikTok Videos sa iOS?", a: <p className="mb-0">Kopyahin ang link ng video mula sa TikTok app, buksan ang aming tool sa Safari o ibang browser, i-paste ang link, at i-click ang download. Maaari mong i-save ang video nang direkta sa iyong camera roll o photos library.</p> },
     { q: "Libre ba ang TikTok Downloader na Gamitin?", a: <p className="mb-0">Oo, ganap na libre itong gamitin. Walang nakatagong singil, subscription, o kinakailangan sa pagbabayad, mag-download ng walang limitasyong TikTok video nang libre.</p> },
     { q: "Kailangan Ko Bang Mag-install ng Anumang Software, App, o Extension ng Browser?", a: <p className="mb-0">Hindi! Ito ay isang ganap na online na tool, walang software, app, o browser extension ay kinakailangan. Buksan lamang ito sa iyong browser, i-paste ang link ng TikTok video, at i-download kaagad ang iyong video.</p> },
     { q: "Maaari ba akong Mag-download ng Mga Video mula sa Mga Pribadong Account?", a: <p className="mb-0">Hindi. Makakapag-download lang ng mga pampublikong TikTok na video. Pribado o pinaghihigpitang nilalaman ay hindi suportado.</p> },
